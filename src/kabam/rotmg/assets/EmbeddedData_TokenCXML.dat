@@ -1,0 +1,1643 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Objects>
+   <Object type="0x21C3" id="Mystery ST Shard x1">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>1</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x21C4" id="Mystery ST Shard x2">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>100</feedPower>
+   </Object>
+   <Object type="0x21C5" id="Mystery ST Shard x3">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>150</feedPower>
+   </Object>
+   <Object type="0x21C6" id="Mystery ST Shard x4">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>200</feedPower>
+   </Object>
+   <Object type="0x21C7" id="Mystery ST Shard x5">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>250</feedPower>
+   </Object>
+   <Object type="0x21C8" id="Mystery ST Shard x6">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>6</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>300</feedPower>
+   </Object>
+   <Object type="0x21C9" id="Mystery ST Shard x7">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>7</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>350</feedPower>
+   </Object>
+   <Object type="0x21CA" id="Mystery ST Shard x8">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>8</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>400</feedPower>
+   </Object>
+   <Object type="0x21CB" id="Mystery ST Shard x9">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>9</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>450</feedPower>
+   </Object>
+   <Object type="0x21CC" id="Mystery ST Shard x10">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>10</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x21CD" id="Mystery ST Shard x11">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>11</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>550</feedPower>
+   </Object>
+   <Object type="0x21CE" id="Mystery ST Shard x12">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>12</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>600</feedPower>
+   </Object>
+   <Object type="0x21CF" id="Mystery ST Shard x13">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>13</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>650</feedPower>
+   </Object>
+   <Object type="0x21D0" id="Mystery ST Shard x14">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>14</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>700</feedPower>
+   </Object>
+   <Object type="0x21D1" id="Mystery ST Shard x15">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x9d</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>Collect Mystery ST Shards and use them to obtain a Mystery ST Chest.\n\nSprite Credits: Piggby</Description>
+      <Quantity>15</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="" description="Double click to create a Mystery ST Chest! Doing so will consume the Tokens."/>
+         <EffectInfo name="Stack limit" description="15"/>
+         <EffectInfo name="Event" description="Mystery ST Shard"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+      <feedPower>750</feedPower>
+      <Activate id="Mystery ST Chest">Exchange</Activate>
+      <Track/>
+      <Consumable/>
+   </Object>
+   <Object type="0x7fd6" id="Halloween Candy x 1">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>1</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fd7" id="Halloween Candy x 2">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fd8" id="Halloween Candy x 3">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fd9" id="Halloween Candy x 4">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fda" id="Halloween Candy x 5">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fdb" id="Halloween Candy x 6">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>6</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fdc" id="Halloween Candy x 7">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>7</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fde" id="Halloween Candy x 8">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>8</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fdd" id="Halloween Candy x 9">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>9</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fdf" id="Halloween Candy x 10">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>10</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe0" id="Halloween Candy x 11">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>11</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe1" id="Halloween Candy x 12">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer! </Description>
+      <Quantity>12</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe2" id="Halloween Candy x 13">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>13</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe3" id="Halloween Candy x 14">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>14</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe4" id="Halloween Candy x 15">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>15</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe5" id="Halloween Candy x 16">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>16</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe6" id="Halloween Candy x 17">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>17</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe7" id="Halloween Candy x 18">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>18</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe8" id="Halloween Candy x 19">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>19</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fe9" id="Halloween Candy x 20">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>20</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fea" id="Halloween Candy x 21">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>21</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7feb" id="Halloween Candy x 22">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>22</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fec" id="Halloween Candy x 23">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>23</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fed" id="Halloween Candy x 24">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>24</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x7fee" id="Halloween Candy x 25">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x59a</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Halloween Candy! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>25</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x2595" id="Pumpkin Token x 1">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>1</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x2596" id="Pumpkin Token x 2">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x2597" id="Pumpkin Token x 3">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x2598" id="Pumpkin Token x 4">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x2599" id="Pumpkin Token x 5">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x259a" id="Pumpkin Token x 6">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>6</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x259b" id="Pumpkin Token x 7">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>7</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x259c" id="Pumpkin Token x 8">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>8</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x259d" id="Pumpkin Token x 9">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>9</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x259e" id="Pumpkin Token x 10">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>10</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x259f" id="Pumpkin Token x 11">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>11</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a0" id="Pumpkin Token x 12">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>12</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a1" id="Pumpkin Token x 13">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>13</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a2" id="Pumpkin Token x 14">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>14</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a3" id="Pumpkin Token x 15">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>15</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a4" id="Pumpkin Token x 16">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>16</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a5" id="Pumpkin Token x 17">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>17</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a6" id="Pumpkin Token x 18">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>18</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a7" id="Pumpkin Token x 19">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>19</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a8" id="Pumpkin Token x 20">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>20</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25a9" id="Pumpkin Token x 21">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>21</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25aa" id="Pumpkin Token x 22">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>22</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25ab" id="Pumpkin Token x 23">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>23</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25ac" id="Pumpkin Token x 24">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>24</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25ad" id="Pumpkin Token x 25">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x34</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Magic Pumpkin! You can drag and drop tokens onto each other and exchange them for rewards at the Tinkerer!</Description>
+      <Quantity>25</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25c8" id="Bone Token x 1">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5c0</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>1</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25c9" id="Bone Token x 2">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25ca" id="Bone Token x 3">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25cb" id="Bone Token x 4">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25cc" id="Bone Token x 5">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25cd" id="Bone Token x 6">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>6</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25ce" id="Bone Token x 7">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>7</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25cf" id="Bone Token x 8">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>8</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d0" id="Bone Token x 9">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>9</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d1" id="Bone Token x 10">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>10</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d2" id="Bone Token x 11">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>11</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d3" id="Bone Token x 12">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>12</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d4" id="Bone Token x 13">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>13</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d5" id="Bone Token x 14">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>14</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d6" id="Bone Token x 15">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>15</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d7" id="Bone Token x 16">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>16</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d8" id="Bone Token x 17">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>17</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25d9" id="Bone Token x 18">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>18</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25da" id="Bone Token x 19">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>19</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25db" id="Bone Token x 20">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>20</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25dc" id="Bone Token x 21">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>21</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25dd" id="Bone Token x 22">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>22</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25de" id="Bone Token x 23">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>23</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25df" id="Bone Token x 24">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>24</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+   <Object type="0x25e0" id="Bone Token x 25">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x33</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>A Bone Token! You can drag and drop tokens onto each other and exchange then for rewards at the Tinkerer!</Description>
+      <Quantity>25</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="Stack limit" description="25"/>
+         <EffectInfo name="Event" description="Halloween Event"/>
+      </ExtraTooltipData>
+      <Soulbound/>
+      <BagType>7</BagType>
+      <Treasure/>
+   </Object>
+</Objects>
