@@ -21,8 +21,10 @@ package io.decagames.rotmg.supportCampaign.tab
     import io.decagames.rotmg.supportCampaign.signals.UpdateCampaignProgress;
     import io.decagames.rotmg.supportCampaign.signals.TierSelectedSignal;
     import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+    import com.company.assembleegameclient.ui.tooltip.ToolTip;
     import kabam.rotmg.tooltips.HoverTooltipDelegate;
     import flash.events.Event;
+    import io.decagames.rotmg.supportCampaign.tooltips.SupportTooltip;
     import io.decagames.rotmg.shop.NotEnoughResources;
     import com.company.assembleegameclient.util.Currency;
     import io.decagames.rotmg.ui.buttons.BaseButton;
@@ -63,15 +65,17 @@ package io.decagames.rotmg.supportCampaign.tab
         public var updatePointsSignal:UpdateCampaignProgress;
         [Inject]
         public var selectedSignal:TierSelectedSignal;
-        private var toolTip:TextToolTip = null;
+        private var infoToolTip:TextToolTip = null;
+        private var supportToolTip:ToolTip;
         private var hoverTooltipDelegate:HoverTooltipDelegate;
+        private var supportTooltipDelegate:HoverTooltipDelegate;
 
 
         override public function initialize():void
         {
             this.updatePointsSignal.add(this.onPointsUpdate);
             this.view.show(this.hudModel.getPlayerName(), this.model.isUnlocked, this.model.isStarted, this.model.unlockPrice, this.model.donatePointsRatio);
-            if ((!(this.model.isStarted)))
+            if (!this.model.isStarted)
             {
                 this.view.addEventListener(Event.ENTER_FRAME, this.updateStartCountdown);
             };
@@ -83,13 +87,22 @@ package io.decagames.rotmg.supportCampaign.tab
             {
                 this.view.unlockButton.clickSignal.add(this.unlockClick);
             };
+            if (this.view.unlockButton)
+            {
+                this.supportToolTip = new SupportTooltip();
+                this.supportTooltipDelegate = new HoverTooltipDelegate();
+                this.supportTooltipDelegate.setShowToolTipSignal(this.showTooltipSignal);
+                this.supportTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
+                this.supportTooltipDelegate.setDisplayObject(this.view.unlockButton);
+                this.supportTooltipDelegate.tooltip = this.supportToolTip;
+            };
         }
 
         private function updateCampaignInformation():void
         {
             this.view.updatePoints(this.model.points, this.model.rank);
             this.view.drawProgress(this.model.points, this.model.rankConfig, this.model.rank, this.model.claimed);
-            this.updateTooltip();
+            this.updateInfoTooltip();
             this.view.showTier(this.model.nextClaimableTier, this.model.ranks, this.model.rank, this.model.claimed);
             this.view.updateTime((this.model.endDate.time - new Date().time));
         }
@@ -120,7 +133,7 @@ package io.decagames.rotmg.supportCampaign.tab
             this.view.updatePoints(this.model.points, this.model.rank);
             this.view.showTier(this.model.nextClaimableTier, this.model.ranks, this.model.rank, this.model.claimed);
             this.view.drawProgress(this.model.points, this.model.rankConfig, this.model.rank, this.model.claimed);
-            this.updateTooltip();
+            this.updateInfoTooltip();
             this.selectedSignal.dispatch(this.model.nextClaimableTier);
             if (this.model.rank >= SupporterCampaignModel.CHARACTER_GLOW_RANK)
             {
@@ -129,23 +142,23 @@ package io.decagames.rotmg.supportCampaign.tab
             };
         }
 
-        private function updateTooltip():void
+        private function updateInfoTooltip():void
         {
             if (this.view.infoButton)
             {
-                if (this.model.rank == 5)
+                if (this.model.rank == 6)
                 {
-                    this.toolTip = new TextToolTip(0x363636, 15585539, (((this.model.rank == 0) ? "No rank" : SupporterCampaignModel.RANKS_NAMES[(this.model.rank - 1)]) + " Supporter"), (((("Thank you for your Support, " + this.hudModel.getPlayerName()) + "!") + "\n\nWe are bringing your favorite bullet-hell MMO to Unity!") + "\n\nYou have unlocked everything we had to offer, we are glad you are joining us on this journey! You can continue to Donate and further help shape the future of Realm of the Mad God."), 220);
+                    this.infoToolTip = new TextToolTip(0x363636, 15585539, (((this.model.rank == 0) ? "No rank" : SupporterCampaignModel.RANKS_NAMES[(this.model.rank - 1)]) + " Supporter"), (((("Thank you for your Support, " + this.hudModel.getPlayerName()) + "!") + "\n\nYou have unlocked everything we had to offer, we are glad you are joining us on this journey <3 You can continue to Boost and further help shape the future of Realm of the Mad God.") + "\n\nReach 100.000 points to unlock an exclusive character glow!"), 220);
                 }
                 else
                 {
-                    this.toolTip = new TextToolTip(0x363636, 0x9B9B9B, (((this.model.rank == 0) ? "No rank" : SupporterCampaignModel.RANKS_NAMES[(this.model.rank - 1)]) + " Supporter"), ("We are bringing your favorite bullet-hell MMO to Unity!" + "\n\nWith each donation you are helping us achieve this goal and additionally unlock some unique gifts."), 220);
+                    this.infoToolTip = new TextToolTip(0x363636, 0x9B9B9B, (((this.model.rank == 0) ? "No rank" : SupporterCampaignModel.RANKS_NAMES[(this.model.rank - 1)]) + " Supporter"), ((("Thank you for your Support, " + this.hudModel.getPlayerName()) + "!") + "\n\nWe are bringing your favorite bullet-hell MMO to Unity!"), 220);
                 };
                 this.hoverTooltipDelegate = new HoverTooltipDelegate();
                 this.hoverTooltipDelegate.setShowToolTipSignal(this.showTooltipSignal);
                 this.hoverTooltipDelegate.setHideToolTipsSignal(this.hideTooltipSignal);
                 this.hoverTooltipDelegate.setDisplayObject(this.view.infoButton);
-                this.hoverTooltipDelegate.tooltip = this.toolTip;
+                this.hoverTooltipDelegate.tooltip = this.infoToolTip;
             };
         }
 

@@ -46,6 +46,7 @@ package kabam.rotmg.dailyLogin.tasks
         {
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("/dailyLogin/fetchCalendar", this.requestData);
+			
         }
 
         private function onComplete(_arg_1:Boolean, _arg_2:*):void

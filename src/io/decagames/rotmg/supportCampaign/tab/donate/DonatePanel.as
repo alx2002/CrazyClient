@@ -35,7 +35,6 @@ package io.decagames.rotmg.supportCampaign.tab.donate
         public function DonatePanel(_arg_1:int)
         {
             var _local_2:SliceScalingBitmap;
-            var _local_5:SliceScalingBitmap;
             super();
             this.ratio = _arg_1;
             this.leftPanel = TextureParser.instance.getSliceScalingBitmap("UI", "black_field_background", 130);
@@ -84,11 +83,11 @@ package io.decagames.rotmg.supportCampaign.tab.donate
             this.supportIcon.y = (this.pointAmountTextfield.y + 1);
             this.supportIcon.x = (this.pointAmountTextfield.x + this.pointAmountTextfield.width);
             this.updatePoints((SupporterCampaignModel.DEFAULT_DONATE_AMOUNT * this.ratio));
-            _local_5 = TextureParser.instance.getSliceScalingBitmap("UI", "buy_button_background", 119);
+            var _local_5:SliceScalingBitmap = TextureParser.instance.getSliceScalingBitmap("UI", "buy_button_background", 119);
             _local_5.x = 112;
             addChild(_local_5);
             this._donateButton = new SliceScalingButton(TextureParser.instance.getSliceScalingBitmap("UI", "generic_green_button"));
-            this._donateButton.setLabel("Donate", DefaultLabelFormat.defaultButtonLabel);
+            this._donateButton.setLabel("Boost", DefaultLabelFormat.defaultButtonLabel);
             this._donateButton.width = (_local_5.width - 14);
             this._donateButton.y = (_local_5.y + 4);
             this._donateButton.x = (_local_5.x + 7);

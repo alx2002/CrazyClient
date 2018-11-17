@@ -20,7 +20,7 @@ package io.decagames.rotmg.supportCampaign.data
         public static const DEFAULT_DONATE_SPINNER_STEP:int = 100;
         public static const DONATE_MAX_INPUT_CHARS:int = 5;
         public static const SUPPORT_COLOR:Number = 13395711;
-        public static const SUPPORTER_CHAT_COLOR:Number = 13395711;
+        public static const SUPPORTER_CHAT_COLOR:Number = 13395711; 
         public static const CHARACTER_GLOW_RANK:int = 5;
         public static const RANKS_NAMES:Array = ["Basic", "Greater", "Superior", "Paramount", "Exalted", "Unbound"];
 
@@ -65,25 +65,25 @@ package io.decagames.rotmg.supportCampaign.data
 
         public function getRankByPoints(_arg_1:int):int
         {
-            var _local_2:int;
             var _local_3:int;
-            if ((!(this.hasValidData)))
+            if (!this.hasValidData)
             {
                 return (0);
             };
+            var _local_2:int;
             if (((!(this._ranks == null)) && (this._ranks.length > 0)))
             {
-                _local_2 = 0;
-                while (_local_2 < this._ranks.length)
+                _local_3 = 0;
+                while (_local_3 < this._ranks.length)
                 {
-                    if (_arg_1 >= this._ranks[_local_2])
+                    if (_arg_1 >= this._ranks[_local_3])
                     {
-                        _local_3 = (_local_2 + 1);
+                        _local_2 = (_local_3 + 1);
                     };
-                    _local_2++;
+                    _local_3++;
                 };
             };
-            return (_local_3);
+            return (_local_2);
         }
 
         public function get rankConfig():Vector.<RankVO>
@@ -109,7 +109,6 @@ package io.decagames.rotmg.supportCampaign.data
 
         private function parseConfig(_arg_1:XML):void
         {
-            var _local_2:int;
             this._unlockPrice = int(this.getXMLData(_arg_1.CampaignConfig, "UnlockPrice", true));
             this._donatePointsRatio = int(this.getXMLData(_arg_1.CampaignConfig, "DonatePointsRatio", true));
             this._endDate = new Date((int(this.getXMLData(_arg_1.CampaignConfig, "CampaignEndDate", true)) * 1000));
@@ -117,6 +116,7 @@ package io.decagames.rotmg.supportCampaign.data
             this._ranks = this.getXMLData(_arg_1.CampaignConfig, "RanksList", true).split(",");
             this._shopPurchasePointsRatio = int(this.getXMLData(_arg_1.CampaignConfig, "ShopPurchasePointsRatio", true));
             this._rankConfig = new Vector.<RankVO>();
+            var _local_2:int;
             while (_local_2 < this._ranks.length)
             {
                 this._rankConfig.push(new RankVO(this._ranks[_local_2], SupporterCampaignModel.RANKS_NAMES[_local_2]));
@@ -162,19 +162,19 @@ package io.decagames.rotmg.supportCampaign.data
 
         public function get nextClaimableTier():int
         {
-            var _local_1:String;
+            var _local_2:String;
             if (this._ranks.length == 0)
             {
                 return (1);
             };
-            var _local_2:int = 1;
-            for each (_local_1 in this._ranks)
+            var _local_1:int = 1;
+            for each (_local_2 in this._ranks)
             {
-                if (((this._rank >= _local_2) && (this._claimed < _local_2)))
+                if (((this._rank >= _local_1) && (this._claimed < _local_1)))
                 {
-                    return (_local_2);
+                    return (_local_1);
                 };
-                _local_2++;
+                _local_1++;
             };
             return (this._rank);
         }

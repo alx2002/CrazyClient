@@ -22,43 +22,42 @@ package io.decagames.rotmg.supportCampaign.tab.donate.popup
 
         public function DonateConfirmationPopup(_arg_1:int, _arg_2:int)
         {
-            var _local_3:SliceScalingBitmap;
-            var _local_5:UILabel;
-            super(240, 130, "Donate");
+            var _local_6:SliceScalingBitmap;
+            super(240, 130, "Boost");
             this._gold = _arg_1;
-            var _local_4:UILabel = new UILabel();
-            _local_4.text = "You will receive:";
-            DefaultLabelFormat.createLabelFormat(_local_4, 14, 0x999999, TextFormatAlign.CENTER, false);
-            _local_4.wordWrap = true;
-            _local_4.width = _contentWidth;
-            _local_4.y = 5;
-            addChild(_local_4);
+            var _local_3:UILabel = new UILabel();
+            _local_3.text = "You will receive:";
+            DefaultLabelFormat.createLabelFormat(_local_3, 14, 0x999999, TextFormatAlign.CENTER, false);
+            _local_3.wordWrap = true;
+            _local_3.width = _contentWidth;
+            _local_3.y = 5;
+            addChild(_local_3);
             this.supportIcon = TextureParser.instance.getSliceScalingBitmap("UI", "campaign_Points");
             addChild(this.supportIcon);
-            _local_5 = new UILabel();
-            _local_5.text = _arg_2.toString();
-            DefaultLabelFormat.createLabelFormat(_local_5, 22, 15585539, TextFormatAlign.CENTER, true);
-            _local_5.x = (((_contentWidth / 2) - (_local_5.width / 2)) - 10);
-            _local_5.y = 25;
+            var _local_4:UILabel = new UILabel();
+            _local_4.text = _arg_2.toString();
+            DefaultLabelFormat.createLabelFormat(_local_4, 22, 15585539, TextFormatAlign.CENTER, true);
+            _local_4.x = (((_contentWidth / 2) - (_local_4.width / 2)) - 10);
+            _local_4.y = 25;
+            addChild(_local_4);
+            this.supportIcon.y = (_local_4.y + 3);
+            this.supportIcon.x = (_local_4.x + _local_4.width);
+            var _local_5:UILabel = new UILabel();
+            _local_5.text = "Supporter Points";
+            DefaultLabelFormat.createLabelFormat(_local_5, 14, 0x999999, TextFormatAlign.CENTER, false);
+            _local_5.wordWrap = true;
+            _local_5.width = _contentWidth;
+            _local_5.y = 50;
             addChild(_local_5);
-            this.supportIcon.y = (_local_5.y + 3);
-            this.supportIcon.x = (_local_5.x + _local_5.width);
-            var _local_6:UILabel = new UILabel();
-            _local_6.text = "Supporter Points";
-            DefaultLabelFormat.createLabelFormat(_local_6, 14, 0x999999, TextFormatAlign.CENTER, false);
-            _local_6.wordWrap = true;
-            _local_6.width = _contentWidth;
-            _local_6.y = 50;
+            _local_6 = new TextureParser().getSliceScalingBitmap("UI", "main_button_decoration", 148);
             addChild(_local_6);
-            _local_3 = new TextureParser().getSliceScalingBitmap("UI", "main_button_decoration", 148);
-            addChild(_local_3);
             this._donateButton = new ShopBuyButton(_arg_1);
-            this._donateButton.width = (_local_3.width - 45);
+            this._donateButton.width = (_local_6.width - 45);
             addChild(this._donateButton);
-            _local_3.y = (_contentHeight - 50);
-            _local_3.x = Math.round(((_contentWidth - _local_3.width) / 2));
-            this._donateButton.y = (_local_3.y + 6);
-            this._donateButton.x = (_local_3.x + 22);
+            _local_6.y = (_contentHeight - 50);
+            _local_6.x = Math.round(((_contentWidth - _local_6.width) / 2));
+            this._donateButton.y = (_local_6.y + 6);
+            this._donateButton.x = (_local_6.x + 22);
         }
 
         public function get donateButton():ShopBuyButton

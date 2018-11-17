@@ -7,10 +7,15 @@ package kabam.rotmg.account.web.view
 {
     import com.company.assembleegameclient.account.ui.Frame;
     import org.osflash.signals.Signal;
+	import kabam.rotmg.account.core.Account; //
+	import kabam.lib.tasks.BaseTask;
     import com.company.assembleegameclient.account.ui.TextInputField;
     import com.company.assembleegameclient.ui.DeprecatedClickableText;
     import com.company.assembleegameclient.account.ui.CheckBoxField;
     import kabam.rotmg.text.model.TextKey;
+	import com.company.assembleegameclient.appengine.SavedCharacter;
+	import kabam.rotmg.appengine.api.AppEngineClient;
+	import kabam.rotmg.characters.model.CharacterModel;
     import org.osflash.signals.natives.NativeMappedSignal;
     import flash.events.MouseEvent;
     import kabam.rotmg.account.web.model.AccountData;
@@ -20,6 +25,15 @@ package kabam.rotmg.account.web.view
 
     public class WebLoginDialog extends Frame 
     {
+		
+		[Inject]
+        public var character:SavedCharacter;
+        [Inject]
+        public var client:AppEngineClient;
+        [Inject]
+        public var account:Account;
+        [Inject]
+        public var model:CharacterModel;
 
         public var cancel:Signal;
         public var signIn:Signal;
@@ -57,7 +71,6 @@ package kabam.rotmg.account.web.view
             addNavigationText(this.forgotText);
             this.registerText = new DeprecatedClickableText(12, false, TextKey.WEB_LOGIN_DIALOG_REGISTER);
             addNavigationText(this.registerText);
-            rightButton_.addEventListener(MouseEvent.CLICK, this.onSignIn);
             addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
         }
@@ -78,14 +91,17 @@ package kabam.rotmg.account.web.view
 
         private function onSignIn(_arg_1:MouseEvent):void
         {
+		
             this.onSignInSub();
         }
+		
 
         private function onSignInSub():void
         {
             var _local_1:AccountData;
             if (((this.isEmailValid()) && (this.isPasswordValid())))
             {
+				
                 _local_1 = new AccountData();
                 _local_1.username = this.email.text();
                 _local_1.password = this.password.text();

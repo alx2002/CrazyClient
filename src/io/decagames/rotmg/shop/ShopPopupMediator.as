@@ -210,7 +210,7 @@ package io.decagames.rotmg.shop
                 this.updateTimer.reset();
                 this.updateTimer.start();
             };
-            if (_arg_1 != "Supporter")
+            if (_arg_1 != "Campaign")
             {
                 this.updateShop(null);
             }

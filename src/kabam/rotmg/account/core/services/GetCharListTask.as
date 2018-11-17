@@ -6,6 +6,7 @@
 package kabam.rotmg.account.core.services
 {
     import kabam.lib.tasks.BaseTask;
+	import com.company.assembleegameclient.parameters.Parameters; //
     import kabam.rotmg.account.core.Account;
     import kabam.rotmg.appengine.api.AppEngineClient;
     import kabam.rotmg.core.model.PlayerModel;
@@ -65,13 +66,26 @@ package kabam.rotmg.account.core.services
             Parameters.sendLogin_ = false;
         }
 
-        private function sendRequest():void
+        /*
+		 private function sendRequest():void
         {
             this.client.complete.addOnce(this.onComplete);
             this.client.sendRequest("/char/list", this.requestData);
         }
+		*/
+		private function sendRequest():void {
+        this.client.complete.addOnce(this.onComplete);
+        if (((Parameters.Cache_CHARLIST_valid) && (Parameters.data_.cacheCharList))) {
+            this.onComplete(true, Parameters.Cache_CHARLIST_data);
+        }
+        else {
+            this.client.sendRequest("/char/list", this.requestData);
+        }
+    }
+		
 
-        private function onComplete(_arg_1:Boolean, _arg_2:*):void
+        /*
+		 private function onComplete(_arg_1:Boolean, _arg_2:*):void
         {
             if (_arg_1)
             {
@@ -82,6 +96,30 @@ package kabam.rotmg.account.core.services
                 this.onTextError(_arg_2);
             };
         }
+		*/
+		private function onComplete(_arg_1:Boolean, _arg_2:*):void {
+        if ((_arg_2 is String)) {
+            if (_arg_2) {
+                if (((!(_arg_2.indexOf("rror>Internal Error") == -1)) || (!(_arg_2.indexOf("rror>Internal error") == -1)))) {
+                    if (((Parameters.Cache_CHARLIST_valid) && (Parameters.data_.cacheCharList))) {
+                        _arg_2 = Parameters.Cache_CHARLIST_data;
+                        _arg_1 = true;
+                    }
+                    else {
+                        Parameters.preload = true;
+                    }
+                }
+            }
+        }
+        if (_arg_1) {
+            this.onListComplete(_arg_2);
+            Parameters.Cache_CHARLIST_valid = true;
+            Parameters.Cache_CHARLIST_data = _arg_2;
+        }
+        else {
+            this.onTextError(_arg_2);
+        }
+    }
 
         public function makeRequestData():Object
         {

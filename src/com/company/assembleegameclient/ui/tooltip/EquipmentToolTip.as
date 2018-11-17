@@ -71,6 +71,7 @@ package com.company.assembleegameclient.ui.tooltip
         private var playerCanUse:Boolean;
         private var comparisonResults:SlotComparisonResult;
         private var powerText:TextFieldDisplayConcrete;
+		private var supporterPointsText:TextFieldDisplayConcrete;
         private var keyInfoResponse:KeyInfoResponseSignal;
         private var originalObjectType:int;
         private var sameActivateEffect:Boolean;
@@ -159,6 +160,7 @@ package com.company.assembleegameclient.ui.tooltip
             this.makeRestrictionList();
             this.makeRestrictionText();
             this.makeItemPowerText();
+			this.makeSupporterPointsText();
         }
 
         private function addSetInfo():void
@@ -208,6 +210,24 @@ package com.company.assembleegameclient.ui.tooltip
                 this.powerText.filters = FilterUtil.getStandardDropShadowFilter();
                 waiter.push(this.powerText.textChanged);
                 addChild(this.powerText);
+            };
+        }
+		
+		private function makeSupporterPointsText():void
+        {
+            var _local_1:*;
+            var _local_2:String;
+            for each (_local_1 in this.objectXML.Activate)
+            {
+                _local_2 = _local_1.toString();
+                if (_local_2 == ActivationType.GRANT_SUPPORTER_POINTS)
+                {
+                    this.supporterPointsText = new TextFieldDisplayConcrete().setSize(12).setColor(0xFFFFFF).setBold(true).setTextWidth((((MAX_WIDTH - this.icon.width) - 4) - 30)).setWordWrap(true);
+                    this.supporterPointsText.setStringBuilder(new StaticStringBuilder().setString(("Supporter points: " + _local_1.@amount)));
+                    this.supporterPointsText.filters = FilterUtil.getStandardDropShadowFilter();
+                    waiter.push(this.supporterPointsText.textChanged);
+                    addChild(this.supporterPointsText);
+                };
             };
         }
 
@@ -1373,6 +1393,15 @@ package com.company.assembleegameclient.ui.tooltip
                 {
                     this.powerText.x = 4;
                     this.powerText.y = _local_1;
+                    _local_1 = (_local_1 + this.powerText.height);
+                };
+            };
+            if (this.supporterPointsText)
+            {
+                if (contains(this.supporterPointsText))
+                {
+                    this.supporterPointsText.x = 4;
+                    this.supporterPointsText.y = _local_1;
                 };
             };
         }

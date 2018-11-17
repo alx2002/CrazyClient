@@ -52,19 +52,22 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.preview
 
         public function showTier(_arg_1:int, _arg_2:int, _arg_3:int):void
         {
+            var tier:int = _arg_1;
+            var currentRank:int = _arg_2;
+            var claimed:int = _arg_3;
             if (((this.background) && (this.background.parent)))
             {
                 removeChild(this.background);
             };
             try
             {
-                this.background = TextureParser.instance.getSliceScalingBitmap("UI", ("Banner_Tier_" + _arg_1));
+                this.background = TextureParser.instance.getSliceScalingBitmap("UI", ("Banner_Tier_" + tier));
                 addChildAt(this.background, 0);
             }
             catch(e:Error)
             {
             };
-            this.renderButtons(_arg_1, _arg_2, _arg_3);
+            this.renderButtons(tier, currentRank, claimed);
         }
 
         private function renderButtons(_arg_1:int, _arg_2:int, _arg_3:int):void
@@ -130,7 +133,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.preview
 
         public function selectAnimation():void
         {
-            if ((!(this.selectTween)))
+            if (!this.selectTween)
             {
                 this.selectTween = new TimelineMax();
                 this.selectTween.add(TweenMax.to(this, 0.05, {"tint":0xFFFFFF}));

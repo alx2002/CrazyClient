@@ -157,7 +157,7 @@ package kabam.rotmg.dailyLogin.model
 
         public function markAsClaimed(_arg_1:int, _arg_2:String):void
         {
-            this.daysConfig[_arg_2][(_arg_1 - 1)].isClaimed = true;
+            this.daysConfig[_arg_2][(_arg_1 - 1)].isClaimed = true; //true
         }
 
         private function sortCalendar(_arg_1:Vector.<CalendarDayModel>):Vector.<CalendarDayModel>
@@ -168,6 +168,7 @@ package kabam.rotmg.dailyLogin.model
         public function get initialized():Boolean
         {
             return (this._initialized);
+
         }
 
         public function clear():void

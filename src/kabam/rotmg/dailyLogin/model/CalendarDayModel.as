@@ -12,7 +12,7 @@ package kabam.rotmg.dailyLogin.model
         private var _quantity:int;
         private var _itemID:int;
         private var _gold:int;
-        private var _isClaimed:Boolean;
+        private var _isClaimed:Boolean; //Boolean;
         private var _isCurrent:Boolean;
         private var _claimKey:String = "";
         private var _calendarType:String = "";

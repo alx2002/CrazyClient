@@ -1,17 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
-
-//com.company.assembleegameclient.ui.board.EmbeddedHelp
-
 package com.company.assembleegameclient.ui.board
 {
-    import mx.core.ByteArrayAsset;
+import mx.core.*;
 
-    [Embed(source="EmbeddedHelp.dat", mimeType="application/octet-stream")]
-    public class EmbeddedHelp extends ByteArrayAsset 
-    {
+[Embed(source="EmbeddedHelp.dat", mimeType="application/octet-stream")]
+public class EmbeddedHelp extends ByteArrayAsset
+{
+	public function EmbeddedHelp()
+	{
+		super();
 
-
-    }
-}//package com.company.assembleegameclient.ui.board
-
+	}
+}
+}

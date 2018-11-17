@@ -50,7 +50,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
             {
                 return ("");
             };
-            if ((!(num)))
+            if (!num)
             {
                 return ("");
             };
@@ -91,7 +91,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
                     break;
                 case TierButtonStatus.UNLOCKED:
                     this.background = TextureParser.instance.getSliceScalingBitmap("UI", "tier_unlocked");
-                    this.background.y = -5;
+                    this.background.y = -3;
                     addChildAt(this.background, 0);
                     DefaultLabelFormat.createLabelFormat(this.tierLabel, 18, 0xFFFFFF, TextFormatAlign.CENTER, true);
                     this.tierLabel.wordWrap = true;
@@ -99,7 +99,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
                     this.tierLabel.width = this.background.width;
                     this.tierLabel.y = 4;
                     this.tierLabel.filters = [this.GLOW_FILTER];
-                    if ((!(this.claimTween)))
+                    if (!this.claimTween)
                     {
                         this.claimTween = new TimelineMax({"repeat":-1});
                         this.claimTween.add(TweenMax.to(this, 0.2, {
@@ -123,10 +123,9 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
                 case TierButtonStatus.CLAIMED:
                     this.background = TextureParser.instance.getSliceScalingBitmap("UI", "tier_claimed");
                     this.background.y = -3;
-                    addChildAt(this.background, 0);
                     DefaultLabelFormat.createLabelFormat(this.tierLabel, 0, 0xFFFFFF, TextFormatAlign.CENTER, true);
                     this.tierLabel.text = "";
-                    this.tierLabel.y = 6;
+                    addChildAt(this.background, 0);
                     if (this.claimTween)
                     {
                         this.claimTween.pause(0);
@@ -153,7 +152,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
             if (this._selected)
             {
                 this.background.filters = [this.OUTLINE_FILTER];
-                if ((!(this.tierTween)))
+                if (!this.tierTween)
                 {
                     this.tierTween = new TimelineMax();
                     this.tierTween.add(TweenMax.to(this, 0.05, {

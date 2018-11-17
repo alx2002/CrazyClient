@@ -8,18 +8,34 @@ package com.company.assembleegameclient.parameters
     import flash.display.DisplayObject;
     import flash.net.SharedObject;
     import __AS3__.vec.Vector;
+	import com.company.assembleegameclient.game.events.ReconnectEvent;
     import flash.utils.Dictionary;
     import com.company.util.KeyCodes;
     import com.company.assembleegameclient.map.Map;
     import flash.events.Event;
+	//
+	import flash.display.DisplayObject;
+import flash.display.StageScaleMode;
+import flash.events.Event;
+import flash.geom.Point;
+import flash.net.SharedObject;
+import flash.system.Capabilities;
+import flash.utils.Dictionary;
+/*
+ * To DO
+ * Add preload
+ * 
+ * Add Cache_CHARLIST
+ */
     import flash.display.StageScaleMode;
     import __AS3__.vec.*;
+	import com.company.util.MoreDateUtil;
 
     public class Parameters 
     {
 
-        public static const BUILD_VERSION:String = "X31.0";
-        public static const MINOR_VERSION:String = "2";
+        public static const BUILD_VERSION:String = "X31.1";
+        public static const MINOR_VERSION:String = "0"; //from 31.0.4
         public static const ENABLE_ENCRYPTION:Boolean = true;
         public static const PORT:int = 2050;
         public static const ALLOW_SCREENSHOT_MODE:Boolean = true;
@@ -44,6 +60,11 @@ package com.company.assembleegameclient.parameters
         public static var blendType_:int = 1;
         public static var projColorType_:int = 0;
         public static var drawProj_:Boolean = true;
+		//
+		public static var Cache_CHARLIST_valid:Boolean = false;
+		public static var Cache_CHARLIST_data:String = "";
+		public static var preload:Boolean = false;
+		//
         public static var screenShotMode_:Boolean = false;
         public static var sendLogin_:Boolean = true;
         public static const TUTORIAL_GAMEID:int = -1;
@@ -240,6 +261,9 @@ package com.company.assembleegameclient.parameters
             setDefault("beginnersOfferShowNowTime", 0);
             setDefault("watchForTutorialExit", false);
             setDefault("clickForGold", false);
+			
+			setDefault("cacheCharList", false); //beta
+			
             setDefault("contextualPotionBuy", false);
             setDefault("inventorySwap", true);
             setDefault("particleEffect", true);

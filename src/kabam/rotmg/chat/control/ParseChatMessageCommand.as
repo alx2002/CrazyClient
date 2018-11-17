@@ -891,9 +891,6 @@ package kabam.rotmg.chat.control
                     Parameters.save();
                     this.hudModel.gameSprite.hudView.characterDetails.setName(_local_13.name_);
                     return (true);
-                case "/flist":
-                    this.openDialog.dispatch(new SocialPopupView());
-                    return (true);
                 case "/nexus":
                     _local_26.escapeUnsafe();
                     return (true);
@@ -901,6 +898,7 @@ package kabam.rotmg.chat.control
                     _local_13.followTarget = null;
                     _local_13.notifyPlayer("Stopped following");
                     return (true);
+				//
                 case "/cchelp":
                     this.openDialog.dispatch(new HelpBoard());
                     return (true);

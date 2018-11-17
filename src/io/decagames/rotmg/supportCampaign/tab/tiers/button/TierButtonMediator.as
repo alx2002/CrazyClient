@@ -14,6 +14,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
     import com.company.assembleegameclient.ui.tooltip.TextToolTip;
     import kabam.rotmg.tooltips.HoverTooltipDelegate;
     import flash.events.MouseEvent;
+    import io.decagames.rotmg.supportCampaign.tab.tiers.button.status.TierButtonStatus;
 
     public class TierButtonMediator extends Mediator 
     {
@@ -53,7 +54,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
 
         private function onClickHandler(_arg_1:MouseEvent):void
         {
-            if ((!(this.view.selected)))
+            if (!this.view.selected)
             {
                 this.view.selected = true;
                 this.selectedSignal.dispatch(this.view.tier);
@@ -69,7 +70,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.button
         {
             this.remainingPoints = (this.model.ranks[(this.view.tier - 1)] - this.model.points);
             this.rankName = SupporterCampaignModel.RANKS_NAMES[(this.view.tier - 1)];
-            if (this.view.label)
+            if ((((this.view.label) && (TierButtonStatus.LOCKED)) || (TierButtonStatus.UNLOCKED)))
             {
                 if (this.remainingPoints <= 0)
                 {

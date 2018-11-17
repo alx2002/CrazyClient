@@ -7,6 +7,8 @@ package com.company.assembleegameclient.ui.options
 {
     import flash.display.Sprite;
     import __AS3__.vec.Vector;
+		import com.company.assembleegameclient.parameters.Parameters;
+	import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
     import kabam.rotmg.text.model.TextKey;
     import com.company.assembleegameclient.game.GameSprite;
     import com.company.assembleegameclient.screens.TitleMenuOption;
@@ -848,6 +850,7 @@ package com.company.assembleegameclient.ui.options
             this.addOptionAndPosition(new ChoiceOption("stageScale", makeOnOffLabels(), [StageScaleMode.NO_SCALE, StageScaleMode.EXACT_FIT], "Fullscreen v3", "Extends viewing area at a cost of lower fps.", this.fsv3));
             this.addOptionAndPosition(new ChoiceOption("uiscale", makeOnOffLabels(), [true, false], "Scale UI", "Scales the UI to fit the screen.", this.scaleui));
             this.fsv3_options();
+			//this.addOptionAndPosition(new ChoiceOption("cacheCharList", makeOnOffLabels(), [true, false], "Cache Character List", 'Makes the main menu reload when you go back to it, instead of using the cached version which avoids the 10 minute "Internal Error" timeout', null, 11403055), 0, 0, true);
             this.addOptionAndPosition(new ChoiceOption("STDamage", makeOnOffLabels(), [true, false], "Show Damage", "Show damage done to players and enemies.", null));
             this.addOptionAndPosition(new ChoiceOption("showSkins", makeOnOffLabels(), [true, false], "Show Skins", "Forces default skin to everyone when turned off.", null));
             this.addOptionAndPosition(new ChoiceOption("STHealth", makeOnOffLabels(), [true, false], "Show Health", "Show total health points of players and enemies as they take damage.", null));

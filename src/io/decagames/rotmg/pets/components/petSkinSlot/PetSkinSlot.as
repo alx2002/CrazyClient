@@ -106,12 +106,11 @@ package io.decagames.rotmg.pets.components.petSkinSlot
 
         private function createNewLabel(_arg_1:int):Sprite
         {
-            var _local_3:UILabel;
             var _local_2:Sprite = new Sprite();
             _local_2.graphics.beginFill(0xFFFFFF);
             _local_2.graphics.drawRect(0, 0, _arg_1, 9);
             _local_2.graphics.endFill();
-            _local_3 = new UILabel();
+            var _local_3:UILabel = new UILabel();
             DefaultLabelFormat.newSkinLabel(_local_3);
             _local_3.width = _arg_1;
             _local_3.wordWrap = true;

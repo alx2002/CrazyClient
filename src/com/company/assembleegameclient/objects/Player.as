@@ -2184,16 +2184,9 @@ package com.company.assembleegameclient.objects
             var _local_14:BitmapData = texturingCache_[_local_9];
             if (_local_14 == null)
             {
-                if (this.supportCampaignModel.getRankByPoints(supporterPoints) >= SupporterCampaignModel.CHARACTER_GLOW_RANK)
-                {
-                    _local_14 = GlowRedrawer.outlineGlow(_local_9, SupporterCampaignModel.SUPPORT_COLOR, 1.4, false, 0, true);
-                }
-                else
-                {
-                    _local_14 = GlowRedrawer.outlineGlow(_local_9, ((this.legendaryRank_ == -1) ? 0 : 0xFF0000));
-                };
-                texturingCache_[_local_9] = _local_14;
-            };
+            _local_14 = GlowRedrawer.outlineGlow(_local_9, ((this.legendaryRank_ == -1) ? 0 : 0xFF0000));
+            texturingCache_[_local_9] = _local_14;
+         }
             if ((((isPaused()) || (isStasis())) || (isPetrified())))
             {
                 _local_14 = CachingColorTransformer.filterBitmapData(_local_14, PAUSED_FILTER);

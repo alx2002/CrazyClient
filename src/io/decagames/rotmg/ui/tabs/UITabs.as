@@ -72,14 +72,13 @@ package io.decagames.rotmg.ui.tabs
 
         private function createTabButtons():void
         {
-            var _local_1:int;
             var _local_2:int;
             var _local_3:String;
             var _local_4:TabButton;
             var _local_5:UITab;
             var _local_6:TabButton;
-            _local_1 = 1;
-            _local_2 = int(int((((this.tabsWidth - ((this.content.length - 1) * this.tabsXSpace)) - (this.tabsButtonMargin * 2)) / this.content.length)));
+            var _local_1:int = 1;
+            _local_2 = int((((this.tabsWidth - ((this.content.length - 1) * this.tabsXSpace)) - (this.tabsButtonMargin * 2)) / this.content.length));
             for each (_local_5 in this.content)
             {
                 if (_local_1 == 1)

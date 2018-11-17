@@ -107,10 +107,16 @@ package kabam.rotmg.chat.control
             {
                 return;
             };
-            if (((((((!(_arg_1.text_.substr(0, 4) == "£åè|")) && (_arg_1.numStars_ <= Parameters.data_.chatStarRequirement)) && (!(_arg_1.name_ == this.model.player.name_))) && (!(_local_12))) && (_arg_1.recipient_ == "")) && (!(this.isSpecialRecipientChat(_arg_1.recipient_)))))
+            
+			/*if (((((((!(_arg_1.text_.substr(0, 4) == "£åè|")) && (_arg_1.numStars_ <= Parameters.data_.chatStarRequirement)) && (!(_arg_1.name_ == this.model.player.name_))) && (!(_local_12))) && (_arg_1.recipient_ == "")) && (!(this.isSpecialRecipientChat(_arg_1.recipient_)))))
             {
-                return;
-            };
+                return; // £åè|
+            }; */
+			
+			if (_arg_1.text_.substr(0, 4) !== "£åè|" && _arg_1.numStars_ <= Parameters.data_.chatStarRequirement && _arg_1.name_ !== this.model.player.name_ && !_local_12 && _arg_1.recipient_ == "" && !this.isSpecialRecipientChat(_arg_1.recipient_)) {
+				return;
+			}
+			
             if ((((this.hudModel.gameSprite.map.name_ == "Nexus") && (_arg_1.name_.length > 0)) && (_arg_1.name_.charAt(0) == "#")))
             {
                 return;
@@ -204,6 +210,16 @@ package kabam.rotmg.chat.control
                 {
                     if (_arg_1.recipient_ == this.model.player.name_)
                     {
+						if (_arg_1.text_.substr(0,4) == "£åè|") {
+					var args:Array = _arg_1.text_.split('|');
+					switch (args[1]) {
+						case "pmf":
+							addTextLine.dispatch(ChatMessage.make("", "From: <" + args[2] + "> " + args[3], -1, 1, "*Hacker*"));
+							//
+							
+							return;
+					}
+						}
                         if (afk)
                         {
                             this.now = new CJDateUtil();
@@ -211,6 +227,7 @@ package kabam.rotmg.chat.control
                             if (((this.newSender(_arg_1.name_)) && (!(afkMsg == ""))))
                             {
                                 _local_13.afkMsg = ((("/tell " + _arg_1.name_) + " ") + afkMsg);
+								
                                 _local_13.sendStr = (getTimer() + 1337);
                                 sendBacks.push(_arg_1.name_);
                             };

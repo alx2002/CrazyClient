@@ -42,7 +42,7 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.progressBar
             this.currentRank = _arg_2;
             this.claimed = _arg_3;
             this.points = _arg_1;
-            if ((!(this.buttonAreReady)))
+            if (!this.buttonAreReady)
             {
                 this.renderButtons();
                 this.renderProgressBar();
@@ -66,36 +66,36 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.progressBar
 
         private function updateButtons():void
         {
-            var _local_1:TierButton;
-            var _local_2:Boolean;
-            for each (_local_1 in this.buttons)
+            var _local_2:TierButton;
+            var _local_1:Boolean;
+            for each (_local_2 in this.buttons)
             {
-                _local_1.updateStatus(this.getStatusByTier(_local_1.tier));
-                if (((!(_local_2)) && (this.getStatusByTier(_local_1.tier) == TierButtonStatus.UNLOCKED)))
+                _local_2.updateStatus(this.getStatusByTier(_local_2.tier));
+                if (((!(_local_1)) && (this.getStatusByTier(_local_2.tier) == TierButtonStatus.UNLOCKED)))
                 {
-                    _local_2 = true;
-                    _local_1.selected = true;
+                    _local_1 = true;
+                    _local_2.selected = true;
                 }
                 else
                 {
-                    _local_1.selected = false;
+                    _local_2.selected = false;
                 };
             };
-            if ((!(_local_2)))
+            if (!_local_1)
             {
                 if (this.currentRank != 0)
                 {
-                    for each (_local_1 in this.buttons)
+                    for each (_local_2 in this.buttons)
                     {
-                        if (this.currentRank == _local_1.tier)
+                        if (this.currentRank == _local_2.tier)
                         {
-                            _local_2 = true;
-                            _local_1.selected = true;
+                            _local_1 = true;
+                            _local_2.selected = true;
                         };
                     };
                 };
             };
-            if ((!(_local_2)))
+            if (!_local_1)
             {
                 this.buttons[0].selected = true;
             };
@@ -103,58 +103,58 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.progressBar
 
         private function updateProgressBar():void
         {
-            var _local_1:ProgressBar;
-            var _local_3:int;
-            var _local_2:int = this.points;
-            for each (_local_1 in this.progressBars)
+            var _local_3:ProgressBar;
+            var _local_1:int = this.points;
+            var _local_2:int;
+            for each (_local_3 in this.progressBars)
             {
-                if (this.claimed > _local_3)
+                if (this.claimed > _local_2)
                 {
-                    _local_1.maxColor = 0x4BA800;
+                    _local_3.maxColor = 0x4BA800;
                 };
-                if (_local_1.value != _local_2)
+                if (_local_3.value != _local_1)
                 {
-                    if (_local_2 > (_local_1.maxValue - _local_1.minValue))
+                    if (_local_1 > (_local_3.maxValue - _local_3.minValue))
                     {
-                        _local_1.value = (_local_1.maxValue - _local_1.minValue);
+                        _local_3.value = (_local_3.maxValue - _local_3.minValue);
                     }
                     else
                     {
-                        _local_1.value = _local_2;
+                        _local_3.value = _local_1;
                     };
                 };
-                _local_2 = this.points;
-                _local_2 = (_local_2 - _local_1.maxValue);
-                if (_local_2 <= 0) break;
-                _local_3++;
+                _local_1 = this.points;
+                _local_1 = (_local_1 - _local_3.maxValue);
+                if (_local_1 <= 0) break;
+                _local_2++;
             };
         }
 
         private function renderProgressBar():void
         {
             var _local_1:TierButton;
-            var _local_2:TierButton;
-            var _local_3:int;
-            var _local_4:ProgressBar;
+            var _local_4:TierButton;
             var _local_5:int;
+            var _local_6:ProgressBar;
             _local_1 = null;
-            var _local_6:Vector.<TierButton> = this.buttons.concat();
-            for each (_local_2 in _local_6)
+            var _local_2:int;
+            var _local_3:Vector.<TierButton> = this.buttons.concat();
+            for each (_local_4 in _local_3)
             {
-                _local_3 = ((_local_1 == null) ? 0 : (_local_1.x + _local_1.width));
-                _local_4 = new ProgressBar(((_local_2.x - _local_3) + 4), 4, "", "", ((_local_5 == 0) ? 0 : this.ranks[(_local_5 - 1)].points), this.ranks[_local_5].points, 0, 0x545454, 15585539);
-                _local_4.x = (_local_3 - 2);
-                _local_4.y = 7;
-                _local_4.shouldAnimate = false;
-                this.progressBars.push(_local_4);
-                addChild(_local_4);
+                _local_5 = ((_local_1 == null) ? 0 : (_local_1.x + _local_1.width));
+                _local_6 = new ProgressBar(((_local_4.x - _local_5) + 4), 4, "", "", ((_local_2 == 0) ? 0 : this.ranks[(_local_2 - 1)].points), this.ranks[_local_2].points, 0, 0x545454, 15585539);
+                _local_6.x = (_local_5 - 2);
+                _local_6.y = 7;
+                _local_6.shouldAnimate = false;
+                this.progressBars.push(_local_6);
+                addChild(_local_6);
                 if (_local_1 != null)
                 {
                     addChild(_local_1);
                 };
-                addChild(_local_2);
-                _local_1 = _local_2;
-                _local_5++;
+                addChild(_local_4);
+                _local_1 = _local_4;
+                _local_2++;
             };
             addChild(this.supportIcon);
             this.supportIcon.x = -3;
@@ -163,14 +163,14 @@ package io.decagames.rotmg.supportCampaign.tab.tiers.progressBar
 
         private function renderButtons():void
         {
-            var _local_1:RankVO;
-            var _local_2:TierButton;
-            var _local_3:int = 1;
-            for each (_local_1 in this.ranks)
+            var _local_2:RankVO;
+            var _local_3:TierButton;
+            var _local_1:int = 1;
+            for each (_local_2 in this.ranks)
             {
-                _local_2 = this.getButtonByTier(_local_3);
-                this.buttons.push(addChild(_local_2));
-                _local_3++;
+                _local_3 = this.getButtonByTier(_local_1);
+                this.buttons.push(addChild(_local_3));
+                _local_1++;
             };
             this.buttonAreReady = true;
         }

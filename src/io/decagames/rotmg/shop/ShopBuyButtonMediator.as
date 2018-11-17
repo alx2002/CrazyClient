@@ -30,7 +30,7 @@ package io.decagames.rotmg.shop
 
         override public function initialize():void
         {
-            if (((((this.view.showCampaignTooltip) && (this.model.isActive)) && (this.view.currency == Currency.GOLD)) && (!(this.model.shopPurchasePointsRatio == 0))))
+            if ((((((this.model.hasValidData) && (this.view.showCampaignTooltip)) && (this.model.isActive)) && (this.view.currency == Currency.GOLD)) && (!(this.model.shopPurchasePointsRatio == 0))))
             {
                 this.toolTip = new PointsTooltip(this.view, 0x363636, 0x9B9B9B, 200);
                 this.hoverTooltipDelegate = new HoverTooltipDelegate();

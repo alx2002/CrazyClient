@@ -5,6 +5,8 @@
 
 package kabam.rotmg.account.web.commands
 {
+	import com.company.assembleegameclient.parameters.Parameters;
+	import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
     import kabam.rotmg.account.web.model.AccountData;
     import kabam.rotmg.account.core.services.LoginTask;
     import kabam.lib.tasks.TaskMonitor;
@@ -58,6 +60,7 @@ package kabam.rotmg.account.web.commands
 
         private function makeSuccessTask():TaskSequence
         {
+			Parameters.Cache_CHARLIST_valid = false;//
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.closeDialogs));
             _local_1.add(new DispatchSignalTask(this.updateLogin));
@@ -69,6 +72,7 @@ package kabam.rotmg.account.web.commands
 
         private function makeFailureTask():TaskSequence
         {
+			Parameters.Cache_CHARLIST_valid = false;//
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(new DispatchSignalTask(this.loginError, this.loginTask));
             _local_1.add(this.setScreenTask);

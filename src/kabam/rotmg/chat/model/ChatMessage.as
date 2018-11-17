@@ -15,7 +15,7 @@ package kabam.rotmg.chat.model
         public var recipient:String = "";
         public var isToMe:Boolean;
         public var isWhisper:Boolean;
-        public var isFromSupporter:Boolean;
+        public var isFromSupporter:Boolean = true; //public var isFromSupporter:Boolean;
         public var tokens:Object;
 
 
