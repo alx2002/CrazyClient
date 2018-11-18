@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Articles>
+   <Article>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+      <Command>BASIC COMMANDS</Command>
+      <Explanation>/onlygods [True/False] -- Adds everything to the 'Ignore List' that is not a god. (This is for 'Enemy/Slayer of the Gods' Fame Bonus).
+/blockcubes [True/False] -- Adds cubes to the 'Ignore List' and prevents you to damaging them. (This is for 'Friend of the Cubes' Fame Bonus).
+/blockpots [True/False] -- Blocks usage of pots. (This is for 'Thirsty' Fame Bonus).
+/blockabil [True/False] -- Blocks the usage of your class ability. (This is for 'Mundane' Fame Bonus).
+/blocktp [True/False] -- Blocks the usage of teleporting. (This is for 'Boots on the ground' Fame Bonus).
+/statustext [True/False] -- Changes the color of text above an enemy/player based on it's percentage of health.
+/dodbot [True/False] -- Enables DoD bot. (This is for 'Doer of Deeds' Fame Bonus).
+/lockfilter [True/False] -- Hides players that are not locked on your screen.
+/recondelay [VALUE] -- Sets the connection delay to locations in milliseconds. (Default: 100)
+/autonex [0 - 100 (Percent%)] -- This sets the autonex to a custom percentage. [0% is 'Off']
+/autopot [0 - 100 (Percent%)] -- This sets the autopot to a custom percentage. [0% is 'Off']
+/automana [0 - 100 (Percent%)] -- This sets the autonmana to a custom percentage. [0% is 'Off']
+</Explanation>
+   </Article>
+
+   <Article>
+      <Command>VISUAL COMMANDS</Command>
+      <Explanation>/hidehacks -- Hides visual hacks to take a screenshot. (Says unknown command "/hidehacks" in chat.)
+/ao -- Makes other players transparent based on /alpha.
+/alpha [Decimal] -- Makes others players transparent if /ao is enabled. (0 is invisible, 1 is solid)
+/fs -- Toggles Fullscreen.
+/scaleui -- Toggles UI scaling.
+/uitextsize [amount] -- Changes the size of the text in the left-side UI panel. (Default:15)
+/mscale [Decimal] -- Changes map zoom. (Default: 1)
+/timer [amount] -- Displays a timer named 'Custom Timer' in the top left with the [Value1] as how many seconds long.
+/dye [Dye] -- Sets both your dyes to the [Value1] dye. [Leave Value1 Empty for dye removal] (CLIENT SIDE -- ONLY YOU SEE THIS)
+/name [name] -- Sets your name to the [Value1] name in HUD ONLY. [Leave Value1 Empty for name removal]</Explanation>
+   </Article>
+
+   <Article>
+      <Command>MOVEMENT/PLACEMENT COMMANDS</Command>
+      <Explanation>/setspd [54 - ???] -- Sets your speed to the selected value. You can not go higher than your real speed, nor can you go below 54.
+/pos -- Prints your position in the realm in chat.
+/tp [Player Name] -- Teleports to whoever has the closest name to the name you typed.
+/swmove -- Toggles tiles in sprite world.
+/record -- Begins recording all movements you make.
+/save -- Stops and saves the movement recording you made.
+/play -- Starts the movement recording you made.
+/stop -- Stops the movement recording you played.</Explanation>
+   </Article>
+
+   <Article>
+      <Command>CONNECTION COMMANDS</Command>
+      <Explanation>
+/tut -- Sends you to nexustutorial. '/nexustutorial'
+/serv - Shows what server and realm you're in.
+/vaultonly -- Enables 'Vault Only' mode to avoid detection from Realmeye/Trackers.
+/connect [IP] -- Connects you to the server with that specified IP.
+/con [Server] (Realm) -- Directly connects you to the Server and Realm of your choice on a specific character.
+Specify servers with abbreviations. Examples include... EUN2, USW2, AUS, AES, EUE...
+</Explanation>
+   </Article>
+
+   <Article>
+      <Command>MESSAGE COMMANDS</Command>
+      <Explanation>/re -- Repeats your last message
+/setmsg [1 - 9 (Message ID)] 
+This sets your custom messages... {options menu} -> 'Messages' tab -> Set Hotkeys for messages you want to keys you want.
+/afk [Message] -- This toggles the 'Away from Keyboard' setting. All tell messages will be copied to a clip, when you type /afk again all tell messages will be displayed for you to read. 
+The message is optional, it is sent on a delay and it is sent once per person and fully automatic, sent to all people who send you a /tell message with your AFK Status.</Explanation>
+   </Article>
+
+   <Article>
+      <Command>OTHER/EXTRA COMMANDS</Command>
+      <Explanation>/myID -- Displays your Object-ID
+/getid [Player's Name] -- Gets the ID of the player you named.
+/s -- Switches your inventory and backpack items.
+/fame -- Shows you your fame gain statistics from your current session.
+/fameclear -- Clears fame gain statistics from your current session.
+/colo [Decimal Value] -- Sets the offset of the Colossus Sword.
+/flist -- Opens Deca's Friends List
+/swtree -- Adds/Removes trees from sprite world in aim exception list.
+/const -- Adds/Removes trees from sprite world in aim ignore list.</Explanation>
+   </Article>
+
+   <Article>
+      <Command>LIST COMMANDS</Command>
+      <Explanation>The ''Ignore List" makes Auto Aim "Ignore" Mob ID(s)
+/iglist -- Displays the "Ignore List" in chat
+/rig [mob ID] -- removes a mob ID from this Ignore List
+/aig [mob ID] -- adds a mob ID to the Ignore List
+/igdefault -- sets the Ignore List to all the default mob ID(s)
+/igclear -- clears the Ignore List.
+The Exception List is a list of mobs that are aimed at even when they're invulnerable.
+/exlist -- Displays the "Exception List" in chat
+/rex [mob ID] -- Removes a mob ID from this "Exception List"
+/aex [mob ID] -- Adds a mob ID to the "Exception List"
+/exdefault -- Sets the "Exception List" to all the default mob ID(s)
+/exclear -- Clears the "Exception List".
+
+</Explanation>
+   </Article>
+
+   <Article>
+      <Command>Reference</Command>
+      <Explanation>Credits to Renigade for making this list possible.
+	  https://www.mpgh.net/forum/showthread.php?t=1385201</Explanation>
+   </Article>
+</Articles>

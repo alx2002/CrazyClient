@@ -11,6 +11,9 @@ package kabam.rotmg.chat.control
     import kabam.rotmg.dialogs.control.OpenDialogSignal;
     import com.company.assembleegameclient.parameters.Parameters;
     import flash.display.DisplayObject;
+	//
+	import com.company.assembleegameclient.ui.board.SPCBoard;
+	
     import flash.display.StageScaleMode;
     import kabam.rotmg.chat.model.ChatMessage;
     import flash.events.Event;
@@ -23,7 +26,7 @@ package kabam.rotmg.chat.control
     import flash.utils.getTimer;
     import kabam.rotmg.game.commands.PlayGameCommand;
     import io.decagames.rotmg.social.SocialPopupView;
-    import com.company.assembleegameclient.ui.board.HelpBoard;
+    
     import flash.geom.Point;
     import com.company.assembleegameclient.util.AssetLoader;
     import flash.net.navigateToURL;
@@ -770,6 +773,11 @@ package kabam.rotmg.chat.control
                     Parameters.save();
                     this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.SWNoTileMove) ? "SWMove enabled" : "SWMove disabled")));
                     return (true);
+					//
+				case "/cchelp":
+                this.openDialog.dispatch(new SPCBoard());
+                return (true);
+				//
                 case "/ao":
                     Parameters.data_.alphaOnOthers = (!(Parameters.data_.alphaOnOthers));
                     Parameters.save();
@@ -899,9 +907,9 @@ package kabam.rotmg.chat.control
                     _local_13.notifyPlayer("Stopped following");
                     return (true);
 				//
-                case "/cchelp":
-                    this.openDialog.dispatch(new HelpBoard());
-                    return (true);
+                //case "/cchelp":
+                    //this.openDialog.dispatch(new HelpBoard());
+                    //return (true);
                 case "/afk":
                     TextHandler.afk = (!(TextHandler.afk));
                     if ((!(TextHandler.afk)))

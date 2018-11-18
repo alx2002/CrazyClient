@@ -40,7 +40,7 @@ package kabam.rotmg.ui.view
     import com.company.util.SpriteUtil;
     import flash.events.MouseEvent;
     import kabam.rotmg.friends.view.FriendListView;
-    import com.company.assembleegameclient.ui.board.HelpBoard;
+    import com.company.assembleegameclient.ui.board.SPCBoard;
     import __AS3__.vec.*;
 
     public class HUDView extends Sprite implements UnFocusAble 
@@ -394,7 +394,7 @@ package kabam.rotmg.ui.view
         private function openHelp(_arg_1:MouseEvent):void
         {
             this.toggleIcons(_arg_1);
-            this.openDialog.dispatch(new HelpBoard());
+            this.openDialog.dispatch(new SPCBoard());
         }
 
         private function toggleIcons(_arg_1:MouseEvent):void
@@ -486,3 +486,4 @@ package kabam.rotmg.ui.view
     }
 }//package kabam.rotmg.ui.view
 
+
