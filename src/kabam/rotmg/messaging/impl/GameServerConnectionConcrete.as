@@ -2458,6 +2458,13 @@ package kabam.rotmg.messaging.impl
                             };
                         };
                         break;
+						                    case StatData.SUPPORTER_STAT:
+                        if (_local_9 != null)
+                        {
+                            _local_9.setSupporterFlag(_local_8);
+                        };
+                        break;
+
                     case StatData.MERCHANDISE_CURRENCY_STAT:
                         (_arg_1 as SellableObject).setCurrency(_local_5);
                         break;

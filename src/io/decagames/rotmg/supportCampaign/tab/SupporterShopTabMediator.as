@@ -25,12 +25,15 @@ package io.decagames.rotmg.supportCampaign.tab
     import kabam.rotmg.tooltips.HoverTooltipDelegate;
     import flash.events.Event;
     import io.decagames.rotmg.supportCampaign.tooltips.SupportTooltip;
+	    import com.company.assembleegameclient.objects.Player;
+    import io.decagames.rotmg.supportCampaign.data.SupporterFeatures;
+
     import io.decagames.rotmg.shop.NotEnoughResources;
     import com.company.assembleegameclient.util.Currency;
     import io.decagames.rotmg.ui.buttons.BaseButton;
     import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import com.company.assembleegameclient.objects.Player;
+    //import com.company.assembleegameclient.objects.Player;
 
     public class SupporterShopTabMediator extends Mediator 
     {
@@ -128,7 +131,7 @@ package io.decagames.rotmg.supportCampaign.tab
             this.view.removeEventListener(Event.ENTER_FRAME, this.updateStartCountdown);
         }
 
-        private function onPointsUpdate():void
+        /*private function onPointsUpdate():void
         {
             this.view.updatePoints(this.model.points, this.model.rank);
             this.view.showTier(this.model.nextClaimableTier, this.model.ranks, this.model.rank, this.model.claimed);
@@ -140,7 +143,23 @@ package io.decagames.rotmg.supportCampaign.tab
                 this.gameModel.player.supporterPoints = this.model.points;
                 this.gameModel.player.clearTextureCache();
             };
+        }*/
+		
+		   private function onPointsUpdate():void
+        {
+            this.view.updatePoints(this.model.points, this.model.rank);
+            this.view.showTier(this.model.nextClaimableTier, this.model.ranks, this.model.rank, this.model.claimed);
+            this.view.drawProgress(this.model.points, this.model.rankConfig, this.model.rank, this.model.claimed);
+            this.updateInfoTooltip();
+            this.selectedSignal.dispatch(this.model.nextClaimableTier);
+            var _local_1:Player = this.gameModel.player;
+            if (_local_1.hasSupporterFeature(SupporterFeatures.GLOW))
+            {
+                _local_1.supporterPoints = this.model.points;
+                _local_1.clearTextureCache();
+            };
         }
+
 
         private function updateInfoTooltip():void
         {

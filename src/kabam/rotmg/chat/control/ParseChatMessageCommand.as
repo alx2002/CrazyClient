@@ -1161,6 +1161,22 @@ package kabam.rotmg.chat.control
                         this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME, ("Auto mana percentage set to " + Parameters.data_.autoMana)));
                         return (true);
                     };
+					_local_8 = this.data.toLowerCase().match("^/an (\\d+)$");
+                    if (_local_8 != null)
+                    {
+                        Parameters.AutoNexus = _local_8[1];
+                        Parameters.save();
+                        this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME, ("Auto nexus percentage set to " + Parameters.AutoNexus)));
+                        return (true);
+                    };
+					_local_8 = this.data.toLowerCase().match("^/autonexus (\\d+)$");
+                    if (_local_8 != null)
+                    {
+                        Parameters.AutoNexus = _local_8[1];
+                        Parameters.save();
+                        this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME, ("Auto nexus percentage set to " + Parameters.AutoNexus)));
+                        return (true);
+                    };
                     _local_8 = this.data.toLowerCase().match("^/autonex (\\d+)$");
                     if (_local_8 != null)
                     {
@@ -1778,3 +1794,4 @@ package kabam.rotmg.chat.control
     }
 }//package kabam.rotmg.chat.control
 
+

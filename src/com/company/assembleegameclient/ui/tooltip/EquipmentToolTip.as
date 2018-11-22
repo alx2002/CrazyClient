@@ -215,7 +215,7 @@ package com.company.assembleegameclient.ui.tooltip
 		
 		private function makeSupporterPointsText():void
         {
-            var _local_1:*;
+            var _local_1:XML;
             var _local_2:String;
             for each (_local_1 in this.objectXML.Activate)
             {

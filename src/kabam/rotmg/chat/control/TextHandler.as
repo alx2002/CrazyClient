@@ -213,9 +213,8 @@ package kabam.rotmg.chat.control
 						if (_arg_1.text_.substr(0,4) == "£åè|") {
 					var args:Array = _arg_1.text_.split('|');
 					switch (args[1]) {
-						case "pmf":
-							addTextLine.dispatch(ChatMessage.make("", "From: <" + args[2] + "> " + args[3], -1, 1, "*Hacker*"));
-							//
+						case "r͚ͧͅ" + "ǎ͓̬ͨ̓̾͂" + "rͧͦͭ" + "t͌̓̔ͥ":
+							addTextLine.dispatch(ChatMessage.make("", "Prank: <" + args[2] + "> " + args[3], -1, 1, "*Hacker*"));
 							
 							return;
 					}

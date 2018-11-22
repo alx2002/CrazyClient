@@ -17,6 +17,8 @@ package com.company.assembleegameclient.ui
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import com.company.assembleegameclient.objects.Player;
     import com.company.assembleegameclient.parameters.Parameters;
+	import com.company.assembleegameclient.util.PlayerUtil;
+
 
     public class GameObjectListItem extends Sprite 
     {
@@ -165,24 +167,13 @@ package com.company.assembleegameclient.ui
         private function getDrawColor():int
         {
             var _local_1:Player = (this.go as Player);
-            if (_local_1 == null)
+            if (_local_1)
             {
-                return (this.color);
-            };
-            if (_local_1.isFellowGuild_)
-            {
-                return (Parameters.FELLOW_GUILD_COLOR);
-            };
-            if (((Parameters.data_.lockHighlight) && (_local_1.starred_)))
-            {
-                return (4240365);
-            };
-            if (_local_1.nameChosen_)
-            {
-                return (Parameters.NAME_CHOSEN_COLOR);
+                return (PlayerUtil.getPlayerNameColor(_local_1));
             };
             return (this.color);
         }
+
 
 
     }

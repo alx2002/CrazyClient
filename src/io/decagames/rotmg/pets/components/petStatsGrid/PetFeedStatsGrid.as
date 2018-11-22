@@ -101,12 +101,11 @@ package io.decagames.rotmg.pets.components.petStatsGrid
 
         private function refreshAbilities(_arg_1:IPetVO):void
         {
-            var _local_2:int;
             var _local_3:AbilityVO;
             this._currentLevels.length = 0;
             this._maxLevel = this._petVO.maxAbilityPower;
             this._labelContainer.visible = true;
-            _local_2 = 0;
+            var _local_2:int;
             for each (_local_3 in _arg_1.abilityList)
             {
                 this._currentLevels.push(_local_3.level);
@@ -116,6 +115,7 @@ package io.decagames.rotmg.pets.components.petStatsGrid
                 _local_2++;
             };
         }
+
 
         private function renderAbilitySimulation(_arg_1:AbilityVO, _arg_2:int):void
         {

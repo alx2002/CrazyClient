@@ -1187,4 +1187,22 @@
       <Exp>1000</Exp>
       <StasisImmune/>
    </Object>
+   <Object type="0x809d" id="Wandering Turkey Event Chest">
+      <DisplayId>Wandering Turkey</DisplayId>
+      <Class>Character</Class>
+      <Enemy/>
+      <KeepDamageRecord/>
+      <Quest/>
+      <Level>20</Level>
+      <AnimatedTexture>
+         <File>chars16x16rEncounters</File>
+         <Index>135</Index>
+      </AnimatedTexture>
+      <MaxHitPoints>60000</MaxHitPoints>
+      <Defense>0</Defense>
+      <Size>240</Size>
+      <ShadowSize>0</ShadowSize>
+      <Exp>1000</Exp>
+      <StasisImmune/>
+   </Object>
 </Objects>

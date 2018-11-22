@@ -1343,7 +1343,6 @@
       <Hero/>
       <Quest/>
       <God/>
-      <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
       <Cube/>
@@ -1452,6 +1451,7 @@
       <Hero/>
       <Quest/>
       <God/>
+      <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
       <Projectile id="0">

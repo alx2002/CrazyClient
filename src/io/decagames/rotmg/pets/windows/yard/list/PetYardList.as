@@ -85,7 +85,8 @@ package io.decagames.rotmg.pets.windows.yard.list
 
         private function createScrollview():void
         {
-            var _local_1:Sprite = new Sprite();
+            var _local_1:Sprite;
+            _local_1 = new Sprite();
             this.yardContainer = new Sprite();
             this.yardContainer.x = this.contentInset.x;
             this.yardContainer.y = 2;
@@ -108,6 +109,7 @@ package io.decagames.rotmg.pets.windows.yard.list
             addChild(_local_1);
             _local_1.y = 45;
         }
+
 
         public function addPet(_arg_1:PetItem):void
         {

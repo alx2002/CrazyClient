@@ -39,6 +39,9 @@ package com.company.assembleegameclient.ui.options
     import kabam.rotmg.core.StaticInjectorContext;
     import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
     import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
+	import com.company.assembleegameclient.objects.Player;
+    import io.decagames.rotmg.supportCampaign.data.SupporterFeatures;
+
     import flash.display.StageDisplayState;
     import com.company.assembleegameclient.sound.Music;
     import com.company.assembleegameclient.sound.SFX;
@@ -1193,11 +1196,13 @@ package com.company.assembleegameclient.ui.options
 
         private function onCharacterGlow():void
         {
-            if (StaticInjectorContext.getInjector().getInstance(SupporterCampaignModel).rank >= SupporterCampaignModel.CHARACTER_GLOW_RANK)
+            var _local_1:Player = this.gs_.map.player_;
+            if (_local_1.hasSupporterFeature(SupporterFeatures.GLOW))
             {
-                this.gs_.map.player_.clearTextureCache();
+                _local_1.clearTextureCache();
             };
         }
+
 
         private function onShowQuestPortraitsChange():void
         {
