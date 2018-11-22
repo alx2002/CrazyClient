@@ -1,4 +1,2 @@
 # CrazyClient
-Alternative to vanilla.
-X31.1.1
-
+Built on X31.1.1
