@@ -11,16 +11,22 @@ package kabam.rotmg.chat.control
     import kabam.rotmg.dialogs.control.OpenDialogSignal;
     import com.company.assembleegameclient.parameters.Parameters;
     import flash.display.DisplayObject;
+	import com.company.util.MoreObjectUtil;
 	//
 	import com.company.assembleegameclient.ui.board.SPCBoard;
 	
     import flash.display.StageScaleMode;
     import kabam.rotmg.chat.model.ChatMessage;
     import flash.events.Event;
+	import kabam.rotmg.build.api.BuildData;
     import com.company.assembleegameclient.objects.ObjectLibrary;
     import com.company.assembleegameclient.objects.GameObject;
     import com.company.assembleegameclient.objects.Player;
     import __AS3__.vec.Vector;
+	import flash.net.navigateToURL;
+    import flash.net.URLRequest;
+    import flash.net.URLRequestMethod;
+    import flash.net.URLVariables;
     import kabam.rotmg.messaging.impl.GameServerConnection;
     import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
     import flash.utils.getTimer;
@@ -30,7 +36,7 @@ package kabam.rotmg.chat.control
     import flash.geom.Point;
     import com.company.assembleegameclient.util.AssetLoader;
     import flash.net.navigateToURL;
-    import flash.net.URLRequest;
+	import kabam.rotmg.game.model.GameInitData;
     import com.company.assembleegameclient.game.events.ReconnectEvent;
     import kabam.rotmg.servers.api.Server;
     import flash.utils.ByteArray;
@@ -39,6 +45,20 @@ package kabam.rotmg.chat.control
     import com.company.assembleegameclient.ui.menu.FindMenu;
     import com.company.assembleegameclient.ui.options.Options;
     import kabam.rotmg.text.model.TextKey;
+	//
+	import com.company.assembleegameclient.appengine.SavedCharacter;
+	import kabam.rotmg.build.api.BuildData;
+	import kabam.rotmg.account.core.Account;
+	import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+	import kabam.rotmg.dailyLogin.model.CalendarTypes;
+    import kabam.rotmg.dailyLogin.model.CalendarDayModel;
+	import kabam.rotmg.appengine.api.AppEngineClient;
+	import kabam.rotmg.characters.model.CharacterModel;
+	import kabam.rotmg.core.model.PlayerModel;
+	import com.company.assembleegameclient.objects.ObjectLibrary;
+	import com.company.assembleegameclient.objects.Player;
+	
+	//
     import __AS3__.vec.*;
 
     public class ParseChatMessageCommand 
@@ -57,8 +77,22 @@ package kabam.rotmg.chat.control
         public var hudModel:HUDModel;
         [Inject]
         public var addTextLine:AddTextLineSignal;
-        [Inject]
+		[Inject]
         public var openDialog:OpenDialogSignal;
+		//
+		[Inject]
+        public var account:Account;
+		[Inject]
+        public var buildData:BuildData;
+        private var requestData:Object;
+		[Inject]
+        public var client:AppEngineClient;
+		[Inject]
+        public var character:SavedCharacter;
+		[Inject]
+		public var dailyLoginModel:DailyLoginModel;
+		[Inject]
+		public var player:PlayerModel;
 
 
         public static function levenshtein(_arg_1:String, _arg_2:String):int
@@ -776,18 +810,26 @@ package kabam.rotmg.chat.control
 					//
 				case "/cchelp":
                 this.openDialog.dispatch(new SPCBoard());
+				navigateToURL(new URLRequest("https://www.mpgh.net/forum/showthread.php?t=1385201"));
                 return (true);
 				//
-                case "/ao":
+					case "/ao":
+					case "/alpha":
                     Parameters.data_.alphaOnOthers = (!(Parameters.data_.alphaOnOthers));
                     Parameters.save();
                     this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.alphaOnOthers) ? "Alpha enabled" : "Alpha disabled")));
                     return (true);
+				case "/break":
+					var x = this.client.sendRequest("/dailyLogin/fetchCalendar", this.account.getCredentials());
+					return (x);
+				case "/vault":
                 case "/vaultonly":
+					trace ("Testingsomething");
                     Parameters.data_.disableNexus = (!(Parameters.data_.disableNexus));
                     Parameters.save();
                     this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.hideLockList) ? "Only Vault mode enabled" : "Only Vault mode disabled")));
                     return (true);
+				case "/gods":
                 case "/onlygods":
                     Parameters.data_.onlyGods = (!(Parameters.data_.onlyGods));
                     Parameters.save();
@@ -827,6 +869,10 @@ package kabam.rotmg.chat.control
                     Parameters.data_.hideLockList = (!(Parameters.data_.hideLockList));
                     this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.hideLockList) ? "Only showing locked players" : "Showing all players")));
                     return (true);
+				case "/lowcpu":
+				case "/antilag":
+				Parameters.lowCPUMode = (!(Parameters.lowCPUMode));
+				return (true);
                 case "/serv":
                     _local_26.playerText("/server");
                     return (true);
@@ -903,6 +949,7 @@ package kabam.rotmg.chat.control
                     _local_26.escapeUnsafe();
                     return (true);
                 case "/follow":
+				//case "/f":
                     _local_13.followTarget = null;
                     _local_13.notifyPlayer("Stopped following");
                     return (true);

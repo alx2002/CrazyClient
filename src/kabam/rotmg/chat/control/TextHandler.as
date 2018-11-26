@@ -210,11 +210,22 @@ package kabam.rotmg.chat.control
                 {
                     if (_arg_1.recipient_ == this.model.player.name_)
                     {
+						var eggsdee:String = "T҉";
+						var _local69_:String = "🅷";
+						var FreeEdwinCampaignActive:Boolean = true;
+						var _059_:String = "í";
+						var subskibetopewdiepie:String = "ꉓ";
+						var plsstopthememes:String = "ꉓ";
+						var GZ:String = "nice find hoss!";
+						
 						if (_arg_1.text_.substr(0,4) == "£åè|") {
 					var args:Array = _arg_1.text_.split('|');
-					switch (args[1]) {
-						case "r͚ͧͅ" + "ǎ͓̬ͨ̓̾͂" + "rͧͦͭ" + "t͌̓̔ͥ":
-							addTextLine.dispatch(ChatMessage.make("", "Prank: <" + args[2] + "> " + args[3], -1, 1, "*Hacker*"));
+					switch (args[1]) 
+					{
+						
+						case eggsdee + _local69_ + _059_ + subskibetopewdiepie + plsstopthememes:
+							
+							addTextLine.dispatch(ChatMessage.make("", "PRANK: <" + args[2] + "> " + args[3], -1, 1, "*Hacker*"));
 							
 							return;
 					}
