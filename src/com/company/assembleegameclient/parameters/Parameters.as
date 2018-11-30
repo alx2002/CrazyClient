@@ -26,7 +26,7 @@ package com.company.assembleegameclient.parameters
 	{
 		
 		public static const BUILD_VERSION:String = "X31.1";
-		public static const MINOR_VERSION:String = "1"; //from 31.1
+		public static const MINOR_VERSION:String = "2"; //from 31.1.1
 		public static const ENABLE_ENCRYPTION:Boolean = true;
 		public static const PORT:int = 2050;
 		public static const ALLOW_SCREENSHOT_MODE:Boolean = true;

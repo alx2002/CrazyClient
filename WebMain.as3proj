@@ -6,12 +6,13 @@
     <movie input="" />
     <movie path="out\WebMain.swf" />
     <movie fps="30" />
-    <movie width="800" />
-    <movie height="600" />
+    <movie width="1920" />
+    <movie height="1080" />
     <movie version="28" />
     <movie minorVersion="0" />
     <movie platform="Flash Player" />
     <movie background="#FFFFFF" />
+    <movie preferredSDK="Flex 4.6.0, AIR 3.1;4.6.0, 3.1;" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>

@@ -1,5 +1,6 @@
 ﻿package kabam.rotmg.assets
 {
+	import mx.core.*;
    public class EmbeddedAssets
    {
       
@@ -360,8 +361,8 @@
       [Embed(source="EmbeddedAssets_d1LofiObjBigEmbed_.png")]
 	public static var d1LofiObjBigEmbed_:Class;
       
-      /* [Embed(source="EmbeddedAssets_d2Chars8x8rEmbed_.png")]
-	public static var d2Chars8x8rEmbed_:Class; */
+       [Embed(source="EmbeddedAssets_d2Chars8x8rEmbed_.png")]
+	public static var d2Chars8x8rEmbed_:Class;
       
       [Embed(source="EmbeddedAssets_d2Chars16x16rEmbed_.png")]
 	public static var d2Chars16x16rEmbed_:Class;
