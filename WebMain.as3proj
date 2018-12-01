@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="out\WebMain.swf" />
     <movie fps="30" />
-    <movie width="1920" />
-    <movie height="1080" />
+    <movie width="800" />
+    <movie height="600" />
     <movie version="28" />
     <movie minorVersion="0" />
     <movie platform="Flash Player" />

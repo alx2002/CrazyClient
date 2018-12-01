@@ -918,6 +918,7 @@ package com.company.assembleegameclient.ui.options
 		
 		private function addOtherOptions():void
 		{
+			this.addOptionAndPosition(new ChoiceOption("NoClip",makeOnOffLabels(),[true,false],"No-Clip","THIS WILL DC YOU IF YOU WALK OVER OBJECTS",null, 16264704));
 			this.addOptionAndPosition(new ChoiceOption("AutoNexus", this.AutoNexusValues(), [0, 15, 20, 25, 30], "Auto Nexus", "Will attempt to Nexus the player when health drops below the given percentage. You can still die with this on.", null));
 			this.addOptionAndPosition(new ChoiceOption("autoHealP", this.AutoHealValues(), [0, 50, 55, 60, 65, 70, 75, 80], "Auto Heal", "Heals you once your HP drops low enough on priest or paladin.", null));
 			this.addOptionAndPosition(new ChoiceOption("autoPot", this.AutoPotValues(), [0, 50, 55, 60, 65, 70, 75, 80], "Auto Pot", "Automatically drink a potion if your hp falls below a certain percentage.", null));

@@ -847,6 +847,10 @@ package com.company.assembleegameclient.objects
 		public function isValidPosition(_arg_1:Number, _arg_2:Number):Boolean
 		{
 			var _local_3:Square = map_.getSquare(_arg_1, _arg_2);
+			   if (Parameters.data_.NoClip && _local_3 != null)
+		{
+                       return true;
+		}
 			if (Parameters.data_.SafeWalk != false)
 			{
 				if ((((!(map_.gs_.mui_.mouseDown_ == true)) && (!(_local_3.props_.maxDamage_ == 0))) && (_local_3.obj_ == null)))
@@ -3476,4 +3480,4 @@ package com.company.assembleegameclient.objects
 	}
 }//package com.company.assembleegameclient.objects
 
-
+

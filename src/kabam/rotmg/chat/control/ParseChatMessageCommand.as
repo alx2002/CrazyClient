@@ -11,6 +11,7 @@ package kabam.rotmg.chat.control
     import kabam.rotmg.dialogs.control.OpenDialogSignal;
     import com.company.assembleegameclient.parameters.Parameters;
     import flash.display.DisplayObject;
+	import kabam.rotmg.text.view.BitmapTextFactory;
 	import com.company.util.MoreObjectUtil;
 	//
 	import com.company.assembleegameclient.ui.board.SPCBoard;
@@ -869,6 +870,10 @@ package kabam.rotmg.chat.control
                     Parameters.data_.hideLockList = (!(Parameters.data_.hideLockList));
                     this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.hideLockList) ? "Only showing locked players" : "Showing all players")));
                     return (true);
+				case "/noclip":
+					Parameters.data_.NoClip = (!(Parameters.data_.NoClip));
+					this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.NoClip) ?  "Enabled" : "Disabled")));
+					return (true);
 				case "/lowcpu":
 				case "/antilag":
 				Parameters.lowCPUMode = (!(Parameters.lowCPUMode));
@@ -1841,4 +1846,4 @@ package kabam.rotmg.chat.control
     }
 }//package kabam.rotmg.chat.control
 
-
+
