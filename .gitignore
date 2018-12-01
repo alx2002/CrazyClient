@@ -47,9 +47,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-/out
+out/
 
-/obj
+obj/
 
 *.as3proj
 
