@@ -47,8 +47,14 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Ignore node_modules folder
-node_modules
+/out
+
+/obj
+
+*.as3proj
+
+*.exe
+*.zip
 
 # Ignore all text files
 *.txt
