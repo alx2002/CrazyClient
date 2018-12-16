@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.particles.ShockeeEffect
 
@@ -30,7 +30,7 @@ package com.company.assembleegameclient.objects.particles
 			return (false);
 		}
 		
-		private function onTimer(_arg_1:TimerEvent):void
+		private function onTimer(event:TimerEvent):void
 		{
 			this.isShocked = (!(this.isShocked));
 			this.go.toggleShockEffect(this.isShocked);

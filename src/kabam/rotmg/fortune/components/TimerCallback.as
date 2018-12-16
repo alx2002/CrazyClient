@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.fortune.components.TimerCallback
 
@@ -62,7 +62,7 @@ package kabam.rotmg.fortune.components
             this.tbo.start();
         }
 
-        public function callbackWrapper(_arg_1:TimerEvent):void
+        public function callbackWrapper(event:TimerEvent):void
         {
             this.tbo.removeEventListener(TimerEvent.TIMER_COMPLETE, this.callbackWrapper);
             if (this.data8 != null)

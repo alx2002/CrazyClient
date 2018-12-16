@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy
 
 package kabam.rotmg.stage3D.proxies
 {
     import flash.display3D.IndexBuffer3D;
-    import __AS3__.vec.Vector;
+    
 
     public class IndexBuffer3DProxy 
     {

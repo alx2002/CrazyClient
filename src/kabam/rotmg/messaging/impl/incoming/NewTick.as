@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.incoming.NewTick
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.messaging.impl.data.ObjectStatusData;
     import com.company.assembleegameclient.util.FreeList;
     import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+    
 
     public class NewTick extends IncomingMessage 
     {

@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.assets.model.Animation
 
@@ -11,7 +11,7 @@ package kabam.rotmg.assets.model
     import flash.utils.Timer;
     import flash.events.TimerEvent;
 
-    public class Animation extends Sprite 
+    public class Animation extends Sprite
     {
 
         private const DEFAULT_SPEED:int = 200;
@@ -90,7 +90,7 @@ package kabam.rotmg.assets.model
             this.started = false;
         }
 
-        private function iterate(_arg_1:TimerEvent=null):void
+        private function iterate(event:TimerEvent=null):void
         {
             this.index = (++this.index % this.count);
             this.bitmap.bitmapData = this.frames[this.index];

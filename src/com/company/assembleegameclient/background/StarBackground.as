@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.background.StarBackground
 
 package com.company.assembleegameclient.background
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.map.Camera;
 	import com.company.util.AssetLibrary;
 	import com.company.util.ImageSet;
@@ -65,8 +65,8 @@ package com.company.assembleegameclient.background
 	}
 }//package com.company.assembleegameclient.background
 
-import __AS3__.vec.*;
-import __AS3__.vec.Vector;
+
+
 import com.company.assembleegameclient.map.Camera;
 import flash.display.BitmapData;
 import flash.display.GraphicsBitmapFill;

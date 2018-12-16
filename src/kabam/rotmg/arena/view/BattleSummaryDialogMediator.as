@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.BattleSummaryDialogMediator
 
@@ -53,7 +53,7 @@ package kabam.rotmg.arena.view
             this.fadeOutTimer.start();
         }
 
-        private function showBattleSummaryDialog(_arg_1:TimerEvent):void
+        private function showBattleSummaryDialog(event:TimerEvent):void
         {
             this.fadeOutTimer.removeEventListener(TimerEvent.TIMER, this.showBattleSummaryDialog);
             this.view.visible = true;

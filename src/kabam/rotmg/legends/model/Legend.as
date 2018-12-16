@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.legends.model.Legend
 
 package kabam.rotmg.legends.model
 {
     import kabam.rotmg.fame.model.FameVO;
-    import __AS3__.vec.Vector;
+    
     import flash.display.BitmapData;
 
     public class Legend implements FameVO 

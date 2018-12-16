@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.ui.popups.modal.ModalPopup
 
@@ -10,13 +10,13 @@ package io.decagames.rotmg.ui.popups.modal
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
     import io.decagames.rotmg.ui.popups.header.PopupHeader;
     import io.decagames.rotmg.ui.scroll.UIScrollbar;
-    import __AS3__.vec.Vector;
+    
     import io.decagames.rotmg.ui.buttons.BaseButton;
     import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
     import flash.geom.Rectangle;
     import flash.display.DisplayObject;
     import io.decagames.rotmg.ui.texture.TextureParser;
-    import __AS3__.vec.*;
+    
 
     public class ModalPopup extends BasePopup 
     {

@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.pets.data.vo.requests.FeedPetRequestVO
 
 package io.decagames.rotmg.pets.data.vo.requests
 {
-	import __AS3__.vec.Vector;
+	
 	import kabam.rotmg.messaging.impl.data.SlotObjectData;
 	
 	public class FeedPetRequestVO implements IUpgradePetRequestVO

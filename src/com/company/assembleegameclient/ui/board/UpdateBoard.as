@@ -15,31 +15,31 @@ package com.company.assembleegameclient.ui.board
 	import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 	import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 	import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-	
-	
-	
+
+
+
 	public class UpdateBoard extends Frame
 	{
-		
+
 		private var closeDialogs:CloseDialogsSignal;
 		private var deleteButton:Sprite;
 		private var scrollBar:Scrollbar;
 		private var container:UpdateContainer;
 		private var title:TextFieldDisplayConcrete;
-		
+
 		public function UpdateBoard()
 		{
 			super("", "", "");
 			this.closeDialogs = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
 			w_ = 700;
-			h_ = 550;
+			h_ = 300;
 			this.container = new UpdateContainer();
 			addChild(this.container);
 			this.createScrollbar();
 			this.makeMask();
 			this.makeDeleteButton();
 		}
-		
+
 		private function createScrollbar():void
 		{
 			this.scrollBar = new Scrollbar(16, 510);
@@ -49,12 +49,12 @@ package com.company.assembleegameclient.ui.board
 			this.scrollBar.addEventListener(Event.CHANGE, this.onScrollBarChange);
 			addChild(this.scrollBar);
 		}
-		
+
 		private function onScrollBarChange(_arg_1:Event):void
 		{
 			this.container.setPos((-(this.scrollBar.pos()) * (this.container.height - 510)));
 		}
-		
+
 		private function makeMask():void
 		{
 			var _local_1:Shape;
@@ -113,7 +113,7 @@ package com.company.assembleegameclient.ui.board
 			_local_2.endFill();
 			addChild(_local_1);
 		}
-		
+
 		private function makeDeleteButton():void
 		{
 			this.title = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3);
@@ -127,11 +127,11 @@ package com.company.assembleegameclient.ui.board
 			this.deleteButton.x = 668;
 			addChild(this.deleteButton);
 		}
-		
+
 		private function onClose(_arg_1:MouseEvent):void
 		{
 			this.closeDialogs.dispatch();
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.ui.board

@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile
 
@@ -175,7 +175,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 			;
 		}
 		
-		private function onDoubleClickTimerComplete(_arg_1:TimerEvent):void
+		private function onDoubleClickTimerComplete(event:TimerEvent):void
 		{
 			this.setPendingDoubleClick(false);
 			dispatchEvent(new ItemTileEvent(ItemTileEvent.ITEM_CLICK, this));

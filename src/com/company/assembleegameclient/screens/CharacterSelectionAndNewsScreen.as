@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen
 
@@ -26,14 +26,14 @@ package com.company.assembleegameclient.screens
 	import kabam.rotmg.ui.view.components.MenuOptionsBar;
 	import kabam.rotmg.ui.view.components.ScreenBase;
 	import org.osflash.signals.Signal;
-	
+
 	public class CharacterSelectionAndNewsScreen extends Sprite
 	{
-		
+
 		private static const NEWS_X:int = 475;
 		private static const TAB_UNSELECTED:uint = 0xB3B3B3;
 		private static const TAB_SELECTED:uint = 0xFFFFFF;
-		
+
 		private const SCROLLBAR_REQUIREMENT_HEIGHT:Number = 400;
 		private const CHARACTER_LIST_Y_POS:int = 108;
 		private const CHARACTER_LIST_X_POS:int = 18;
@@ -55,7 +55,7 @@ package com.company.assembleegameclient.screens
 		private var scrollBar:Scrollbar;
 		private var menuOptionsBar:MenuOptionsBar;
 		private var BOUNDARY_LINE_ONE_Y:int = 106;
-		
+
 		public var newCharacter:Signal = new Signal();
 		public var chooseName:Signal = new Signal();
 		public var playGame:Signal = new Signal();
@@ -63,7 +63,7 @@ package com.company.assembleegameclient.screens
 		private var playButton:TitleMenuOption = ButtonFactory.getPlayButton();
 		private var classesButton:TitleMenuOption = ButtonFactory.getClassesButton();
 		private var backButton:TitleMenuOption = ButtonFactory.getMainButton();
-		
+
 		public function CharacterSelectionAndNewsScreen()
 		{
 			this.close = this.backButton.clicked;
@@ -71,7 +71,7 @@ package com.company.assembleegameclient.screens
 			addChild(new ScreenBase());
 			addChild(new AccountScreen());
 		}
-		
+
 		public function initialize(_arg_1:PlayerModel):void
 		{
 			if (this.isInitialized)
@@ -83,7 +83,7 @@ package com.company.assembleegameclient.screens
 			this.model = _arg_1;
 			this.createDisplayAssets(_arg_1);
 		}
-		
+
 		private function createDisplayAssets(_arg_1:PlayerModel):void
 		{
 			this.createNameText();
@@ -107,7 +107,7 @@ package com.company.assembleegameclient.screens
 			}
 			;
 		}
-		
+
 		private function makeMenuOptionsBar():void
 		{
 			this.playButton.clicked.add(this.onPlayClick);
@@ -117,7 +117,7 @@ package com.company.assembleegameclient.screens
 			this.menuOptionsBar.addButton(this.classesButton, MenuOptionsBar.RIGHT);
 			addChild(this.menuOptionsBar);
 		}
-		
+
 		private function createNews():void
 		{
 			var _local_1:NewsView;
@@ -126,7 +126,7 @@ package com.company.assembleegameclient.screens
 			_local_1.y = 112;
 			addChild(_local_1);
 		}
-		
+
 		private function createScrollbar():void
 		{
 			this.scrollBar = new Scrollbar(16, 399);
@@ -136,7 +136,7 @@ package com.company.assembleegameclient.screens
 			this.scrollBar.addEventListener(Event.CHANGE, this.onScrollBarChange);
 			addChild(this.scrollBar);
 		}
-		
+
 		private function createNewsText():void
 		{
 			this.newsText = new TextFieldDisplayConcrete().setSize(18).setColor(TAB_UNSELECTED);
@@ -147,7 +147,7 @@ package com.company.assembleegameclient.screens
 			this.newsText.y = 79;
 			addChild(this.newsText);
 		}
-		
+
 		private function createCharacterListChar():void
 		{
 			this.characterListType = CharacterList.TYPE_CHAR_SELECT;
@@ -162,7 +162,7 @@ package com.company.assembleegameclient.screens
 			;
 			addChild(this.characterList);
 		}
-		
+
 		private function createCharacterListGrave():void
 		{
 			this.characterListType = CharacterList.TYPE_GRAVE_SELECT;
@@ -177,7 +177,7 @@ package com.company.assembleegameclient.screens
 			;
 			addChild(this.characterList);
 		}
-		
+
 		private function removeCharacterList():void
 		{
 			if (this.characterList != null)
@@ -193,7 +193,7 @@ package com.company.assembleegameclient.screens
 			}
 			;
 		}
-		
+
 		private function createOpenCharactersText():void
 		{
 			this.openCharactersText = new TextFieldDisplayConcrete().setSize(18).setColor(TAB_UNSELECTED);
@@ -205,7 +205,7 @@ package com.company.assembleegameclient.screens
 			this.openCharactersText.addEventListener(MouseEvent.CLICK, this.onOpenCharacters);
 			addChild(this.openCharactersText);
 		}
-		
+
 		private function onOpenCharacters(_arg_1:MouseEvent):void
 		{
 			if (this.characterListType != CharacterList.TYPE_CHAR_SELECT)
@@ -217,7 +217,7 @@ package com.company.assembleegameclient.screens
 			}
 			;
 		}
-		
+
 		private function createOpenGraveyardText():void
 		{
 			this.openGraveyardText = new TextFieldDisplayConcrete().setSize(18).setColor(TAB_UNSELECTED);
@@ -229,7 +229,7 @@ package com.company.assembleegameclient.screens
 			this.openGraveyardText.addEventListener(MouseEvent.CLICK, this.onOpenGraveyard);
 			addChild(this.openGraveyardText);
 		}
-		
+
 		private function onOpenGraveyard(_arg_1:MouseEvent):void
 		{
 			if (this.characterListType != CharacterList.TYPE_GRAVE_SELECT)
@@ -241,7 +241,7 @@ package com.company.assembleegameclient.screens
 			}
 			;
 		}
-		
+
 		private function createCreditDisplay():void
 		{
 			this.creditDisplay = new CreditDisplay();
@@ -250,7 +250,7 @@ package com.company.assembleegameclient.screens
 			this.creditDisplay.y = 20;
 			addChild(this.creditDisplay);
 		}
-		
+
 		private function createChooseNameLink():void
 		{
 			this.nameChooseLink_ = new DeprecatedClickableText(16, false, TextKey.CHARACTER_SELECTION_AND_NEWS_SCREEN_CHOOSE_NAME);
@@ -260,7 +260,7 @@ package com.company.assembleegameclient.screens
 			this.nameChooseLink_.addEventListener(MouseEvent.CLICK, this.onChooseName);
 			addChild(this.nameChooseLink_);
 		}
-		
+
 		private function createNameText():void
 		{
 			this.nameText = new TextFieldDisplayConcrete().setSize(22).setColor(0xB3B3B3);
@@ -271,7 +271,7 @@ package com.company.assembleegameclient.screens
 			this.nameText.x = ((this.getReferenceRectangle().width - this.nameText.width) / 2);
 			addChild(this.nameText);
 		}
-		
+
 		private function getReferenceRectangle():Rectangle
 		{
 			var _local_1:Rectangle = new Rectangle();
@@ -282,7 +282,7 @@ package com.company.assembleegameclient.screens
 			;
 			return (_local_1);
 		}
-		
+
 		private function createBoundaryLines():void
 		{
 			this.lines = new Shape();
@@ -295,12 +295,12 @@ package com.company.assembleegameclient.screens
 			this.lines.graphics.lineStyle();
 			addChild(this.lines);
 		}
-		
-		private function onChooseName(_arg_1:MouseEvent):void
+
+		public function onChooseName(_arg_1:MouseEvent):void
 		{
 			this.chooseName.dispatch();
 		}
-		
+
 		private function onScrollBarChange(_arg_1:Event):void
 		{
 			if (this.characterList != null)
@@ -309,7 +309,7 @@ package com.company.assembleegameclient.screens
 			}
 			;
 		}
-		
+
 		private function onPlayClick():void
 		{
 			if (this.model.getCharacterCount() == 0)
@@ -322,7 +322,7 @@ package com.company.assembleegameclient.screens
 			}
 			;
 		}
-		
+
 		public function setName(_arg_1:String):void
 		{
 			this.nameText.setStringBuilder(new StaticStringBuilder(this.model.getName()));
@@ -334,7 +334,7 @@ package com.company.assembleegameclient.screens
 			}
 			;
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.screens
 

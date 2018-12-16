@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.packages.view.BusyIndicator
 
@@ -79,7 +79,7 @@ package kabam.rotmg.packages.view
             this.timer.removeEventListener(TimerEvent.TIMER, this.updatePinwheel);
         }
 
-        private function updatePinwheel(_arg_1:TimerEvent):void
+        private function updatePinwheel(event:TimerEvent):void
         {
             this.quarterCircleMask.rotation = (this.quarterCircleMask.rotation + 20);
         }

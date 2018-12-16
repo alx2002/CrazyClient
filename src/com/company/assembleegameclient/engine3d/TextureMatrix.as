@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.engine3d.TextureMatrix
 
 package com.company.assembleegameclient.engine3d
 {
-	import __AS3__.vec.Vector;
+	
 	import flash.display.BitmapData;
 	import flash.geom.Matrix;
 	

@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.supportCampaign.data.SupporterFeatures
 
 package io.decagames.rotmg.supportCampaign.data
 {
-    public class SupporterFeatures 
+    public class SupporterFeatures
     {
 
         public static const GLOW:int = 1;

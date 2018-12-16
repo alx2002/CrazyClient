@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.ArenaLeaderboardListItem
 
@@ -22,7 +22,7 @@ package kabam.rotmg.arena.view
     import io.decagames.rotmg.pets.data.vo.PetVO;
     import flash.filters.DropShadowFilter;
 
-    public class ArenaLeaderboardListItem extends Sprite 
+    public class ArenaLeaderboardListItem extends Sprite
     {
 
         private static const HEIGHT:int = 60;
@@ -199,9 +199,9 @@ package kabam.rotmg.arena.view
             this.petIconBackground.visible = false;
         }
 
-        private function getPetBitmap(_arg_1:PetVO, _arg_2:int):Bitmap
+        private function getPetBitmap(id:PetVO, _arg_2:int):Bitmap
         {
-            return (new Bitmap(this.petIconFactory.getPetSkinTexture(_arg_1, _arg_2)));
+            return (new Bitmap(this.petIconFactory.getPetSkinTexture(id, _arg_2)));
         }
 
         public function setColor():void

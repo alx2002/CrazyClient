@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.nexusShop.NexusShopPopupView
 
 package io.decagames.rotmg.nexusShop
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.objects.SellableObject;
 	import com.company.assembleegameclient.util.FilterUtil;
 	import flash.display.Sprite;

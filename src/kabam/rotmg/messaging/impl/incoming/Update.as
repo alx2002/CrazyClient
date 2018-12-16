@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.incoming.Update
 
 package kabam.rotmg.messaging.impl.incoming
 {
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.messaging.impl.data.GroundTileData;
     import kabam.rotmg.messaging.impl.data.ObjectData;
     import com.company.assembleegameclient.util.FreeList;
     import flash.utils.IDataInput;
-    import __AS3__.vec.*;
+    
 
     public class Update extends IncomingMessage 
     {

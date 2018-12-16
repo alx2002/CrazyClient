@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.stage3D.Object3D.Util
 
@@ -7,7 +7,7 @@ package kabam.rotmg.stage3D.Object3D
 {
     import flash.geom.Matrix3D;
     import flash.utils.ByteArray;
-    import __AS3__.vec.*;
+    
 
     public class Util 
     {

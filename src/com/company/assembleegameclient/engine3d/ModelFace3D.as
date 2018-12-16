@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.engine3d.ModelFace3D
 
 package com.company.assembleegameclient.engine3d
 {
-	import __AS3__.vec.Vector;
+	
 	
 	public class ModelFace3D
 	{

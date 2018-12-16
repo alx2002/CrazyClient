@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid
 
 package com.company.assembleegameclient.ui.panels.itemgrids
 {
-	import __AS3__.vec.Vector;
+	
 	import com.company.assembleegameclient.constants.InventoryOwnerTypes;
 	import com.company.assembleegameclient.objects.Container;
 	import com.company.assembleegameclient.objects.GameObject;

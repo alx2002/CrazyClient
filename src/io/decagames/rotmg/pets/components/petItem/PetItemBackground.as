@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.pets.components.petItem.PetItemBackground
 
 package io.decagames.rotmg.pets.components.petItem
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.util.GraphicsUtil;
 	import flash.display.GraphicsPath;
 	import flash.display.GraphicsSolidFill;

@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTile
 
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.objects.ObjectLibrary;
 	import com.company.assembleegameclient.objects.Player;
 	import com.company.assembleegameclient.parameters.Parameters;

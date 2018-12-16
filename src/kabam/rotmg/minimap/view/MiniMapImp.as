@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.minimap.view.MiniMapImp
 
@@ -13,7 +13,7 @@ package kabam.rotmg.minimap.view
     import com.company.assembleegameclient.objects.GameObject;
     import com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip;
     import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
-    import __AS3__.vec.Vector;
+    
     import flash.geom.Matrix;
     import com.company.assembleegameclient.objects.Player;
     import com.company.assembleegameclient.util.AssetLoader;
@@ -32,7 +32,7 @@ package kabam.rotmg.minimap.view
     import com.company.assembleegameclient.ui.options.Options;
     import com.company.assembleegameclient.objects.Container;
     import com.company.util.RectangleUtil;
-    import __AS3__.vec.*;
+    
 
     public class MiniMapImp extends MiniMap 
     {

@@ -1,19 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel
 
 package io.decagames.rotmg.supportCampaign.data
 {
-    import __AS3__.vec.Vector;
+    
     import io.decagames.rotmg.supportCampaign.data.vo.RankVO;
     import kabam.rotmg.core.StaticInjectorContext;
     import io.decagames.rotmg.supportCampaign.signals.UpdateCampaignProgress;
     import com.company.assembleegameclient.util.TimeUtil;
     import io.decagames.rotmg.utils.date.TimeLeft;
-    import __AS3__.vec.*;
+    
 
-    public class SupporterCampaignModel 
+    public class SupporterCampaignModel
     {
 
         public static const DEFAULT_DONATE_AMOUNT:int = 100;
@@ -23,7 +23,7 @@ package io.decagames.rotmg.supportCampaign.data
         public static const RANKS_NAMES:Array = ["Basic", "Greater", "Superior", "Paramount", "Exalted", "Unbound"];
 
         private var _unlockPrice:int;
-        private var _points:int;
+        private var _points:int = 100;
         private var _rank:int;
         private var _tempRank:int;
         private var _donatePointsRatio:int;
@@ -32,7 +32,7 @@ package io.decagames.rotmg.supportCampaign.data
         private var _startDate:Date;
         private var _ranks:Array;
         private var _isUnlocked:Boolean;
-        private var _hasValidData:Boolean;
+        private var _hasValidData:Boolean = true;
         private var _claimed:int;
         private var _rankConfig:Vector.<RankVO>;
 
@@ -56,7 +56,7 @@ package io.decagames.rotmg.supportCampaign.data
 
         public function updatePoints(_arg_1:int):void
         {
-            this._points = _arg_1;
+            this._points = _arg_1 = 100; // = _arg_1;
             this._rank = this.getRankByPoints(this._points);
             StaticInjectorContext.getInjector().getInstance(UpdateCampaignProgress).dispatch();
         }
@@ -66,7 +66,7 @@ package io.decagames.rotmg.supportCampaign.data
             var _local_3:int;
             if (!this.hasValidData)
             {
-                return (0);
+                return (100); //(0)
             };
             var _local_2:int;
             if (((!(this._ranks == null)) && (this._ranks.length > 0)))

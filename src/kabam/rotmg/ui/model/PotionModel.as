@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.ui.model.PotionModel
 
@@ -80,7 +80,7 @@ package kabam.rotmg.ui.model
             };
         }
 
-        private function coolDownPurchase(_arg_1:TimerEvent):void
+        private function coolDownPurchase(event:TimerEvent):void
         {
             if (this.costIndex == 0)
             {
@@ -90,7 +90,7 @@ package kabam.rotmg.ui.model
             this.update.dispatch(this.position);
         }
 
-        private function coolDownPrice(_arg_1:TimerEvent):void
+        private function coolDownPrice(event:TimerEvent):void
         {
             this.costIndex--;
             if (this.costIndex == 0)

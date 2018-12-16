@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.game.MapUserInput
 
@@ -50,10 +50,10 @@ package com.company.assembleegameclient.game
 	import kabam.rotmg.ui.model.TabStripModel;
 	import net.hires.debug.Stats;
 	import org.swiftsuspenders.Injector;
-	
+
 	public class MapUserInput
 	{
-		
+
 		private static var stats_:Stats = new Stats();
 		public static var reconRealm:ReconnectEvent;
 		public static var reconVault:ReconnectEvent;
@@ -64,7 +64,7 @@ package com.company.assembleegameclient.game
 		public static var skipRender:Boolean = false;
 		public static var optionsOpen:Boolean = false;
 		public static var inputting:Boolean = false;
-		
+
 		public var ninjaTapped:Boolean = false;
 		public var gs_:GameSprite;
 		public var mouseDown_:Boolean = false;
@@ -99,7 +99,7 @@ package com.company.assembleegameclient.game
 		private var areFKeysAvailable:Boolean;
 		private var isFriendsListOpen:Boolean;
 		private var parseChatMessage:ParseChatMessageSignal;
-		
+
 		public function MapUserInput(_arg_1:GameSprite)
 		{
 			this.gs_ = _arg_1;
@@ -124,7 +124,7 @@ package com.company.assembleegameclient.game
 			this.areFKeysAvailable = _local_3.areDeveloperHotkeysEnabled();
 			this.gs_.map.signalRenderSwitch.add(this.onRenderSwitch);
 		}
-		
+
 		public function onRenderSwitch(_arg_1:Boolean):void
 		{
 			if (_arg_1)
@@ -143,7 +143,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function clearInput():void
 		{
 			this.moveLeft_ = 0;
@@ -157,7 +157,7 @@ package com.company.assembleegameclient.game
 			this.maxprism = false;
 			this.setPlayerMovement();
 		}
-		
+
 		public function setEnablePlayerInput(_arg_1:Boolean):void
 		{
 			if (this.enablePlayerInput_ != _arg_1)
@@ -167,7 +167,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function onAddedToStage(_arg_1:Event):void
 		{
 			var _local_2:Stage = this.gs_.stage;
@@ -182,7 +182,7 @@ package com.company.assembleegameclient.game
 			_local_2.addEventListener(MouseEvent.RIGHT_MOUSE_DOWN, this.onRightMouseDown_forWorld);
 			_local_2.addEventListener(MouseEvent.RIGHT_MOUSE_UP, this.onRightMouseUp_forWorld);
 		}
-		
+
 		private function onRemovedFromStage(_arg_1:Event):void
 		{
 			var _local_2:Stage = this.gs_.stage;
@@ -197,16 +197,16 @@ package com.company.assembleegameclient.game
 			_local_2.removeEventListener(MouseEvent.RIGHT_MOUSE_DOWN, this.onRightMouseDown_forWorld);
 			_local_2.removeEventListener(MouseEvent.RIGHT_MOUSE_UP, this.onRightMouseUp_forWorld);
 		}
-		
+
 		private function onActivate(_arg_1:Event):void
 		{
 		}
-		
+
 		private function onDeactivate(_arg_1:Event):void
 		{
 			this.clearInput();
 		}
-		
+
 		public function onMouseDown(_arg_1:MouseEvent):void
 		{
 			var _local_2:Number;
@@ -304,7 +304,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function onMouseUp(_arg_1:MouseEvent):void
 		{
 			this.mouseDown_ = false;
@@ -316,7 +316,7 @@ package com.company.assembleegameclient.game
 			;
 			_local_2.isShooting = false;
 		}
-		
+
 		private function onMouseWheel(_arg_1:MouseEvent):void
 		{
 			if (_arg_1.delta > 0)
@@ -329,7 +329,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function onEnterFrame(_arg_1:Event):void
 		{
 			var _local_2:Player;
@@ -354,62 +354,62 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
-		private function handleAutoAbil(_arg_1:Player):Boolean
+
+		private function handleAutoAbil(seal:Player):Boolean
 		{
-			if ((!((((_arg_1.objectType_ == 0x0300) || (_arg_1.objectType_ == 797)) || (_arg_1.objectType_ == 799)) || ((_arg_1.objectType_ == 784) && (Parameters.data_.priestAA)))))
+			if ((!((((seal.objectType_ == 0x0300) || (seal.objectType_ == 797)) || (seal.objectType_ == 799)) || ((seal.objectType_ == 784) && (Parameters.data_.priestAA)))))
 			{
 				return (false);
 			}
 			;
 			if (this.spaceSpam >= getTimer())
 			{
-				if (_arg_1.mapAutoAbil)
+				if (seal.mapAutoAbil)
 				{
-					_arg_1.mapAutoAbil = false;
-					_arg_1.notifyPlayer("Auto Ability: Disabled", 0xFF00, 1500);
+					seal.mapAutoAbil = false;
+					seal.notifyPlayer("Auto Ability: Disabled", 0xFF00, 1500);
 				}
 				;
 				return (true);
 			}
 			;
 			this.spaceSpam = (getTimer() + 500);
-			switch (_arg_1.equipment_[1])
+			switch (seal.equipment_[1])
 			{
-			case 2855: 
-			case 2785: 
-			case 8333: 
-			case 2857: 
-			case 8335: 
-			case 2667: 
-			case 3080: 
-			case 3078: 
-			case 2225: 
-			case 2854: 
-			case 2645: 
-			case 8344: 
-			case 8610: 
-			case 3102: 
-			case 5854: 
-			case 1976: 
-				_arg_1.mapAutoAbil = (!(_arg_1.mapAutoAbil));
-				_arg_1.notifyPlayer(((_arg_1.mapAutoAbil) ? "Auto Ability: Enabled" : "Auto Ability: Disabled"), 0xFF00, 1500);
+			case 2855:
+			case 2785:
+			case 8333:
+			case 2857:
+			case 8335:
+			case 2667:
+			case 3080:
+			case 3078:
+			case 2225:
+			case 2854:
+			case 2645:
+			case 8344:
+			case 8610:
+			case 3102:
+			case 5854:
+			case 1976:
+				seal.mapAutoAbil = (!(seal.mapAutoAbil));
+				seal.notifyPlayer(((seal.mapAutoAbil) ? "Auto Ability: Enabled" : "Auto Ability: Disabled"), 0xFF00, 1500);
 				return (true);
-			case 2642: 
-			case 2777: 
-			case 2643: 
-			case 2778: 
-			case 2644: 
-			case 2611: 
-			case 2651: 
-			case 2853: 
-			case 3081: 
-			case 8342: 
-			case 579: 
+			case 2642: //T0
+			case 2777: //T1
+			case 2643:
+			case 2778:
+			case 2644:
+			case 2611:
+			case 2651:
+			case 2853:
+			case 3081:
+			case 8342: //T++
+			case 579: //PURI
 				if (Parameters.data_.palaSpam)
 				{
-					_arg_1.mapAutoAbil = (!(_arg_1.mapAutoAbil));
-					_arg_1.notifyPlayer(((_arg_1.mapAutoAbil) ? "Auto Ability: Enabled" : "Auto Ability: Disabled"), 0xFF00, 1500);
+					seal.mapAutoAbil = (!(seal.mapAutoAbil));
+					seal.notifyPlayer(((seal.mapAutoAbil) ? "Auto Ability: Enabled" : "Auto Ability: Disabled"), 0xFF00, 1500);
 					return (true);
 				}
 				;
@@ -417,7 +417,7 @@ package com.company.assembleegameclient.game
 			;
 			return (false);
 		}
-		
+
 		private function isIgnored(_arg_1:int):Boolean
 		{
 			var _local_2:int;
@@ -441,7 +441,7 @@ package com.company.assembleegameclient.game
 			;
 			return (false);
 		}
-		
+
 		private function handlePerfectAim(_arg_1:Player):void
 		{
 			var _local_2:GameObject;
@@ -494,7 +494,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function aimAt(_arg_1:Player, _arg_2:Vector3D):void
 		{
 			if (Parameters.data_.inaccurate)
@@ -506,7 +506,7 @@ package com.company.assembleegameclient.game
 			this.gs_.gsc_.useItem(getTimer(), _arg_1.objectId_, 1, _arg_1.equipment_[1], _arg_2.x, _arg_2.y, UseType.START_USE);
 			_arg_1.doShoot(getTimer(), _arg_1.equipment_[1], ObjectLibrary.xmlLibrary_[_arg_1.equipment_[1]], Math.atan2((_arg_2.y - _arg_1.y_), (_arg_2.x - _arg_1.x_)), false);
 		}
-		
+
 		private function handlePerfectBomb(_arg_1:Player):Boolean
 		{
 			var _local_2:GameObject;
@@ -569,7 +569,7 @@ package com.company.assembleegameclient.game
 			;
 			return (true);
 		}
-		
+
 		private function handleCooldown(_arg_1:Player, _arg_2:XML):void
 		{
 			var _local_3:Number = 500;
@@ -581,7 +581,7 @@ package com.company.assembleegameclient.game
 			_arg_1.lastAltAttack_ = getTimer();
 			_arg_1.nextAltAttack_ = (getTimer() + _local_3);
 		}
-		
+
 		private function ninjaTap(_arg_1:Player):Boolean
 		{
 			if (_arg_1.objectType_ != 806)
@@ -601,45 +601,45 @@ package com.company.assembleegameclient.game
 			;
 			return (true);
 		}
-		
-		private function abilityUsed(_arg_1:Player, _arg_2:XML):void
+
+		private function abilityUsed(player:Player, _arg_2:XML):void
 		{
 			var _local_3:Number;
 			var _local_4:Number;
 			var _local_5:Number;
 			this.specialKeyDown_ = true;
-			if (_arg_1 == null)
+			if (player == null)
 			{
 				return;
 			}
 			;
-			if (((Parameters.data_.autoAbil) && (this.handleAutoAbil(_arg_1))))
+			if (((Parameters.data_.autoAbil) && (this.handleAutoAbil(player))))
 			{
 				return;
 			}
 			;
-			if (_arg_1.nextAltAttack_ >= getTimer())
+			if (player.nextAltAttack_ >= getTimer())
 			{
 				return;
 			}
 			;
-			if (int(_arg_2.MpCost) > _arg_1.mp_)
+			if (int(_arg_2.MpCost) > player.mp_)
 			{
 				return;
 			}
 			;
-			if (((Parameters.data_.perfectBomb) && (this.handlePerfectBomb(_arg_1))))
+			if (((Parameters.data_.perfectBomb) && (this.handlePerfectBomb(player))))
 			{
-				this.handleCooldown(_arg_1, _arg_2);
+				this.handleCooldown(player, _arg_2);
 				return;
 			}
 			;
-			if (((Parameters.data_.ninjaTap) && (this.ninjaTap(_arg_1))))
+			if (((Parameters.data_.ninjaTap) && (this.ninjaTap(player))))
 			{
 				return;
 			}
 			;
-			if (((this.maxprism) && ((_arg_1.objectType_ == 804) || (_arg_1.equipment_[1] == 2650))))
+			if (((this.maxprism) && ((player.objectType_ == 804) || (player.equipment_[1] == 2650))))
 			{
 				_local_3 = Math.atan2(this.gs_.map.mouseX, this.gs_.map.mouseY);
 				if (_local_3 < 0)
@@ -649,21 +649,21 @@ package com.company.assembleegameclient.game
 				;
 				_local_4 = ((13 * 50) * Math.sin(_local_3));
 				_local_5 = ((13 * 50) * Math.cos(_local_3));
-				_arg_1.useAltWeapon(_local_4, _local_5, UseType.START_USE);
+				player.useAltWeapon(_local_4, _local_5, UseType.START_USE);
 				return;
 			}
 			;
-			if (((_arg_1.isUnstable()) && (Parameters.data_.dbUnstableAbil)))
+			if (((player.isUnstable()) && (Parameters.data_.dbUnstableAbil)))
 			{
-				_arg_1.useAltWeapon(((Math.random() * 600) - 300), ((Math.random() * 600) - 325), UseType.START_USE);
+				player.useAltWeapon(((Math.random() * 600) - 300), ((Math.random() * 600) - 325), UseType.START_USE);
 			}
 			else
 			{
-				_arg_1.useAltWeapon(this.gs_.map.mouseX, this.gs_.map.mouseY, UseType.START_USE);
+				player.useAltWeapon(this.gs_.map.mouseX, this.gs_.map.mouseY, UseType.START_USE);
 			}
 			;
 		}
-		
+
 		private function onKeyDown(_arg_1:KeyboardEvent):void
 		{
 			var _local_2:GameObject;
@@ -691,22 +691,22 @@ package com.company.assembleegameclient.game
 			var _local_21:Player = this.gs_.map.player_;
 			switch (_arg_1.keyCode)
 			{
-			case KeyCodes.F1: 
-			case KeyCodes.F2: 
-			case KeyCodes.F3: 
-			case KeyCodes.F4: 
-			case KeyCodes.F5: 
-			case KeyCodes.F6: 
-			case KeyCodes.F7: 
-			case KeyCodes.F8: 
-			case KeyCodes.F9: 
-			case KeyCodes.F10: 
-			case KeyCodes.F11: 
-			case KeyCodes.F12: 
-			case KeyCodes.INSERT: 
-			case KeyCodes.ALTERNATE: 
+			case KeyCodes.F1:
+			case KeyCodes.F2:
+			case KeyCodes.F3:
+			case KeyCodes.F4:
+			case KeyCodes.F5:
+			case KeyCodes.F6:
+			case KeyCodes.F7:
+			case KeyCodes.F8:
+			case KeyCodes.F9:
+			case KeyCodes.F10:
+			case KeyCodes.F11:
+			case KeyCodes.F12:
+			case KeyCodes.INSERT:
+			case KeyCodes.ALTERNATE:
 				break;
-			default: 
+			default:
 				if (this.gs_.stage.focus != null)
 				{
 					return;
@@ -716,22 +716,22 @@ package com.company.assembleegameclient.game
 			;
 			switch (_arg_1.keyCode)
 			{
-			case Parameters.data_.moveUp: 
+			case Parameters.data_.moveUp:
 				this.moveUp_ = 1;
 				break;
-			case Parameters.data_.moveDown: 
+			case Parameters.data_.moveDown:
 				this.moveDown_ = 1;
 				break;
-			case Parameters.data_.moveLeft: 
+			case Parameters.data_.moveLeft:
 				this.moveLeft_ = 1;
 				break;
-			case Parameters.data_.moveRight: 
+			case Parameters.data_.moveRight:
 				this.moveRight_ = 1;
 				break;
-			case Parameters.data_.useSpecial: 
+			case Parameters.data_.useSpecial:
 				this.abilityUsed(_local_21, ObjectLibrary.xmlLibrary_[_local_21.equipment_[1]]);
 				break;
-			case Parameters.data_.QuestTeleport: 
+			case Parameters.data_.QuestTeleport:
 				_local_4 = this.gs_.map.quest_.getObject(1);
 				if (_local_4 != null)
 				{
@@ -766,7 +766,7 @@ package com.company.assembleegameclient.game
 				}
 				;
 				break;
-			case Parameters.data_.enterPortal: 
+			case Parameters.data_.enterPortal:
 				_local_3 = int.MAX_VALUE;
 				_local_5 = -1;
 				for each (_local_2 in this.gs_.map.goDict_)
@@ -792,85 +792,85 @@ package com.company.assembleegameclient.game
 				;
 				this.gs_.gsc_.usePortal(_local_5);
 				break;
-			case Parameters.data_.rotateLeft: 
+			case Parameters.data_.rotateLeft:
 				if ((!(Parameters.data_.allowRotation))) break;
 				this.rotateLeft_ = 1;
 				break;
-			case Parameters.data_.rotateRight: 
+			case Parameters.data_.rotateRight:
 				if ((!(Parameters.data_.allowRotation))) break;
 				this.rotateRight_ = 1;
 				break;
-			case Parameters.data_.resetToDefaultCameraAngle: 
+			case Parameters.data_.resetToDefaultCameraAngle:
 				Parameters.data_.cameraAngle = Parameters.data_.defaultCameraAngle;
 				Parameters.save();
 				break;
-			case Parameters.data_.autofireToggle: 
+			case Parameters.data_.autofireToggle:
 				_local_21.isShooting = (this.autofire_ = (!(this.autofire_)));
 				break;
-			case Parameters.data_.toggleHPBar: 
+			case Parameters.data_.toggleHPBar:
 				Parameters.data_.HPBar = ((Parameters.data_.HPBar != 0) ? 0 : 1);
 				break;
-			case Parameters.data_.toggleProjectiles: 
+			case Parameters.data_.toggleProjectiles:
 				Parameters.data_.disableAllyShoot = ((Parameters.data_.disableAllyShoot != 0) ? 0 : 1);
 				break;
-			case Parameters.data_.toggleMasterParticles: 
+			case Parameters.data_.toggleMasterParticles:
 				Parameters.data_.noParticlesMaster = (!(Parameters.data_.noParticlesMaster));
 				break;
-			case Parameters.data_.useInvSlot1: 
+			case Parameters.data_.useInvSlot1:
 				this.useItem(4);
 				break;
-			case Parameters.data_.useInvSlot2: 
+			case Parameters.data_.useInvSlot2:
 				this.useItem(5);
 				break;
-			case Parameters.data_.useInvSlot3: 
+			case Parameters.data_.useInvSlot3:
 				this.useItem(6);
 				break;
-			case Parameters.data_.useInvSlot4: 
+			case Parameters.data_.useInvSlot4:
 				this.useItem(7);
 				break;
-			case Parameters.data_.useInvSlot5: 
+			case Parameters.data_.useInvSlot5:
 				this.useItem(8);
 				break;
-			case Parameters.data_.useInvSlot6: 
+			case Parameters.data_.useInvSlot6:
 				this.useItem(9);
 				break;
-			case Parameters.data_.useInvSlot7: 
+			case Parameters.data_.useInvSlot7:
 				this.useItem(10);
 				break;
-			case Parameters.data_.useInvSlot8: 
+			case Parameters.data_.useInvSlot8:
 				this.useItem(11);
 				break;
-			case Parameters.data_.useHealthPotion: 
+			case Parameters.data_.useHealthPotion:
 				if (this.potionInventoryModel.getPotionModel(PotionInventoryModel.HEALTH_POTION_ID).available)
 				{
 					this.useBuyPotionSignal.dispatch(new UseBuyPotionVO(PotionInventoryModel.HEALTH_POTION_ID, UseBuyPotionVO.CONTEXTBUY));
 				}
 				;
 				break;
-			case Parameters.data_.useMagicPotion: 
+			case Parameters.data_.useMagicPotion:
 				if (this.potionInventoryModel.getPotionModel(PotionInventoryModel.MAGIC_POTION_ID).available)
 				{
 					this.useBuyPotionSignal.dispatch(new UseBuyPotionVO(PotionInventoryModel.MAGIC_POTION_ID, UseBuyPotionVO.CONTEXTBUY));
 				}
 				;
 				break;
-			case Parameters.data_.miniMapZoomOut: 
+			case Parameters.data_.miniMapZoomOut:
 				this.miniMapZoom.dispatch(MiniMapZoomSignal.OUT);
 				break;
-			case Parameters.data_.miniMapZoomIn: 
+			case Parameters.data_.miniMapZoomIn:
 				this.miniMapZoom.dispatch(MiniMapZoomSignal.IN);
 				break;
-			case Parameters.data_.togglePerformanceStats: 
+			case Parameters.data_.togglePerformanceStats:
 				this.togglePerformanceStats();
 				break;
-			case Parameters.data_.escapeToNexus: 
-			case Parameters.data_.escapeToNexus2: 
+			case Parameters.data_.escapeToNexus:
+			case Parameters.data_.escapeToNexus2:
 				_local_20 = StaticInjectorContext.getInjector().getInstance(CloseAllPopupsSignal);
 				_local_20.dispatch();
 				this.exitGame.dispatch();
 				this.gs_.gsc_.escape();
 				break;
-			case Parameters.data_.friendList: 
+			case Parameters.data_.friendList:
 				this.isFriendsListOpen = (!(this.isFriendsListOpen));
 				if (this.isFriendsListOpen)
 				{
@@ -893,16 +893,16 @@ package com.company.assembleegameclient.game
 				}
 				;
 				break;
-			case Parameters.data_.options: 
+			case Parameters.data_.options:
 				_local_20 = StaticInjectorContext.getInjector().getInstance(CloseAllPopupsSignal);
 				_local_20.dispatch();
 				this.openOptions();
 				break;
-			case Parameters.data_.toggleCentering: 
+			case Parameters.data_.toggleCentering:
 				Parameters.data_.centerOnPlayer = (!(Parameters.data_.centerOnPlayer));
 				Parameters.save();
 				break;
-			case Parameters.data_.switchTabs: 
+			case Parameters.data_.switchTabs:
 				_local_20 = StaticInjectorContext.getInjector().getInstance(CloseAllPopupsSignal);
 				_local_20.dispatch();
 				if (((Parameters.data_.normalUI) || (Options.hidden)))
@@ -915,7 +915,7 @@ package com.company.assembleegameclient.game
 				}
 				;
 				break;
-			case Parameters.data_.ReconRealm: 
+			case Parameters.data_.ReconRealm:
 				if (reconRealm != null)
 				{
 					reconRealm.charId_ = this.gs_.gsc_.charId_;
@@ -932,7 +932,7 @@ package com.company.assembleegameclient.game
 				}
 				;
 				break;
-			case Parameters.data_.ReconRandom: 
+			case Parameters.data_.ReconRandom:
 				if (reconVault != null)
 				{
 					reconRandom = reconVault;
@@ -942,7 +942,7 @@ package com.company.assembleegameclient.game
 					this.gs_.dispatchEvent(reconRandom);
 				}
 				;
-			case Parameters.data_.ReconDung: 
+			case Parameters.data_.ReconDung:
 				if (reconDung != null)
 				{
 					if ((getTimer() - dungTime) < 180000)
@@ -967,7 +967,7 @@ package com.company.assembleegameclient.game
 				}
 				;
 				break;
-			case Parameters.data_.ReconVault: 
+			case Parameters.data_.ReconVault:
 				if (reconVault != null)
 				{
 					reconVault.charId_ = this.gs_.gsc_.charId_;
@@ -975,7 +975,7 @@ package com.company.assembleegameclient.game
 				}
 				;
 				break;
-			case Parameters.data_.ReconDaily: 
+			case Parameters.data_.ReconDaily:
 				if (reconDaily != null)
 				{
 					reconDaily.charId_ = this.gs_.gsc_.charId_;
@@ -983,73 +983,73 @@ package com.company.assembleegameclient.game
 				}
 				;
 				break;
-			case Parameters.data_.tpto: 
+			case Parameters.data_.tpto:
 				this.gs_.gsc_.teleport(TextHandler.caller);
 				break;
-			case Parameters.data_.msg1key: 
+			case Parameters.data_.msg1key:
 				if (Parameters.data_.msg1 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg1);
 				break;
-			case Parameters.data_.msg2key: 
+			case Parameters.data_.msg2key:
 				if (Parameters.data_.msg2 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg2);
 				break;
-			case Parameters.data_.msg3key: 
+			case Parameters.data_.msg3key:
 				if (Parameters.data_.msg3 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg3);
 				break;
-			case Parameters.data_.msg4key: 
+			case Parameters.data_.msg4key:
 				if (Parameters.data_.msg4 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg4);
 				break;
-			case Parameters.data_.msg5key: 
+			case Parameters.data_.msg5key:
 				if (Parameters.data_.msg5 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg5);
 				break;
-			case Parameters.data_.msg6key: 
+			case Parameters.data_.msg6key:
 				if (Parameters.data_.msg6 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg6);
 				break;
-			case Parameters.data_.msg7key: 
+			case Parameters.data_.msg7key:
 				if (Parameters.data_.msg7 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg7);
 				break;
-			case Parameters.data_.msg8key: 
+			case Parameters.data_.msg8key:
 				if (Parameters.data_.msg8 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg8);
 				break;
-			case Parameters.data_.msg9key: 
+			case Parameters.data_.msg9key:
 				if (Parameters.data_.msg9 == null) break;
 				this.parseChatMessage.dispatch(Parameters.data_.msg9);
 				break;
-			case Parameters.data_.SkipRenderKey: 
+			case Parameters.data_.SkipRenderKey:
 				MapUserInput.skipRender = (!(MapUserInput.skipRender));
 				break;
-			case Parameters.data_.maxPrism: 
+			case Parameters.data_.maxPrism:
 				this.maxprism = (!(this.maxprism));
 				_local_21.notifyPlayer(((this.maxprism) ? "Max Prism: Enabled" : "Max Prism: Disabled"), 0xFF00, 1500);
 				break;
-			case Parameters.data_.Cam90DegInc: 
+			case Parameters.data_.Cam90DegInc:
 				Parameters.data_.cameraAngle = (Parameters.data_.cameraAngle - (0.785398163397448 * 2));
 				Parameters.save();
 				break;
-			case Parameters.data_.Cam90DegDec: 
+			case Parameters.data_.Cam90DegDec:
 				Parameters.data_.cameraAngle = (Parameters.data_.cameraAngle + (0.785398163397448 * 2));
 				Parameters.save();
 				break;
-			case Parameters.data_.cam2quest: 
+			case Parameters.data_.cam2quest:
 				_local_7 = this.gs_.map.quest_.getLoc();
 				Parameters.data_.cameraAngle = (Math.atan2((_local_21.y_ - _local_7.y), (_local_21.x_ - _local_7.x)) - 1.57079632679);
 				Parameters.save();
 				break;
-			case Parameters.data_.AAHotkey: 
+			case Parameters.data_.AAHotkey:
 				Parameters.data_.AAOn = (!(Parameters.data_.AAOn));
 				_local_21.levelUpEffect(((Parameters.data_.AAOn) ? "Auto Aim: On" : "Auto Aim: Off"));
 				break;
-			case Parameters.data_.AAModeHotkey: 
+			case Parameters.data_.AAModeHotkey:
 				this.selectAimMode();
 				break;
-			case Parameters.data_.tombCycle: 
+			case Parameters.data_.tombCycle:
 				Parameters.data_.curBoss++;
 				if (Parameters.data_.curBoss > 3368)
 				{
@@ -1059,62 +1059,62 @@ package com.company.assembleegameclient.game
 				Parameters.save();
 				_local_21.notifyPlayer(("Active boss: " + ObjectLibrary.typeToDisplayId_[Parameters.data_.curBoss]), 0xFF00, 1500);
 				break;
-			case Parameters.data_.kdbPetrify: 
+			case Parameters.data_.kdbPetrify:
 				Parameters.data_.dbPetrify = (!(Parameters.data_.dbPetrify));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbPetrify) ? "Petrify: On" : "Petrify: Off"), ((Parameters.data_.dbPetrify) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbArmorBroken: 
+			case Parameters.data_.kdbArmorBroken:
 				Parameters.data_.dbArmorBroken = (!(Parameters.data_.dbArmorBroken));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbArmorBroken) ? "Armor Broken: On" : "Armor Broken: Off"), ((Parameters.data_.dbArmorBroken) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbBleeding: 
+			case Parameters.data_.kdbBleeding:
 				Parameters.data_.dbBleeding = (!(Parameters.data_.dbBleeding));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbBleeding) ? "Bleeding: On" : "Bleeding: Off"), ((Parameters.data_.dbBleeding) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbDazed: 
+			case Parameters.data_.kdbDazed:
 				Parameters.data_.dbDazed = (!(Parameters.data_.dbDazed));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbDazed) ? "Dazed: On" : "Dazed: Off"), ((Parameters.data_.dbDazed) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbParalyzed: 
+			case Parameters.data_.kdbParalyzed:
 				Parameters.data_.dbParalyzed = (!(Parameters.data_.dbParalyzed));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbParalyzed) ? "Paralyzed: On" : "Paralyzed: Off"), ((Parameters.data_.dbParalyzed) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbSick: 
+			case Parameters.data_.kdbSick:
 				Parameters.data_.dbSick = (!(Parameters.data_.dbSick));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbSick) ? "Sick: On" : "Sick: Off"), ((Parameters.data_.dbSick) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbSlowed: 
+			case Parameters.data_.kdbSlowed:
 				Parameters.data_.dbSlowed = (!(Parameters.data_.dbSlowed));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbSlowed) ? "Slowed: On" : "Slowed: Off"), ((Parameters.data_.dbSlowed) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbStunned: 
+			case Parameters.data_.kdbStunned:
 				Parameters.data_.dbStunned = (!(Parameters.data_.dbStunned));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbStunned) ? "Stunned: On" : "Stunned: Off"), ((Parameters.data_.dbStunned) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbWeak: 
+			case Parameters.data_.kdbWeak:
 				Parameters.data_.dbWeak = (!(Parameters.data_.dbWeak));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbWeak) ? "Weak: On" : "Weak: Off"), ((Parameters.data_.dbWeak) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbQuiet: 
+			case Parameters.data_.kdbQuiet:
 				Parameters.data_.dbQuiet = (!(Parameters.data_.dbQuiet));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbQuiet) ? "Quiet: On" : "Quiet: Off"), ((Parameters.data_.dbQuiet) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbPetStasis: 
+			case Parameters.data_.kdbPetStasis:
 				Parameters.data_.dbPetStasis = (!(Parameters.data_.dbPetStasis));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbPetStasis) ? "Pet Stasis: On" : "Pet Stasis: Off"), ((Parameters.data_.dbPetStasis) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbAll: 
+			case Parameters.data_.kdbAll:
 				Parameters.data_.dbAll = (!(Parameters.data_.dbAll));
 				Parameters.data_.dbPetrify = Parameters.data_.dbAll;
 				Parameters.data_.dbArmorBroken = Parameters.data_.dbAll;
@@ -1130,47 +1130,47 @@ package com.company.assembleegameclient.game
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.dbAll) ? "All: On" : "All: Off"), ((Parameters.data_.dbAll) ? 0xFF0000 : 0xFF00), 1500);
 				break;
-			case Parameters.data_.kdbPre1: 
+			case Parameters.data_.kdbPre1:
 				this.activatePreset(1);
 				break;
-			case Parameters.data_.kdbPre2: 
+			case Parameters.data_.kdbPre2:
 				this.activatePreset(2);
 				break;
-			case Parameters.data_.kdbPre3: 
+			case Parameters.data_.kdbPre3:
 				this.activatePreset(3);
 				break;
-			case Parameters.data_.resetCHP: 
+			case Parameters.data_.resetCHP:
 				_local_21.chp = _local_21.hp_;
 				_local_21.cmaxhp = _local_21.maxHP_;
 				_local_21.cmaxhpboost = _local_21.maxHPBoost_;
 				break;
-			case Parameters.data_.pbToggle: 
+			case Parameters.data_.pbToggle:
 				Parameters.data_.perfectBomb = (!(Parameters.data_.perfectBomb));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.perfectBomb) ? "Spell Bomb Aim: On" : "Spell Bomb Aim: Off"), 0xFF00, 1500);
 				break;
-			case Parameters.data_.tPassCover: 
+			case Parameters.data_.tPassCover:
 				Parameters.data_.PassesCover = (!(Parameters.data_.PassesCover));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.PassesCover) ? "Proj No-Clip: On" : "Proj No-Clip: Off"), 0xFF00, 1500);
 				break;
-			case Parameters.data_.panicKey: 
+			case Parameters.data_.panicKey:
 				Options.toggleHax();
 				this.gs_.hudView.toggle();
 				break;
-			case Parameters.data_.SafeWalkKey: 
+			case Parameters.data_.SafeWalkKey:
 				Parameters.data_.SafeWalk = (!(Parameters.data_.SafeWalk));
 				Parameters.save();
 				_local_21.notifyPlayer(((Parameters.data_.SafeWalk) ? "Safe Walk: On" : "Safe Walk: Off"), 0xFF00, 1500);
 				break;
-			case Parameters.data_.SelfTPHotkey: 
+			case Parameters.data_.SelfTPHotkey:
 				this.gs_.gsc_.teleportId(_local_21.objectId_);
 				break;
-			case Parameters.data_.autoAbilKey: 
+			case Parameters.data_.autoAbilKey:
 				Parameters.data_.autoAbil = (!(Parameters.data_.autoAbil));
 				_local_21.notifyPlayer(((Parameters.data_.autoAbil) ? "Auto Ability enabled" : "Auto Ability disabled"), 0xFF00, 1500);
 				break;
-			case Parameters.data_.LowCPUModeHotKey: 
+			case Parameters.data_.LowCPUModeHotKey:
 				Parameters.lowCPUMode = (!(Parameters.lowCPUMode));
 				_local_21.notifyPlayer(((Parameters.lowCPUMode) ? "Low CPU enabled" : "Low CPU disabled"), 0xFF00, 1500);
 				break;
@@ -1178,7 +1178,7 @@ package com.company.assembleegameclient.game
 			;
 			this.setPlayerMovement();
 		}
-		
+
 		public function onRightMouseDown_forWorld(_arg_1:MouseEvent):void
 		{
 			if (Parameters.data_.rightClickOption == "Ability")
@@ -1198,12 +1198,12 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function onRightMouseUp_forWorld(_arg_1:MouseEvent):void
 		{
 			this.held = false;
 		}
-		
+
 		public function openOptions():void
 		{
 			this.closeDialogSignal.dispatch();
@@ -1211,7 +1211,7 @@ package com.company.assembleegameclient.game
 			GameSprite.hidePreloader();
 			this.layers.overlay.addChild(new Options(this.gs_));
 		}
-		
+
 		public function activatePreset(_arg_1:int, _arg_2:int = -1):void
 		{
 			var _local_3:int;
@@ -1220,15 +1220,15 @@ package com.company.assembleegameclient.game
 			var _local_6:int;
 			switch (_arg_1)
 			{
-			case 1: 
+			case 1:
 				_local_5 = Parameters.data_.dbPre1[0];
 				_local_3 = Parameters.data_.dbPre1[1];
 				break;
-			case 2: 
+			case 2:
 				_local_5 = Parameters.data_.dbPre2[0];
 				_local_3 = Parameters.data_.dbPre2[1];
 				break;
-			case 3: 
+			case 3:
 				_local_5 = Parameters.data_.dbPre3[0];
 				_local_3 = Parameters.data_.dbPre3[1];
 				break;
@@ -1243,15 +1243,15 @@ package com.company.assembleegameclient.game
 			{
 				switch (_arg_1)
 				{
-				case 1: 
+				case 1:
 					Parameters.data_.dbPre1[2] = (!(Parameters.data_.dbPre1[2]));
 					_local_4 = Parameters.data_.dbPre1[2];
 					break;
-				case 2: 
+				case 2:
 					Parameters.data_.dbPre2[2] = (!(Parameters.data_.dbPre2[2]));
 					_local_4 = Parameters.data_.dbPre2[2];
 					break;
-				case 3: 
+				case 3:
 					Parameters.data_.dbPre3[2] = (!(Parameters.data_.dbPre3[2]));
 					_local_4 = Parameters.data_.dbPre3[2];
 					break;
@@ -1264,15 +1264,15 @@ package com.company.assembleegameclient.game
 				{
 					switch (_arg_1)
 					{
-					case 1: 
+					case 1:
 						Parameters.data_.dbPre1[2] = false;
 						_local_4 = Parameters.data_.dbPre1[2];
 						break;
-					case 2: 
+					case 2:
 						Parameters.data_.dbPre2[2] = false;
 						_local_4 = Parameters.data_.dbPre2[2];
 						break;
-					case 3: 
+					case 3:
 						Parameters.data_.dbPre3[2] = false;
 						_local_4 = Parameters.data_.dbPre3[2];
 						break;
@@ -1285,15 +1285,15 @@ package com.company.assembleegameclient.game
 					{
 						switch (_arg_1)
 						{
-						case 1: 
+						case 1:
 							Parameters.data_.dbPre1[2] = true;
 							_local_4 = Parameters.data_.dbPre1[2];
 							break;
-						case 2: 
+						case 2:
 							Parameters.data_.dbPre2[2] = true;
 							_local_4 = Parameters.data_.dbPre2[2];
 							break;
-						case 3: 
+						case 3:
 							Parameters.data_.dbPre3[2] = true;
 							_local_4 = Parameters.data_.dbPre3[2];
 							break;
@@ -1311,37 +1311,37 @@ package com.company.assembleegameclient.game
 				{
 					switch (_local_6)
 					{
-					case 0: 
+					case 0:
 						Parameters.data_.dbArmorBroken = _local_4;
 						break;
-					case 1: 
+					case 1:
 						Parameters.data_.dbBleeding = _local_4;
 						break;
-					case 2: 
+					case 2:
 						Parameters.data_.dbDazed = _local_4;
 						break;
-					case 3: 
+					case 3:
 						Parameters.data_.dbParalyzed = _local_4;
 						break;
-					case 4: 
+					case 4:
 						Parameters.data_.dbSick = _local_4;
 						break;
-					case 5: 
+					case 5:
 						Parameters.data_.dbSlowed = _local_4;
 						break;
-					case 6: 
+					case 6:
 						Parameters.data_.dbStunned = _local_4;
 						break;
-					case 7: 
+					case 7:
 						Parameters.data_.dbWeak = _local_4;
 						break;
-					case 8: 
+					case 8:
 						Parameters.data_.dbQuiet = _local_4;
 						break;
-					case 9: 
+					case 9:
 						Parameters.data_.dbPetStasis = _local_4;
 						break;
-					case 10: 
+					case 10:
 						Parameters.data_.dbPetrify = _local_4;
 						break;
 					}
@@ -1358,7 +1358,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function selectAimMode():void
 		{
 			var _local_1:int;
@@ -1374,45 +1374,45 @@ package com.company.assembleegameclient.game
 			;
 			switch (_local_1)
 			{
-			case 1: 
+			case 1:
 				_local_2 = "Aim Assist Mode: Highest HP";
 				break;
-			case 2: 
+			case 2:
 				_local_2 = "Aim Assist Mode: Closest";
 				break;
-			case 0: 
+			case 0:
 				_local_2 = "Aim Assist Mode: Closest to Cursor";
 			}
 			;
 			this.gs_.map.player_.levelUpEffect(_local_2);
 			Parameters.data_.aimMode = _local_1;
 		}
-		
+
 		private function onKeyUp(_arg_1:KeyboardEvent):void
 		{
 			var _local_2:Number;
 			var _local_3:Number;
 			switch (_arg_1.keyCode)
 			{
-			case Parameters.data_.moveUp: 
+			case Parameters.data_.moveUp:
 				this.moveUp_ = 0;
 				break;
-			case Parameters.data_.moveDown: 
+			case Parameters.data_.moveDown:
 				this.moveDown_ = 0;
 				break;
-			case Parameters.data_.moveLeft: 
+			case Parameters.data_.moveLeft:
 				this.moveLeft_ = 0;
 				break;
-			case Parameters.data_.moveRight: 
+			case Parameters.data_.moveRight:
 				this.moveRight_ = 0;
 				break;
-			case Parameters.data_.rotateLeft: 
+			case Parameters.data_.rotateLeft:
 				this.rotateLeft_ = 0;
 				break;
-			case Parameters.data_.rotateRight: 
+			case Parameters.data_.rotateRight:
 				this.rotateRight_ = 0;
 				break;
-			case Parameters.data_.useSpecial: 
+			case Parameters.data_.useSpecial:
 				this.specialKeyDown_ = false;
 				if (((!(Parameters.data_.ninjaTap)) && (!(inputting))))
 				{
@@ -1424,7 +1424,7 @@ package com.company.assembleegameclient.game
 			;
 			this.setPlayerMovement();
 		}
-		
+
 		private function setPlayerMovement():void
 		{
 			var _local_1:Player = this.gs_.map.player_;
@@ -1442,7 +1442,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function useItem(_arg_1:int):void
 		{
 			if (this.tabStripModel.currentSelection == TabStripModel.BACKPACK)
@@ -1452,7 +1452,7 @@ package com.company.assembleegameclient.game
 			;
 			GameServerConnection.instance.useItem_new(this.gs_.map.player_, _arg_1);
 		}
-		
+
 		private function togglePerformanceStats():void
 		{
 			if (this.gs_.contains(stats_))
@@ -1470,7 +1470,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function toggleScreenShotMode():void
 		{
 			Parameters.screenShotMode_ = (!(Parameters.screenShotMode_));
@@ -1486,7 +1486,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.game
 

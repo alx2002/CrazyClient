@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.ImminentWaveCountdownClockMediator
 
@@ -68,7 +68,7 @@ package kabam.rotmg.arena.view
             this.fadeOutTimer.start();
         }
 
-        private function onShow(_arg_1:TimerEvent):void
+        private function onShow(event:TimerEvent):void
         {
             this.view.show();
         }

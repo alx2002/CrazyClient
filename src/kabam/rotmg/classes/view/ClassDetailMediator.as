@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.classes.view.ClassDetailMediator
 
@@ -69,7 +69,7 @@ package kabam.rotmg.classes.view
             this.nextSkinTimer.start();
         }
 
-        private function delayedFocusSet(_arg_1:TimerEvent):void
+        private function delayedFocusSet(event:TimerEvent):void
         {
             var _local_2:Animation = (this.skins[this.nextSkin.id] = ((this.skins[this.nextSkin.id]) || (this.factory.makeWalkingIcon(this.nextSkin.template, ((this.nextSkin.is16x16) ? 100 : 200)))));
             this.view.setWalkingAnimation(_local_2);

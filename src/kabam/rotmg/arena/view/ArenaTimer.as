@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.ArenaTimer
 
@@ -35,7 +35,7 @@ package kabam.rotmg.arena.view
             this.timer.stop();
         }
 
-        private function updateTimer(_arg_1:TimerEvent):void
+        private function updateTimer(event:TimerEvent):void
         {
             var _local_2:int = int(int((this.secs / 60)));
             var _local_3:int = (this.secs % 60);

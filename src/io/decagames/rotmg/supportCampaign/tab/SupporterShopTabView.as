@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.supportCampaign.tab.SupporterShopTabView
 
@@ -18,7 +18,7 @@ package io.decagames.rotmg.supportCampaign.tab
     import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
     import flash.text.TextFormatAlign;
     import io.decagames.rotmg.utils.date.TimeSpan;
-    import __AS3__.vec.Vector;
+    
     import io.decagames.rotmg.supportCampaign.data.vo.RankVO;
     import io.decagames.rotmg.supportCampaign.tab.donate.DonatePanel;
 

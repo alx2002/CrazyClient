@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.chat.control.TextHandler
 
 package kabam.rotmg.chat.control
 {
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.chat.model.ChatMessage;
     import com.company.assembleegameclient.util.StageProxy;
     import kabam.rotmg.account.core.Account;
@@ -31,7 +31,7 @@ package kabam.rotmg.chat.control
     import kabam.rotmg.game.model.AddSpeechBalloonVO;
     import com.company.assembleegameclient.objects.GameObject;
     import kabam.rotmg.chat.view.ChatListItemFactory;
-    import __AS3__.vec.*;
+    
 
     public class TextHandler 
     {

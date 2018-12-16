@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.background.NexusBackground
 
 package com.company.assembleegameclient.background
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.map.Camera;
 	import com.company.util.GraphicsUtil;
 	import flash.display.BitmapData;
@@ -71,8 +71,8 @@ package com.company.assembleegameclient.background
 	}
 }//package com.company.assembleegameclient.background
 
-import __AS3__.vec.*;
-import __AS3__.vec.Vector;
+
+
 import com.company.assembleegameclient.background.NexusBackground;
 import com.company.assembleegameclient.map.Camera;
 import com.company.util.AssetLibrary;

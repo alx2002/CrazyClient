@@ -1,18 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.ui.gird.UIGrid
 
 package io.decagames.rotmg.ui.gird
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
+    
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
     import io.decagames.rotmg.ui.scroll.UIScrollbar;
     import flash.events.Event;
     import flash.display.DisplayObject;
     import io.decagames.rotmg.ui.texture.TextureParser;
-    import __AS3__.vec.*;
+    
 
     public class UIGrid extends Sprite 
     {

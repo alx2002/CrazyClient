@@ -11,12 +11,12 @@ package com.company.assembleegameclient.ui.board
 	import kabam.rotmg.account.core.Account;
 	import kabam.rotmg.appengine.api.AppEngineClient;
 	import kabam.rotmg.core.StaticInjectorContext;
-	
-	
-	
+
+
+
 	public class GuildBoardWindow extends Sprite
 	{
-		
+
 		private var canEdit_:Boolean;
 		private var darkBox_:Shape;
 		private var dialog_:Dialog;
@@ -24,7 +24,7 @@ package com.company.assembleegameclient.ui.board
 		private var viewBoard_:ViewBoard;
 		private var editBoard_:EditBoard;
 		private var client:AppEngineClient;
-		
+
 		public function GuildBoardWindow(_arg_1:Boolean)
 		{
 			this.canEdit_ = _arg_1;
@@ -37,7 +37,7 @@ package com.company.assembleegameclient.ui.board
 			addChild(this.darkBox_);
 			this.load();
 		}
-		
+
 		private function load():void
 		{
 			var _local_1:Account = StaticInjectorContext.getInjector().getInstance(Account);
@@ -48,7 +48,7 @@ package com.company.assembleegameclient.ui.board
 			addChild(this.dialog_);
 			this.darkBox_.visible = false;
 		}
-		
+
 		private function onGetBoardComplete(_arg_1:Boolean, _arg_2:*):void
 		{
 			if (_arg_1)
@@ -60,7 +60,7 @@ package com.company.assembleegameclient.ui.board
 				this.reportError(_arg_2);
 			}
 		}
-		
+
 		private function showGuildBoard(_arg_1:String):void
 		{
 			this.darkBox_.visible = true;
@@ -69,7 +69,7 @@ package com.company.assembleegameclient.ui.board
 			this.text_ = _arg_1;
 			this.show();
 		}
-		
+
 		private function show():void
 		{
 			this.viewBoard_ = new ViewBoard(this.text_, this.canEdit_);
@@ -77,16 +77,16 @@ package com.company.assembleegameclient.ui.board
 			this.viewBoard_.addEventListener(Event.CHANGE, this.onViewChange);
 			addChild(this.viewBoard_);
 		}
-		
+
 		private function reportError(_arg_1:String):void
 		{
 		}
-		
+
 		private function onViewComplete(_arg_1:Event):void
 		{
 			parent.removeChild(this);
 		}
-		
+
 		private function onViewChange(_arg_1:Event):void
 		{
 			removeChild(this.viewBoard_);
@@ -96,14 +96,14 @@ package com.company.assembleegameclient.ui.board
 			this.editBoard_.addEventListener(Event.COMPLETE, this.onEditComplete);
 			addChild(this.editBoard_);
 		}
-		
+
 		private function onEditCancel(_arg_1:Event):void
 		{
 			removeChild(this.editBoard_);
 			this.editBoard_ = null;
 			this.show();
 		}
-		
+
 		private function onEditComplete(_arg_1:Event):void
 		{
 			var _local_2:Account = StaticInjectorContext.getInjector().getInstance(Account);
@@ -118,7 +118,7 @@ package com.company.assembleegameclient.ui.board
 			addChild(this.dialog_);
 			this.darkBox_.visible = false;
 		}
-		
+
 		private function onSetBoardComplete(_arg_1:Boolean, _arg_2:*):void
 		{
 			if (_arg_1)
@@ -130,7 +130,7 @@ package com.company.assembleegameclient.ui.board
 				this.onSaveError(_arg_2);
 			}
 		}
-		
+
 		private function onSaveDone(_arg_1:String):void
 		{
 			this.darkBox_.visible = true;
@@ -139,11 +139,11 @@ package com.company.assembleegameclient.ui.board
 			this.text_ = _arg_1;
 			this.show();
 		}
-		
+
 		private function onSaveError(_arg_1:String):void
 		{
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.ui.board
 

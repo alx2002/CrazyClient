@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.stage3D.graphic3D.Graphic3D
 
 package kabam.rotmg.stage3D.graphic3D
 {
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.stage3D.proxies.TextureProxy;
     import flash.geom.Matrix3D;
     import kabam.rotmg.stage3D.proxies.Context3DProxy;
@@ -21,7 +21,7 @@ package kabam.rotmg.stage3D.graphic3D
     import flash.display.GraphicsBitmapFill;
     import flash.display.GraphicsGradientFill;
     import flash.display3D.Context3DVertexBufferFormat;
-    import __AS3__.vec.*;
+    
 
     public class Graphic3D 
     {

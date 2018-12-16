@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.pets.windows.yard.feed.FeedTabMediator
 
@@ -18,7 +18,7 @@ package io.decagames.rotmg.pets.windows.yard.feed
     import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
     import io.decagames.rotmg.pets.signals.SimulateFeedSignal;
     import io.decagames.rotmg.pets.data.vo.PetVO;
-    import __AS3__.vec.Vector;
+    
     import io.decagames.rotmg.pets.windows.yard.feed.items.FeedItem;
     import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
     import kabam.rotmg.game.view.components.InventoryTabContent;
@@ -33,7 +33,7 @@ package io.decagames.rotmg.pets.windows.yard.feed
     import com.company.assembleegameclient.util.Currency;
     import io.decagames.rotmg.ui.popups.modal.error.ErrorModal;
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import __AS3__.vec.*;
+    
 
     public class FeedTabMediator extends Mediator 
     {

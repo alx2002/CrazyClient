@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.account.core.view.MoneyFrame
 
@@ -17,12 +17,12 @@ package kabam.rotmg.account.core.view
     import com.company.assembleegameclient.ui.DeprecatedClickableText;
     import com.company.assembleegameclient.util.offer.Offer;
     import flash.events.MouseEvent;
-    import __AS3__.vec.Vector;
+    
     import com.company.assembleegameclient.parameters.Parameters;
     import com.company.assembleegameclient.util.PaymentMethod;
     import flash.display.Shape;
     import flash.text.TextFieldAutoSize;
-    import __AS3__.vec.*;
+    
 
     public class MoneyFrame extends Sprite 
     {

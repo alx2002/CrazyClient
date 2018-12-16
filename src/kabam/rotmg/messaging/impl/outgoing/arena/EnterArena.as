@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.outgoing.arena.EnterArena
 
@@ -25,7 +25,7 @@ package kabam.rotmg.messaging.impl.outgoing.arena
 
         override public function toString():String
         {
-            return (formatToString("ENTER_ARENA", "currency"));
+            return (formatToString("ENTERARENA", "currency"));
         }
 
 

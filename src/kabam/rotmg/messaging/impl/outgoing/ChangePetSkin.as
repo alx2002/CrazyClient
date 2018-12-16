@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.outgoing.ChangePetSkin
 
@@ -28,7 +28,7 @@ package kabam.rotmg.messaging.impl.outgoing
 
         override public function toString():String
         {
-            return (formatToString("PET_CHANGE_SKIN_MSG", "petId", "skinType"));
+            return (formatToString("PETCHANGESKINMSG", "petId", "skinType"));
         }
 
 

@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.particles.RisingFuryEffect
 
@@ -41,7 +41,7 @@ package com.company.assembleegameclient.objects.particles
 			this.timer.start();
 		}
 		
-		private function onTimer(_arg_1:TimerEvent):void
+		private function onTimer(event:TimerEvent):void
 		{
 			var _local_2:Number = (Math.floor((this.go.x_ * 10)) / 10);
 			var _local_3:Number = (Math.floor((this.go.y_ * 10)) / 10);
@@ -53,7 +53,7 @@ package com.company.assembleegameclient.objects.particles
 			;
 		}
 		
-		private function onChargingComplete(_arg_1:TimerEvent):void
+		private function onChargingComplete(event:TimerEvent):void
 		{
 			this.particleField.destroy();
 			var _local_2:Timer = new Timer(33, 12);
@@ -61,7 +61,7 @@ package com.company.assembleegameclient.objects.particles
 			_local_2.start();
 		}
 		
-		private function onShockTimer(_arg_1:TimerEvent):void
+		private function onShockTimer(event:TimerEvent):void
 		{
 			this.isCharged = (!(this.isCharged));
 			this.go.toggleChargingEffect(this.isCharged);

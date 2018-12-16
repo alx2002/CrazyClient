@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.map.ParticleModalMap
 
 package com.company.assembleegameclient.map
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.objects.BasicObject;
 	import com.company.assembleegameclient.objects.GameObject;
 	import com.company.assembleegameclient.objects.particles.ConfettiEffect;

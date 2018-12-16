@@ -1,14 +1,14 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.dialogs.model.DialogsModel
 
 package kabam.rotmg.dialogs.model
 {
-    import __AS3__.vec.Vector;
+    
     import org.osflash.signals.Signal;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+    
 
     public class DialogsModel 
     {

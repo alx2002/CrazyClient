@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.servers.control.ParseServerDataCommand
 
@@ -7,9 +7,9 @@ package kabam.rotmg.servers.control
 {
     import kabam.rotmg.servers.api.ServerModel;
     import kabam.rotmg.servers.api.Server;
-    import __AS3__.vec.Vector;
+    
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+    
 
     public class ParseServerDataCommand 
     {

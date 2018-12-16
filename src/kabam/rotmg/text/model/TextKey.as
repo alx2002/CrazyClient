@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.text.model.TextKey
 
 package kabam.rotmg.text.model
 {
-    public class TextKey 
+    public class TextKey
     {
 
         public static const LOADING_TEXT:String = "Loading.text";

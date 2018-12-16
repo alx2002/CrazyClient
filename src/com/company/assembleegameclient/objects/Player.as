@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.Player
 
 package com.company.assembleegameclient.objects
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.game.events.ReconnectEvent;
 	import com.company.assembleegameclient.map.Camera;
 	import com.company.assembleegameclient.map.Square;
@@ -69,11 +69,11 @@ package com.company.assembleegameclient.objects
 	import org.osflash.signals.Signal;
 	import org.swiftsuspenders.Injector;
 	//
-	
-	
+
+
 	public class Player extends Character
 	{
-		
+
 		public static const MS_BETWEEN_TELEPORT:int = 10000;
 		public static const MS_REALM_TELEPORT:int = 120000;
 		private static const MOVE_THRESHOLD:Number = 0.4;
@@ -105,7 +105,7 @@ package com.company.assembleegameclient.objects
 		public static var nextLootSlot:int = -1;
 		public static var pItems:eItems = new eItems();
 		public static var reconRealm:ReconnectEvent;
-		
+
 		private var lastreconnect:int = 0;
 		private var nextSwap:int = 0;
 		public var followTarget:GameObject;
@@ -142,7 +142,7 @@ package com.company.assembleegameclient.objects
 		public var fameWasChanged:Signal = new Signal();
 		//
 		public var supporterFlagWasChanged:Signal = new Signal();
-		
+
 		private var famePortrait_:BitmapData = null;
 		public var accountId_:String = "";
 		public var credits_:int = 0;
@@ -184,7 +184,7 @@ package com.company.assembleegameclient.objects
 		public var maxHPMax_:int = 0;
 		public var maxMPMax_:int = 0;
 		public var supporterFlag:int = 0;
-		
+
 		public var hasBackpack_:Boolean = false;
 		public var starred_:Boolean = false;
 		public var ignored_:Boolean = false;
@@ -221,7 +221,7 @@ package com.company.assembleegameclient.objects
 		private var ip_:IntPoint = new IntPoint();
 		[Inject]
 		public var hudModel:HUDModel;
-		
+
 		public function Player(_arg_1:XML)
 		{
 			var _local_2:Injector = StaticInjectorContext.getInjector();
@@ -241,7 +241,7 @@ package com.company.assembleegameclient.objects
 			this.maxMPMax_ = int(_arg_1.MaxMagicPoints.@max);
 			texturingCache_ = new Dictionary();
 		}
-		
+
 		public static function fromPlayerXML(_arg_1:String, _arg_2:XML):Player
 		{
 			var _local_3:int = int(_arg_2.ObjectType);
@@ -268,12 +268,12 @@ package com.company.assembleegameclient.objects
 			_local_5.hasBackpack_ = (_arg_2.HasBackpack == "1");
 			return (_local_5);
 		}
-		
+
 		private static function makeErrorMessage(_arg_1:String, _arg_2:Object = null):ChatMessage
 		{
 			return (ChatMessage.make(Parameters.ERROR_CHAT_NAME, _arg_1, -1, -1, "", false, _arg_2));
 		}
-		
+
 		public function getFamePortrait(_arg_1:int):BitmapData
 		{
 			var _local_2:MaskedImage;
@@ -287,7 +287,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (this.famePortrait_);
 		}
-		
+
 		public function getFameBonus():int
 		{
 			var _local_1:int;
@@ -316,7 +316,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_3);
 		}
-		
+
 		public function calculateStatBoosts():void
 		{
 			var _local_1:int;
@@ -351,28 +351,28 @@ package com.company.assembleegameclient.objects
 									_local_5 = int(_local_3.@amount);
 									switch (_local_4)
 									{
-									case StatData.MAX_HP_STAT: 
+									case StatData.MAX_HP_STAT:
 										this.maxHPBoost_ = (this.maxHPBoost_ + _local_5);
 										break;
-									case StatData.MAX_MP_STAT: 
+									case StatData.MAX_MP_STAT:
 										this.maxMPBoost_ = (this.maxMPBoost_ + _local_5);
 										break;
-									case StatData.ATTACK_STAT: 
+									case StatData.ATTACK_STAT:
 										this.attackBoost_ = (this.attackBoost_ + _local_5);
 										break;
-									case StatData.DEFENSE_STAT: 
+									case StatData.DEFENSE_STAT:
 										this.defenseBoost_ = (this.defenseBoost_ + _local_5);
 										break;
-									case StatData.SPEED_STAT: 
+									case StatData.SPEED_STAT:
 										this.speedBoost_ = (this.speedBoost_ + _local_5);
 										break;
-									case StatData.VITALITY_STAT: 
+									case StatData.VITALITY_STAT:
 										this.vitalityBoost_ = (this.vitalityBoost_ + _local_5);
 										break;
-									case StatData.WISDOM_STAT: 
+									case StatData.WISDOM_STAT:
 										this.wisdomBoost_ = (this.wisdomBoost_ + _local_5);
 										break;
-									case StatData.DEXTERITY_STAT: 
+									case StatData.DEXTERITY_STAT:
 										this.dexterityBoost_ = (this.dexterityBoost_ + _local_5);
 										break;
 									}
@@ -391,7 +391,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function setRelativeMovement(_arg_1:Number, _arg_2:Number, _arg_3:Number):void
 		{
 			var _local_4:Number;
@@ -412,35 +412,35 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function setCredits(_arg_1:int):void
 		{
 			this.credits_ = _arg_1;
 			this.creditsWereChanged.dispatch();
 		}
-		
+
 		public function setFame(_arg_1:int):void
 		{
 			this.fame_ = _arg_1;
 			this.fameWasChanged.dispatch();
 		}
-		
+
 		public function setSupporterFlag(_arg_1:int):void
 		{
 			this.supporterFlag = _arg_1;
 			this.supporterFlagWasChanged.dispatch();
 		}
-		
+
 		public function hasSupporterFeature(_arg_1:int):Boolean
 		{
 			return ((this.supporterFlag & _arg_1) == _arg_1);
 		}
-		
+
 		public function setTokens(_arg_1:int):void
 		{
 			this.tokens_ = _arg_1;
 		}
-		
+
 		public function setGuildName(_arg_1:String):void
 		{
 			var _local_2:GameObject;
@@ -473,18 +473,18 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function isTeleportEligible(_arg_1:Player):Boolean
 		{
 			return (!(((_arg_1.dead_) || (_arg_1.isPaused())) || (_arg_1.isInvisible())));
 		}
-		
+
 		public function msUtilTeleport():int
 		{
 			var _local_1:int = getTimer();
 			return (Math.max(0, (this.nextTeleportAt_ - _local_1)));
 		}
-		
+
 		public function teleportTo(_arg_1:Player):Boolean
 		{
 			if (isPaused())
@@ -510,7 +510,7 @@ package com.company.assembleegameclient.objects
 			map_.gs_.gsc_.teleport(_arg_1.name_);
 			return (true);
 		}
-		
+
 		public function levelUpEffect(_arg_1:String, _arg_2:Boolean = true):void
 		{
 			if (Options.hidden)
@@ -527,7 +527,7 @@ package com.company.assembleegameclient.objects
 			_local_3.setStringBuilder(new LineBuilder().setParams(_arg_1));
 			map_.mapOverlay_.addStatusText(_local_3);
 		}
-		
+
 		public function handleLevelUp(_arg_1:Boolean):void
 		{
 			var _local_2:XML;
@@ -587,12 +587,12 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function levelUpParticleEffect(_arg_1:uint = 0xFF00FF00):void
 		{
 			map_.addObj(new LevelUpEffect(this, _arg_1, 20), x_, y_);
 		}
-		
+
 		public function handleExpUp(_arg_1:int):void
 		{
 			if (((level_ == 20) && (!(this.bForceExp()))))
@@ -609,12 +609,12 @@ package com.company.assembleegameclient.objects
 			_local_2.setStringBuilder(new LineBuilder().setParams(TextKey.PLAYER_EXP, {"exp": _arg_1}));
 			map_.mapOverlay_.addStatusText(_local_2);
 		}
-		
+
 		private function bForceExp():Boolean
 		{
 			return ((Parameters.data_.forceEXP) && ((Parameters.data_.forceEXP == 1) || ((Parameters.data_.forceEXP == 2) && (map_.player_ == this))));
 		}
-		
+
 		private function getNearbyMerchant():Merchant
 		{
 			var _local_1:Point;
@@ -635,13 +635,13 @@ package com.company.assembleegameclient.objects
 			;
 			return (null);
 		}
-		
+
 		public function walkTo(_arg_1:Number, _arg_2:Number):Boolean
 		{
 			this.modifyMove(_arg_1, _arg_2, newP);
 			return (this.moveTo(newP.x, newP.y));
 		}
-		
+
 		override public function moveTo(_arg_1:Number, _arg_2:Number):Boolean
 		{
 			var _local_3:Boolean = super.moveTo(_arg_1, _arg_2);
@@ -652,7 +652,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_3);
 		}
-		
+
 		public function targetAA():void
 		{
 			var _local_1:int;
@@ -667,7 +667,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function autoAbility():void
 		{
 			var _local_1:int = equipment_[1];
@@ -679,23 +679,23 @@ package com.company.assembleegameclient.objects
 			;
 			switch (this.objectType_)
 			{
-			case 801: 
-			case 782: 
-			case 803: 
-			case 802: 
-			case 775: 
-			case 805: 
-			case 798: 
-			case 800: 
-			case 785: 
+			case 801:
+			case 782:
+			case 803:
+			case 802:
+			case 775:
+			case 805:
+			case 798:
+			case 800:
+			case 785:
 				this.targetAA();
 				return;
-			default: 
+			default:
 				return;
 			}
 			;
 		}
-		
+
 		public function modifyMove(_arg_1:Number, _arg_2:Number, _arg_3:Point):void
 		{
 			var _local_4:Boolean;
@@ -731,7 +731,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function modifyStep(_arg_1:Number, _arg_2:Number, _arg_3:Point):void
 		{
 			var _local_4:Number;
@@ -829,11 +829,11 @@ package com.company.assembleegameclient.objects
 			_arg_3.x = _local_4;
 			_arg_3.y = _local_5;
 		}
-		
-		private function resetMoveVector(_arg_1:Boolean):void
+
+		private function resetMoveVector(point:Boolean):void
 		{
 			moveVec_.scaleBy(-0.5);
-			if (_arg_1)
+			if (point)
 			{
 				moveVec_.y = (moveVec_.y * -1);
 			}
@@ -843,13 +843,13 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function isValidPosition(_arg_1:Number, _arg_2:Number):Boolean
 		{
-			var _local_3:Square = map_.getSquare(_arg_1, _arg_2);
+			var _local_3:Square = map_.getSquare(_arg_1, _arg_2); //overide
 			   if (Parameters.data_.NoClip && _local_3 != null)
 		{
-                       return true;
+            return true;
 		}
 			if (Parameters.data_.SafeWalk != false)
 			{
@@ -956,13 +956,13 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		public function isFullOccupy(_arg_1:Number, _arg_2:Number):Boolean
 		{
 			var _local_3:Square = map_.lookupSquare(_arg_1, _arg_2);
 			return (((_local_3 == null) || (_local_3.tileType_ == 0xFF)) || ((!(_local_3.obj_ == null)) && (_local_3.obj_.props_.fullOccupy_)));
 		}
-		
+
 		public function notifyPlayer(_arg_1:String, _arg_2:int = 0xFF00, _arg_3:int = 1500):void
 		{
 			if (Options.hidden)
@@ -974,7 +974,7 @@ package com.company.assembleegameclient.objects
 			_local_4.setStringBuilder(new StaticStringBuilder(_arg_1));
 			map_.mapOverlay_.addStatusText(_local_4);
 		}
-		
+
 		public function lootNotif(_arg_1:String, _arg_2:GameObject):void
 		{
 			if (Options.hidden)
@@ -986,7 +986,7 @@ package com.company.assembleegameclient.objects
 			_local_3.setStringBuilder(new StaticStringBuilder(_arg_1));
 			map_.mapOverlay_.addStatusText(_local_3);
 		}
-		
+
 		public function notWanted(_arg_1:XML):Boolean
 		{
 			var _local_2:Boolean;
@@ -1003,7 +1003,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (false);
 		}
-		
+
 		public function genWantedList():Vector.<int>
 		{
 			var _local_1:XML;
@@ -1027,20 +1027,20 @@ package com.company.assembleegameclient.objects
 									_local_3 = int(_local_1.Activate.@stat);
 									switch (_local_3)
 									{
-									case 21: 
-									case 20: 
-									case 0: 
-									case 3: 
+									case 21:
+									case 20:
+									case 0:
+									case 3:
 										if (Parameters.data_.potsMajor)
 										{
 											_local_4.push(ObjectLibrary.idToType_[String(_local_1.@id)]);
 										}
 										;
 										break;
-									case 22: 
-									case 26: 
-									case 27: 
-									case 28: 
+									case 22:
+									case 26:
+									case 27:
+									case 28:
 										if (Parameters.data_.potsMinor)
 										{
 											_local_4.push(ObjectLibrary.idToType_[String(_local_1.@id)]);
@@ -1100,14 +1100,14 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_4);
 		}
-		
+
 		public function bagDist(_arg_1:GameObject, _arg_2:Container):Number
 		{
 			var _local_3:Number = (_arg_1.x_ - _arg_2.x_);
 			var _local_4:Number = (_arg_1.y_ - _arg_2.y_);
 			return (Math.sqrt(((_local_3 * _local_3) + (_local_4 * _local_4))));
 		}
-		
+
 		public function getLootableBags(_arg_1:Vector.<Container>, _arg_2:Number):Vector.<Container>
 		{
 			var _local_3:Container;
@@ -1123,7 +1123,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_4);
 		}
-		
+
 		public function getLootBags():Vector.<Container>
 		{
 			var _local_1:GameObject;
@@ -1139,7 +1139,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_2);
 		}
-		
+
 		public function lookForLoot():Boolean
 		{
 			var _local_1:int = getTimer();
@@ -1152,7 +1152,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (false);
 		}
-		
+
 		public function isWantedItem(_arg_1:int):Boolean
 		{
 			var _local_2:int;
@@ -1176,7 +1176,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (false);
 		}
-		
+
 		public function lootItem(_arg_1:int, _arg_2:Container, _arg_3:int, _arg_4:int, _arg_5:int):void
 		{
 			var _local_6:Boolean = ((!(_arg_1 == HEALTH_SLOT)) && (!(_arg_1 == MAGIC_SLOT)));
@@ -1227,7 +1227,7 @@ package com.company.assembleegameclient.objects
 			lastLootTime = getTimer();
 			this.map_.gs_.gsc_.lastInvSwapTime = _arg_5;
 		}
-		
+
 		public function nextAvailableInventorySlotMod():int
 		{
 			var _local_1:int = ((this.hasBackpack_) ? equipment_.length : (equipment_.length - GeneralConstants.NUM_INVENTORY_SLOTS));
@@ -1257,7 +1257,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (-1);
 		}
-		
+
 		public function okToLoot(_arg_1:int):Boolean
 		{
 			var _local_2:int = getTimer();
@@ -1274,7 +1274,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (false);
 		}
-		
+
 		public function autoloot_(_arg_1:int):void
 		{
 			var _local_2:Container;
@@ -1309,7 +1309,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function vault_():void
 		{
 			var _local_1:int;
@@ -1338,14 +1338,14 @@ package com.company.assembleegameclient.objects
 				{
 					switch (equipment_[_local_1])
 					{
-					case 2592: 
-					case 2591: 
-					case 2593: 
-					case 2636: 
-					case 2612: 
-					case 2613: 
-					case 2793: 
-					case 2794: 
+					case 2592:
+					case 2591:
+					case 2593:
+					case 2636:
+					case 2612:
+					case 2613:
+					case 2793:
+					case 2794:
 						_local_6 = _local_1;
 						break;
 					}
@@ -1417,14 +1417,14 @@ package com.company.assembleegameclient.objects
 				{
 					switch (_local_5.equipment_[_local_1])
 					{
-					case 2592: 
-					case 2591: 
-					case 2593: 
-					case 2636: 
-					case 2612: 
-					case 2613: 
-					case 2793: 
-					case 2794: 
+					case 2592:
+					case 2591:
+					case 2593:
+					case 2636:
+					case 2612:
+					case 2613:
+					case 2793:
+					case 2794:
 						map_.gs_.gsc_.invSwap(this, _local_5, _local_1, _local_5.equipment_[_local_1], this, _local_6, equipment_[_local_6]);
 						lastLootTime = getTimer();
 						return;
@@ -1438,7 +1438,7 @@ package com.company.assembleegameclient.objects
 			this.collect = 0;
 			this.notifyPlayer("Stopping", 0xFF0000, 1500);
 		}
-		
+
 		private function swapInvBp(_arg_1:int):void
 		{
 			if (getTimer() >= this.nextSwap)
@@ -1449,7 +1449,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		private function selectSlot(_arg_1:TradeSlot):void
 		{
 			var _local_2:int;
@@ -1466,13 +1466,13 @@ package com.company.assembleegameclient.objects
 			map_.gs_.gsc_.changeTrade(_local_3);
 			map_.gs_.hudView.tradePanel.tradeButton_.setState(0);
 		}
-		
+
 		private function naturalize(_arg_1:int):TradeSlot
 		{
 			var _local_2:Vector.<int> = new <int>[4, 8, 5, 9, 6, 10, 7, 11];
 			return (map_.gs_.hudView.tradePanel.myInv_.slots_[_local_2[_arg_1]]);
 		}
-		
+
 		private function findSlots():void
 		{
 			var _local_1:Player;
@@ -1489,7 +1489,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function startTimer(_arg_1:int, _arg_2:int = 500):void
 		{
 			this.timerCount = 0;
@@ -1497,19 +1497,19 @@ package com.company.assembleegameclient.objects
 			this.timerStep = _arg_2;
 			this.startTime = getTimer();
 		}
-		
+
 		override public function damage(_arg_1:Boolean, _arg_2:int, _arg_3:Vector.<uint>, _arg_4:Boolean, _arg_5:Projectile, _arg_6:Boolean = false):void
 		{
 			this.negateHealth(_arg_2);
 			super.damage(_arg_1, _arg_2, _arg_3, false, _arg_5);
 		}
-		
+
 		public function damageWithoutAck(_arg_1:int):void
 		{
 			this.negateHealth(_arg_1);
 			showDamageText(_arg_1, false);
 		}
-		
+
 		public function negateHealth(_arg_1:int):void
 		{
 			if (this == map_.player_)
@@ -1519,7 +1519,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		private function checkOPAuto():void
 		{
 			if ((((((this.chp / maxHP_) * 100) <= (Parameters.AutoNexus + 10)) && (this.lastteleport <= getTimer())) && (Parameters.data_.tpBeforeNexus)))
@@ -1542,7 +1542,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function getItemHp():int
 		{
 			var _local_1:XML;
@@ -1574,7 +1574,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_3);
 		}
-		
+
 		public function checkAutonexus():void
 		{
 			if (((this == map_.player_) && (!(map_.gs_.isSafeMap))))
@@ -1597,7 +1597,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		override public function update(_arg_1:int, _arg_2:int):Boolean
 		{
 			var _local_3:int;
@@ -1823,27 +1823,27 @@ package com.company.assembleegameclient.objects
 					_local_23 = (1 + (this.wisdom_ / 150));
 					switch (equipment_[1])
 					{
-					case eItems.Cloak_of_Ghostly_Concealment: 
-					case eItems.Cloak_of_Endless_Twilight: 
-					case eItems.Cloak_of_Winter: 
-					case eItems.Ghastly_Drape: 
+					case eItems.Cloak_of_Ghostly_Concealment:
+					case eItems.Cloak_of_Endless_Twilight:
+					case eItems.Cloak_of_Winter:
+					case eItems.Ghastly_Drape:
 						_local_22 = 6500;
 						break;
-					case eItems.Helm_of_the_Great_General: 
-					case eItems.Golden_Helm: 
-					case eItems.Pathfinders_Helm: 
-					case eItems.Hivemaster_Helm: 
+					case eItems.Helm_of_the_Great_General:
+					case eItems.Golden_Helm:
+					case eItems.Pathfinders_Helm:
+					case eItems.Hivemaster_Helm:
 						_local_22 = 7000;
 						break;
-					case eItems.Helm_of_the_Juggernaut: 
+					case eItems.Helm_of_the_Juggernaut:
 						_local_22 = 6000;
 						break;
-					case eItems.Seal_of_the_Blessed_Champion: 
-					case eItems.Seal_of_the_Holy_Warrior: 
-					case eItems.Marble_Seal: 
+					case eItems.Seal_of_the_Blessed_Champion:
+					case eItems.Seal_of_the_Holy_Warrior:
+					case eItems.Marble_Seal:
 						_local_22 = 5500;
 						break;
-					case eItems.Advent_Seal: 
+					case eItems.Advent_Seal:
 						if (Parameters.data_.palaSpam)
 						{
 							_local_22 = 500;
@@ -1854,25 +1854,25 @@ package com.company.assembleegameclient.objects
 						}
 						;
 						break;
-					case eItems.Seal_of_the_Initiate: 
-					case eItems.Seal_of_the_Pilgrim: 
-					case eItems.Seal_of_the_Seeker: 
-					case eItems.Seal_of_the_Aspirant: 
-					case eItems.Seal_of_the_Divine: 
-					case eItems.Tome_of_Renewing: 
-					case eItems.Tome_of_Divine_Favor: 
-					case eItems.Tome_of_Holy_Guidance: 
-					case eItems.Tome_of_Purification: 
-					case eItems.Tome_of_Pain: 
-					case eItems.Nativity_Tome: 
+					case eItems.Seal_of_the_Initiate:
+					case eItems.Seal_of_the_Pilgrim:
+					case eItems.Seal_of_the_Seeker:
+					case eItems.Seal_of_the_Aspirant:
+					case eItems.Seal_of_the_Divine:
+					case eItems.Tome_of_Renewing:
+					case eItems.Tome_of_Divine_Favor:
+					case eItems.Tome_of_Holy_Guidance:
+					case eItems.Tome_of_Purification:
+					case eItems.Tome_of_Pain:
+					case eItems.Nativity_Tome:
 						if (Parameters.data_.palaSpam)
 						{
 							_local_22 = 500;
 						}
 						;
 						break;
-					case eItems.Tome_of_Holy_Protection: 
-					case eItems.Tome_of_Frigid_Protection: 
+					case eItems.Tome_of_Holy_Protection:
+					case eItems.Tome_of_Frigid_Protection:
 						if (Parameters.data_.palaSpam)
 						{
 							_local_22 = 500;
@@ -1903,31 +1903,31 @@ package com.company.assembleegameclient.objects
 					_local_23 = (1 + (this.wisdom_ / 150));
 					switch (equipment_[1])
 					{
-					case eItems.Seal_of_the_Blessed_Champion: 
-					case eItems.Seal_of_the_Holy_Warrior: 
-					case eItems.Advent_Seal: 
+					case eItems.Seal_of_the_Blessed_Champion:
+					case eItems.Seal_of_the_Holy_Warrior:
+					case eItems.Advent_Seal:
 						_local_22 = ((4000 * _local_23) - 200);
 						break;
-					case eItems.Seal_of_the_Initiate: 
+					case eItems.Seal_of_the_Initiate:
 						_local_22 = ((2500 * _local_23) - 200);
 						break;
-					case eItems.Seal_of_the_Pilgrim: 
-					case eItems.Seal_of_the_Seeker: 
+					case eItems.Seal_of_the_Pilgrim:
+					case eItems.Seal_of_the_Seeker:
 						_local_22 = ((3000 * _local_23) - 200);
 						break;
-					case eItems.Seal_of_the_Aspirant: 
-					case eItems.Seal_of_the_Divine: 
+					case eItems.Seal_of_the_Aspirant:
+					case eItems.Seal_of_the_Divine:
 						_local_22 = ((3500 * _local_23) - 200);
 						break;
-					case eItems.Tome_of_Renewing: 
-					case eItems.Tome_of_Divine_Favor: 
-					case eItems.Tome_of_Holy_Guidance: 
-					case eItems.Tome_of_Purification: 
-					case eItems.Nativity_Tome: 
-					case eItems.Tome_of_Holy_Protection: 
-					case eItems.Tome_of_Frigid_Protection: 
-					case eItems.Tome_of_Rejuvenation: 
-					case eItems.Tome_of_Pain: 
+					case eItems.Tome_of_Renewing:
+					case eItems.Tome_of_Divine_Favor:
+					case eItems.Tome_of_Holy_Guidance:
+					case eItems.Tome_of_Purification:
+					case eItems.Nativity_Tome:
+					case eItems.Tome_of_Holy_Protection:
+					case eItems.Tome_of_Frigid_Protection:
+					case eItems.Tome_of_Rejuvenation:
+					case eItems.Tome_of_Pain:
 						_local_22 = 500;
 						break;
 					}
@@ -2160,7 +2160,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		public function onMove():void
 		{
 			if (map_ == null)
@@ -2181,7 +2181,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		override protected function makeNameBitmapData():BitmapData
 		{
 			var _local_1:StringBuilder = new StaticStringBuilder(name_);
@@ -2190,12 +2190,12 @@ package com.company.assembleegameclient.objects
 			_local_3.draw(FameUtil.numStarsToIcon(this.numStars_), RANK_OFFSET_MATRIX);
 			return (_local_3);
 		}
-		
+
 		private function getNameColor():uint
 		{
 			return (PlayerUtil.getPlayerNameColor(this));
 		}
-		
+
 		protected function drawBreathBar(_arg_1:Vector.<IGraphicsData>, _arg_2:int):void
 		{
 			var _local_3:Number;
@@ -2242,7 +2242,7 @@ package com.company.assembleegameclient.objects
 			GraphicsFillExtra.setSoftwareDrawSolid(this.breathFill_, true);
 			GraphicsFillExtra.setSoftwareDrawSolid(this.breathBackFill_, true);
 		}
-		
+
 		override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
 		{
 			if (((!(Options.hidden)) && ((Parameters.data_.hideLockList) || (Parameters.lowCPUMode))))
@@ -2277,7 +2277,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		private function getMoveSpeed():Number
 		{
 			if (isSlowed())
@@ -2293,7 +2293,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_1 * this.moveMultiplier_);
 		}
-		
+
 		public function attackFrequency():Number
 		{
 			if (isDazed())
@@ -2309,7 +2309,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_1);
 		}
-		
+
 		private function attackMultiplier():Number
 		{
 			if (isWeak())
@@ -2325,7 +2325,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_1);
 		}
-		
+
 		private function makeSkinTexture():void
 		{
 			var _local_1:MaskedImage = this.skin.imageFromAngle(0, AnimatedChar.STAND, 0);
@@ -2334,7 +2334,7 @@ package com.company.assembleegameclient.objects
 			mask_ = _local_1.mask_;
 			this.isDefaultAnimatedChar = true;
 		}
-		
+
 		private function setToRandomAnimatedCharacter():void
 		{
 			var _local_1:Vector.<XML> = ObjectLibrary.hexTransforms_;
@@ -2346,8 +2346,8 @@ package com.company.assembleegameclient.objects
 			animatedChar_ = _local_4.animatedChar_;
 			this.isDefaultAnimatedChar = false;
 		}
-		
-		override protected function getTexture(_arg_1:Camera, _arg_2:int):BitmapData
+
+		 override protected function getTexture(_arg_1:Camera, _arg_2:int):BitmapData
 		{
 			var _local_3:MaskedImage;
 			var _local_4:int;
@@ -2457,14 +2457,13 @@ package com.company.assembleegameclient.objects
 				else
 				{
 					_local_14 = GlowRedrawer.outlineGlow(_local_9, ((this.legendaryRank_ == -1) ? 0 : 0xFF0000));
-				}
-				;
-				//_local_14 = GlowRedrawer.outlineGlow(_local_9, ((this.legendaryRank_ == -1) ? 0 : 0xFF0000));
-				
+				};
+				_local_14 = GlowRedrawer.outlineGlow(_local_9, ((this.legendaryRank_ == -1) ? 0 : 0xFF0000));
+
 				texturingCache_[_local_9] = _local_14;
 			}
 			;
-			
+
 			if ((((isPaused()) || (isStasis())) || (isPetrified())))
 			{
 				_local_14 = CachingColorTransformer.filterBitmapData(_local_14, PAUSED_FILTER);
@@ -2488,7 +2487,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_14);
 		}
-		
+
 		override public function getPortrait():BitmapData
 		{
 			var _local_1:MaskedImage;
@@ -2503,7 +2502,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (portrait_);
 		}
-		
+
 		public function useAltWeapon(_arg_1:Number, _arg_2:Number, _arg_3:int, _arg_4:int = 0):Boolean
 		{
 			var _local_5:XML;
@@ -2599,30 +2598,30 @@ package com.company.assembleegameclient.objects
 					_local_11 = (1 + (this.wisdom_ / 150));
 					switch (equipment_[1])
 					{
-					case 2650: 
-					case 8610: 
-					case 2785: 
-					case 2855: 
-					case 8333: 
+					case 2650:
+					case 8610:
+					case 2785:
+					case 2855:
+					case 8333:
 						this.startTimer(11);
 						break;
-					case 3080: 
+					case 3080:
 						this.startTimer(9);
 						break;
-					case 2857: 
-					case 2667: 
-					case 8335: 
-					case 2225: 
+					case 2857:
+					case 2667:
+					case 8335:
+					case 2225:
 						this.startTimer(12);
 						break;
-					case 3078: 
+					case 3078:
 						this.startTimer(int((10 * _local_11)));
 						break;
-					case 2854: 
-					case 2645: 
-					case 8344: 
-					case 3102: 
-					case 5854: 
+					case 2854:
+					case 2645:
+					case 8344:
+					case 3102:
+					case 5854:
 						this.startTimer(int((8 * _local_11)));
 						break;
 					}
@@ -2648,7 +2647,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		public function useAltWeapon_(_arg_1:Number, _arg_2:Number, _arg_3:int, _arg_4:Boolean = false):Boolean
 		{
 			var _local_5:XML;
@@ -2751,12 +2750,12 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		public function attemptAttackAngle(_arg_1:Number):void
 		{
 			this.aim_(_arg_1);
 		}
-		
+
 		public function autoAim_(_arg_1:Vector3D, _arg_2:Vector3D, _arg_3:ProjectileProperties):Vector3D
 		{
 			var _local_4:Vector3D;
@@ -2832,11 +2831,11 @@ package com.company.assembleegameclient.objects
 											_local_8 = _local_5.maxHP_;
 											switch (_local_5.objectType_)
 											{
-											case 1625: 
+											case 1625:
 												_local_8 = 3000;
-											case 3369: 
+											case 3369:
 												_local_8 = 7500;
-											case 3371: 
+											case 3371:
 												_local_8 = 8000;
 											}
 											;
@@ -2928,14 +2927,14 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_4);
 		}
-		
+
 		public function getDist(_arg_1:Number, _arg_2:Number, _arg_3:Number, _arg_4:Number):Number
 		{
 			var _local_5:* = (_arg_1 - _arg_3);
 			var _local_6:* = (_arg_2 - _arg_4);
 			return (Math.sqrt(((_local_6 * _local_6) + (_local_5 * _local_5))));
 		}
-		
+
 		public function leadPos(_arg_1:Vector3D, _arg_2:Vector3D, _arg_3:Vector3D, _arg_4:Number):Vector3D
 		{
 			var _local_5:Vector3D = _arg_2.subtract(_arg_1);
@@ -2963,7 +2962,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_arg_2.add(_arg_3));
 		}
-		
+
 		public function getAimAngle():Number
 		{
 			var _local_1:Vector3D;
@@ -2990,7 +2989,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (Number.MAX_VALUE);
 		}
-		
+
 		public function pSTopW(_arg_1:Number, _arg_2:Number):Point
 		{
 			var _local_3:Point = this.sToW(_arg_1, _arg_2);
@@ -2998,7 +2997,7 @@ package com.company.assembleegameclient.objects
 			_local_3.y = (int(_local_3.y) + (1 / 2));
 			return (_local_3);
 		}
-		
+
 		public function sToW(_arg_1:Number, _arg_2:Number):Point
 		{
 			var _local_3:* = Parameters.data_.cameraAngle;
@@ -3010,7 +3009,7 @@ package com.company.assembleegameclient.objects
 			var _local_7:* = ((_arg_1 * _local_5) + (_arg_2 * _local_4));
 			return (new Point((map_.player_.x_ + _local_6), (map_.player_.y_ + _local_7)));
 		}
-		
+
 		public function aim_(_arg_1:Number):void
 		{
 			var _local_2:Number = NaN;
@@ -3036,7 +3035,7 @@ package com.company.assembleegameclient.objects
 			;
 			this.shoot((Parameters.data_.cameraAngle + _arg_1));
 		}
-		
+
 		public function hasWeapon():Boolean
 		{
 			var _local_1:int = equipment_[0];
@@ -3047,7 +3046,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		override public function setAttack(_arg_1:int, _arg_2:Number):void
 		{
 			var _local_3:XML = ObjectLibrary.xmlLibrary_[_arg_1];
@@ -3060,7 +3059,7 @@ package com.company.assembleegameclient.objects
 			this.attackPeriod_ = ((1 / this.attackFrequency()) * (1 / _local_4));
 			super.setAttack(_arg_1, _arg_2);
 		}
-		
+
 		private function shoot(_arg_1:Number):void
 		{
 			if (((((map_ == null) || (isStunned())) || (isPaused())) || (isPetrified())))
@@ -3087,7 +3086,7 @@ package com.company.assembleegameclient.objects
 			attackStart_ = _local_4;
 			this.doShoot(attackStart_, _local_2, _local_3, attackAngle_, true);
 		}
-		
+
 		public function doShoot(_arg_1:int, _arg_2:int, _arg_3:XML, _arg_4:Number, _arg_5:Boolean):void
 		{
 			var _local_6:uint;
@@ -3155,12 +3154,12 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function isHexed():Boolean
 		{
 			return (!((condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.HEXED_BIT) == 0));
 		}
-		
+
 		public function isInventoryFull():Boolean
 		{
 			if (equipment_ == null)
@@ -3182,7 +3181,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		public function getSlotwithItem(_arg_1:int):int
 		{
 			var _local_2:int = ((this.hasBackpack_) ? equipment_.length : (equipment_.length - GeneralConstants.NUM_INVENTORY_SLOTS));
@@ -3199,7 +3198,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (-1);
 		}
-		
+
 		public function getItemwithSlot(_arg_1:int):int
 		{
 			var _local_2:int = ((this.hasBackpack_) ? equipment_.length : (equipment_.length - GeneralConstants.NUM_INVENTORY_SLOTS));
@@ -3216,7 +3215,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (-1);
 		}
-		
+
 		public function nextAvailableInventorySlot():int
 		{
 			var _local_1:int = ((this.hasBackpack_) ? equipment_.length : (equipment_.length - GeneralConstants.NUM_INVENTORY_SLOTS));
@@ -3233,7 +3232,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (-1);
 		}
-		
+
 		public function numberOfAvailableSlots():int
 		{
 			var _local_1:int;
@@ -3251,7 +3250,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_1);
 		}
-		
+
 		public function swapInventoryIndex(_arg_1:int):int
 		{
 			var _local_2:int;
@@ -3285,30 +3284,30 @@ package com.company.assembleegameclient.objects
 			;
 			return (-1);
 		}
-		
+
 		public function getPotionCount(_arg_1:int):int
 		{
 			switch (_arg_1)
 			{
-			case PotionInventoryModel.HEALTH_POTION_ID: 
+			case PotionInventoryModel.HEALTH_POTION_ID:
 				return (this.healthPotionCount_);
-			case PotionInventoryModel.MAGIC_POTION_ID: 
+			case PotionInventoryModel.MAGIC_POTION_ID:
 				return (this.magicPotionCount_);
 			}
 			;
 			return (0);
 		}
-		
+
 		public function getTex1():int
 		{
 			return (tex1Id_);
 		}
-		
+
 		public function getTex2():int
 		{
 			return (tex2Id_);
 		}
-		
+
 		public function handleAutoH(_arg_1:int):void
 		{
 			if (((this.chp / maxHP_) * 100) <= Parameters.data_.autoHealP)
@@ -3326,7 +3325,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function handleAutoMana():void
 		{
 			if (((mp_ / maxMP_) * 100) <= Parameters.data_.autoMana)
@@ -3344,76 +3343,76 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function hasSeal():Boolean
 		{
 			var _local_1:Boolean;
 			switch (this.equipment_[1])
 			{
-			case eItems.Seal_of_the_Initiate: 
-			case eItems.Seal_of_the_Pilgrim: 
-			case eItems.Seal_of_the_Seeker: 
-			case eItems.Seal_of_the_Aspirant: 
-			case eItems.Seal_of_the_Divine: 
-			case eItems.Seal_of_the_Holy_Warrior: 
-			case eItems.Advent_Seal: 
-			case eItems.Seal_of_the_Enchanted_Forest: 
-			case eItems.Marble_Seal: 
-			case eItems.Seal_of_the_Blasphemous_Prayer: 
-			case eItems.Seal_of_the_Blessed_Champion: 
+			case eItems.Seal_of_the_Initiate:
+			case eItems.Seal_of_the_Pilgrim:
+			case eItems.Seal_of_the_Seeker:
+			case eItems.Seal_of_the_Aspirant:
+			case eItems.Seal_of_the_Divine:
+			case eItems.Seal_of_the_Holy_Warrior:
+			case eItems.Advent_Seal:
+			case eItems.Seal_of_the_Enchanted_Forest:
+			case eItems.Marble_Seal:
+			case eItems.Seal_of_the_Blasphemous_Prayer:
+			case eItems.Seal_of_the_Blessed_Champion:
 				_local_1 = true;
 				break;
 			}
 			;
 			return (_local_1);
 		}
-		
+
 		public function hasHealingSeal():Boolean
 		{
 			var _local_1:Boolean;
 			switch (this.equipment_[1])
 			{
-			case eItems.Seal_of_the_Initiate: 
-			case eItems.Seal_of_the_Pilgrim: 
-			case eItems.Seal_of_the_Seeker: 
-			case eItems.Seal_of_the_Aspirant: 
-			case eItems.Seal_of_the_Divine: 
-			case eItems.Seal_of_the_Holy_Warrior: 
-			case eItems.Advent_Seal: 
-			case eItems.Seal_of_the_Blasphemous_Prayer: 
-			case eItems.Seal_of_the_Blessed_Champion: 
+			case eItems.Seal_of_the_Initiate:
+			case eItems.Seal_of_the_Pilgrim:
+			case eItems.Seal_of_the_Seeker:
+			case eItems.Seal_of_the_Aspirant:
+			case eItems.Seal_of_the_Divine:
+			case eItems.Seal_of_the_Holy_Warrior:
+			case eItems.Advent_Seal:
+			case eItems.Seal_of_the_Blasphemous_Prayer:
+			case eItems.Seal_of_the_Blessed_Champion:
 				_local_1 = true;
 				break;
 			}
 			;
 			return (_local_1);
 		}
-		
+
 		public function hasTome():Boolean
 		{
 			var _local_1:Boolean;
 			switch (this.equipment_[1])
 			{
-			case eItems.Healing_Tome: 
-			case eItems.Nativity_Tome: 
-			case eItems.pD_Tome: 
-			case eItems.Remedy_Tome: 
-			case eItems.Spirit_Salve_Tome: 
-			case eItems.Tome_of_Divine_Favor: 
-			case eItems.Tome_of_Frigid_Protection: 
-			case eItems.Tome_of_Holy_Guidance: 
-			case eItems.Tome_of_Holy_Protection: 
-			case eItems.Tome_of_Purification: 
-			case eItems.Tome_of_Rejuvenation: 
-			case eItems.Tome_of_Renewing: 
-			case eItems.Tome_of_Pain: 
+			case eItems.Healing_Tome:
+			case eItems.Nativity_Tome:
+			case eItems.pD_Tome:
+			case eItems.Remedy_Tome:
+			case eItems.Spirit_Salve_Tome:
+			case eItems.Tome_of_Divine_Favor:
+			case eItems.Tome_of_Frigid_Protection:
+			case eItems.Tome_of_Holy_Guidance:
+			case eItems.Tome_of_Holy_Protection:
+			case eItems.Tome_of_Purification:
+			case eItems.Tome_of_Rejuvenation:
+			case eItems.Tome_of_Renewing:
+			case eItems.Tome_of_Pain:
 				_local_1 = true;
 				break;
 			}
 			;
 			return (_local_1);
 		}
-		
+
 		public function sbAssist(_arg_1:int, _arg_2:int):void
 		{
 			var _local_3:Point;
@@ -3471,12 +3470,12 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function getPSpeed():Number
 		{
 			return (this.getMoveSpeed());
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.objects
 

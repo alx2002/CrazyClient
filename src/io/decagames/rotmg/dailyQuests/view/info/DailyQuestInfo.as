@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfo
 
 package io.decagames.rotmg.dailyQuests.view.info
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import flash.display.Sprite;
 	import io.decagames.rotmg.dailyQuests.data.DailyQuestItemSlotType;
 	import io.decagames.rotmg.dailyQuests.model.DailyQuest;

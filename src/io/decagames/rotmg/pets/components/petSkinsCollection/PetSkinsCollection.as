@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.pets.components.petSkinsCollection.PetSkinsCollection
 
 package io.decagames.rotmg.pets.components.petSkinsCollection
 {
-	import __AS3__.vec.Vector;
+	
 	import flash.display.Sprite;
 	import io.decagames.rotmg.pets.components.petSkinSlot.PetSkinSlot;
 	import io.decagames.rotmg.pets.data.vo.SkinVO;

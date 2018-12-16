@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.chat.view.ChatInputNotAllowed
 
@@ -15,7 +15,7 @@ package kabam.rotmg.chat.view
     import flash.display.BitmapData;
     import com.company.assembleegameclient.util.TextureRedrawer;
 
-    public class ChatInputNotAllowed extends Sprite 
+    public class ChatInputNotAllowed extends Sprite
     {
 
         public static const IMAGE_NAME:String = "lofiInterfaceBig";

@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.mapeditor.EditingScreen
 
 package com.company.assembleegameclient.mapeditor
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.account.ui.CheckBoxField;
 	import com.company.assembleegameclient.account.ui.TextInputField;
 	import com.company.assembleegameclient.editor.CommandEvent;

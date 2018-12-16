@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.util.components.StarsView
 
 package kabam.rotmg.util.components
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
+    
     import com.company.rotmg.graphics.StarGraphic;
     import flash.display.Graphics;
     import flash.geom.ColorTransform;
-    import __AS3__.vec.*;
+    
 
     public class StarsView extends Sprite 
     {

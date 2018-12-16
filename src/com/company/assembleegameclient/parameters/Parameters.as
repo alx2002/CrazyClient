@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //parameters
 
 package com.company.assembleegameclient.parameters
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+
+
 	import com.company.assembleegameclient.map.Map;
 	import com.company.util.KeyCodes;
 	import flash.display.DisplayObject;
@@ -14,17 +14,11 @@ package com.company.assembleegameclient.parameters
 	import flash.events.Event;
 	import flash.net.SharedObject;
 	import flash.utils.Dictionary;
-	//
-	/*
-	 * To DO
-	 * Add preload
-	 *
-	 * Add Cache_CHARLIST
-	 */
-	
+
+
 	public class Parameters
 	{
-		
+
 		public static const BUILD_VERSION:String = "X31.1";
 		public static const MINOR_VERSION:String = "2"; //from 31.1.1
 		public static const ENABLE_ENCRYPTION:Boolean = true;
@@ -85,7 +79,7 @@ package com.company.assembleegameclient.parameters
 		public static var dmgCounter:Array = [];
 		public static var lowCPUMode:Boolean = false;
 		public static var dailyClaimKeys:Vector.<String> = new Vector.<String>();
-		
+
 		public static function setTimerPhases():void
 		{
 			timerPhaseTimes['{"key":"server.oryx_closed_realm"}'] = 120000;
@@ -103,7 +97,7 @@ package com.company.assembleegameclient.parameters
 			timerPhaseNames["You... YOU WILL COME WITH ME!"] = "Survival";
 			timerPhaseNames["DIE! DIE! DIE!!!"] = "Vulnerable";
 		}
-		
+
 		public static function load():void
 		{
 			try
@@ -120,7 +114,7 @@ package com.company.assembleegameclient.parameters
 			setTimerPhases();
 			save();
 		}
-		
+
 		public static function save():void
 		{
 			try
@@ -136,7 +130,7 @@ package com.company.assembleegameclient.parameters
 			}
 			;
 		}
-		
+
 		private static function setDefaultKey(_arg_1:String, _arg_2:uint):void
 		{
 			if ((!(data_.hasOwnProperty(_arg_1))))
@@ -146,7 +140,7 @@ package com.company.assembleegameclient.parameters
 			;
 			keyNames_[_arg_1] = true;
 		}
-		
+
 		public static function setKey(_arg_1:String, _arg_2:uint):void
 		{
 			var _local_3:String;
@@ -166,7 +160,7 @@ package com.company.assembleegameclient.parameters
 			;
 			data_[_arg_1] = _arg_2;
 		}
-		
+
 		private static function setDefault(_arg_1:String, _arg_2:*):void
 		{
 			if ((!(data_.hasOwnProperty(_arg_1))))
@@ -175,22 +169,22 @@ package com.company.assembleegameclient.parameters
 			}
 			;
 		}
-		
+
 		public static function isGpuRender():Boolean
 		{
 			return ((!(GPURenderError)) && (!(Map.forceSoftwareRender)));
 		}
-		
+
 		public static function clearGpuRenderEvent(_arg_1:Event):void
 		{
 			clearGpuRender();
 		}
-		
+
 		public static function clearGpuRender():void
 		{
 			GPURenderError = true;
 		}
-		
+
 		public static function setDefaults():void
 		{
 			setDefaultKey("moveLeft", KeyCodes.A);
@@ -262,9 +256,11 @@ package com.company.assembleegameclient.parameters
 			setDefault("beginnersOfferShowNowTime", 0);
 			setDefault("watchForTutorialExit", false);
 			setDefault("clickForGold", false);
-			
+			setDefault("playerSize", 25);
+			setDefault("pSize", true);
+
 			setDefault("cacheCharList", false); //beta
-			
+
 			setDefault("contextualPotionBuy", false);
 			setDefault("inventorySwap", true);
 			setDefault("particleEffect", true);
@@ -393,7 +389,7 @@ package com.company.assembleegameclient.parameters
 			setDefault("bestServ", "Default");
 			setDefault("showSkins", true);
 			setDefault("showPets", true);
-			setDefault("sizer", false);
+			setDefault("sizer", true);
 			setDefaultKey("enterPortal", KeyCodes.UNSET);
 			setDefault("perfectBomb", true);
 			setDefault("perfectQuiv", true);
@@ -534,7 +530,7 @@ package com.company.assembleegameclient.parameters
 			setDefault("gravestones", 0);
 			setDefault("chatNameColor", 0);
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.parameters
 

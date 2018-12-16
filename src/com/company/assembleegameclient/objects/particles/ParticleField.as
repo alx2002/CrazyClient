@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.particles.ParticleField
 
@@ -85,7 +85,7 @@ package com.company.assembleegameclient.objects.particles
 			return (true);
 		}
 		
-		private function onTimer(_arg_1:TimerEvent):void
+		private function onTimer(event:TimerEvent):void
 		{
 			var _local_2:Square = new Square(this.getStartPoint(), this.getEndPoint(), this.getLifespan());
 			_local_2.complete.add(this.onSquareComplete);

@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.lib.ui.api.List
 
 package kabam.lib.ui.api
 {
     import flash.display.DisplayObject;
-    import __AS3__.vec.Vector;
+    
 
     public interface List 
     {

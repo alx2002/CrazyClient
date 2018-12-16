@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.map.partyoverlay.GameObjectArrow
 
 package com.company.assembleegameclient.map.partyoverlay
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.map.Camera;
 	import com.company.assembleegameclient.map.Map;
 	import com.company.assembleegameclient.objects.GameObject;

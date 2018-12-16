@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.pets.windows.yard.fuse.FuseTabMediator
 
@@ -18,7 +18,7 @@ package io.decagames.rotmg.pets.windows.yard.fuse
     import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
     import kabam.rotmg.game.model.GameModel;
     import kabam.rotmg.core.model.PlayerModel;
-    import __AS3__.vec.Vector;
+    
     import io.decagames.rotmg.pets.components.petItem.PetItem;
     import io.decagames.rotmg.pets.data.vo.PetVO;
     import io.decagames.rotmg.pets.data.rarity.PetRarityEnum;
@@ -34,7 +34,7 @@ package io.decagames.rotmg.pets.windows.yard.fuse
     import flash.events.MouseEvent;
     import io.decagames.rotmg.pets.utils.FeedFuseCostModel;
     import io.decagames.rotmg.pets.utils.FusionCalculator;
-    import __AS3__.vec.*;
+    
 
     public class FuseTabMediator extends Mediator 
     {

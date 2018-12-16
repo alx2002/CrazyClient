@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.ui.popups.PopupMediator
 
@@ -13,8 +13,8 @@ package io.decagames.rotmg.ui.popups
     import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
     import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
     import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+    
+    
 
     public class PopupMediator extends Mediator 
     {

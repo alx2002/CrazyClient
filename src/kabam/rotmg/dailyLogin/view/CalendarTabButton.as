@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.dailyLogin.view.CalendarTabButton
 
@@ -13,14 +13,14 @@ package kabam.rotmg.dailyLogin.view
     import flash.display.LineScaleMode;
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
-    import __AS3__.vec.Vector;
+    
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import kabam.rotmg.text.view.TextFieldDisplayConcrete;
     import flash.events.Event;
     import flash.text.TextFieldAutoSize;
     import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-    import __AS3__.vec.*;
+    
 
     public class CalendarTabButton extends Sprite 
     {

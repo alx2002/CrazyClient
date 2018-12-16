@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.options.Options
 
 package com.company.assembleegameclient.ui.options
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.game.GameSprite;
 	import com.company.assembleegameclient.game.MapUserInput;
 	import com.company.assembleegameclient.objects.Player;
@@ -41,12 +41,12 @@ package com.company.assembleegameclient.ui.options
 	import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 	import kabam.rotmg.ui.UIUtils;
 	import kabam.rotmg.ui.signals.ToggleShowTierTagSignal;
-	
-	
+
+
 	public class Options extends Sprite
 	{
-		
-		private static const TABS:Vector.<String> = new <String>[TextKey.OPTIONS_CONTROLS, TextKey.OPTIONS_HOTKEYS, TextKey.OPTIONS_CHAT, TextKey.OPTIONS_GRAPHICS, TextKey.OPTIONS_SOUND, AUTOAIM_, ABILMENU_, VISUAL_, DEBUFF_, EXTRA_, LOOT_, RECON_, OTHER_, MESSAGE_, "Experimental", NULL_, DBKEYS_];
+
+		private static const TABS:Vector.<String> = new <String>[TextKey.OPTIONS_CONTROLS, TextKey.OPTIONS_HOTKEYS, TextKey.OPTIONS_CHAT, TextKey.OPTIONS_GRAPHICS, TextKey.OPTIONS_SOUND, AUTOAIM_, ABILMENU_, VISUAL_, DEBUFF_, EXTRA_, LOOT_, RECON_, OTHER_, MESSAGE_, "Experimental", NULL_, DBKEYS_, "Visual 2"];
 		private static const AUTOAIM_:String = "Auto Aim";
 		private static const EXTRA_:String = "Extra";
 		private static const DEBUFF_:String = "Debuffs";
@@ -67,7 +67,7 @@ package com.company.assembleegameclient.ui.options
 		public static const SCROLL_CHAT_DOWN:String = "scrollChatDown";
 		private static var registeredCursors:Vector.<String> = new Vector.<String>(0);
 		public static var hidden:Boolean = false;
-		
+
 		private var gs_:GameSprite;
 		private var continueButton_:TitleMenuOption;
 		private var resetToDefaultsButton_:TitleMenuOption;
@@ -75,7 +75,7 @@ package com.company.assembleegameclient.ui.options
 		private var tabs_:Vector.<OptionsTabTitle> = new Vector.<OptionsTabTitle>();
 		private var selected_:OptionsTabTitle = null;
 		private var options_:Vector.<Sprite> = new Vector.<Sprite>();
-		
+
 		public function Options(_arg_1:GameSprite)
 		{
 			var _local_2:TextFieldDisplayConcrete;
@@ -160,73 +160,73 @@ package com.company.assembleegameclient.ui.options
 			addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
 			addEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromStage);
 		}
-		
+
 		private static function makePotionBuy():ChoiceOption
 		{
 			return (new ChoiceOption("contextualPotionBuy", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CONTEXTUAL_POTION_BUY, TextKey.OPTIONS_CONTEXTUAL_POTION_BUY_DESC, null));
 		}
-		
+
 		private static function makeOnOffLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[makeLineBuilder(TextKey.OPTIONS_ON), makeLineBuilder(TextKey.OPTIONS_OFF)]);
 		}
-		
+
 		private static function makeHighLowLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("High"), new StaticStringBuilder("Low")]);
 		}
-		
+
 		private static function makeHpBarLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("All"), new StaticStringBuilder("Enemy"), new StaticStringBuilder("Self & En."), new StaticStringBuilder("Self"), new StaticStringBuilder("Ally")]);
 		}
-		
+
 		private static function makeForceExpLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("On"), new StaticStringBuilder("Self")]);
 		}
-		
+
 		private static function makeAllyShootLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("All"), new StaticStringBuilder("Proj")]);
 		}
-		
+
 		private static function makeBarTextLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("All"), new StaticStringBuilder("Fame"), new StaticStringBuilder("HP/MP")]);
 		}
-		
+
 		private static function makeCursorSelectLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("ProX"), new StaticStringBuilder("X2"), new StaticStringBuilder("X3"), new StaticStringBuilder("X4"), new StaticStringBuilder("Corner1"), new StaticStringBuilder("Corner2"), new StaticStringBuilder("Symb"), new StaticStringBuilder("Alien"), new StaticStringBuilder("Xhair"), new StaticStringBuilder("Chusto1"), new StaticStringBuilder("Chusto2")]);
 		}
-		
+
 		private static function onToMaxTextToggle():void
 		{
 			StatusBar.barTextSignal.dispatch(Parameters.data_.toggleBarText);
 			StatView.toMaxTextSignal.dispatch(Parameters.data_.toggleToMaxText);
 		}
-		
+
 		private static function makeLineBuilder(_arg_1:String):LineBuilder
 		{
 			return (new LineBuilder().setParams(_arg_1));
 		}
-		
+
 		private static function makeClickForGold():ChoiceOption
 		{
 			return (new ChoiceOption("clickForGold", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CLICK_FOR_GOLD, TextKey.OPTIONS_CLICK_FOR_GOLD_DESC, null));
 		}
-		
+
 		private static function onUIQualityToggle():void
 		{
 			UIUtils.toggleQuality(Parameters.data_.uiQuality);
 		}
-		
+
 		private static function onBarTextToggle():void
 		{
 			StatusBar.barTextSignal.dispatch(Parameters.data_.toggleBarText);
 		}
-		
+
 		public static function refreshCursor():void
 		{
 			var _local_1:MouseCursorData;
@@ -244,18 +244,18 @@ package com.company.assembleegameclient.ui.options
 			;
 			Mouse.cursor = Parameters.data_.cursorSelect;
 		}
-		
+
 		private static function makeDegreeOptions():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("45�"), new StaticStringBuilder("0�")]);
 		}
-		
+
 		private static function onDefaultCameraAngleChange():void
 		{
 			Parameters.data_.cameraAngle = Parameters.data_.defaultCameraAngle;
 			Parameters.save();
 		}
-		
+
 		private static function makeStarSelectLabels():Vector.<StringBuilder>
 		{
 			if (hidden)
@@ -265,22 +265,22 @@ package com.company.assembleegameclient.ui.options
 			;
 			return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("Light Blue"), new StaticStringBuilder("Blue"), new StaticStringBuilder("Red"), new StaticStringBuilder("Orange"), new StaticStringBuilder("Yellow"), new StaticStringBuilder("Alone")]);
 		}
-		
+
 		private static function makeSupportLabels():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Default"), new StaticStringBuilder("Blue"), new StaticStringBuilder("Purple"), new StaticStringBuilder("Orange")]);
 		}
-		
+
 		public static function isAirApplication():Boolean
 		{
 			return (Capabilities.playerType == "Desktop");
 		}
-		
+
 		private static function makeRightClickOptions():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("Ability"), new StaticStringBuilder("Camera")]);
 		}
-		
+
 		public static function toggleHax():void
 		{
 			TABS.splice(0, TABS.length);
@@ -319,37 +319,37 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function BoundingDistValues():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("1"), new StaticStringBuilder("2"), new StaticStringBuilder("3"), new StaticStringBuilder("4"), new StaticStringBuilder("5"), new StaticStringBuilder("6"), new StaticStringBuilder("7"), new StaticStringBuilder("8"), new StaticStringBuilder("9"), new StaticStringBuilder("10"), new StaticStringBuilder("15"), new StaticStringBuilder("20")]);
 		}
-		
+
 		private function ZeroSix():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("0"), new StaticStringBuilder("1"), new StaticStringBuilder("2"), new StaticStringBuilder("3"), new StaticStringBuilder("4"), new StaticStringBuilder("5"), new StaticStringBuilder("6")]);
 		}
-		
+
 		private function OneTen():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("1"), new StaticStringBuilder("2"), new StaticStringBuilder("3"), new StaticStringBuilder("4"), new StaticStringBuilder("5"), new StaticStringBuilder("6"), new StaticStringBuilder("7"), new StaticStringBuilder("8"), new StaticStringBuilder("9"), new StaticStringBuilder("10")]);
 		}
-		
+
 		private function ZeroThirteen():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("0"), new StaticStringBuilder("1"), new StaticStringBuilder("2"), new StaticStringBuilder("3"), new StaticStringBuilder("4"), new StaticStringBuilder("5"), new StaticStringBuilder("6"), new StaticStringBuilder("7"), new StaticStringBuilder("8"), new StaticStringBuilder("9"), new StaticStringBuilder("10"), new StaticStringBuilder("11"), new StaticStringBuilder("12"), new StaticStringBuilder("13")]);
 		}
-		
+
 		private function ZeroTwelve():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("0"), new StaticStringBuilder("1"), new StaticStringBuilder("2"), new StaticStringBuilder("3"), new StaticStringBuilder("4"), new StaticStringBuilder("5"), new StaticStringBuilder("6"), new StaticStringBuilder("7"), new StaticStringBuilder("8"), new StaticStringBuilder("9"), new StaticStringBuilder("10"), new StaticStringBuilder("11"), new StaticStringBuilder("12")]);
 		}
-		
+
 		private function onContinueClick(_arg_1:MouseEvent):void
 		{
 			this.close();
 		}
-		
+
 		private function onResetToDefaultsClick(_arg_1:MouseEvent):void
 		{
 			var _local_2:BaseOption;
@@ -369,19 +369,19 @@ package com.company.assembleegameclient.ui.options
 			Parameters.save();
 			this.refresh();
 		}
-		
+
 		private function onHomeClick(_arg_1:MouseEvent):void
 		{
 			this.close();
 			this.gs_.closed.dispatch();
 		}
-		
+
 		private function onTabClick(_arg_1:MouseEvent):void
 		{
 			var _local_2:OptionsTabTitle = (_arg_1.currentTarget as OptionsTabTitle);
 			this.setSelected(_local_2);
 		}
-		
+
 		private function setSelected(_arg_1:OptionsTabTitle):void
 		{
 			if (_arg_1 == this.selected_)
@@ -399,64 +399,63 @@ package com.company.assembleegameclient.ui.options
 			this.removeOptions();
 			switch (this.selected_.text_)
 			{
-			case TextKey.OPTIONS_CONTROLS: 
+			case TextKey.OPTIONS_CONTROLS:
 				this.addControlsOptions();
 				return;
-			case TextKey.OPTIONS_HOTKEYS: 
+			case TextKey.OPTIONS_HOTKEYS:
 				this.addHotKeysOptions();
 				return;
-			case TextKey.OPTIONS_CHAT: 
+			case TextKey.OPTIONS_CHAT:
 				this.addChatOptions();
 				return;
-			case TextKey.OPTIONS_GRAPHICS: 
+			case TextKey.OPTIONS_GRAPHICS:
 				this.addGraphicsOptions();
 				return;
-			case TextKey.OPTIONS_FRIEND: 
+			case TextKey.OPTIONS_FRIEND:
 				this.addFriendOptions();
 				return;
-			case TextKey.OPTIONS_MISC: 
+			case TextKey.OPTIONS_MISC:
 				this.addMiscOptions();
 				return;
-			case TextKey.OPTIONS_SOUND: 
+			case TextKey.OPTIONS_SOUND:
 				this.addSoundOptions();
 				return;
-			case "Experimental": 
+			case "Experimental":
 				this.addExperimentalOptions();
 				return;
-			case DEBUFF_: 
+			case DEBUFF_:
 				this.addDebuffsOptions();
 				return;
-			case OTHER_: 
+			case OTHER_:
 				this.addOtherOptions();
 				return;
-			case AUTOAIM_: 
+			case AUTOAIM_:
 				this.addAimOptions();
 				return;
-			case ABILMENU_: 
+			case ABILMENU_:
 				this.addAbilityOptions();
 				return;
-			case VISUAL_: 
+			case VISUAL_:
 				this.addVisualOptions();
 				return;
-			case LOOT_: 
+			case LOOT_:
 				this.addLootOptions();
 				return;
-			case RECON_: 
+			case RECON_:
 				this.addReconnectOptions();
 				return;
-			case MESSAGE_: 
+			case MESSAGE_:
 				this.addMessageOptions();
 				return;
-			case EXTRA_: 
+			case EXTRA_:
 				this.addExtraOptions();
 				return;
-			case DBKEYS_: 
+			case DBKEYS_:
 				this.dbKeys();
 				return;
-			}
-			;
+			};
 		}
-		
+
 		private function onAddedToStage(_arg_1:Event):void
 		{
 			MapUserInput.optionsOpen = true;
@@ -470,14 +469,14 @@ package com.company.assembleegameclient.ui.options
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown, false, 1);
 			stage.addEventListener(KeyboardEvent.KEY_UP, this.onKeyUp, false, 1);
 		}
-		
+
 		private function onRemovedFromStage(_arg_1:Event):void
 		{
 			MapUserInput.optionsOpen = false;
 			stage.removeEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown, false);
 			stage.removeEventListener(KeyboardEvent.KEY_UP, this.onKeyUp, false);
 		}
-		
+
 		private function onKeyDown(_arg_1:KeyboardEvent):void
 		{
 			if (_arg_1.keyCode == Parameters.data_.options)
@@ -487,18 +486,18 @@ package com.company.assembleegameclient.ui.options
 			;
 			_arg_1.stopImmediatePropagation();
 		}
-		
+
 		private function close():void
 		{
 			stage.focus = null;
 			parent.removeChild(this);
 		}
-		
+
 		private function onKeyUp(_arg_1:KeyboardEvent):void
 		{
 			_arg_1.stopImmediatePropagation();
 		}
-		
+
 		private function removeOptions():void
 		{
 			var _local_1:Sprite;
@@ -509,7 +508,7 @@ package com.company.assembleegameclient.ui.options
 			;
 			this.options_.length = 0;
 		}
-		
+
 		private function addControlsOptions():void
 		{
 			this.addOptionAndPosition(new KeyMapper("moveUp", TextKey.OPTIONS_MOVE_UP, TextKey.OPTIONS_MOVE_UP_DESC));
@@ -534,12 +533,12 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function onToggleUI():void
 		{
 			this.gs_.hudView.toggle();
 		}
-		
+
 		private function showMobInfo_():void
 		{
 			if (((!(Parameters.data_.showMobInfo)) && (!(this.gs_.map.mapOverlay_ == null))))
@@ -548,19 +547,19 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function scaleui():void
 		{
 			Parameters.root.dispatchEvent(new Event(Event.RESIZE));
 		}
-		
+
 		private function fsv3():void
 		{
 			stage.scaleMode = Parameters.data_.stageScale;
 			Parameters.root.dispatchEvent(new Event(Event.RESIZE));
 			this.fsv3_options();
 		}
-		
+
 		private function fsv3_options():void
 		{
 			var _local_1:ChoiceOption;
@@ -575,7 +574,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function updateEffId():void
 		{
 			var _local_1:ChoiceOption;
@@ -596,7 +595,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addDebuffsOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("dbArmorBroken", makeOnOffLabels(), [true, false], "Armor Broken", "Red means you will take this status effect. Increases risk of getting disconnected when turned off.", this.updateEffId, ((Parameters.data_.dbArmorBroken) ? 0xFF0000 : 0xFFFFFF), true));
@@ -622,7 +621,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new ChoiceOption("dbPetrify", makeOnOffLabels(), [true, false], "Petrify", "Red means you will take this status effect. Increases risk of getting disconnected when turned off.", this.updateEffId, ((Parameters.data_.dbPetrify) ? 0xFF0000 : 0xFFFFFF), true));
 			this.quietCastle_options();
 		}
-		
+
 		private function dbKeys():void
 		{
 			this.addOptionAndPosition(new KeyMapper("kdbArmorBroken", "Armor Broken", "Toggles the effect."));
@@ -646,7 +645,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new KeyMapper("kdbPetStasis", "Pet Stasis", "Toggles the effect."));
 			this.addOptionAndPosition(new KeyMapper("kdbPetrify", "Petrify", "Toggles the effect."));
 		}
-		
+
 		private function calcEffId():int
 		{
 			var _local_1:int;
@@ -707,7 +706,7 @@ package com.company.assembleegameclient.ui.options
 			;
 			return (_local_1);
 		}
-		
+
 		private function quietCastle_options():void
 		{
 			var _local_1:ChoiceOption;
@@ -729,7 +728,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function unstableAbil_options():void
 		{
 			var _local_1:ChoiceOption;
@@ -750,7 +749,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addAimOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("AAAddOne", makeOnOffLabels(), [true, false], "+0.5 Search Radius", "Increase the range at which auto aim will lock on and shoot at mobs by half a tile.", null));
@@ -763,7 +762,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new KeyMapper("tPassCover", "Toggle Projectile No-Clip", "Toggles the hack on and off."));
 			this.addOptionAndPosition(new ChoiceOption("autoDecrementHP", makeOnOffLabels(), [true, false], "Remove HP when dealing damage", "Decreases an enemy's health when you deal damage to them, this allows you to one shot enemies with spellbombs.", null));
 		}
-		
+
 		private function addAbilityOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("perfectBomb", makeOnOffLabels(), [true, false], "Spell Bomb and Poison Aim", "Targets the mob with highest max health in 15 tile radius from the player.", this.pbOptions));
@@ -783,7 +782,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new ChoiceOption("abilTimer", makeOnOffLabels(), [true, false], "Ability Timer", "Shows time remaining on abilities that give buffs.", null));
 			this.pbOptions();
 		}
-		
+
 		private function pbOptions():void
 		{
 			var _local_1:ChoiceOption;
@@ -828,7 +827,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addLootOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("LNAbility", this.ZeroSix(), [0, 1, 2, 3, 4, 5, 6], "Min Ability Tier", "Minimum tier at which notifications and auto loot will function for ability items.", this.updateWanted));
@@ -847,13 +846,13 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new ChoiceOption("bigBag", makeOnOffLabels(), [true, false], "Large Loot Bags and Chests", "For those of you who are legally blind.", null));
 			this.loot_options();
 		}
-		
+
 		private function updateWanted():void
 		{
 			Player.wantedList = null;
 			this.gs_.map.player_.genWantedList();
 		}
-		
+
 		private function loot_options():void
 		{
 			var _local_1:ChoiceOption;
@@ -874,13 +873,13 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function updateRotate():void
 		{
 			Parameters.PLAYER_ROTATE_SPEED = (Parameters.data_.rotateSpeed / 1000);
 			Parameters.ALLOW_SCREENSHOT_MODE;
 		}
-		
+
 		private function addReconnectOptions():void
 		{
 			this.addOptionAndPosition(new KeyMapper("ReconRealm", "Recon Realm", "Key that connects the user to the last realm in."));
@@ -890,13 +889,13 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new KeyMapper("ReconDaily", "Recon Daily", "Key that connects the user to daily quest room."));
 			this.addOptionAndPosition(new ChoiceOption("disableNexus", makeOnOffLabels(), [true, false], "Vault Only Mode", "Prevents you from entering the Nexus to avoid Realmeye and other detection", null));
 		}
-		
+
+
 		private function addVisualOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("stageScale", makeOnOffLabels(), [StageScaleMode.NO_SCALE, StageScaleMode.EXACT_FIT], "Fullscreen v3", "Extends viewing area at a cost of lower fps.", this.fsv3));
 			this.addOptionAndPosition(new ChoiceOption("uiscale", makeOnOffLabels(), [true, false], "Scale UI", "Scales the UI to fit the screen.", this.scaleui));
 			this.fsv3_options();
-			//this.addOptionAndPosition(new ChoiceOption("cacheCharList", makeOnOffLabels(), [true, false], "Cache Character List", 'Makes the main menu reload when you go back to it, instead of using the cached version which avoids the 10 minute "Internal Error" timeout', null, 11403055), 0, 0, true);
 			this.addOptionAndPosition(new ChoiceOption("STDamage", makeOnOffLabels(), [true, false], "Show Damage", "Show damage done to players and enemies.", null));
 			this.addOptionAndPosition(new ChoiceOption("showSkins", makeOnOffLabels(), [true, false], "Show Skins", "Forces default skin to everyone when turned off.", null));
 			this.addOptionAndPosition(new ChoiceOption("STHealth", makeOnOffLabels(), [true, false], "Show Health", "Show total health points of players and enemies as they take damage.", null));
@@ -915,10 +914,10 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new KeyMapper("panicKey", "Panic Key", "Toggle visual options to take screenshot."));
 			this.addOptionAndPosition(new KeyMapper("LowCPUModeHotKey", "Low CPU Mode", "Disables a lot of rendering and stuff by hotkey"));
 		}
-		
+
 		private function addOtherOptions():void
 		{
-			this.addOptionAndPosition(new ChoiceOption("NoClip",makeOnOffLabels(),[true,false],"No-Clip","THIS WILL DC YOU IF YOU WALK OVER OBJECTS",null, 16264704));
+			this.addOptionAndPosition(new ChoiceOption("NoClip", makeOnOffLabels(), [true, false], "No-Clip", "THIS WILL DC YOU IF YOU WALK OVER OBJECTS", null, 16264704));
 			this.addOptionAndPosition(new ChoiceOption("AutoNexus", this.AutoNexusValues(), [0, 15, 20, 25, 30], "Auto Nexus", "Will attempt to Nexus the player when health drops below the given percentage. You can still die with this on.", null));
 			this.addOptionAndPosition(new ChoiceOption("autoHealP", this.AutoHealValues(), [0, 50, 55, 60, 65, 70, 75, 80], "Auto Heal", "Heals you once your HP drops low enough on priest or paladin.", null));
 			this.addOptionAndPosition(new ChoiceOption("autoPot", this.AutoPotValues(), [0, 50, 55, 60, 65, 70, 75, 80], "Auto Pot", "Automatically drink a potion if your hp falls below a certain percentage.", null));
@@ -940,7 +939,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new ChoiceOption("instaSelect", makeOnOffLabels(), [true, false], "Instantly Select All Items", "When turned on, a right click on the trade window will select all your items instantly. When turned off, selects only items of the same type, smoothly, like an actual player.", null));
 			this.addOptionAndPosition(new ChoiceOption("mapHack", makeOnOffLabels(), [true, false], "Map Hack", "Shows entire map when entering a realm. Loading in for the first time will take longer.", null));
 		}
-		
+
 		private function addMessageOptions():void
 		{
 			this.addOptionAndPosition(new KeyMapper("msg1key", "Custom Message 1", (('Currently set to "' + Parameters.data_.msg1) + '". Use /setmsg 1 <message> to replace this message.')));
@@ -961,32 +960,32 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new NullOption());
 			this.addOptionAndPosition(new KeyMapper("msg9key", "Custom Message 9", (('Currently set to "' + Parameters.data_.msg9) + '". Use /setmsg 9 <message> to replace this message.')));
 		}
-		
+
 		private function AutoNexusValues():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder(((Parameters.AutoNexus == 0) ? "Off" : (Parameters.AutoNexus + "%"))), new StaticStringBuilder("15%"), new StaticStringBuilder("20%"), new StaticStringBuilder("25%"), new StaticStringBuilder("30%")]);
 		}
-		
+
 		private function AutoHealValues():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder(((Parameters.data_.autoHealP == 0) ? "Off" : (Parameters.data_.autoHealP + "%"))), new StaticStringBuilder("50%"), new StaticStringBuilder("55%"), new StaticStringBuilder("60%"), new StaticStringBuilder("65%"), new StaticStringBuilder("70%"), new StaticStringBuilder("75%"), new StaticStringBuilder("80%")]);
 		}
-		
+
 		private function AutoPotValues():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder(((Parameters.data_.autoPot == 0) ? "Off" : (Parameters.data_.autoPot + "%"))), new StaticStringBuilder("50%"), new StaticStringBuilder("55%"), new StaticStringBuilder("60%"), new StaticStringBuilder("65%"), new StaticStringBuilder("70%"), new StaticStringBuilder("75%"), new StaticStringBuilder("80%")]);
 		}
-		
+
 		private function AutoManaValues():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder(((Parameters.data_.autoMana == 0) ? "Off" : (Parameters.data_.autoMana + "%"))), new StaticStringBuilder("20%"), new StaticStringBuilder("30%"), new StaticStringBuilder("40%"), new StaticStringBuilder("50%"), new StaticStringBuilder("60%"), new StaticStringBuilder("70%"), new StaticStringBuilder("80%")]);
 		}
-		
+
 		private function ServerPrefValues():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Default"), new StaticStringBuilder("USW"), new StaticStringBuilder("USMW"), new StaticStringBuilder("EUW"), new StaticStringBuilder("USE"), new StaticStringBuilder("ASE"), new StaticStringBuilder("USS"), new StaticStringBuilder("USSW"), new StaticStringBuilder("EUE"), new StaticStringBuilder("EUN"), new StaticStringBuilder("EUSW"), new StaticStringBuilder("USE3"), new StaticStringBuilder("USW2"), new StaticStringBuilder("USMW2"), new StaticStringBuilder("USE2"), new StaticStringBuilder("USNW"), new StaticStringBuilder("AE"), new StaticStringBuilder("USS3"), new StaticStringBuilder("EUN2"), new StaticStringBuilder("EUW2"), new StaticStringBuilder("EUS"), new StaticStringBuilder("USS2"), new StaticStringBuilder("USW3")]);
 		}
-		
+
 		private function addExtraOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("etheriteDisable", makeOnOffLabels(), [true, false], "Offset Etherite", "Offsets your firing angle if you have an Etherite equipped to make it so your shots are in a straight line", null));
@@ -1009,7 +1008,7 @@ package com.company.assembleegameclient.ui.options
 			this.tombDeactivate();
 			this.addOptionAndPosition(new NullOption());
 		}
-		
+
 		private function tombDeactivate():void
 		{
 			var _local_1:ChoiceOption;
@@ -1041,22 +1040,22 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function bossNames():Vector.<StringBuilder>
 		{
 			return (new <StringBuilder>[new StaticStringBuilder("Bes"), new StaticStringBuilder("Nut"), new StaticStringBuilder("Geb")]);
 		}
-		
+
 		private function makeAllowCameraRotation():ChoiceOption
 		{
 			return (new ChoiceOption("allowRotation", makeOnOffLabels(), [true, false], TextKey.OPTIONS_ALLOW_ROTATION, TextKey.OPTIONS_ALLOW_ROTATION_DESC, this.onAllowRotationChange));
 		}
-		
+
 		private function makeAllowMiniMapRotation():ChoiceOption
 		{
 			return (new ChoiceOption("allowMiniMapRotation", makeOnOffLabels(), [true, false], TextKey.OPTIONS_ALLOW_MINIMAP_ROTATION, TextKey.OPTIONS_ALLOW_MINIMAP_ROTATION_DESC, null));
 		}
-		
+
 		private function onAllowRotationChange():void
 		{
 			var _local_1:KeyMapper;
@@ -1077,7 +1076,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addHotKeysOptions():void
 		{
 			this.addOptionAndPosition(new KeyMapper("useHealthPotion", TextKey.OPTIONS_USE_BUY_HEALTH, TextKey.OPTIONS_USE_BUY_HEALTH_DESC));
@@ -1091,7 +1090,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new KeyMapper("GPURenderToggle", TextKey.OPTIONS_HARDWARE_ACC_HOTKEY_TITLE, TextKey.OPTIONS_HARDWARE_ACC_HOTKEY_DESC));
 			this.addOptionsChoiceOption();
 		}
-		
+
 		public function addOptionsChoiceOption():void
 		{
 			var _local_1:String = ((Capabilities.os.split(" ")[0] == "Mac") ? "Command" : "Ctrl");
@@ -1099,7 +1098,7 @@ package com.company.assembleegameclient.ui.options
 			_local_2.setTooltipText(new LineBuilder().setParams(TextKey.OPTIONS_SWITCH_ITEM_IN_BACKPACK_DESC, {"key": _local_1}));
 			this.addOptionAndPosition(_local_2);
 		}
-		
+
 		public function addInventoryOptions():void
 		{
 			var _local_1:KeyMapper;
@@ -1114,7 +1113,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addChatOptions():void
 		{
 			this.addOptionAndPosition(new KeyMapper(CHAT, TextKey.OPTIONS_ACTIVATE_CHAT, TextKey.OPTIONS_ACTIVATE_CHAT_DESC));
@@ -1140,7 +1139,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new ChoiceOption("chatGuild", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CHAT_GUILD, TextKey.OPTIONS_CHAT_GUILD_DESC, this.onAllChatDisabled));
 			this.addOptionAndPosition(new ChoiceOption("chatTrade", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CHAT_TRADE, TextKey.OPTIONS_CHAT_TRADE_DESC, null));
 		}
-		
+
 		private function onAllChatDisabled():void
 		{
 			var _local_1:ChoiceOption;
@@ -1153,7 +1152,7 @@ package com.company.assembleegameclient.ui.options
 				{
 					switch (_local_1.paramName_)
 					{
-					case "chatAll": 
+					case "chatAll":
 						_local_1.refreshNoCallback();
 						break;
 					}
@@ -1164,7 +1163,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function onAllChatEnabled():void
 		{
 			var _local_1:ChoiceOption;
@@ -1180,10 +1179,10 @@ package com.company.assembleegameclient.ui.options
 				{
 					switch (_local_1.paramName_)
 					{
-					case "hidePlayerChat": 
-					case "chatWhisper": 
-					case "chatGuild": 
-					case "chatFriend": 
+					case "hidePlayerChat":
+					case "chatWhisper":
+					case "chatGuild":
+					case "chatFriend":
 						_local_1.refreshNoCallback();
 						break;
 					}
@@ -1194,7 +1193,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addExperimentalOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("disableEnemyParticles", makeOnOffLabels(), [true, false], "Disable Enemy Particles", "Disable enemy hit and death particles.", null));
@@ -1216,7 +1215,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addGraphicsOptions():void
 		{
 			var _local_1:String;
@@ -1250,22 +1249,21 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new KeyMapper("toggleProjectiles", "Toggle Ally Projectiles", "This key will toggle rendering of friendly projectiles"));
 			this.addOptionAndPosition(new KeyMapper("toggleMasterParticles", "Toggle Particles", "This key will toggle rendering of nonessential particles (Particles Master option)"));
 		}
-		
+
 		private function onToggleTierTag():void
 		{
 			StaticInjectorContext.getInjector().getInstance(ToggleShowTierTagSignal).dispatch(Parameters.data_.showTierTag);
 		}
-		
+
 		private function onCharacterGlow():void
 		{
 			var _local_1:Player = this.gs_.map.player_;
 			if (_local_1.hasSupporterFeature(SupporterFeatures.GLOW))
 			{
 				_local_1.clearTextureCache();
-			}
-			;
+			};
 		}
-		
+
 		private function onShowQuestPortraitsChange():void
 		{
 			if (((((!(this.gs_ == null)) && (!(this.gs_.map == null))) && (!(this.gs_.map.partyOverlay_ == null))) && (!(this.gs_.map.partyOverlay_.questArrow_ == null))))
@@ -1274,12 +1272,12 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function onFullscreenChange():void
 		{
 			stage.displayState = ((Parameters.data_.fullscreenMode) ? "fullScreenInteractive" : StageDisplayState.NORMAL);
 		}
-		
+
 		private function addSoundOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("playMusic", makeOnOffLabels(), [true, false], TextKey.OPTIONS_PLAY_MUSIC, TextKey.OPTIONS_PLAY_MUSIC_DESC, this.onPlayMusicChange));
@@ -1300,7 +1298,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-		
+
 		private function addFriendOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("tradeWithFriends", makeOnOffLabels(), [true, false], TextKey.OPTIONS_TRADE_FRIEND, TextKey.OPTIONS_TRADE_FRIEND_DESC, this.onPlaySoundEffectsChange));
@@ -1308,7 +1306,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new ChoiceOption("chatFriend", makeOnOffLabels(), [true, false], TextKey.OPTIONS_CHAT_FRIEND, TextKey.OPTIONS_CHAT_FRIEND_DESC, null));
 			this.addOptionAndPosition(new ChoiceOption("friendStarRequirement", makeStarSelectLabels(), [0, 1, 2, 3, 5, 10], TextKey.OPTIONS_STAR_REQ, TextKey.OPTIONS_FRIEND_STAR_REQ_DESC, null));
 		}
-		
+
 		private function addMiscOptions():void
 		{
 			this.addOptionAndPosition(new ChoiceOption("showProtips", new <StringBuilder>[makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW), makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW)], [Parameters.data_.showProtips, Parameters.data_.showProtips], TextKey.OPTIONS_LEGAL_PRIVACY, TextKey.OPTIONS_LEGAL_PRIVACY_DESC, null));
@@ -1316,7 +1314,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new ChoiceOption("showProtips", new <StringBuilder>[makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW), makeLineBuilder(TextKey.OPTIONS_LEGAL_VIEW)], [Parameters.data_.showProtips, Parameters.data_.showProtips], TextKey.OPTIONS_LEGAL_TOS, TextKey.OPTIONS_LEGAL_TOS_DESC, null));
 			this.addOptionAndPosition(new NullOption());
 		}
-		
+
 		private function onPlayMusicChange():void
 		{
 			Music.setPlayMusic(Parameters.data_.playMusic);
@@ -1331,7 +1329,7 @@ package com.company.assembleegameclient.ui.options
 			;
 			this.refresh();
 		}
-		
+
 		private function onPlaySoundEffectsChange():void
 		{
 			SFX.setPlaySFX(Parameters.data_.playSFX);
@@ -1346,17 +1344,17 @@ package com.company.assembleegameclient.ui.options
 			;
 			this.refresh();
 		}
-		
+
 		private function onMusicVolumeChange(_arg_1:Number):void
 		{
 			Music.setMusicVolume(_arg_1);
 		}
-		
+
 		private function onSoundEffectsVolumeChange(_arg_1:Number):void
 		{
 			SFX.setSFXVolume(_arg_1);
 		}
-		
+
 		private function addOptionAndPosition(_arg_1:Option, _arg_2:Number = 0, _arg_3:Number = 0):void
 		{
 			var positionOption:Function;
@@ -1371,19 +1369,19 @@ package com.company.assembleegameclient.ui.options
 			option.textChanged.addOnce(positionOption);
 			this.addOption(option);
 		}
-		
+
 		private function addOption(_arg_1:Option):void
 		{
 			addChild(_arg_1);
 			_arg_1.addEventListener(Event.CHANGE, this.onChange);
 			this.options_.push(_arg_1);
 		}
-		
+
 		private function onChange(_arg_1:Event):void
 		{
 			this.refresh();
 		}
-		
+
 		private function refresh():void
 		{
 			var _local_1:BaseOption;
@@ -1400,7 +1398,7 @@ package com.company.assembleegameclient.ui.options
 			}
 			;
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.ui.options
 

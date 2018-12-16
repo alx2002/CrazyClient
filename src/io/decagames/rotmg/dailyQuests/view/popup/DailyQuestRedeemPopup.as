@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.dailyQuests.view.popup.DailyQuestRedeemPopup
 
 package io.decagames.rotmg.dailyQuests.view.popup
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import flash.display.Sprite;
 	import flash.text.TextFieldAutoSize;
 	import io.decagames.rotmg.dailyQuests.data.DailyQuestItemSlotType;

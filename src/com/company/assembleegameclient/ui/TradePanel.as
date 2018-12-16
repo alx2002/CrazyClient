@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.TradePanel
 
 package com.company.assembleegameclient.ui
 {
-	import __AS3__.vec.Vector;
+	
 	import com.company.assembleegameclient.game.AGameSprite;
 	import com.company.assembleegameclient.parameters.Parameters;
 	import flash.display.Sprite;

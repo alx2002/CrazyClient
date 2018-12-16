@@ -1,22 +1,22 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.animation.AnimationData
 
 package com.company.assembleegameclient.objects.animation
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
 	
+	
+
 	public class AnimationData
 	{
-		
+
 		public var prob_:Number = 1;
 		public var period_:int;
 		public var periodJitter_:int;
 		public var sync_:Boolean = false;
 		public var frames:Vector.<FrameData> = new Vector.<FrameData>();
-		
+
 		public function AnimationData(_arg_1:XML)
 		{
 			var _local_2:XML;
@@ -35,7 +35,7 @@ package com.company.assembleegameclient.objects.animation
 			}
 			;
 		}
-		
+
 		private function getPeriod():int
 		{
 			if (this.periodJitter_ == 0)
@@ -45,7 +45,7 @@ package com.company.assembleegameclient.objects.animation
 			;
 			return ((this.period_ - this.periodJitter_) + ((2 * Math.random()) * this.periodJitter_));
 		}
-		
+
 		public function getLastRun(_arg_1:int):int
 		{
 			if (this.sync_)
@@ -55,7 +55,7 @@ package com.company.assembleegameclient.objects.animation
 			;
 			return ((_arg_1 + this.getPeriod()) + (200 * Math.random()));
 		}
-		
+
 		public function getNextRun(_arg_1:int):int
 		{
 			if (this.sync_)
@@ -65,7 +65,7 @@ package com.company.assembleegameclient.objects.animation
 			;
 			return (_arg_1 + this.getPeriod());
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.objects.animation
 

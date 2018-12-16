@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.game.logging.GameSpriteLoopWatch
 
 package kabam.rotmg.game.logging
 {
     import kabam.lib.console.model.Watch;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+    
+    
 
     public class GameSpriteLoopWatch extends Watch 
     {

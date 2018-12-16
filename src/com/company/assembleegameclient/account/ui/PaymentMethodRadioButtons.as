@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.account.ui.PaymentMethodRadioButtons
 
 package com.company.assembleegameclient.account.ui
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.account.ui.components.Selectable;
 	import com.company.assembleegameclient.account.ui.components.SelectionGroup;
 	import flash.display.DisplayObject;

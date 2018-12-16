@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.util.ConditionEffect
 
 package com.company.assembleegameclient.util
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
 	import com.company.util.AssetLibrary;
 	import com.company.util.PointUtil;

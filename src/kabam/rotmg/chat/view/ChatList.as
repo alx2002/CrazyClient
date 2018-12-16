@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.chat.view.ChatList
 
@@ -7,10 +7,10 @@ package kabam.rotmg.chat.view
 {
     import flash.display.Sprite;
     import flash.utils.Timer;
-    import __AS3__.vec.Vector;
+    
     import flash.events.TimerEvent;
     import kabam.rotmg.chat.model.ChatModel;
-    import __AS3__.vec.*;
+    
 
     public class ChatList extends Sprite 
     {
@@ -40,7 +40,7 @@ package kabam.rotmg.chat.view
             this.timer.start();
         }
 
-        private function onCheckTimeout(_arg_1:TimerEvent):void
+        private function onCheckTimeout(event:TimerEvent):void
         {
             var _local_2:ChatListItem;
             var _local_3:ChatListItem;

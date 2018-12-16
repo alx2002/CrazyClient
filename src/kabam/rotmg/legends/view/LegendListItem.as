@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.legends.view.LegendListItem
 
@@ -21,7 +21,7 @@ package kabam.rotmg.legends.view
     import com.company.assembleegameclient.util.TextureRedrawer;
     import flash.events.MouseEvent;
 
-    public class LegendListItem extends Sprite 
+    public class LegendListItem extends Sprite
     {
 
         private static const FONT_SIZE:int = 22;
@@ -130,7 +130,7 @@ package kabam.rotmg.legends.view
             {
                 if (this.legend.place == 1)
                 {
-                    _local_1 = 16646031;
+                    _local_1 = 16646031; //yellow
                 }
                 else
                 {

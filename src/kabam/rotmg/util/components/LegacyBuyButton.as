@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.util.components.LegacyBuyButton
 
@@ -12,7 +12,7 @@ package kabam.rotmg.util.components
     import com.company.util.MoreColorUtil;
     import flash.display.GraphicsSolidFill;
     import flash.display.GraphicsPath;
-    import __AS3__.vec.Vector;
+    
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
     import kabam.rotmg.ui.view.SignalWaiter;
@@ -28,7 +28,7 @@ package kabam.rotmg.util.components
     import flash.display.CapsStyle;
     import flash.display.JointStyle;
     import flash.display.Graphics;
-    import __AS3__.vec.*;
+    
 
     public class LegacyBuyButton extends BuyButton 
     {

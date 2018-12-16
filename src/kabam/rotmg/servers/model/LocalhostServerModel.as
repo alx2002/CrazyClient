@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.servers.model.LocalhostServerModel
 
@@ -8,7 +8,7 @@ package kabam.rotmg.servers.model
     import kabam.rotmg.servers.api.ServerModel;
     import kabam.rotmg.servers.api.Server;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.Vector;
+    
 
     public class LocalhostServerModel implements ServerModel 
     {

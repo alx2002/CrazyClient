@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.ContinueOrQuitMediator
 
@@ -67,7 +67,7 @@ package kabam.rotmg.arena.view
             if (this.gameModel.player.credits_ >= _arg_2)
             {
                 this.closeDialogs.dispatch();
-                _local_3 = (this.messages.require(GameServerConnection.ENTER_ARENA) as EnterArena);
+                _local_3 = (this.messages.require(GameServerConnection.ENTERARENA) as EnterArena);
                 _local_3.currency = _arg_1;
                 this.socketServer.sendMessage(_local_3);
             }

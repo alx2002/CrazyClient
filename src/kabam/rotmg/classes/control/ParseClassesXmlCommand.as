@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.classes.control.ParseClassesXmlCommand
 
@@ -13,8 +13,8 @@ package kabam.rotmg.classes.control
     import kabam.rotmg.classes.model.CharacterSkinState;
     import kabam.rotmg.classes.model.CharacterClassUnlock;
     import kabam.rotmg.classes.model.CharacterClassStat;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+    
+    
 
     public class ParseClassesXmlCommand 
     {

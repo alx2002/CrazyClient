@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.util.components.CountdownTimer
 
@@ -98,7 +98,7 @@ package kabam.rotmg.util.components
             return (!(this.countdownSeconds == 0));
         }
 
-        public function countdown(_arg_1:TimerEvent):void
+        public function countdown(event:TimerEvent):void
         {
             this.countdownSeconds--;
             if (this.countdownSeconds == 0)

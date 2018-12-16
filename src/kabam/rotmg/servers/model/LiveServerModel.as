@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.servers.model.LiveServerModel
 
 package kabam.rotmg.servers.model
 {
     import kabam.rotmg.servers.api.ServerModel;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.servers.api.Server;
     import kabam.rotmg.core.model.PlayerModel;
     import kabam.rotmg.servers.api.LatLong;
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+    
 
     public class LiveServerModel implements ServerModel 
     {

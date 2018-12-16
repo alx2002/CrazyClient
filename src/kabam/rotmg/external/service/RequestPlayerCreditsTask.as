@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.external.service.RequestPlayerCreditsTask
 
@@ -38,7 +38,7 @@ package kabam.rotmg.external.service
             this.timer.start();
         }
 
-        private function handleTimer(_arg_1:TimerEvent):void
+        private function handleTimer(event:TimerEvent):void
         {
             var _local_2:Array = this.retryTimes;
             var _local_3:int = this.retryCount;

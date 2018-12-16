@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //WebMain
 
@@ -11,6 +11,7 @@ package
 	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
 	import flash.display.Stage;
+	import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import io.decagames.rotmg.dailyQuests.config.DailyQuestsConfig;
@@ -60,19 +61,19 @@ package
 	import robotlegs.bender.bundles.mvcs.MVCSBundle;
 	import robotlegs.bender.extensions.signalCommandMap.SignalCommandMapExtension;
 	import robotlegs.bender.framework.api.IContext;
-	
+
 	public class WebMain extends Sprite
 	{
-		
+
 		public static var STAGE:Stage;
 		public static var USER_AGENT:String = "None";
 		public static var sWidth:Number = 800;
 		public static var sHeight:Number = 600;
-		
+
 		[Inject]
 		public var stageproxy:StageProxy;
 		protected var context:IContext;
-		
+
 		public function WebMain()
 		{
 			if (stage)
@@ -86,7 +87,7 @@ package
 			}
 			;
 		}
-		
+
 		public function onStageResize(_arg_1:Event):void
 		{
 			if (stage.scaleMode == StageScaleMode.NO_SCALE)
@@ -107,16 +108,17 @@ package
 			sWidth = stage.stageWidth;
 			sHeight = stage.stageHeight;
 		}
-		
+
 		private function onAddedToStage(_arg_1:Event):void
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
 			this.setup();
 		}
-		
+
 		private function setup():void
 		{
 			this.hackParameters();
+			GameServerConnectionConcrete.parsePackets();
 			this.createContext();
 			new AssetLoader().load();
 			stage.scaleMode = StageScaleMode.EXACT_FIT;
@@ -124,12 +126,12 @@ package
 			STAGE = stage;
 			UIUtils.toggleQuality(Parameters.data_.uiQuality);
 		}
-		
+
 		private function hackParameters():void
 		{
 			Parameters.root = stage.root;
 		}
-		
+
 		private function createContext():void
 		{
 			this.context = new StaticInjectorContext();
@@ -138,7 +140,7 @@ package
 			this.context.injector.map(StageProxy).toValue(_local_1);
 			this.context.extend(MVCSBundle).extend(SignalCommandMapExtension).configure(BuildConfig).configure(StartupConfig).configure(NetConfig).configure(AssetsConfig).configure(DialogsConfig).configure(EnvironmentConfig).configure(ApplicationConfig).configure(LanguageConfig).configure(TextConfig).configure(AppEngineConfig).configure(AccountConfig).configure(ErrorConfig).configure(CoreConfig).configure(ApplicationSpecificConfig).configure(DeathConfig).configure(CharactersConfig).configure(ServersConfig).configure(GameConfig).configure(UIConfig).configure(MiniMapConfig).configure(LegendsConfig).configure(NewsConfig).configure(FameConfig).configure(TooltipsConfig).configure(PromotionsConfig).configure(ProTipConfig).configure(MapLoadingConfig).configure(ClassesConfig).configure(PackageConfig).configure(PetsConfig).configure(DailyLoginConfig).configure(Stage3DConfig).configure(ArenaConfig).configure(ExternalConfig).configure(MysteryBoxConfig).configure(FortuneConfig).configure(DailyQuestsConfig).configure(SocialConfig).configure(ToSConfig).configure(NexusShopConfig).configure(SupportCampaignConfig).configure(this);
 		}
-	
+
 	}
-}//package 
+}//package
 

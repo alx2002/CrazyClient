@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer
 
@@ -37,7 +37,7 @@ package kabam.rotmg.arena.component
             this.updateTimer.start();
         }
 
-        private function onUpdateTime(_arg_1:TimerEvent):void
+        private function onUpdateTime(event:TimerEvent):void
         {
             this.differenceMilliseconds = (this.differenceMilliseconds - 1000);
             this.resetClock.setStringBuilder(this.resetClockStringBuilder.setParams(TextKey.ARENA_WEEKLY_RESET_LABEL, {"time":this.getDateString()}));

@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.fame.service.RequestCharacterFameTask
 
@@ -49,7 +49,7 @@ package kabam.rotmg.fame.service
             this.timer.start();
         }
 
-        private function sendFameRequest(_arg_1:TimerEvent):void
+        private function sendFameRequest(event:TimerEvent):void
         {
             this.client.setMaxRetries(8);
             this.client.complete.addOnce(this.onComplete);

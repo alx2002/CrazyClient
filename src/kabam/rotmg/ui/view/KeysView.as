@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.ui.view.KeysView
 
@@ -7,9 +7,9 @@ package kabam.rotmg.ui.view
 {
     import flash.display.Sprite;
     import mx.core.BitmapAsset;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.ui.model.Key;
-    import __AS3__.vec.*;
+    
 
     public class KeysView extends Sprite 
     {

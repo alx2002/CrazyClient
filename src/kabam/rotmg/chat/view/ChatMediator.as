@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.chat.view.ChatMediator
 
@@ -24,7 +24,7 @@ package kabam.rotmg.chat.view
     import kabam.rotmg.account.core.view.RegisterPromptDialog;
     import kabam.rotmg.text.model.TextKey;
 
-    public class ChatMediator extends Mediator 
+    public class ChatMediator extends Mediator
     {
 
         private static const SCROLL_BUFFER_SIZE:int = 10;
@@ -218,7 +218,8 @@ package kabam.rotmg.chat.view
             {
                 if (((!(this.hudModel.gameSprite == null)) && (this.hudModel.gameSprite.evalIsNotInCombatMapArea())))
                 {
-                    this.openDialog.dispatch(new RegisterPromptDialog(TextKey.CHAT_REGISTER_TO_CHAT));
+					this.showChatInput.dispatch(true, _arg_1);
+                    //this.openDialog.dispatch(new RegisterPromptDialog(TextKey.CHAT_REGISTER_TO_CHAT));
                 };
             };
         }

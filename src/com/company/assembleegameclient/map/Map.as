@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.map.Map
 
 package com.company.assembleegameclient.map
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.background.Background;
 	import com.company.assembleegameclient.game.AGameSprite;
 	import com.company.assembleegameclient.game.MapUserInput;
@@ -44,10 +44,15 @@ package com.company.assembleegameclient.map
 	import kabam.rotmg.stage3D.graphic3D.Program3DFactory;
 	import kabam.rotmg.stage3D.graphic3D.TextureFactory;
 	import org.swiftsuspenders.Injector;
-	
+
+
+	import net.flashpunk.utils.Draw;
+	import net.flashpunk.utils.Input;
+
+
 	public class Map extends AbstractMap
 	{
-		
+
 		public static const CLOTH_BAZAAR:String = "Cloth Bazaar";
 		public static const NEXUS:String = "Nexus";
 		public static const DAILY_QUEST_ROOM:String = "Daily Quest Room";
@@ -65,7 +70,7 @@ package com.company.assembleegameclient.map
 		protected static const BLIND_FILTER:ColorMatrixFilter = new ColorMatrixFilter([0.05, 0.05, 0.05, 0, 0, 0.05, 0.05, 0.05, 0, 0, 0.05, 0.05, 0.05, 0, 0, 0.05, 0.05, 0.05, 1, 0]);
 		protected static var BREATH_CT:ColorTransform = new ColorTransform((0xFF / 0xFF), (55 / 0xFF), (0 / 0xFF), 0);
 		public static var texture:BitmapData;
-		
+
 		public var ifDrawEffectFlag:Boolean = true;
 		private var loopMonitor:RollingMeanLoopMonitor;
 		private var inUpdate_:Boolean = false;
@@ -82,7 +87,7 @@ package com.company.assembleegameclient.map
 		public var visibleSquares_:Vector.<Square> = new Vector.<Square>();
 		public var topSquares_:Vector.<Square> = new Vector.<Square>();
 		private var addTextLine:AddTextLineSignal;
-		
+
 		public function Map(_arg_1:AGameSprite)
 		{
 			var _local_2:Injector = StaticInjectorContext.getInjector();
@@ -100,7 +105,7 @@ package com.company.assembleegameclient.map
 			this.addTextLine = _local_2.getInstance(AddTextLineSignal);
 			wasLastFrameGpu = Parameters.isGpuRender();
 		}
-		
+
 		override public function setProps(_arg_1:int, _arg_2:int, _arg_3:String, _arg_4:int, _arg_5:Boolean, _arg_6:Boolean):void
 		{
 			width_ = _arg_1;
@@ -111,18 +116,18 @@ package com.company.assembleegameclient.map
 			showDisplays_ = _arg_6;
 			this.forceSoftwareRenderCheck(name_);
 		}
-		
+
 		override public function setHitAreaProps(_arg_1:int, _arg_2:int):void
 		{
 			mapHitArea.graphics.beginFill(0xFF0000, 0);
 			mapHitArea.graphics.drawRect((-(_arg_1) / 2), ((-(_arg_2) / 2) - 20), _arg_1, _arg_2);
 		}
-		
+
 		private function forceSoftwareRenderCheck(_arg_1:String):void
 		{
 			forceSoftwareRender = true;
 		}
-		
+
 		override public function initialize():void
 		{
 			squares_.length = (width_ * height_);
@@ -140,7 +145,7 @@ package com.company.assembleegameclient.map
 			addChild(partyOverlay_);
 			isPetYard = (name_.substr(0, 8) == "Pet Yard");
 		}
-		
+
 		override public function dispose():void
 		{
 			var _local_1:Square;
@@ -186,7 +191,7 @@ package com.company.assembleegameclient.map
 			GraphicsFillExtra.dispose();
 			Program3DFactory.getInstance().dispose();
 		}
-		
+
 		override public function update(_arg_1:int, _arg_2:int):void
 		{
 			var _local_3:BasicObject;
@@ -225,7 +230,7 @@ package com.company.assembleegameclient.map
 			this.idsToRemove_.length = 0;
 			party_.update(_arg_1, _arg_2);
 		}
-		
+
 		override public function pSTopW(_arg_1:Number, _arg_2:Number):Point
 		{
 			var _local_3:Square;
@@ -240,7 +245,7 @@ package com.company.assembleegameclient.map
 			;
 			return (null);
 		}
-		
+
 		override public function setGroundTile(_arg_1:int, _arg_2:int, _arg_3:uint):void
 		{
 			var _local_4:int;
@@ -270,7 +275,7 @@ package com.company.assembleegameclient.map
 			}
 			;
 		}
-		
+
 		override public function addObj(_arg_1:BasicObject, _arg_2:Number, _arg_3:Number):void
 		{
 			if (_arg_1 == null)
@@ -295,7 +300,7 @@ package com.company.assembleegameclient.map
 			}
 			;
 		}
-		
+
 		public function internalAddObj(_arg_1:BasicObject):void
 		{
 			if ((!(_arg_1.addTo(this, _arg_1.x_, _arg_1.y_))))
@@ -315,7 +320,7 @@ package com.company.assembleegameclient.map
 			;
 			_local_2[_arg_1.objectId_] = _arg_1;
 		}
-		
+
 		override public function removeObj(_arg_1:int):void
 		{
 			if (this.inUpdate_)
@@ -328,7 +333,7 @@ package com.company.assembleegameclient.map
 			}
 			;
 		}
-		
+
 		public function internalRemoveObj(_arg_1:int):void
 		{
 			var _local_2:Dictionary = goDict_;
@@ -347,7 +352,7 @@ package com.company.assembleegameclient.map
 			_local_3.removeFromMap();
 			delete _local_2[_arg_1];
 		}
-		
+
 		public function getSquare(_arg_1:Number, _arg_2:Number):Square
 		{
 			if (((((_arg_1 < 0) || (_arg_1 >= width_)) || (_arg_2 < 0)) || (_arg_2 >= height_)))
@@ -366,7 +371,7 @@ package com.company.assembleegameclient.map
 			;
 			return (_local_4);
 		}
-		
+
 		public function lookupSquare(_arg_1:int, _arg_2:int):Square
 		{
 			if (((((_arg_1 < 0) || (_arg_1 >= width_)) || (_arg_2 < 0)) || (_arg_2 >= height_)))
@@ -376,7 +381,7 @@ package com.company.assembleegameclient.map
 			;
 			return (squares_[(_arg_1 + (_arg_2 * width_))]);
 		}
-		
+
 		public function correctMapView(_arg_1:Camera):Point
 		{
 			var _local_2:Rectangle = _arg_1.clipRect_;
@@ -397,7 +402,7 @@ package com.company.assembleegameclient.map
 			var _local_6:Number = ((_arg_1.angleRad_ - (Math.PI / 2)) - Math.atan2(_local_3, _local_4));
 			return (new Point((_arg_1.x_ + (_local_5 * Math.cos(_local_6))), (_arg_1.y_ + (_local_5 * Math.sin(_local_6)))));
 		}
-		
+
 		override public function draw(_arg_1:Camera, _arg_2:int):void
 		{
 			var _local_3:Square;
@@ -704,7 +709,7 @@ package com.company.assembleegameclient.map
 			}
 			;
 		}
-		
+
 		private function getFilterIndex():uint
 		{
 			var _local_1:uint;
@@ -735,7 +740,7 @@ package com.company.assembleegameclient.map
 			;
 			return (_local_1);
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.map
 

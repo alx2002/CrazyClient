@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.mysterybox.components.MysteryBoxRollModal
 
@@ -9,7 +9,7 @@ package kabam.rotmg.mysterybox.components
     import kabam.rotmg.appengine.api.AppEngineClient;
     import kabam.rotmg.account.core.Account;
     import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-    import __AS3__.vec.Vector;
+    
     import flash.display.Bitmap;
     import kabam.rotmg.fortune.components.ItemWithTooltip;
     import kabam.rotmg.pets.view.components.DialogCloseButton;
@@ -48,7 +48,7 @@ package kabam.rotmg.mysterybox.components
     import io.decagames.rotmg.shop.ShopPopupView;
     import com.gskinner.motion.GTween;
     import com.gskinner.motion.easing.Sine;
-    import __AS3__.vec.*;
+    
 
     public class MysteryBoxRollModal extends Sprite 
     {
@@ -310,7 +310,7 @@ package kabam.rotmg.mysterybox.components
             this.swapImageTimer.start();
         }
 
-        private function onTotalRollTimeComplete(_arg_1:TimerEvent):void
+        private function onTotalRollTimeComplete(event:TimerEvent):void
         {
             this.totalRollTimer.stop();
             this.timerComplete = true;
@@ -321,7 +321,7 @@ package kabam.rotmg.mysterybox.components
             this.totalRollTimer.removeEventListener(TimerEvent.TIMER, this.onTotalRollTimeComplete);
         }
 
-        private function onNextRollTimerComplete(_arg_1:TimerEvent):void
+        private function onNextRollTimerComplete(event:TimerEvent):void
         {
             this.nextRollTimer.stop();
             this.nextRollTimer.removeEventListener(TimerEvent.TIMER, this.onNextRollTimerComplete);
@@ -344,7 +344,7 @@ package kabam.rotmg.mysterybox.components
             this.totalRollTimer.start();
         }
 
-        private function swapItemImage(_arg_1:TimerEvent):void
+        private function swapItemImage(event:TimerEvent):void
         {
             var _local_2:uint;
             this.swapImageTimer.stop();

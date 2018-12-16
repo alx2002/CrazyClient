@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.editor.CommandList
 
 package com.company.assembleegameclient.editor
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	
 	public class CommandList
 	{

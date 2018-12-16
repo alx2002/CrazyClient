@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.news.services.GetAppEngineNewsTask
 
@@ -11,9 +11,9 @@ package kabam.rotmg.news.services
     import kabam.rotmg.language.model.LanguageModel;
     import flash.utils.getTimer;
     import kabam.rotmg.news.model.NewsCellVO;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.news.model.NewsCellLinkType;
-    import __AS3__.vec.*;
+    
 
     public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask 
     {

@@ -1,17 +1,17 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.ArenaLeaderboardList
 
 package kabam.rotmg.arena.view
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
+    
     import flash.display.DisplayObject;
     import kabam.rotmg.util.components.VerticalScrollingList;
     import kabam.lib.ui.api.Size;
     import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-    import __AS3__.vec.*;
+    
 
     public class ArenaLeaderboardList extends Sprite 
     {

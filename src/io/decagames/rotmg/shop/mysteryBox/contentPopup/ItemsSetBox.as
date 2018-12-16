@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.shop.mysteryBox.contentPopup.ItemsSetBox
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
     import io.decagames.rotmg.ui.gird.UIGridElement;
-    import __AS3__.vec.Vector;
+    
 
     public class ItemsSetBox extends UIGridElement 
     {

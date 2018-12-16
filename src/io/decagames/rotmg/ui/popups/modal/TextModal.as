@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.ui.popups.modal.TextModal
 
@@ -8,7 +8,7 @@ package io.decagames.rotmg.ui.popups.modal
     import io.decagames.rotmg.ui.labels.UILabel;
     import io.decagames.rotmg.ui.buttons.BaseButton;
     import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
-    import __AS3__.vec.Vector;
+    
 
     public class TextModal extends ModalPopup 
     {

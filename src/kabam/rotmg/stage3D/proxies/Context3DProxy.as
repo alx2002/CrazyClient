@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.stage3D.proxies.Context3DProxy
 
@@ -7,7 +7,7 @@ package kabam.rotmg.stage3D.proxies
 {
     import flash.display3D.Context3D;
     import flash.geom.Matrix3D;
-    import __AS3__.vec.Vector;
+    
 
     public class Context3DProxy 
     {

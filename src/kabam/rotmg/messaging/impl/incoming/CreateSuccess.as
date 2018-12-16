@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.incoming.CreateSuccess
 
@@ -26,7 +26,7 @@ package kabam.rotmg.messaging.impl.incoming
 
         override public function toString():String
         {
-            return (formatToString("CREATE_SUCCESS", "objectId_", "charId_"));
+            return (formatToString("CREATESUCCESS", "objectId_", "charId_"));
         }
 
 

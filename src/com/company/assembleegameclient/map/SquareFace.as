@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.map.SquareFace
 
 package com.company.assembleegameclient.map
 {
-	import __AS3__.vec.Vector;
+	
 	import com.company.assembleegameclient.engine3d.Face3D;
 	import com.company.assembleegameclient.parameters.Parameters;
 	import flash.display.BitmapData;

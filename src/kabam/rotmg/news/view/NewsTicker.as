@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.news.view.NewsTicker
 
@@ -66,7 +66,7 @@ package kabam.rotmg.news.view
             this.timer.start();
         }
 
-        private function scrollAnimation(_arg_1:TimerEvent):void
+        private function scrollAnimation(event:TimerEvent):void
         {
             this.timer.stop();
             if (this.scrollText.scrollH < this.scrollText.maxScrollH)

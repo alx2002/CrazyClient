@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.game.commands.PlayGameCommand
 
@@ -19,7 +19,7 @@ package kabam.rotmg.game.commands
     import flash.utils.ByteArray;
     import flash.utils.getTimer;
     import com.company.assembleegameclient.game.GameSprite;
-    import __AS3__.vec.Vector;
+    
 
     public class PlayGameCommand 
     {

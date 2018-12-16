@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.ui.view.TitleMediator
 
@@ -8,6 +8,7 @@ package kabam.rotmg.ui.view
     import robotlegs.bender.bundles.mvcs.Mediator;
     import kabam.rotmg.account.core.Account;
     import kabam.rotmg.core.model.PlayerModel;
+	import kabam.rotmg.account.web.model.AccountData;
     import kabam.rotmg.core.signals.SetScreenSignal;
     import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
     import kabam.rotmg.ui.signals.EnterGameSignal;
@@ -34,7 +35,7 @@ package kabam.rotmg.ui.view
     import com.company.assembleegameclient.mapeditor.MapEditor;
     import flash.events.Event;
 
-    public class TitleMediator extends Mediator 
+    public class TitleMediator extends Mediator
     {
 
         private static var supportCalledBefore:Boolean = false;

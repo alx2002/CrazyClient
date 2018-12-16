@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.dialogs.CloseDialogComponent
 
 package com.company.assembleegameclient.ui.dialogs
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import flash.events.Event;
 	import org.osflash.signals.Signal;
 	

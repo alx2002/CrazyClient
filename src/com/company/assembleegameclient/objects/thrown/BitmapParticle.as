@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.thrown.BitmapParticle
 
 package com.company.assembleegameclient.objects.thrown
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+
+
 	import com.company.assembleegameclient.map.Camera;
 	import com.company.assembleegameclient.map.Square;
 	import com.company.assembleegameclient.objects.BasicObject;
@@ -18,10 +18,10 @@ package com.company.assembleegameclient.objects.thrown
 	import flash.display.GraphicsPath;
 	import flash.display.IGraphicsData;
 	import flash.geom.Matrix;
-	
+
 	public class BitmapParticle extends BasicObject
 	{
-		
+
 		protected var bitmapFill_:GraphicsBitmapFill = new GraphicsBitmapFill(null, null, false, false);
 		protected var path_:GraphicsPath = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS, null);
 		protected var vS_:Vector.<Number> = new Vector.<Number>();
@@ -30,7 +30,7 @@ package com.company.assembleegameclient.objects.thrown
 		public var _bitmapData:BitmapData;
 		protected var _rotationDelta:Number = 0;
 		public var _rotation:Number = 0;
-		
+
 		public function BitmapParticle(_arg_1:BitmapData, _arg_2:Number)
 		{
 			hasShadow_ = false;
@@ -38,7 +38,7 @@ package com.company.assembleegameclient.objects.thrown
 			this._bitmapData = _arg_1;
 			z_ = _arg_2;
 		}
-		
+
 		public function moveTo(_arg_1:Number, _arg_2:Number):Boolean
 		{
 			var _local_3:Square;
@@ -53,16 +53,16 @@ package com.company.assembleegameclient.objects.thrown
 			square_ = _local_3;
 			return (true);
 		}
-		
+
 		public function setSize(_arg_1:int):void
 		{
 			this.size_ = ((_arg_1 / 100) * 5);
 		}
-		
+
 		override public function drawShadow(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
 		{
 		}
-		
+
 		override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
 		{
 			var _local_4:BitmapData;
@@ -112,7 +112,7 @@ package com.company.assembleegameclient.objects.thrown
 			}
 			;
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.objects.thrown
 

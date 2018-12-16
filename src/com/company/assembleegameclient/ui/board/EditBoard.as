@@ -19,15 +19,15 @@ package com.company.assembleegameclient.ui.board
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import kabam.rotmg.text.model.TextKey;
-	
-	
-	
+
+
+
 	internal class EditBoard extends Sprite
 	{
-		
+
 		public static const TEXT_WIDTH:int = 400;
 		public static const TEXT_HEIGHT:int = 400;
-		
+
 		private var text_:String;
 		public var w_:int;
 		public var h_:int;
@@ -36,13 +36,13 @@ package com.company.assembleegameclient.ui.board
 		private var scrollBar_:Scrollbar;
 		private var cancelButton_:DeprecatedTextButton;
 		private var saveButton_:DeprecatedTextButton;
-		
+
 		private var backgroundFill_:GraphicsSolidFill = new GraphicsSolidFill(0x333333, 1);
 		private var outlineFill_:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);
 		private var lineStyle_:GraphicsStroke = new GraphicsStroke(2, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, outlineFill_);
 		private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
 		private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
-		
+
 		public function EditBoard(_arg_1:String)
 		{
 			this.text_ = _arg_1;
@@ -84,7 +84,7 @@ package com.company.assembleegameclient.ui.board
 			this.saveButton_.textChanged.add(this.layoutBackground);
 			addChild(this.saveButton_);
 		}
-		
+
 		private function layoutBackground():void
 		{
 			this.h_ = ((TEXT_HEIGHT + this.saveButton_.height) + 8);
@@ -96,27 +96,27 @@ package com.company.assembleegameclient.ui.board
 			graphics.drawGraphicsData(this.graphicsData_);
 			this.scrollBar_.setIndicatorSize(TEXT_HEIGHT, this.boardText_.textHeight, false);
 		}
-		
+
 		public function getText():String
 		{
 			return (this.boardText_.text);
 		}
-		
+
 		private function onScrollBarChange(_arg_1:Event):void
 		{
 			this.boardText_.scrollV = (1 + (this.scrollBar_.pos() * this.boardText_.maxScrollV));
 		}
-		
+
 		private function onCancel(_arg_1:Event):void
 		{
 			dispatchEvent(new Event(Event.CANCEL));
 		}
-		
+
 		private function onSave(_arg_1:Event):void
 		{
 			dispatchEvent(new Event(Event.COMPLETE));
 		}
-		
+
 		private function onTextChange(_arg_1:Event):void
 		{
 			if (this.scrollBar_ == null)
@@ -133,7 +133,7 @@ package com.company.assembleegameclient.ui.board
 				this.scrollBar_.setPos(((this.boardText_.scrollV - 1) / (this.boardText_.maxScrollV - 1)));
 			}
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.ui.board
 

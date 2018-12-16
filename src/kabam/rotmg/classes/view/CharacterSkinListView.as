@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.classes.view.CharacterSkinListView
 
@@ -7,7 +7,7 @@ package kabam.rotmg.classes.view
 {
     import flash.display.Sprite;
     import kabam.rotmg.util.components.VerticalScrollingList;
-    import __AS3__.vec.Vector;
+    
     import flash.display.DisplayObject;
     import kabam.lib.ui.api.Size;
 

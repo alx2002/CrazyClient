@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.dailyQuests.model.DailyQuest
 
 package io.decagames.rotmg.dailyQuests.model
 {
-	import __AS3__.vec.Vector;
+	
 	
 	public class DailyQuest
 	{

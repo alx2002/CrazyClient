@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.friends.view.FriendTabView
 
@@ -7,7 +7,7 @@ package kabam.rotmg.friends.view
 {
     import flash.display.Sprite;
     import org.osflash.signals.Signal;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.game.view.components.TabView;
     import flash.events.MouseEvent;
     import com.company.ui.BaseSimpleText;
@@ -18,7 +18,7 @@ package kabam.rotmg.friends.view
     import flash.display.GraphicsPath;
     import flash.display.IGraphicsData;
     import com.company.util.GraphicsUtil;
-    import __AS3__.vec.*;
+    
 
     public class FriendTabView extends Sprite 
     {

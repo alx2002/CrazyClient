@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.outgoing.Move
 
 package kabam.rotmg.messaging.impl.outgoing
 {
     import kabam.rotmg.messaging.impl.data.WorldPosData;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.messaging.impl.data.MoveRecord;
     import flash.utils.IDataOutput;
-    import __AS3__.vec.*;
+    
 
     public class Move extends OutgoingMessage 
     {

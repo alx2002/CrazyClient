@@ -1,15 +1,15 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.data.ObjectStatusData
 
 package kabam.rotmg.messaging.impl.data
 {
-    import __AS3__.vec.Vector;
+    
     import com.company.assembleegameclient.util.FreeList;
     import flash.utils.IDataInput;
     import flash.utils.IDataOutput;
-    import __AS3__.vec.*;
+    
 
     public class ObjectStatusData 
     {

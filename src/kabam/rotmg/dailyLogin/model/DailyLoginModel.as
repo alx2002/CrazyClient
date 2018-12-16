@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.dailyLogin.model.DailyLoginModel
 
 package kabam.rotmg.dailyLogin.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+    
+    
 
     public class DailyLoginModel 
     {

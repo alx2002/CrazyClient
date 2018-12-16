@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.ImminentWaveCountdownClock
 
@@ -71,7 +71,7 @@ package kabam.rotmg.arena.view
             y = ((contains(this.countDownContainer)) ? 138 : 87.5);
         }
 
-        private function updateCountdownClock(_arg_1:TimerEvent):void
+        private function updateCountdownClock(event:TimerEvent):void
         {
             if (this.count > 1)
             {
@@ -90,7 +90,7 @@ package kabam.rotmg.arena.view
             };
         }
 
-        private function cleanup(_arg_1:TimerEvent):void
+        private function cleanup(event:TimerEvent):void
         {
             this.waveStartTimer.removeEventListener(TimerEvent.TIMER, this.cleanup);
             this.close.dispatch();

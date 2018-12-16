@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.fame.FameContentPopupMediator
 
 package io.decagames.rotmg.fame
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.appengine.SavedCharacter;
 	import com.company.assembleegameclient.objects.ObjectLibrary;
 	import com.company.assembleegameclient.objects.Player;

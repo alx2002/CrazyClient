@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.messaging.impl.incoming.GlobalNotification
 
@@ -26,7 +26,7 @@ package kabam.rotmg.messaging.impl.incoming
 
         override public function toString():String
         {
-            return (formatToString("GLOBAL_NOTIFICATION", "type", "text"));
+            return (formatToString("GLOBALNOTIFICATION", "type", "text"));
         }
 
 

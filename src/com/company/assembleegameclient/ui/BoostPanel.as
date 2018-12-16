@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.BoostPanel
 
@@ -48,7 +48,7 @@ package com.company.assembleegameclient.ui
 			this.timer.start();
 		}
 		
-		private function update(_arg_1:TimerEvent):void
+		private function update(event:TimerEvent):void
 		{
 			this.updateTimer(this.tierBoostTimer, this.player.tierBoost);
 			this.updateTimer(this.dropBoostTimer, this.player.dropBoost);

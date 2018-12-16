@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.news.view.NewsMediator
 
@@ -8,7 +8,7 @@ package kabam.rotmg.news.view
     import robotlegs.bender.bundles.mvcs.Mediator;
     import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
     import kabam.rotmg.news.model.NewsModel;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.news.model.NewsCellVO;
 
     public class NewsMediator extends Mediator 

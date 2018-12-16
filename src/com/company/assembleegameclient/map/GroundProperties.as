@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.map.GroundProperties
 
 package com.company.assembleegameclient.map
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.objects.TextureData;
 	import com.company.assembleegameclient.objects.TextureDataConcrete;
 	import com.company.util.BitmapUtil;

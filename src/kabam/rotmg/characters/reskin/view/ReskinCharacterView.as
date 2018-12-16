@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.characters.reskin.view.ReskinCharacterView
 
@@ -17,7 +17,7 @@ package kabam.rotmg.characters.reskin.view
     import flash.text.TextFieldAutoSize;
     import kabam.rotmg.text.view.stringBuilder.LineBuilder;
     import kabam.rotmg.text.model.TextKey;
-    import __AS3__.vec.Vector;
+    
     import flash.display.DisplayObject;
     import flash.display.LineScaleMode;
     import flash.display.CapsStyle;

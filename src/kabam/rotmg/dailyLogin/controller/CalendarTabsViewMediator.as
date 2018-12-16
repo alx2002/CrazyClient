@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.dailyLogin.controller.CalendarTabsViewMediator
 
@@ -8,12 +8,12 @@ package kabam.rotmg.dailyLogin.controller
     import robotlegs.bender.bundles.mvcs.Mediator;
     import kabam.rotmg.dailyLogin.view.CalendarTabsView;
     import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.dailyLogin.view.CalendarTabButton;
     import kabam.rotmg.dailyLogin.config.CalendarSettings;
     import kabam.rotmg.dailyLogin.model.CalendarTypes;
     import flash.events.MouseEvent;
-    import __AS3__.vec.*;
+    
 
     public class CalendarTabsViewMediator extends Mediator 
     {

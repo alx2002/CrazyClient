@@ -1,249 +1,252 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
-
+﻿
 //kabam.rotmg.messaging.impl.GameServerConnectionConcrete
 
 package kabam.rotmg.messaging.impl
 {
-    import com.company.assembleegameclient.game.events.ReconnectEvent;
-    import __AS3__.vec.Vector;
-    import kabam.lib.net.api.MessageProvider;
-    import com.company.util.Random;
-    import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
-    import kabam.rotmg.messaging.impl.incoming.Death;
-    import flash.utils.Timer;
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
-    import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
-    import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
-    import robotlegs.bender.framework.api.ILogger;
-    import kabam.rotmg.death.control.HandleDeathSignal;
-    import kabam.rotmg.death.control.ZombifySignal;
-    import kabam.rotmg.game.focus.control.SetGameFocusSignal;
-    import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
-    import io.decagames.rotmg.pets.signals.PetFeedResultSignal;
-    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import kabam.rotmg.arena.control.ArenaDeathSignal;
-    import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
-    import io.decagames.rotmg.dailyQuests.signal.QuestFetchCompleteSignal;
-    import io.decagames.rotmg.dailyQuests.signal.QuestRedeemCompleteSignal;
-    import kabam.rotmg.dailyLogin.signal.ClaimDailyRewardResponseSignal;
-    import io.decagames.rotmg.classes.NewClassUnlockSignal;
-    import kabam.rotmg.arena.model.CurrentArenaRunModel;
-    import kabam.rotmg.classes.model.ClassesModel;
-    import org.swiftsuspenders.Injector;
-    import kabam.rotmg.game.model.GameModel;
-    import io.decagames.rotmg.pets.signals.UpdateActivePet;
-    import io.decagames.rotmg.pets.data.PetsModel;
-    import io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker;
-    import io.decagames.rotmg.social.model.SocialModel;
-    import kabam.rotmg.servers.api.ServerModel;
-    import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
-    import kabam.rotmg.ui.signals.ShowHideKeyUISignal;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.core.StaticInjectorContext;
-    import kabam.rotmg.maploading.signals.ChangeMapSignal;
-    import kabam.lib.net.impl.SocketServer;
-    import com.company.assembleegameclient.game.AGameSprite;
-    import kabam.rotmg.servers.api.Server;
-    import flash.utils.ByteArray;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import kabam.rotmg.text.model.TextKey;
-    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-    import kabam.lib.net.api.MessageMap;
-    import kabam.rotmg.messaging.impl.outgoing.Create;
-    import kabam.rotmg.messaging.impl.outgoing.PlayerShoot;
-    import kabam.rotmg.messaging.impl.outgoing.Move;
-    import kabam.rotmg.messaging.impl.outgoing.PlayerText;
-    import kabam.lib.net.impl.Message;
-    import kabam.rotmg.messaging.impl.outgoing.InvSwap;
-    import kabam.rotmg.messaging.impl.outgoing.UseItem;
-    import kabam.rotmg.messaging.impl.outgoing.Hello;
-    import kabam.rotmg.messaging.impl.outgoing.InvDrop;
-    import kabam.rotmg.messaging.impl.outgoing.Pong;
-    import kabam.rotmg.messaging.impl.outgoing.Load;
-    import kabam.rotmg.messaging.impl.outgoing.ChangePetSkin;
-    import kabam.rotmg.messaging.impl.outgoing.SetCondition;
-    import kabam.rotmg.messaging.impl.outgoing.Teleport;
-    import kabam.rotmg.messaging.impl.outgoing.UsePortal;
-    import kabam.rotmg.messaging.impl.outgoing.Buy;
-    import kabam.rotmg.messaging.impl.outgoing.PlayerHit;
-    import kabam.rotmg.messaging.impl.outgoing.EnemyHit;
-    import kabam.rotmg.messaging.impl.outgoing.AoeAck;
-    import kabam.rotmg.messaging.impl.outgoing.ShootAck;
-    import kabam.rotmg.messaging.impl.outgoing.OtherHit;
-    import kabam.rotmg.messaging.impl.outgoing.SquareHit;
-    import kabam.rotmg.messaging.impl.outgoing.GotoAck;
-    import kabam.rotmg.messaging.impl.outgoing.GroundDamage;
-    import kabam.rotmg.messaging.impl.outgoing.ChooseName;
-    import kabam.rotmg.messaging.impl.outgoing.CreateGuild;
-    import kabam.rotmg.messaging.impl.outgoing.GuildRemove;
-    import kabam.rotmg.messaging.impl.outgoing.GuildInvite;
-    import kabam.rotmg.messaging.impl.outgoing.RequestTrade;
-    import kabam.rotmg.messaging.impl.outgoing.ChangeTrade;
-    import kabam.rotmg.messaging.impl.outgoing.AcceptTrade;
-    import kabam.rotmg.messaging.impl.outgoing.CancelTrade;
-    import kabam.rotmg.messaging.impl.outgoing.CheckCredits;
-    import kabam.rotmg.messaging.impl.outgoing.Escape;
-    import kabam.rotmg.messaging.impl.outgoing.GoToQuestRoom;
-    import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
-    import kabam.rotmg.messaging.impl.outgoing.ChangeGuildRank;
-    import kabam.rotmg.messaging.impl.outgoing.EditAccountList;
-    import kabam.rotmg.messaging.impl.outgoing.ActivePetUpdateRequest;
-    import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
-    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
-    import kabam.rotmg.messaging.impl.outgoing.arena.QuestRedeem;
-    import kabam.rotmg.messaging.impl.outgoing.KeyInfoRequest;
-    import kabam.rotmg.dailyLogin.message.ClaimDailyRewardMessage;
-    import kabam.rotmg.messaging.impl.incoming.Failure;
-    import kabam.rotmg.messaging.impl.incoming.CreateSuccess;
-    import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
-    import kabam.rotmg.messaging.impl.incoming.Damage;
-    import kabam.rotmg.messaging.impl.incoming.Update;
-    import kabam.rotmg.messaging.impl.incoming.Notification;
-    import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
-    import kabam.rotmg.messaging.impl.incoming.NewTick;
-    import kabam.rotmg.messaging.impl.incoming.ShowEffect;
-    import kabam.rotmg.messaging.impl.incoming.Goto;
-    import kabam.rotmg.messaging.impl.incoming.InvResult;
-    import kabam.rotmg.messaging.impl.incoming.Reconnect;
-    import kabam.rotmg.messaging.impl.incoming.Ping;
-    import kabam.rotmg.messaging.impl.incoming.MapInfo;
-    import kabam.rotmg.messaging.impl.incoming.Pic;
-    import kabam.rotmg.messaging.impl.incoming.BuyResult;
-    import kabam.rotmg.messaging.impl.incoming.Aoe;
-    import kabam.rotmg.messaging.impl.incoming.AccountList;
-    import kabam.rotmg.messaging.impl.incoming.QuestObjId;
-    import kabam.rotmg.messaging.impl.incoming.NameResult;
-    import kabam.rotmg.messaging.impl.incoming.GuildResult;
-    import kabam.rotmg.messaging.impl.incoming.AllyShoot;
-    import kabam.rotmg.messaging.impl.incoming.EnemyShoot;
-    import kabam.rotmg.messaging.impl.incoming.TradeRequested;
-    import kabam.rotmg.messaging.impl.incoming.TradeStart;
-    import kabam.rotmg.messaging.impl.incoming.TradeChanged;
-    import kabam.rotmg.messaging.impl.incoming.TradeDone;
-    import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
-    import kabam.rotmg.messaging.impl.incoming.ClientStat;
-    import kabam.rotmg.messaging.impl.incoming.File;
-    import kabam.rotmg.messaging.impl.incoming.InvitedToGuild;
-    import kabam.rotmg.messaging.impl.incoming.PlaySound;
-    import kabam.rotmg.messaging.impl.incoming.NewAbilityMessage;
-    import kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
-    import kabam.rotmg.messaging.impl.incoming.pets.DeletePetMessage;
-    import kabam.rotmg.messaging.impl.incoming.pets.HatchPetMessage;
-    import kabam.rotmg.messaging.impl.incoming.arena.ImminentArenaWave;
-    import kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath;
-    import kabam.rotmg.messaging.impl.incoming.VerifyEmail;
-    import kabam.rotmg.messaging.impl.incoming.ReskinUnlock;
-    import kabam.rotmg.messaging.impl.incoming.PasswordPrompt;
-    import io.decagames.rotmg.dailyQuests.messages.incoming.QuestFetchResponse;
-    import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
-    import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
-    import kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse;
-    import kabam.rotmg.messaging.impl.incoming.thunderboxer.SetSpeed;
-    import kabam.rotmg.messaging.impl.outgoing.thunderboxer.ThunderMove;
-    import com.company.assembleegameclient.objects.Player;
-    import io.decagames.rotmg.pets.signals.HatchPetSignal;
-    import io.decagames.rotmg.pets.data.vo.HatchPetVO;
-    import io.decagames.rotmg.pets.signals.DeletePetSignal;
-    import io.decagames.rotmg.pets.signals.NewAbilitySignal;
-    import io.decagames.rotmg.pets.signals.UpdatePetYardSignal;
-    import kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler;
-    import com.hurlant.crypto.symmetric.ICipher;
-    import com.hurlant.crypto.Crypto;
-    import com.company.util.MoreStringUtil;
-    import kabam.rotmg.classes.model.CharacterClass;
-    import kabam.rotmg.arena.view.BattleSummaryDialog;
-    import com.company.assembleegameclient.objects.Projectile;
-    import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
-    import kabam.rotmg.game.commands.PlayGameCommand;
-    import com.company.assembleegameclient.sound.SoundEffectLibrary;
-    import com.company.assembleegameclient.objects.GameObject;
-    import kabam.rotmg.constants.ItemConstants;
-    import kabam.rotmg.game.model.PotionInventoryModel;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import flash.utils.getTimer;
-    import flash.geom.Point;
-    import com.company.assembleegameclient.objects.SellableObject;
-    import com.company.assembleegameclient.util.Currency;
-    import com.hurlant.util.der.PEM;
-    import com.hurlant.crypto.rsa.RSAKey;
-    import com.hurlant.util.Base64;
-    import kabam.rotmg.account.core.Account;
-    import com.company.assembleegameclient.game.MapUserInput;
-    import com.company.assembleegameclient.map.AbstractMap;
-    import com.company.assembleegameclient.util.FreeList;
-    import kabam.rotmg.classes.model.CharacterSkin;
-    import kabam.rotmg.classes.model.CharacterSkinState;
-    import com.company.assembleegameclient.ui.panels.TradeRequestPanel;
-    import kabam.rotmg.messaging.impl.data.GroundTileData;
-    import kabam.rotmg.minimap.model.UpdateGroundTileVO;
-    import kabam.rotmg.messaging.impl.data.ObjectStatusData;
-    import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
-    import com.company.assembleegameclient.objects.Container;
-    import com.company.assembleegameclient.objects.Party;
-    import kabam.rotmg.messaging.impl.data.ObjectData;
-    import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
-    import kabam.rotmg.game.view.components.QueuedStatusText;
-    import com.company.assembleegameclient.ui.options.Options;
-    import kabam.rotmg.ui.signals.ShowKeySignal;
-    import kabam.rotmg.ui.model.Key;
-    import com.company.assembleegameclient.objects.particles.ParticleEffect;
-    import com.company.assembleegameclient.objects.particles.ThrowEffect;
-    import com.company.assembleegameclient.objects.FlashDescription;
-    import com.company.assembleegameclient.objects.thrown.ThrowProjectileEffect;
-    import com.company.assembleegameclient.objects.particles.BurstEffect;
-    import com.company.assembleegameclient.objects.particles.HealEffect;
-    import com.company.assembleegameclient.objects.particles.TeleportEffect;
-    import com.company.assembleegameclient.objects.particles.StreamEffect;
-    import com.company.assembleegameclient.objects.particles.NovaEffect;
-    import com.company.assembleegameclient.objects.particles.PoisonEffect;
-    import com.company.assembleegameclient.objects.particles.LineEffect;
-    import com.company.assembleegameclient.objects.particles.FlowEffect;
-    import com.company.assembleegameclient.objects.particles.RingEffect;
-    import com.company.assembleegameclient.objects.particles.LightningEffect;
-    import com.company.assembleegameclient.objects.particles.CollapseEffect;
-    import com.company.assembleegameclient.objects.particles.ConeBlastEffect;
-    import com.company.assembleegameclient.objects.particles.ShockerEffect;
-    import com.company.assembleegameclient.objects.particles.ShockeeEffect;
-    import com.company.assembleegameclient.objects.particles.RisingFuryEffect;
-    import kabam.rotmg.messaging.impl.data.StatData;
-    import com.company.assembleegameclient.objects.Merchant;
-    import com.company.assembleegameclient.objects.Pet;
-    import com.company.assembleegameclient.util.ConditionEffect;
-    import com.company.assembleegameclient.objects.Portal;
-    import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
-    import com.company.assembleegameclient.objects.NameChanger;
-    import com.company.assembleegameclient.util.AnimatedChars;
-    import kabam.rotmg.constants.GeneralConstants;
-    import kabam.rotmg.messaging.impl.outgoing.Reskin;
-    import com.company.assembleegameclient.objects.ObjectProperties;
-    import com.company.assembleegameclient.objects.ProjectileProperties;
-    import com.company.assembleegameclient.map.GroundLibrary;
-    import flash.display.Bitmap;
-    import com.company.assembleegameclient.ui.PicView;
-    import flash.display.BitmapData;
-    import com.gskinner.motion.GTween;
-    import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-    import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
-    import com.company.assembleegameclient.objects.particles.AOEEffect;
-    import com.company.assembleegameclient.game.events.NameResultEvent;
-    import com.company.assembleegameclient.game.events.GuildResultEvent;
-    import flash.net.FileReference;
-    import com.company.assembleegameclient.ui.panels.GuildInvitePanel;
-    import kabam.rotmg.arena.view.ContinueOrQuitDialog;
-    import kabam.rotmg.ui.view.TitleView;
-    import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-    import kabam.rotmg.messaging.impl.data.SlotObjectData;
-    import flash.events.TimerEvent;
-    import com.company.assembleegameclient.ui.dialogs.Dialog;
-    import flash.events.Event;
-    import __AS3__.vec.*;
 
-    public class GameServerConnectionConcrete extends GameServerConnection 
+
+	import com.company.assembleegameclient.game.AGameSprite;
+	import com.company.assembleegameclient.game.MapUserInput;
+	import com.company.assembleegameclient.game.events.GuildResultEvent;
+	import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
+	import com.company.assembleegameclient.game.events.NameResultEvent;
+	import com.company.assembleegameclient.game.events.ReconnectEvent;
+	import com.company.assembleegameclient.map.AbstractMap;
+	import com.company.assembleegameclient.map.GroundLibrary;
+	import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
+	import com.company.assembleegameclient.objects.Container;
+	import com.company.assembleegameclient.objects.FlashDescription;
+	import com.company.assembleegameclient.objects.GameObject;
+	import com.company.assembleegameclient.objects.Merchant;
+	import com.company.assembleegameclient.objects.NameChanger;
+	import com.company.assembleegameclient.objects.ObjectLibrary;
+	import com.company.assembleegameclient.objects.ObjectProperties;
+	import com.company.assembleegameclient.objects.Party;
+	import com.company.assembleegameclient.objects.Pet;
+	import com.company.assembleegameclient.objects.Player;
+	import com.company.assembleegameclient.objects.Portal;
+	import com.company.assembleegameclient.objects.Projectile;
+	import com.company.assembleegameclient.objects.ProjectileProperties;
+	import com.company.assembleegameclient.objects.SellableObject;
+	import com.company.assembleegameclient.objects.particles.AOEEffect;
+	import com.company.assembleegameclient.objects.particles.BurstEffect;
+	import com.company.assembleegameclient.objects.particles.CollapseEffect;
+	import com.company.assembleegameclient.objects.particles.ConeBlastEffect;
+	import com.company.assembleegameclient.objects.particles.FlowEffect;
+	import com.company.assembleegameclient.objects.particles.HealEffect;
+	import com.company.assembleegameclient.objects.particles.LightningEffect;
+	import com.company.assembleegameclient.objects.particles.LineEffect;
+	import com.company.assembleegameclient.objects.particles.NovaEffect;
+	import com.company.assembleegameclient.objects.particles.ParticleEffect;
+	import com.company.assembleegameclient.objects.particles.PoisonEffect;
+	import com.company.assembleegameclient.objects.particles.RingEffect;
+	import com.company.assembleegameclient.objects.particles.RisingFuryEffect;
+	import com.company.assembleegameclient.objects.particles.ShockeeEffect;
+	import com.company.assembleegameclient.objects.particles.ShockerEffect;
+	import com.company.assembleegameclient.objects.particles.StreamEffect;
+	import com.company.assembleegameclient.objects.particles.TeleportEffect;
+	import com.company.assembleegameclient.objects.particles.ThrowEffect;
+	import com.company.assembleegameclient.objects.thrown.ThrowProjectileEffect;
+	import com.company.assembleegameclient.parameters.Parameters;
+	import com.company.assembleegameclient.screens.charrects.CurrentCharacterRect;
+	import com.company.assembleegameclient.sound.SoundEffectLibrary;
+	import com.company.assembleegameclient.ui.PicView;
+	import com.company.assembleegameclient.ui.dialogs.Dialog;
+	import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
+	import com.company.assembleegameclient.ui.options.Options;
+	import com.company.assembleegameclient.ui.panels.GuildInvitePanel;
+	import com.company.assembleegameclient.ui.panels.TradeRequestPanel;
+	import com.company.assembleegameclient.util.AnimatedChars;
+	import com.company.assembleegameclient.util.ConditionEffect;
+	import com.company.assembleegameclient.util.Currency;
+	import com.company.assembleegameclient.util.FreeList;
+	import com.company.util.MoreStringUtil;
+	import com.company.util.Random;
+	import com.gskinner.motion.GTween;
+	import com.hurlant.crypto.Crypto;
+	import com.hurlant.crypto.rsa.RSAKey;
+	import com.hurlant.crypto.symmetric.ICipher;
+	import com.hurlant.util.Base64;
+	import com.hurlant.util.der.PEM;
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.events.Event;
+	import flash.events.TimerEvent;
+	import flash.geom.Point;
+	import flash.net.FileReference;
+	import flash.utils.ByteArray;
+	import flash.utils.Timer;
+	import flash.utils.getTimer;
+	import io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker;
+	import io.decagames.rotmg.classes.NewClassUnlockSignal;
+	import io.decagames.rotmg.dailyQuests.messages.incoming.QuestFetchResponse;
+	import io.decagames.rotmg.dailyQuests.signal.QuestFetchCompleteSignal;
+	import io.decagames.rotmg.dailyQuests.signal.QuestRedeemCompleteSignal;
+	import io.decagames.rotmg.pets.data.PetsModel;
+	import io.decagames.rotmg.pets.data.vo.HatchPetVO;
+	import io.decagames.rotmg.pets.signals.DeletePetSignal;
+	import io.decagames.rotmg.pets.signals.HatchPetSignal;
+	import io.decagames.rotmg.pets.signals.NewAbilitySignal;
+	import io.decagames.rotmg.pets.signals.PetFeedResultSignal;
+	import io.decagames.rotmg.pets.signals.UpdateActivePet;
+	import io.decagames.rotmg.pets.signals.UpdatePetYardSignal;
+	import io.decagames.rotmg.social.model.SocialModel;
+	import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
+	import kabam.lib.net.api.MessageMap;
+	import kabam.lib.net.api.MessageProvider;
+	import kabam.lib.net.impl.Message;
+	import kabam.lib.net.impl.SocketServer;
+	import kabam.rotmg.account.core.Account;
+	import kabam.rotmg.arena.control.ArenaDeathSignal;
+	import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
+	import kabam.rotmg.arena.model.CurrentArenaRunModel;
+	import kabam.rotmg.arena.view.BattleSummaryDialog;
+	import kabam.rotmg.arena.view.ContinueOrQuitDialog;
+	import kabam.rotmg.chat.model.ChatMessage;
+	import kabam.rotmg.classes.model.CharacterClass;
+	import kabam.rotmg.classes.model.CharacterSkin;
+	import kabam.rotmg.classes.model.CharacterSkinState;
+	import kabam.rotmg.classes.model.ClassesModel;
+	import kabam.rotmg.constants.GeneralConstants;
+	import kabam.rotmg.constants.ItemConstants;
+	import kabam.rotmg.core.StaticInjectorContext;
+	import kabam.rotmg.dailyLogin.message.ClaimDailyRewardMessage;
+	import kabam.rotmg.dailyLogin.message.ClaimDailyRewardResponse;
+	import kabam.rotmg.dailyLogin.signal.ClaimDailyRewardResponseSignal;
+	import kabam.rotmg.death.control.HandleDeathSignal;
+	import kabam.rotmg.death.control.ZombifySignal;
+	import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+	import kabam.rotmg.dialogs.control.OpenDialogSignal;
+	import kabam.rotmg.game.commands.PlayGameCommand;
+	import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+	import kabam.rotmg.game.model.GameModel;
+	import kabam.rotmg.game.model.PotionInventoryModel;
+	import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
+	import kabam.rotmg.game.signals.AddTextLineSignal;
+	import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
+	import kabam.rotmg.game.view.components.QueuedStatusText;
+	import kabam.rotmg.maploading.signals.ChangeMapSignal;
+	import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+	import kabam.rotmg.messaging.impl.data.GroundTileData;
+	import kabam.rotmg.messaging.impl.data.ObjectData;
+	import kabam.rotmg.messaging.impl.data.ObjectStatusData;
+	import kabam.rotmg.messaging.impl.data.SlotObjectData;
+	import kabam.rotmg.messaging.impl.data.StatData;
+	import kabam.rotmg.messaging.impl.incoming.AccountList;
+	import kabam.rotmg.messaging.impl.incoming.AllyShoot;
+	import kabam.rotmg.messaging.impl.incoming.Aoe;
+	import kabam.rotmg.messaging.impl.incoming.BuyResult;
+	import kabam.rotmg.messaging.impl.incoming.ClientStat;
+	import kabam.rotmg.messaging.impl.incoming.CreateSuccess;
+	import kabam.rotmg.messaging.impl.incoming.Damage;
+	import kabam.rotmg.messaging.impl.incoming.Death;
+	import kabam.rotmg.messaging.impl.incoming.EnemyShoot;
+	import kabam.rotmg.messaging.impl.incoming.EvolvedMessageHandler;
+	import kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
+	import kabam.rotmg.messaging.impl.incoming.Failure;
+	import kabam.rotmg.messaging.impl.incoming.File;
+	import kabam.rotmg.messaging.impl.incoming.GlobalNotification;
+	import kabam.rotmg.messaging.impl.incoming.Goto;
+	import kabam.rotmg.messaging.impl.incoming.GuildResult;
+	import kabam.rotmg.messaging.impl.incoming.InvResult;
+	import kabam.rotmg.messaging.impl.incoming.InvitedToGuild;
+	import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
+	import kabam.rotmg.messaging.impl.incoming.MapInfo;
+	import kabam.rotmg.messaging.impl.incoming.NameResult;
+	import kabam.rotmg.messaging.impl.incoming.NewAbilityMessage;
+	import kabam.rotmg.messaging.impl.incoming.NewTick;
+	import kabam.rotmg.messaging.impl.incoming.Notification;
+	import kabam.rotmg.messaging.impl.incoming.PasswordPrompt;
+	import kabam.rotmg.messaging.impl.incoming.Pic;
+	import kabam.rotmg.messaging.impl.incoming.Ping;
+	import kabam.rotmg.messaging.impl.incoming.PlaySound;
+	import kabam.rotmg.messaging.impl.incoming.QuestObjId;
+	import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
+	import kabam.rotmg.messaging.impl.incoming.Reconnect;
+	import kabam.rotmg.messaging.impl.incoming.ReskinUnlock;
+	import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
+	import kabam.rotmg.messaging.impl.incoming.ShowEffect;
+	import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
+	import kabam.rotmg.messaging.impl.incoming.TradeChanged;
+	import kabam.rotmg.messaging.impl.incoming.TradeDone;
+	import kabam.rotmg.messaging.impl.incoming.TradeRequested;
+	import kabam.rotmg.messaging.impl.incoming.TradeStart;
+	import kabam.rotmg.messaging.impl.incoming.Update;
+	import kabam.rotmg.messaging.impl.incoming.VerifyEmail;
+	import kabam.rotmg.messaging.impl.incoming.arena.ArenaDeath;
+	import kabam.rotmg.messaging.impl.incoming.arena.ImminentArenaWave;
+	import kabam.rotmg.messaging.impl.incoming.pets.DeletePetMessage;
+	import kabam.rotmg.messaging.impl.incoming.pets.HatchPetMessage;
+	import kabam.rotmg.messaging.impl.incoming.thunderboxer.SetSpeed;
+	import kabam.rotmg.messaging.impl.outgoing.AcceptTrade;
+	import kabam.rotmg.messaging.impl.outgoing.ActivePetUpdateRequest;
+	import kabam.rotmg.messaging.impl.outgoing.AoeAck;
+	import kabam.rotmg.messaging.impl.outgoing.Buy;
+	import kabam.rotmg.messaging.impl.outgoing.CancelTrade;
+	import kabam.rotmg.messaging.impl.outgoing.ChangeGuildRank;
+	import kabam.rotmg.messaging.impl.outgoing.ChangePetSkin;
+	import kabam.rotmg.messaging.impl.outgoing.ChangeTrade;
+	import kabam.rotmg.messaging.impl.outgoing.CheckCredits;
+	import kabam.rotmg.messaging.impl.outgoing.ChooseName;
+	import kabam.rotmg.messaging.impl.outgoing.Create;
+	import kabam.rotmg.messaging.impl.outgoing.CreateGuild;
+	import kabam.rotmg.messaging.impl.outgoing.EditAccountList;
+	import kabam.rotmg.messaging.impl.outgoing.EnemyHit;
+	import kabam.rotmg.messaging.impl.outgoing.Escape;
+	import kabam.rotmg.messaging.impl.outgoing.GoToQuestRoom;
+	import kabam.rotmg.messaging.impl.outgoing.GotoAck;
+	import kabam.rotmg.messaging.impl.outgoing.GroundDamage;
+	import kabam.rotmg.messaging.impl.outgoing.GuildInvite;
+	import kabam.rotmg.messaging.impl.outgoing.GuildRemove;
+	import kabam.rotmg.messaging.impl.outgoing.Hello;
+	import kabam.rotmg.messaging.impl.outgoing.InvDrop;
+	import kabam.rotmg.messaging.impl.outgoing.InvSwap;
+	import kabam.rotmg.messaging.impl.outgoing.JoinGuild;
+	import kabam.rotmg.messaging.impl.outgoing.KeyInfoRequest;
+	import kabam.rotmg.messaging.impl.outgoing.Load;
+	import kabam.rotmg.messaging.impl.outgoing.Move;
+	import kabam.rotmg.messaging.impl.outgoing.OtherHit;
+	import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
+	import kabam.rotmg.messaging.impl.outgoing.PlayerHit;
+	import kabam.rotmg.messaging.impl.outgoing.PlayerShoot;
+	import kabam.rotmg.messaging.impl.outgoing.PlayerText;
+	import kabam.rotmg.messaging.impl.outgoing.Pong;
+	import kabam.rotmg.messaging.impl.outgoing.RequestTrade;
+	import kabam.rotmg.messaging.impl.outgoing.Reskin;
+	import kabam.rotmg.messaging.impl.outgoing.SetCondition;
+	import kabam.rotmg.messaging.impl.outgoing.ShootAck;
+	import kabam.rotmg.messaging.impl.outgoing.SquareHit;
+	import kabam.rotmg.messaging.impl.outgoing.Teleport;
+	import kabam.rotmg.messaging.impl.outgoing.UseItem;
+	import kabam.rotmg.messaging.impl.outgoing.UsePortal;
+	import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
+	import kabam.rotmg.messaging.impl.outgoing.arena.QuestRedeem;
+	import kabam.rotmg.messaging.impl.outgoing.thunderboxer.ThunderMove;
+	import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
+	import kabam.rotmg.minimap.control.UpdateGroundTileSignal;
+	import kabam.rotmg.minimap.model.UpdateGroundTileVO;
+	import kabam.rotmg.servers.api.Server;
+	import kabam.rotmg.servers.api.ServerModel;
+	import kabam.rotmg.text.model.TextKey;
+	import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+	import kabam.rotmg.ui.model.HUDModel;
+	import kabam.rotmg.ui.model.Key;
+	import kabam.rotmg.ui.model.UpdateGameObjectTileVO;
+	import kabam.rotmg.ui.signals.ShowHideKeyUISignal;
+	import kabam.rotmg.ui.signals.ShowKeySignal;
+	import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
+	import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+	import kabam.rotmg.ui.view.TitleView;
+	import org.swiftsuspenders.Injector;
+	import robotlegs.bender.framework.api.ILogger;
+
+
+    public class GameServerConnectionConcrete extends GameServerConnection
     {
+
+
+
+
 
         private static const TO_MILLISECONDS:int = 1000;
         private static var lastfame:int = -1;
@@ -426,7 +429,7 @@ package kabam.rotmg.messaging.impl
             _local_1.map(INVDROP).toMessage(InvDrop);
             _local_1.map(PONG).toMessage(Pong);
             _local_1.map(LOAD).toMessage(Load);
-            _local_1.map(PET_CHANGE_SKIN_MSG).toMessage(ChangePetSkin);
+            _local_1.map(PETCHANGESKINMSG).toMessage(ChangePetSkin);
             _local_1.map(SETCONDITION).toMessage(SetCondition);
             _local_1.map(TELEPORT).toMessage(Teleport);
             _local_1.map(USEPORTAL).toMessage(UsePortal);
@@ -449,26 +452,26 @@ package kabam.rotmg.messaging.impl
             _local_1.map(CANCELTRADE).toMessage(CancelTrade);
             _local_1.map(CHECKCREDITS).toMessage(CheckCredits);
             _local_1.map(ESCAPE).toMessage(Escape);
-            _local_1.map(QUEST_ROOM_MSG).toMessage(GoToQuestRoom);
+            _local_1.map(QUESTROOMMSG).toMessage(GoToQuestRoom);
             _local_1.map(JOINGUILD).toMessage(JoinGuild);
             _local_1.map(CHANGEGUILDRANK).toMessage(ChangeGuildRank);
             _local_1.map(EDITACCOUNTLIST).toMessage(EditAccountList);
-            _local_1.map(ACTIVE_PET_UPDATE_REQUEST).toMessage(ActivePetUpdateRequest);
+            _local_1.map(ACTIVEPETUPDATEREQUEST).toMessage(ActivePetUpdateRequest);
             _local_1.map(PETUPGRADEREQUEST).toMessage(PetUpgradeRequest);
-            _local_1.map(ENTER_ARENA).toMessage(EnterArena);
-            _local_1.map(ACCEPT_ARENA_DEATH).toMessage(OutgoingMessage);
-            _local_1.map(QUEST_FETCH_ASK).toMessage(OutgoingMessage);
-            _local_1.map(QUEST_REDEEM).toMessage(QuestRedeem);
-            _local_1.map(KEY_INFO_REQUEST).toMessage(KeyInfoRequest);
-            _local_1.map(PET_CHANGE_FORM_MSG).toMessage(ReskinPet);
-            _local_1.map(CLAIM_LOGIN_REWARD_MSG).toMessage(ClaimDailyRewardMessage);
+            _local_1.map(ENTERARENA).toMessage(EnterArena);
+            _local_1.map(ACCEPTARENADEATH).toMessage(OutgoingMessage);
+            _local_1.map(QUESTFETCHASK).toMessage(OutgoingMessage);
+            _local_1.map(QUESTREDEEM).toMessage(QuestRedeem);
+            _local_1.map(KEYINFOREQUEST).toMessage(KeyInfoRequest);
+            _local_1.map(PETCHANGEFORMMSG).toMessage(ReskinPet);
+            _local_1.map(CLAIMLOGINREWARDMSG).toMessage(ClaimDailyRewardMessage);
             _local_1.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
-            _local_1.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
+            _local_1.map(CREATESUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
             _local_1.map(SERVERPLAYERSHOOT).toMessage(ServerPlayerShoot).toMethod(this.onServerPlayerShoot);
             _local_1.map(DAMAGE).toMessage(Damage).toMethod(this.onDamage);
             _local_1.map(UPDATE).toMessage(Update).toMethod(this.onUpdate);
             _local_1.map(NOTIFICATION).toMessage(Notification).toMethod(this.onNotification);
-            _local_1.map(GLOBAL_NOTIFICATION).toMessage(GlobalNotification).toMethod(this.onGlobalNotification);
+            _local_1.map(GLOBALNOTIFICATION).toMessage(GlobalNotification).toMethod(this.onGlobalNotification);
             _local_1.map(NEWTICK).toMessage(NewTick).toMethod(this.onNewTick);
             _local_1.map(SHOWEFFECT).toMessage(ShowEffect).toMethod(this.onShowEffect);
             _local_1.map(GOTO).toMessage(Goto).toMethod(this.onGoto);
@@ -496,20 +499,20 @@ package kabam.rotmg.messaging.impl
             _local_1.map(INVITEDTOGUILD).toMessage(InvitedToGuild).toMethod(this.onInvitedToGuild);
             _local_1.map(PLAYSOUND).toMessage(PlaySound).toMethod(this.onPlaySound);
             _local_1.map(ACTIVEPETUPDATE).toMessage(ActivePet).toMethod(this.onActivePetUpdate);
-            _local_1.map(NEW_ABILITY).toMessage(NewAbilityMessage).toMethod(this.onNewAbility);
+            _local_1.map(NEWABILITY).toMessage(NewAbilityMessage).toMethod(this.onNewAbility);
             _local_1.map(PETYARDUPDATE).toMessage(PetYard).toMethod(this.onPetYardUpdate);
-            _local_1.map(EVOLVE_PET).toMessage(EvolvedPetMessage).toMethod(this.onEvolvedPet);
-            _local_1.map(DELETE_PET).toMessage(DeletePetMessage).toMethod(this.onDeletePet);
-            _local_1.map(HATCH_PET).toMessage(HatchPetMessage).toMethod(this.onHatchPet);
-            _local_1.map(IMMINENT_ARENA_WAVE).toMessage(ImminentArenaWave).toMethod(this.onImminentArenaWave);
-            _local_1.map(ARENA_DEATH).toMessage(ArenaDeath).toMethod(this.onArenaDeath);
-            _local_1.map(VERIFY_EMAIL).toMessage(VerifyEmail).toMethod(this.onVerifyEmail);
-            _local_1.map(RESKIN_UNLOCK).toMessage(ReskinUnlock).toMethod(this.onReskinUnlock);
-            _local_1.map(PASSWORD_PROMPT).toMessage(PasswordPrompt).toMethod(this.onPasswordPrompt);
-            _local_1.map(QUEST_FETCH_RESPONSE).toMessage(QuestFetchResponse).toMethod(this.onQuestFetchResponse);
-            _local_1.map(QUEST_REDEEM_RESPONSE).toMessage(QuestRedeemResponse).toMethod(this.onQuestRedeemResponse);
-            _local_1.map(KEY_INFO_RESPONSE).toMessage(KeyInfoResponse).toMethod(this.onKeyInfoResponse);
-            _local_1.map(LOGIN_REWARD_MSG).toMessage(ClaimDailyRewardResponse).toMethod(this.onLoginRewardResponse);
+            _local_1.map(EVOLVEPET).toMessage(EvolvedPetMessage).toMethod(this.onEvolvedPet);
+            _local_1.map(DELETEPET).toMessage(DeletePetMessage).toMethod(this.onDeletePet);
+            _local_1.map(HATCHPET).toMessage(HatchPetMessage).toMethod(this.onHatchPet);
+            _local_1.map(IMMINENTARENAWAVE).toMessage(ImminentArenaWave).toMethod(this.onImminentArenaWave);
+            _local_1.map(ARENADEATH).toMessage(ArenaDeath).toMethod(this.onArenaDeath);
+            _local_1.map(VERIFYEMAIL).toMessage(VerifyEmail).toMethod(this.onVerifyEmail);
+            _local_1.map(RESKINUNLOCK).toMessage(ReskinUnlock).toMethod(this.onReskinUnlock);
+            _local_1.map(PASSWORDPROMPT).toMessage(PasswordPrompt).toMethod(this.onPasswordPrompt);
+            _local_1.map(QUESTFETCHRESPONSE).toMessage(QuestFetchResponse).toMethod(this.onQuestFetchResponse);
+            _local_1.map(QUESTREDEEMRESPONSE).toMessage(QuestRedeemResponse).toMethod(this.onQuestRedeemResponse);
+            _local_1.map(KEYINFORESPONSE).toMessage(KeyInfoResponse).toMethod(this.onKeyInfoResponse);
+            _local_1.map(LOGINREWARDMSG).toMessage(ClaimDailyRewardResponse).toMethod(this.onLoginRewardResponse);
             _local_1.map(SET_SPEED).toMessage(SetSpeed).toMethod(this.onSetSpeed);
             _local_1.map(THUNDER_MOVE).toMessage(ThunderMove);
         }
@@ -607,17 +610,17 @@ package kabam.rotmg.messaging.impl
             _local_1.unmap(CANCELTRADE);
             _local_1.unmap(CHECKCREDITS);
             _local_1.unmap(ESCAPE);
-            _local_1.unmap(QUEST_ROOM_MSG);
+            _local_1.unmap(QUESTROOMMSG);
             _local_1.unmap(JOINGUILD);
             _local_1.unmap(CHANGEGUILDRANK);
             _local_1.unmap(EDITACCOUNTLIST);
             _local_1.unmap(FAILURE);
-            _local_1.unmap(CREATE_SUCCESS);
+            _local_1.unmap(CREATESUCCESS);
             _local_1.unmap(SERVERPLAYERSHOOT);
             _local_1.unmap(DAMAGE);
             _local_1.unmap(UPDATE);
             _local_1.unmap(NOTIFICATION);
-            _local_1.unmap(GLOBAL_NOTIFICATION);
+            _local_1.unmap(GLOBALNOTIFICATION);
             _local_1.unmap(NEWTICK);
             _local_1.unmap(SHOWEFFECT);
             _local_1.unmap(GOTO);
@@ -1298,6 +1301,7 @@ package kabam.rotmg.messaging.impl
 
         override public function teleportId(_arg_1:int):void
         {
+
             var _local_2:Teleport = (this.messages.require(TELEPORT) as Teleport);
             _local_2.objectId_ = _arg_1;
             if ((!(Parameters.data_.blockTP)))
@@ -1312,6 +1316,7 @@ package kabam.rotmg.messaging.impl
             _local_2.objectId_ = _arg_1;
             portid = _arg_1;
             serverConnection.sendMessage(_local_2);
+
         }
 
         override public function buy(_arg_1:int, _arg_2:int):void
@@ -1426,7 +1431,7 @@ package kabam.rotmg.messaging.impl
             };
             if (((gs_.map) && (gs_.map.name_ == "Arena")))
             {
-                serverConnection.sendMessage(this.messages.require(ACCEPT_ARENA_DEATH));
+                serverConnection.sendMessage(this.messages.require(ACCEPTARENADEATH));
             }
             else
             {
@@ -1438,7 +1443,7 @@ package kabam.rotmg.messaging.impl
 
         override public function gotoQuestRoom():void
         {
-            serverConnection.sendMessage(this.messages.require(QUEST_ROOM_MSG));
+            serverConnection.sendMessage(this.messages.require(QUESTROOMMSG));
         }
 
         override public function joinGuild(_arg_1:String):void
@@ -1458,7 +1463,7 @@ package kabam.rotmg.messaging.impl
 
         override public function changePetSkin(_arg_1:int, _arg_2:int, _arg_3:int):void
         {
-            var _local_4:ChangePetSkin = (this.messages.require(PET_CHANGE_SKIN_MSG) as ChangePetSkin);
+            var _local_4:ChangePetSkin = (this.messages.require(PETCHANGESKINMSG) as ChangePetSkin);
             _local_4.petId = _arg_1;
             _local_4.skinType = _arg_2;
             _local_4.currency = _arg_3;
@@ -2317,14 +2322,14 @@ package kabam.rotmg.messaging.impl
                             };
                             break;
                         };
-                        if (((Parameters.data_.sizer) && (!(Options.hidden))))
-                        {
+                        if (((Parameters.data_.sizer) && (!(Options.hidden)))) {
                             _arg_1.size_ = ((_local_5 < 100) ? _local_5 : 100);
-                        }
-                        else
-                        {
+                        } else if ((!(_arg_1.objectId_ == this.playerId_)) && (_arg_1.props_.isPlayer_) && Parameters.data_.pSize && !Options.hidden) {
+                        _arg_1.size_ = Parameters.data_.playerSize;
+						}
+                        else {
                             _arg_1.size_ = _local_5;
-                        };
+                        }
                         break;
                     case StatData.MAX_MP_STAT:
                         _local_9.maxMP_ = _local_5;
@@ -2829,6 +2834,16 @@ package kabam.rotmg.messaging.impl
             serverConnection.sendMessage(_local_2);
         }
 
+		public static function parsePackets(_arg_1:XML = null):void {
+        var _local_1:String;
+        var _local_2:XML = (_arg_1 == null ? XML(new packets()) : _arg_1);
+        var counter:int = 0;
+        for (_local_1 in _local_2.Packet) {
+            GameServerConnection[_local_2.Packet.PacketName[_local_1]] = parseInt(_local_2.Packet.PacketID[_local_1]);
+            counter++;
+			}
+		}
+
         private function parseXML(_arg_1:String):void
         {
             var _local_2:XML = XML(_arg_1);
@@ -2902,6 +2917,8 @@ package kabam.rotmg.messaging.impl
             var _local_2:BitmapData = new BitmapData(gs_.stage.stageWidth, gs_.stage.stageHeight, true, 0);
             _local_2.draw(gs_);
             this.setBackground(_local_2);
+			this.gs_.deathOverlay = new Bitmap();
+            this.gs_.addChild(this.gs_.deathOverlay);
         }
 
         public function setBackground(_arg_1:BitmapData):void
@@ -3170,7 +3187,7 @@ package kabam.rotmg.messaging.impl
 
         override public function questFetch():void
         {
-            serverConnection.sendMessage(this.messages.require(QUEST_FETCH_ASK));
+            serverConnection.sendMessage(this.messages.require(QUESTFETCHASK));
         }
 
         private function onQuestFetchResponse(_arg_1:QuestFetchResponse):void
@@ -3194,7 +3211,7 @@ package kabam.rotmg.messaging.impl
         private function claimDailyReward(_arg_1:String):void
         {
             var _local_2:ClaimDailyRewardMessage;
-            _local_2 = (this.messages.require(GameServerConnection.CLAIM_LOGIN_REWARD_MSG) as ClaimDailyRewardMessage);
+            _local_2 = (this.messages.require(GameServerConnection.CLAIMLOGINREWARDMSG) as ClaimDailyRewardMessage);
             _local_2.claimKey = _arg_1;
             _local_2.type = "nonconsecutive";
             serverConnection.sendMessage(_local_2);
@@ -3207,7 +3224,7 @@ package kabam.rotmg.messaging.impl
 
         override public function questRedeem(_arg_1:String, _arg_2:Vector.<SlotObjectData>, _arg_3:int=-1):void
         {
-            var _local_4:QuestRedeem = (this.messages.require(QUEST_REDEEM) as QuestRedeem);
+            var _local_4:QuestRedeem = (this.messages.require(QUESTREDEEM) as QuestRedeem);
             _local_4.questID = _arg_1;
             _local_4.item = _arg_3;
             _local_4.slots = _arg_2;
@@ -3216,7 +3233,7 @@ package kabam.rotmg.messaging.impl
 
         override public function keyInfoRequest(_arg_1:int):void
         {
-            var _local_2:KeyInfoRequest = (this.messages.require(KEY_INFO_REQUEST) as KeyInfoRequest);
+            var _local_2:KeyInfoRequest = (this.messages.require(KEYINFOREQUEST) as KeyInfoRequest);
             _local_2.itemType_ = _arg_1;
             serverConnection.sendMessage(_local_2);
         }
@@ -3377,4 +3394,4 @@ package kabam.rotmg.messaging.impl
 
     }
 }//package kabam.rotmg.messaging.impl
-
+

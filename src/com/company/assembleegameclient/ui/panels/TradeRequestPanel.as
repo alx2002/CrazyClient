@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.panels.TradeRequestPanel
 
@@ -84,7 +84,7 @@ package com.company.assembleegameclient.ui.panels
 			;
 		}
 		
-		private function onTimer(_arg_1:TimerEvent):void
+		private function onTimer(event:TimerEvent):void
 		{
 			dispatchEvent(new Event(Event.COMPLETE));
 		}

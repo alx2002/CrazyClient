@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.map.AbstractMap
 
 package com.company.assembleegameclient.map
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.background.Background;
 	import com.company.assembleegameclient.game.AGameSprite;
 	import com.company.assembleegameclient.map.mapoverlay.MapOverlay;

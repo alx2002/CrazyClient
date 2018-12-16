@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.ui.view.HUDView
 
@@ -27,7 +27,7 @@ package kabam.rotmg.ui.view
     import com.company.assembleegameclient.ui.options.Options;
     import com.company.assembleegameclient.parameters.Parameters;
     import com.company.assembleegameclient.game.GameSprite;
-    import __AS3__.vec.Vector;
+    
     import flash.display.IGraphicsData;
     import flash.display.GraphicsSolidFill;
     import flash.display.GraphicsPath;
@@ -41,7 +41,7 @@ package kabam.rotmg.ui.view
     import flash.events.MouseEvent;
     import kabam.rotmg.friends.view.FriendListView;
     import com.company.assembleegameclient.ui.board.SPCBoard;
-    import __AS3__.vec.*;
+    
 
     public class HUDView extends Sprite implements UnFocusAble 
     {

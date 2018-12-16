@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.fame.StatsLine
 
 package io.decagames.rotmg.fame
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.util.TextureRedrawer;
 	import com.company.util.AssetLibrary;
 	import com.company.util.GraphicsUtil;

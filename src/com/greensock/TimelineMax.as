@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.greensock.TimelineMax
 
@@ -11,14 +11,14 @@ package com.greensock
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
-	
+
 	public class TimelineMax extends TimelineLite implements IEventDispatcher
 	{
-		
+
 		public static const version:String = "12.1.5";
 		protected static var _listenerLookup:Object = {"onCompleteListener": TweenEvent.COMPLETE, "onUpdateListener": TweenEvent.UPDATE, "onStartListener": TweenEvent.START, "onRepeatListener": TweenEvent.REPEAT, "onReverseCompleteListener": TweenEvent.REVERSE_COMPLETE};
 		protected static var _easeNone:Ease = new Ease(null, null, 1, 0);
-		
+
 		protected var _dispatcher:EventDispatcher;
 		protected var _yoyo:Boolean;
 		protected var _hasUpdateListener:Boolean;
@@ -26,7 +26,7 @@ package com.greensock
 		protected var _locked:Boolean;
 		protected var _repeatDelay:Number;
 		protected var _repeat:int;
-		
+
 		public function TimelineMax(_arg_1:Object = null)
 		{
 			super(_arg_1);
@@ -40,7 +40,7 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		protected static function _getGlobalPaused(_arg_1:Animation):Boolean
 		{
 			while (_arg_1)
@@ -55,12 +55,12 @@ package com.greensock
 			;
 			return (false);
 		}
-		
+
 		public function dispatchEvent(_arg_1:Event):Boolean
 		{
 			return ((this._dispatcher == null) ? false : this._dispatcher.dispatchEvent(_arg_1));
 		}
-		
+
 		public function currentLabel(_arg_1:String = null):*
 		{
 			if ((!(arguments.length)))
@@ -70,12 +70,12 @@ package com.greensock
 			;
 			return (seek(_arg_1, true));
 		}
-		
+
 		public function hasEventListener(_arg_1:String):Boolean
 		{
 			return ((this._dispatcher == null) ? false : this._dispatcher.hasEventListener(_arg_1));
 		}
-		
+
 		public function removeEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean = false):void
 		{
 			if (this._dispatcher != null)
@@ -84,12 +84,12 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		public function addCallback(_arg_1:Function, _arg_2:*, _arg_3:Array = null):TimelineMax
 		{
 			return (add(TweenLite.delayedCall(0, _arg_1, _arg_3), _arg_2) as TimelineMax);
 		}
-		
+
 		public function tweenFromTo(_arg_1:*, _arg_2:*, _arg_3:Object = null):TweenLite
 		{
 			_arg_3 = ((_arg_3) || ({}));
@@ -99,7 +99,7 @@ package com.greensock
 			var _local_4:TweenLite = this.tweenTo(_arg_2, _arg_3);
 			return (_local_4.public::duration(((Math.abs((_local_4.vars.time - _arg_1)) / _timeScale) || (0.001))) as TweenLite);
 		}
-		
+
 		public function addEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean = false, _arg_4:int = 0, _arg_5:Boolean = false):void
 		{
 			if (this._dispatcher == null)
@@ -114,7 +114,7 @@ package com.greensock
 			;
 			this._dispatcher.addEventListener(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5);
 		}
-		
+
 		public function tweenTo(_arg_1:*, _arg_2:Object = null):TweenLite
 		{
 			var p:String;
@@ -148,7 +148,7 @@ package com.greensock
 			};
 			return (t);
 		}
-		
+
 		public function repeat(_arg_1:Number = 0):*
 		{
 			if ((!(arguments.length)))
@@ -159,7 +159,7 @@ package com.greensock
 			this._repeat = _arg_1;
 			return (_uncache(true));
 		}
-		
+
 		public function getLabelBefore(_arg_1:Number = NaN):String
 		{
 			if ((!(_arg_1)))
@@ -184,17 +184,17 @@ package com.greensock
 			;
 			return (null);
 		}
-		
+
 		public function willTrigger(_arg_1:String):Boolean
 		{
 			return ((this._dispatcher == null) ? false : this._dispatcher.willTrigger(_arg_1));
 		}
-		
+
 		override public function totalProgress(_arg_1:Number = NaN, _arg_2:Boolean = true):*
 		{
 			return ((arguments.length) ? totalTime((this.totalDuration() * _arg_1), _arg_2) : (_totalTime / this.totalDuration()));
 		}
-		
+
 		public function getLabelsArray():Array
 		{
 			var _local_1:String;
@@ -210,7 +210,7 @@ package com.greensock
 			_local_2.sortOn("time", Array.NUMERIC);
 			return (_local_2);
 		}
-		
+
 		override public function render(_arg_1:Number, _arg_2:Boolean = false, _arg_3:Boolean = false):void
 		{
 			var _local_4:Animation;
@@ -617,7 +617,7 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		public function removeCallback(_arg_1:Function, _arg_2:* = null):TimelineMax
 		{
 			var _local_3:Array;
@@ -649,7 +649,7 @@ package com.greensock
 			;
 			return (this);
 		}
-		
+
 		public function yoyo(_arg_1:Boolean = false):*
 		{
 			if ((!(arguments.length)))
@@ -660,12 +660,12 @@ package com.greensock
 			this._yoyo = _arg_1;
 			return (this);
 		}
-		
+
 		override public function progress(_arg_1:Number = NaN, _arg_2:Boolean = false):*
 		{
 			return ((arguments.length) ? totalTime(((public::duration() * (((this._yoyo) && (!((this._cycle & 0x01) === 0))) ? (1 - _arg_1) : _arg_1)) + (this._cycle * (_duration + this._repeatDelay))), _arg_2) : (_time / public::duration()));
 		}
-		
+
 		public function repeatDelay(_arg_1:Number = 0):*
 		{
 			if ((!(arguments.length)))
@@ -676,7 +676,7 @@ package com.greensock
 			this._repeatDelay = _arg_1;
 			return (_uncache(true));
 		}
-		
+
 		override public function time(_arg_1:Number = NaN, _arg_2:Boolean = false):*
 		{
 			if ((!(arguments.length)))
@@ -709,7 +709,7 @@ package com.greensock
 			;
 			return (totalTime(_arg_1, _arg_2));
 		}
-		
+
 		protected function _initDispatcher():Boolean
 		{
 			var _local_1:String;
@@ -735,7 +735,7 @@ package com.greensock
 			;
 			return (_local_2);
 		}
-		
+
 		override public function invalidate():*
 		{
 			this._yoyo = Boolean((this.vars.yoyo == true));
@@ -746,7 +746,7 @@ package com.greensock
 			_uncache(true);
 			return (super.invalidate());
 		}
-		
+
 		public function getActive(_arg_1:Boolean = true, _arg_2:Boolean = true, _arg_3:Boolean = false):Array
 		{
 			var _local_4:int;
@@ -783,7 +783,7 @@ package com.greensock
 			;
 			return (_local_6);
 		}
-		
+
 		public function getLabelAfter(_arg_1:Number = NaN):String
 		{
 			var _local_2:int;
@@ -811,7 +811,7 @@ package com.greensock
 			;
 			return (null);
 		}
-		
+
 		override public function totalDuration(_arg_1:Number = NaN):*
 		{
 			if ((!(arguments.length)))
@@ -827,7 +827,7 @@ package com.greensock
 			;
 			return ((this._repeat == -1) ? this : public::duration(((_arg_1 - (this._repeat * this._repeatDelay)) / (this._repeat + 1))));
 		}
-	
+
 	}
 }//package com.greensock
 

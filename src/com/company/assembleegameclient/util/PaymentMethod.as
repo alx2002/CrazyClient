@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.util.PaymentMethod
 
 package com.company.assembleegameclient.util
 {
-	import __AS3__.vec.Vector;
+	
 	import com.company.assembleegameclient.util.offer.Offer;
 	import flash.net.URLVariables;
 	import kabam.rotmg.account.core.Account;

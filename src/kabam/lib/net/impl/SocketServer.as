@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.lib.net.impl.SocketServer
 
@@ -89,7 +89,7 @@ package kabam.lib.net.impl
             this.delayTimer.start();
         }
 
-        private function onTimerComplete(_arg_1:TimerEvent):void
+        private function onTimerComplete(event:TimerEvent):void
         {
             this.delayTimer.removeEventListener(TimerEvent.TIMER_COMPLETE, this.onTimerComplete);
             this.socket.connect(this.server, this.port);

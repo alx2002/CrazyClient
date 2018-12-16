@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.lib.net.impl.MessageCenter
 
@@ -7,10 +7,10 @@ package kabam.lib.net.impl
 {
     import kabam.lib.net.api.MessageMap;
     import kabam.lib.net.api.MessageProvider;
-    import __AS3__.vec.Vector;
+    
     import org.swiftsuspenders.Injector;
     import kabam.lib.net.api.MessageMapping;
-    import __AS3__.vec.*;
+    
 
     public class MessageCenter implements MessageMap, MessageProvider 
     {

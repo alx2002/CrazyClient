@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.mapeditor.Filter
 
 package com.company.assembleegameclient.mapeditor
 {
-	import __AS3__.vec.Vector;
+	
 	import com.company.assembleegameclient.account.ui.TextInputField;
 	import com.company.assembleegameclient.objects.ObjectLibrary;
 	import com.company.assembleegameclient.ui.dropdown.DropDown;

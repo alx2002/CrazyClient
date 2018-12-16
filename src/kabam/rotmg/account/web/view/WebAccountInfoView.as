@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.account.web.view.WebAccountInfoView
 
@@ -22,7 +22,7 @@ package kabam.rotmg.account.web.view
     import kabam.rotmg.build.api.BuildData;
     import kabam.rotmg.build.api.BuildEnvironment;
 
-    public class WebAccountInfoView extends Sprite implements AccountInfoView 
+    public class WebAccountInfoView extends Sprite implements AccountInfoView
     {
 
         private static const FONT_SIZE:int = 18;

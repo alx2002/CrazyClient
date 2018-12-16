@@ -20,16 +20,16 @@ package com.company.assembleegameclient.ui.board
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import kabam.rotmg.text.model.TextKey;
-	
-	
-	
+
+
+
 	internal class ViewBoard extends Sprite
 	{
-		
+
 		public static const TEXT_WIDTH:int = 400; //400
 		public static const TEXT_HEIGHT:int = 400; //400
 		private static const URL_REGEX:RegExp = /((https?|ftp):((\/\/)|(\\\\))+[\w\d:#@%\/;$()~_?\+-=\\\.&]*)/g;
-		
+
 		private var text_:String;
 		public var w_:int;
 		public var h_:int;
@@ -38,13 +38,13 @@ package com.company.assembleegameclient.ui.board
 		private var scrollBar_:Scrollbar;
 		private var editButton_:DeprecatedTextButton;
 		private var closeButton_:DeprecatedTextButton;
-		
+
 		private var backgroundFill_:GraphicsSolidFill = new GraphicsSolidFill(0x070707, 1);
 		private var outlineFill_:GraphicsSolidFill = new GraphicsSolidFill(0xFFFFFF, 1);
 		private var lineStyle_:GraphicsStroke = new GraphicsStroke(2, false, LineScaleMode.NORMAL, CapsStyle.NONE, JointStyle.ROUND, 3, outlineFill_);
 		private var path_:GraphicsPath = new GraphicsPath(new Vector.<int>(), new Vector.<Number>());
 		private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[lineStyle_, backgroundFill_, path_, GraphicsUtil.END_FILL, GraphicsUtil.END_STROKE];
-		
+
 		public function ViewBoard(_arg_1:String, _arg_2:Boolean)
 		{
 			this.text_ = _arg_1;
@@ -91,7 +91,7 @@ package com.company.assembleegameclient.ui.board
 			this.closeButton_.textChanged.addOnce(this.layoutBackground);
 			addChild(this.closeButton_);
 		}
-		
+
 		private function layoutBackground():void
 		{
 			this.h_ = ((TEXT_HEIGHT + this.closeButton_.height) + 8);
@@ -102,22 +102,22 @@ package com.company.assembleegameclient.ui.board
 			GraphicsUtil.drawCutEdgeRect(-6, -6, (this.w_ + 12), (this.h_ + 12), 4, [1, 1, 1, 1], this.path_);
 			graphics.drawGraphicsData(this.graphicsData_);
 		}
-		
+
 		private function onScrollBarChange(_arg_1:Event):void
 		{
 			this.boardText_.y = (-(this.scrollBar_.pos()) * (this.boardText_.height - 400));
 		}
-		
+
 		private function onEdit(_arg_1:Event):void
 		{
 			dispatchEvent(new Event(Event.CHANGE));
 		}
-		
+
 		private function onClose(_arg_1:Event):void
 		{
 			dispatchEvent(new Event(Event.COMPLETE));
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.ui.board
 

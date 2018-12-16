@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.lib.console.model.ActionHistory
 
 package kabam.lib.console.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+    
+    
 
     public final class ActionHistory 
     {

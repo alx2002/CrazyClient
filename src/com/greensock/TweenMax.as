@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.greensock.TweenMax
 
@@ -36,28 +36,28 @@ package com.greensock
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
 	import flash.utils.getTimer;
-	
+
 	public class TweenMax extends TweenLite implements IEventDispatcher
 	{
-		
+
 		public static const version:String = "12.1.5";
 		protected static var _listenerLookup:Object = {"onCompleteListener": TweenEvent.COMPLETE, "onUpdateListener": TweenEvent.UPDATE, "onStartListener": TweenEvent.START, "onRepeatListener": TweenEvent.REPEAT, "onReverseCompleteListener": TweenEvent.REVERSE_COMPLETE};
 		public static var ticker:Shape = Animation.ticker;
 		public static var allTo:Function = staggerTo;
 		public static var allFrom:Function = staggerFrom;
 		public static var allFromTo:Function = staggerFromTo;
-		
+
 		protected var _dispatcher:EventDispatcher;
 		public var _yoyo:Boolean;
 		protected var _hasUpdateListener:Boolean;
 		protected var _cycle:int = 0;
 		protected var _repeatDelay:Number = 0;
 		protected var _repeat:int = 0;
-		
+
 		{
 			TweenPlugin.activate([AutoAlphaPlugin, EndArrayPlugin, FramePlugin, RemoveTintPlugin, TintPlugin, VisiblePlugin, VolumePlugin, BevelFilterPlugin, BezierPlugin, BezierThroughPlugin, BlurFilterPlugin, ColorMatrixFilterPlugin, ColorTransformPlugin, DropShadowFilterPlugin, FrameLabelPlugin, GlowFilterPlugin, HexColorsPlugin, RoundPropsPlugin, ShortRotationPlugin]);
 		}
-		
+
 		public function TweenMax(_arg_1:Object, _arg_2:Number, _arg_3:Object)
 		{
 			super(_arg_1, _arg_2, _arg_3);
@@ -85,12 +85,12 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		public static function resumeAll(_arg_1:Boolean = true, _arg_2:Boolean = true, _arg_3:Boolean = true):void
 		{
 			_changePause(false, _arg_1, _arg_2, _arg_3);
 		}
-		
+
 		public static function fromTo(_arg_1:Object, _arg_2:Number, _arg_3:Object, _arg_4:Object):TweenMax
 		{
 			_arg_4 = _prepVars(_arg_4, false);
@@ -99,7 +99,7 @@ package com.greensock
 			_arg_4.immediateRender = ((!(_arg_4.immediateRender == false)) && (!(_arg_3.immediateRender == false)));
 			return (new TweenMax(_arg_1, _arg_2, _arg_4));
 		}
-		
+
 		public static function staggerTo(_arg_1:Array, _arg_2:Number, _arg_3:Object, _arg_4:Number = 0, _arg_5:Function = null, _arg_6:Array = null):Array
 		{
 			var copy:Object;
@@ -149,12 +149,12 @@ package com.greensock
 			;
 			return (a);
 		}
-		
+
 		public static function pauseAll(_arg_1:Boolean = true, _arg_2:Boolean = true, _arg_3:Boolean = true):void
 		{
 			_changePause(true, _arg_1, _arg_2, _arg_3);
 		}
-		
+
 		public static function staggerFromTo(_arg_1:Array, _arg_2:Number, _arg_3:Object, _arg_4:Object, _arg_5:Number = 0, _arg_6:Function = null, _arg_7:Array = null):Array
 		{
 			_arg_4 = _prepVars(_arg_4, false);
@@ -163,27 +163,27 @@ package com.greensock
 			_arg_4.immediateRender = ((!(_arg_4.immediateRender == false)) && (!(_arg_3.immediateRender == false)));
 			return (staggerTo(_arg_1, _arg_2, _arg_4, _arg_5, _arg_6, _arg_7));
 		}
-		
+
 		public static function getTweensOf(_arg_1:*, _arg_2:Boolean = false):Array
 		{
 			return (TweenLite.getTweensOf(_arg_1, _arg_2));
 		}
-		
+
 		public static function killTweensOf(_arg_1:*, _arg_2:* = false, _arg_3:Object = null):void
 		{
 			TweenLite.killTweensOf(_arg_1, _arg_2, _arg_3);
 		}
-		
+
 		public static function delayedCall(_arg_1:Number, _arg_2:Function, _arg_3:Array = null, _arg_4:Boolean = false):TweenMax
 		{
 			return (new TweenMax(_arg_2, 0, {"delay": _arg_1, "onComplete": _arg_2, "onCompleteParams": _arg_3, "onReverseComplete": _arg_2, "onReverseCompleteParams": _arg_3, "immediateRender": false, "useFrames": _arg_4, "overwrite": 0}));
 		}
-		
+
 		public static function isTweening(_arg_1:Object):Boolean
 		{
 			return (TweenLite.getTweensOf(_arg_1, true).length > 0);
 		}
-		
+
 		public static function killAll(_arg_1:Boolean = false, _arg_2:Boolean = true, _arg_3:Boolean = true, _arg_4:Boolean = true):void
 		{
 			var _local_5:Boolean;
@@ -213,7 +213,7 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		public static function killChildTweensOf(_arg_1:DisplayObjectContainer, _arg_2:Boolean = false):void
 		{
 			var _local_3:int;
@@ -239,7 +239,7 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		private static function _changePause(_arg_1:Boolean, _arg_2:Boolean = true, _arg_3:Boolean = false, _arg_4:Boolean = true):void
 		{
 			var _local_5:Boolean;
@@ -259,24 +259,24 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		public static function set(_arg_1:Object, _arg_2:Object):TweenMax
 		{
 			return (new TweenMax(_arg_1, 0, _arg_2));
 		}
-		
+
 		public static function from(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenMax
 		{
 			_arg_3 = _prepVars(_arg_3, true);
 			_arg_3.runBackwards = true;
 			return (new TweenMax(_arg_1, _arg_2, _arg_3));
 		}
-		
+
 		public static function killDelayedCallsTo(_arg_1:Function):void
 		{
 			TweenLite.killTweensOf(_arg_1);
 		}
-		
+
 		public static function globalTimeScale(_arg_1:Number = NaN):Number
 		{
 			if ((!(arguments.length)))
@@ -299,13 +299,13 @@ package com.greensock
 			_rootFramesTimeline._timeScale = (_rootTimeline._timeScale = _arg_1);
 			return (_arg_1);
 		}
-		
+
 		public static function getAllTweens(_arg_1:Boolean = false):Array
 		{
 			var _local_2:Array = _getChildrenOf(_rootTimeline, _arg_1);
 			return (_local_2.concat(_getChildrenOf(_rootFramesTimeline, _arg_1)));
 		}
-		
+
 		protected static function _getChildrenOf(_arg_1:SimpleTimeline, _arg_2:Boolean):Array
 		{
 			var _local_4:int;
@@ -341,7 +341,7 @@ package com.greensock
 			;
 			return (_local_3);
 		}
-		
+
 		private static function _containsChildOf(_arg_1:DisplayObjectContainer, _arg_2:Object):Boolean
 		{
 			var _local_3:int;
@@ -380,7 +380,7 @@ package com.greensock
 			;
 			return (false);
 		}
-		
+
 		public static function staggerFrom(_arg_1:Array, _arg_2:Number, _arg_3:Object, _arg_4:Number = 0, _arg_5:Function = null, _arg_6:Array = null):Array
 		{
 			_arg_3 = _prepVars(_arg_3, true);
@@ -392,17 +392,17 @@ package com.greensock
 			;
 			return (staggerTo(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5, _arg_6));
 		}
-		
+
 		public static function to(_arg_1:Object, _arg_2:Number, _arg_3:Object):TweenMax
 		{
 			return (new TweenMax(_arg_1, _arg_2, _arg_3));
 		}
-		
+
 		public function dispatchEvent(_arg_1:Event):Boolean
 		{
 			return ((this._dispatcher == null) ? false : this._dispatcher.dispatchEvent(_arg_1));
 		}
-		
+
 		override public function invalidate():*
 		{
 			this._yoyo = Boolean((this.vars.yoyo == true));
@@ -413,7 +413,7 @@ package com.greensock
 			_uncache(true);
 			return (super.invalidate());
 		}
-		
+
 		public function removeEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean = false):void
 		{
 			if (this._dispatcher)
@@ -422,7 +422,7 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		public function addEventListener(_arg_1:String, _arg_2:Function, _arg_3:Boolean = false, _arg_4:int = 0, _arg_5:Boolean = false):void
 		{
 			if (this._dispatcher == null)
@@ -437,12 +437,12 @@ package com.greensock
 			;
 			this._dispatcher.addEventListener(_arg_1, _arg_2, _arg_3, _arg_4, _arg_5);
 		}
-		
+
 		public function willTrigger(_arg_1:String):Boolean
 		{
 			return ((this._dispatcher == null) ? false : this._dispatcher.willTrigger(_arg_1));
 		}
-		
+
 		override public function duration(_arg_1:Number = NaN):*
 		{
 			if ((!(arguments.length)))
@@ -452,7 +452,7 @@ package com.greensock
 			;
 			return (super.duration(_arg_1));
 		}
-		
+
 		override public function time(_arg_1:Number = NaN, _arg_2:Boolean = false):*
 		{
 			if ((!(arguments.length)))
@@ -485,7 +485,7 @@ package com.greensock
 			;
 			return (totalTime(_arg_1, _arg_2));
 		}
-		
+
 		override public function render(_arg_1:Number, _arg_2:Boolean = false, _arg_3:Boolean = false):void
 		{
 			var _local_4:Boolean;
@@ -916,12 +916,12 @@ package com.greensock
 			}
 			;
 		}
-		
+
 		override public function totalProgress(_arg_1:Number = NaN, _arg_2:Boolean = false):*
 		{
 			return ((arguments.length) ? totalTime((this.totalDuration() * _arg_1), _arg_2) : (_totalTime / this.totalDuration()));
 		}
-		
+
 		public function repeat(_arg_1:int = 0):*
 		{
 			if ((!(arguments.length)))
@@ -932,7 +932,7 @@ package com.greensock
 			this._repeat = _arg_1;
 			return (_uncache(true));
 		}
-		
+
 		public function updateTo(_arg_1:Object, _arg_2:Boolean = false):*
 		{
 			var _local_3:String;
@@ -1020,7 +1020,7 @@ package com.greensock
 			;
 			return (this);
 		}
-		
+
 		public function repeatDelay(_arg_1:Number = NaN):*
 		{
 			if ((!(arguments.length)))
@@ -1031,7 +1031,7 @@ package com.greensock
 			this._repeatDelay = _arg_1;
 			return (_uncache(true));
 		}
-		
+
 		public function yoyo(_arg_1:Boolean = false):*
 		{
 			if ((!(arguments.length)))
@@ -1042,12 +1042,12 @@ package com.greensock
 			this._yoyo = _arg_1;
 			return (this);
 		}
-		
+
 		override public function progress(_arg_1:Number = NaN, _arg_2:Boolean = false):*
 		{
 			return ((arguments.length) ? totalTime(((this.duration() * (((this._yoyo) && (!((this._cycle & 0x01) === 0))) ? (1 - _arg_1) : _arg_1)) + (this._cycle * (_duration + this._repeatDelay))), _arg_2) : (_time / this.duration()));
 		}
-		
+
 		protected function _initDispatcher():Boolean
 		{
 			var _local_1:String;
@@ -1073,7 +1073,7 @@ package com.greensock
 			;
 			return (_local_2);
 		}
-		
+
 		override public function totalDuration(_arg_1:Number = NaN):*
 		{
 			if ((!(arguments.length)))
@@ -1089,12 +1089,12 @@ package com.greensock
 			;
 			return ((this._repeat == -1) ? this : this.duration(((_arg_1 - (this._repeat * this._repeatDelay)) / (this._repeat + 1))));
 		}
-		
+
 		public function hasEventListener(_arg_1:String):Boolean
 		{
 			return ((this._dispatcher == null) ? false : this._dispatcher.hasEventListener(_arg_1));
 		}
-	
+
 	}
 }//package com.greensock
 

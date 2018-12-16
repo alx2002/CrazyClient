@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.arena.view.ArenaTimerMediator
 
@@ -11,7 +11,7 @@ package kabam.rotmg.arena.view
     import flash.utils.Timer;
     import flash.events.TimerEvent;
 
-    public class ArenaTimerMediator extends Mediator 
+    public class ArenaTimerMediator extends Mediator
     {
 
         [Inject]
@@ -42,7 +42,7 @@ package kabam.rotmg.arena.view
             this.view.stop();
         }
 
-        private function onRestart(_arg_1:TimerEvent):void
+        private function onRestart(event:TimerEvent):void
         {
             this.delayTimer.stop();
             this.view.start();

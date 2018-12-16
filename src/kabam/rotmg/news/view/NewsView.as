@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.news.view.NewsView
 
 package kabam.rotmg.news.view
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.news.model.NewsCellVO;
 
     public class NewsView extends Sprite 

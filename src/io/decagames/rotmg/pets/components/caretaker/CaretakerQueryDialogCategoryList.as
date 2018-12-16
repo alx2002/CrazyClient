@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.pets.components.caretaker.CaretakerQueryDialogCategoryList
 
 package io.decagames.rotmg.pets.components.caretaker
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import flash.display.DisplayObject;
 	import flash.events.MouseEvent;
 	import kabam.lib.ui.impl.LayoutList;

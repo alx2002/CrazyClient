@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.stage3D.Object3D.OBJGroup
 
 package kabam.rotmg.stage3D.Object3D
 {
     import flash.display3D.IndexBuffer3D;
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+    
+    
 
     public class OBJGroup 
     {

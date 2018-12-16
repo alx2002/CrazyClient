@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.game.GameSprite
 
 package com.company.assembleegameclient.game
 {
-	import __AS3__.vec.Vector;
+	
 	import com.company.assembleegameclient.game.events.MoneyChangedEvent;
 	import com.company.assembleegameclient.map.Map;
 	import com.company.assembleegameclient.objects.GameObject;
@@ -76,19 +76,19 @@ package com.company.assembleegameclient.game
 	import kabam.rotmg.ui.view.QuestHealthBar;
 	import org.osflash.signals.Signal;
 	import robotlegs.bender.framework.api.ILogger;
-	
+
 	public class GameSprite extends AGameSprite
 	{
-		
+
 		public static const NON_COMBAT_MAPS:Vector.<String> = new <String>[Map.NEXUS, Map.VAULT, Map.GUILD_HALL, Map.CLOTH_BAZAAR, Map.NEXUS_EXPLANATION, Map.DAILY_QUEST_ROOM];
 		public static const DISPLAY_AREA_Y_SPACE:int = 32;
 		protected static const PAUSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
-		
+
 		protected const EMPTY_FILTER:DropShadowFilter = new DropShadowFilter(0, 0, 0);
 		public const monitor:Signal = new Signal(String, int);
 		public const modelInitialized:Signal = new Signal();
 		public const drawCharacterWindow:Signal = new Signal(Player);
-		
+
 		public var isNexus_:Boolean = false;
 		public var shopDisplay:ShopDisplay;
 		public var giftStatusDisplay:GiftStatusDisplay;
@@ -123,7 +123,7 @@ package com.company.assembleegameclient.game
 		private var timerCounter:TextFieldDisplayConcrete;
 		public var openDialog:OpenDialogSignal;
 		private var _gsHitArea:Sprite;
-		
+
 		public function GameSprite(_arg_1:Server, _arg_2:int, _arg_3:Boolean, _arg_4:int, _arg_5:int, _arg_6:ByteArray, _arg_7:PlayerModel, _arg_8:String, _arg_9:Boolean)
 		{
 			this.model = _arg_7;
@@ -136,19 +136,19 @@ package com.company.assembleegameclient.game
 			this.chatBox_.list.addEventListener(MouseEvent.MOUSE_UP, this.onChatUp);
 			addChild(this.chatBox_);
 		}
-		
+
 		public static function dispatchMapLoaded(_arg_1:MapInfo):void
 		{
 			var _local_2:MapLoadedSignal = StaticInjectorContext.getInjector().getInstance(MapLoadedSignal);
 			((_local_2) && (_local_2.dispatch(_arg_1)));
 		}
-		
+
 		public static function hidePreloader():void
 		{
 			var _local_1:HideMapLoadingSignal = StaticInjectorContext.getInjector().getInstance(HideMapLoadingSignal);
 			((_local_1) && (_local_1.dispatch()));
 		}
-		
+
 		public static function toTimeCode(_arg_1:Number):String
 		{
 			var _local_2:int = Math.floor(((_arg_1 * 0.001) % 60));
@@ -158,7 +158,7 @@ package com.company.assembleegameclient.game
 			var _local_6:String = ((_local_5 + ":") + _local_3);
 			return (_local_6);
 		}
-		
+
 		public function onChatDown(_arg_1:MouseEvent):void
 		{
 			if (this.chatPlayerMenu != null)
@@ -168,18 +168,18 @@ package com.company.assembleegameclient.game
 			;
 			mui_.onMouseDown(_arg_1);
 		}
-		
+
 		public function onChatUp(_arg_1:MouseEvent):void
 		{
 			mui_.onMouseUp(_arg_1);
 		}
-		
+
 		override public function setFocus(_arg_1:GameObject):void
 		{
 			_arg_1 = ((_arg_1) || (map.player_));
 			this.focus = _arg_1;
 		}
-		
+
 		public function chatMenuPositionFixed():void
 		{
 			var _local_1:Number;
@@ -189,7 +189,7 @@ package com.company.assembleegameclient.game
 			this.chatPlayerMenu.x = _local_2;
 			this.chatPlayerMenu.y = (_local_1 - this.chatPlayerMenu.height);
 		}
-		
+
 		public function addChatPlayerMenu(_arg_1:Player, _arg_2:Number, _arg_3:Number, _arg_4:String = null, _arg_5:Boolean = false, _arg_6:Boolean = false):void
 		{
 			this.removeChatPlayerMenu();
@@ -220,7 +220,7 @@ package com.company.assembleegameclient.game
 			this.chatPlayerMenu.x = _arg_2;
 			this.chatPlayerMenu.y = (_arg_3 - this.chatPlayerMenu.height);
 		}
-		
+
 		public function removeChatPlayerMenu():void
 		{
 			if (((!(this.chatPlayerMenu == null)) && (!(this.chatPlayerMenu.parent == null))))
@@ -230,20 +230,20 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		override public function applyMapInfo(_arg_1:MapInfo):void
 		{
 			map.setProps(_arg_1.width_, _arg_1.height_, _arg_1.name_, _arg_1.background_, _arg_1.allowPlayerTeleport_, _arg_1.showDisplays_);
 			dispatchMapLoaded(_arg_1);
 		}
-		
+
 		public function hudModelInitialized():void
 		{
 			hudView = new HUDView();
 			hudView.x = 600;
 			addChild(hudView);
 		}
-		
+
 		override public function initialize():void
 		{
 			var _local_1:Account;
@@ -274,15 +274,15 @@ package com.company.assembleegameclient.game
 			addChild(this.questBar);
 			switch (map.name_)
 			{
-			case Map.NEXUS: 
-			case Map.DAILY_QUEST_ROOM: 
-			case Map.PET_YARD_1: 
-			case Map.PET_YARD_2: 
-			case Map.PET_YARD_3: 
-			case Map.PET_YARD_4: 
-			case Map.PET_YARD_5: 
-			case Map.VAULT: 
-			default: 
+			case Map.NEXUS:
+			case Map.DAILY_QUEST_ROOM:
+			case Map.PET_YARD_1:
+			case Map.PET_YARD_2:
+			case Map.PET_YARD_3:
+			case Map.PET_YARD_4:
+			case Map.PET_YARD_5:
+			case Map.VAULT:
+			default:
 				if (map.name_ == Map.NEXUS)
 				{
 					this.addToQueueSignal.dispatch(PopupNamesConfig.DAILY_LOGIN_POPUP, this.openDailyCalendarPopupSignal, -1, null);
@@ -311,7 +311,7 @@ package com.company.assembleegameclient.game
 			stage.dispatchEvent(new Event(Event.RESIZE));
 			this.parent.parent.setChildIndex((this.parent.parent as Layers).top, 2);
 		}
-		
+
 		private function showSafeAreaDisplays():void
 		{
 			this.showRankText();
@@ -321,7 +321,7 @@ package com.company.assembleegameclient.game
 			this.showNewsUpdate();
 			this.showNewsTicker();
 		}
-		
+
 		private function setDisplayPosY(_arg_1:Number):void
 		{
 			var _local_2:Number = (UIUtils.NOTIFICATION_SPACE * _arg_1);
@@ -335,7 +335,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function positionDynamicDisplays():void
 		{
 			var _local_1:NewsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
@@ -363,14 +363,14 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function showTimer():void
 		{
 			this.arenaTimer = new ArenaTimer();
 			this.arenaTimer.y = 5;
 			addChild(this.arenaTimer);
 		}
-		
+
 		private function showWaveCounter():void
 		{
 			this.arenaWaveCounter = new ArenaWaveCounter();
@@ -378,7 +378,7 @@ package com.company.assembleegameclient.game
 			this.arenaWaveCounter.x = 5;
 			addChild(this.arenaWaveCounter);
 		}
-		
+
 		private function showNewsTicker():void
 		{
 			this.newsTicker = new NewsTicker();
@@ -386,7 +386,7 @@ package com.company.assembleegameclient.game
 			addChild(this.newsTicker);
 			this.positionDynamicDisplays();
 		}
-		
+
 		private function showGiftStatusDisplay():void
 		{
 			this.giftStatusDisplay = new GiftStatusDisplay();
@@ -394,7 +394,7 @@ package com.company.assembleegameclient.game
 			addChild(this.giftStatusDisplay);
 			this.positionDynamicDisplays();
 		}
-		
+
 		private function showShopDisplay():void
 		{
 			this.shopDisplay = new ShopDisplay((map.name_ == Map.NEXUS));
@@ -402,7 +402,7 @@ package com.company.assembleegameclient.game
 			this.shopDisplay.y = 34;
 			addChild(this.shopDisplay);
 		}
-		
+
 		private function showNewsUpdate(_arg_1:Boolean = true):void
 		{
 			var _local_2:NewsModalButton;
@@ -425,21 +425,21 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function refreshNewsUpdateButton():void
 		{
 			var _local_1:ILogger = StaticInjectorContext.getInjector().getInstance(ILogger);
 			_local_1.debug("NEWS UPDATE -- refreshing button, update noticed");
 			this.showNewsUpdate(false);
 		}
-		
+
 		private function setYAndPositionPackage():void
 		{
 			this.packageY = (this.displaysPosY + 2);
 			this.displaysPosY = (this.displaysPosY + UIUtils.NOTIFICATION_SPACE);
 			this.positionPackage();
 		}
-		
+
 		public function showSpecialOfferIfSafe():void
 		{
 			if (this.evalIsNotInCombatMapArea())
@@ -451,7 +451,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function showPackageButtonIfSafe():void
 		{
 			if (this.evalIsNotInCombatMapArea())
@@ -459,21 +459,21 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function addAndPositionPackage(_arg_1:DisplayObject):void
 		{
 			this.currentPackage = _arg_1;
 			addChild(this.currentPackage);
 			this.positionPackage();
 		}
-		
+
 		private function positionPackage():void
 		{
 			this.currentPackage.x = 80;
 			this.setDisplayPosY(1);
 			this.currentPackage.y = this.displaysPosY;
 		}
-		
+
 		private function showGuildText():void
 		{
 			this.guildText_ = new GuildText("", -1);
@@ -481,7 +481,7 @@ package com.company.assembleegameclient.game
 			this.guildText_.y = 2;
 			addChild(this.guildText_);
 		}
-		
+
 		private function showRankText():void
 		{
 			this.rankText_ = new RankText(-1, true, false);
@@ -489,7 +489,7 @@ package com.company.assembleegameclient.game
 			this.rankText_.y = 2;
 			addChild(this.rankText_);
 		}
-		
+
 		private function updateNearestInteractive():void
 		{
 			var _local_1:GameObject;
@@ -527,12 +527,12 @@ package com.company.assembleegameclient.game
 			;
 			this.mapModel.currentInteractiveTarget = _local_3;
 		}
-		
+
 		private function isPetMap():Boolean
 		{
 			return (true);
 		}
-		
+
 		public function onScreenResize(_arg_1:Event):void
 		{
 			var _local_6:int;
@@ -712,7 +712,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function connect():void
 		{
 			if ((!(this.isGameStarted)))
@@ -747,7 +747,7 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		public function disconnect():void
 		{
 			if (this.isGameStarted)
@@ -776,17 +776,17 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		private function onMoneyChanged(_arg_1:Event):void
 		{
 			gsc_.checkCredits();
 		}
-		
+
 		override public function evalIsNotInCombatMapArea():Boolean
 		{
 			return (!(NON_COMBAT_MAPS.indexOf(map.name_) == -1));
 		}
-		
+
 		private function onEnterFrame(_arg_1:Event):void
 		{
 			var _local_5:int;
@@ -817,9 +817,9 @@ package com.company.assembleegameclient.game
 				this.frameTimeSum_ = 0;
 			}
 			;
-			var _local_7:int = getTimer();
+			var milliseconds:int = getTimer();
 			map.update(_local_3, _local_4);
-			this.monitor.dispatch("Map.update", (getTimer() - _local_7));
+			this.monitor.dispatch("Map.update", (getTimer() - milliseconds));
 			camera_.update(_local_4);
 			if (Parameters.timerActive)
 			{
@@ -828,7 +828,7 @@ package com.company.assembleegameclient.game
 					this.addTimer();
 				}
 				;
-				if (_local_7 >= Parameters.phaseChangeAt)
+				if (milliseconds >= Parameters.phaseChangeAt)
 				{
 					Parameters.phaseChangeAt = 2147483647;
 					Parameters.timerActive = false;
@@ -836,7 +836,7 @@ package com.company.assembleegameclient.game
 				}
 				else
 				{
-					this.updateTimer(_local_7);
+					this.updateTimer(milliseconds);
 				}
 				;
 			}
@@ -892,17 +892,17 @@ package com.company.assembleegameclient.game
 			var _local_9:int = (getTimer() - _local_3);
 			this.monitor.dispatch("GameSprite.loop", _local_9);
 		}
-		
+
 		public function showPetToolTip(_arg_1:Boolean):void
 		{
 		}
-		
+
 		private function updateTimer(_arg_1:int):void
 		{
 			this.timerCounter.visible = true;
 			this.timerCounter.setText(((Parameters.phaseName + "\n") + toTimeCode((Parameters.phaseChangeAt - _arg_1))));
 		}
-		
+
 		private function addTimer():void
 		{
 			if (this.timerCounter == null)
@@ -917,12 +917,12 @@ package com.company.assembleegameclient.game
 			}
 			;
 		}
-		
+
 		override public function showDailyLoginCalendar():void
 		{
 			this.openDialog.dispatch(new DailyLoginModal());
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.game
 

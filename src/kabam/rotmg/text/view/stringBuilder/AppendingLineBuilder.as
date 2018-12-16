@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder
 
 package kabam.rotmg.text.view.stringBuilder
 {
-    import __AS3__.vec.Vector;
+    
     import kabam.rotmg.language.model.StringMap;
-    import __AS3__.vec.*;
+    
 
     public class AppendingLineBuilder implements StringBuilder 
     {

@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.chat.model.TellModel
 
 package kabam.rotmg.chat.model
 {
-    import __AS3__.vec.Vector;
-    import __AS3__.vec.*;
+    
+    
 
     public class TellModel 
     {

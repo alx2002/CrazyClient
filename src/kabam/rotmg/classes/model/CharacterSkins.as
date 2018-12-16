@@ -1,13 +1,13 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.classes.model.CharacterSkins
 
 package kabam.rotmg.classes.model
 {
-    import __AS3__.vec.Vector;
+    
     import com.company.assembleegameclient.parameters.Parameters;
-    import __AS3__.vec.*;
+    
 
     public class CharacterSkins 
     {

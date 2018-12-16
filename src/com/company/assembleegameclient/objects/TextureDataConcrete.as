@@ -1,11 +1,11 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.TextureDataConcrete
 
 package com.company.assembleegameclient.objects
 {
-	import __AS3__.vec.*;
+	
 	import com.company.assembleegameclient.appengine.*;
 	import com.company.assembleegameclient.appengine.RemoteTexture;
 	import com.company.assembleegameclient.objects.particles.EffectProperties;

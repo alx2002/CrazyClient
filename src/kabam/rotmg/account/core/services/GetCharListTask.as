@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.account.core.services.GetCharListTask
 
@@ -243,7 +243,7 @@ package kabam.rotmg.account.core.services
             this.retryTimer = null;
         }
 
-        private function onRetryTimer(_arg_1:TimerEvent):void
+        private function onRetryTimer(event:TimerEvent):void
         {
             this.stopRetryTimer();
             if (this.numRetries < MAX_RETRIES)

@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.ui.panels.GuildInvitePanel
 
@@ -69,7 +69,7 @@ package com.company.assembleegameclient.ui.panels
 			this.acceptButton_.y = ((HEIGHT - this.acceptButton_.height) - 4);
 		}
 		
-		private function onTimer(_arg_1:TimerEvent):void
+		private function onTimer(event:TimerEvent):void
 		{
 			dispatchEvent(new Event(Event.COMPLETE));
 		}

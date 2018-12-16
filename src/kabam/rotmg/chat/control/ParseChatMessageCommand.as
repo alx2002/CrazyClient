@@ -1,68 +1,73 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.chat.control.ParseChatMessageCommand
 
 package kabam.rotmg.chat.control
 {
-    import com.company.assembleegameclient.util.CJDateUtil;
-    import kabam.rotmg.ui.model.HUDModel;
-    import kabam.rotmg.game.signals.AddTextLineSignal;
-    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-    import com.company.assembleegameclient.parameters.Parameters;
-    import flash.display.DisplayObject;
-	import kabam.rotmg.text.view.BitmapTextFactory;
-	import com.company.util.MoreObjectUtil;
-	//
-	import com.company.assembleegameclient.ui.board.SPCBoard;
 	
-    import flash.display.StageScaleMode;
-    import kabam.rotmg.chat.model.ChatMessage;
-    import flash.events.Event;
-	import kabam.rotmg.build.api.BuildData;
-    import com.company.assembleegameclient.objects.ObjectLibrary;
-    import com.company.assembleegameclient.objects.GameObject;
-    import com.company.assembleegameclient.objects.Player;
-    import __AS3__.vec.Vector;
-	import flash.net.navigateToURL;
-    import flash.net.URLRequest;
-    import flash.net.URLRequestMethod;
-    import flash.net.URLVariables;
-    import kabam.rotmg.messaging.impl.GameServerConnection;
-    import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
-    import flash.utils.getTimer;
-    import kabam.rotmg.game.commands.PlayGameCommand;
-    import io.decagames.rotmg.social.SocialPopupView;
-    
-    import flash.geom.Point;
-    import com.company.assembleegameclient.util.AssetLoader;
-    import flash.net.navigateToURL;
-	import kabam.rotmg.game.model.GameInitData;
-    import com.company.assembleegameclient.game.events.ReconnectEvent;
-    import kabam.rotmg.servers.api.Server;
-    import flash.utils.ByteArray;
-    import kabam.rotmg.assets.EmbeddedData;
-    import com.company.assembleegameclient.map.AbstractMap;
-    import com.company.assembleegameclient.ui.menu.FindMenu;
-    import com.company.assembleegameclient.ui.options.Options;
-    import kabam.rotmg.text.model.TextKey;
-	//
+	
 	import com.company.assembleegameclient.appengine.SavedCharacter;
-	import kabam.rotmg.build.api.BuildData;
-	import kabam.rotmg.account.core.Account;
-	import kabam.rotmg.dailyLogin.model.DailyLoginModel;
-	import kabam.rotmg.dailyLogin.model.CalendarTypes;
-    import kabam.rotmg.dailyLogin.model.CalendarDayModel;
-	import kabam.rotmg.appengine.api.AppEngineClient;
-	import kabam.rotmg.characters.model.CharacterModel;
-	import kabam.rotmg.core.model.PlayerModel;
+	import com.company.assembleegameclient.game.events.ReconnectEvent;
+	import com.company.assembleegameclient.map.AbstractMap;
+	import kabam.rotmg.legends.view.LegendsView;
+	import com.company.assembleegameclient.game.GameSprite;
+	import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+	import io.decagames.rotmg.supportCampaign.tooltips.SupportTooltip;
+	import io.decagames.rotmg.supportCampaign.data.SupporterCampaignModel;
+	import com.company.assembleegameclient.objects.GameObject;
+	import io.decagames.rotmg.supportCampaign.data.SupporterFeatures;
 	import com.company.assembleegameclient.objects.ObjectLibrary;
-	import com.company.assembleegameclient.objects.Player;
-	
-	//
-    import __AS3__.vec.*;
+	import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
 
-    public class ParseChatMessageCommand 
+	import com.company.assembleegameclient.objects.Player;
+	import com.company.assembleegameclient.sound.SoundEffectLibrary;
+	import com.company.assembleegameclient.ui.panels.Panel;
+	import com.company.assembleegameclient.parameters.Parameters;
+	import com.company.assembleegameclient.ui.board.SPCBoard;
+	import com.company.assembleegameclient.ui.menu.FindMenu;
+	import kabam.rotmg.arena.view.ArenaLeaderboard;
+	import com.company.assembleegameclient.ui.options.Options;
+	import com.company.assembleegameclient.util.AssetLoader;
+	import com.company.assembleegameclient.util.CJDateUtil;
+	import flash.display.DisplayObject;
+	import flash.display.StageScaleMode;
+	import flash.events.Event;
+	import com.company.assembleegameclient.ui.board.GuildBoardWindow;
+	import flash.geom.Point;
+	import kabam.rotmg.arena.view.ArenaQueryPanelMediator;
+	import flash.net.URLRequest;
+	import flash.net.navigateToURL;
+	import flash.utils.ByteArray;
+	import flash.utils.getTimer;
+	import kabam.rotmg.account.core.Account;
+	import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+	import kabam.rotmg.account.web.view.WebAccountDetailDialog;
+	import kabam.rotmg.account.web.view.WebLoginDialog;
+	import kabam.rotmg.appengine.api.AppEngineClient;
+	import kabam.rotmg.assets.EmbeddedData;
+	import kabam.rotmg.arena.view.ArenaQueryPanel;
+	import kabam.rotmg.build.api.BuildData;
+	import kabam.rotmg.chat.control.ShowChatInputSignal;
+	import kabam.rotmg.chat.model.ChatMessage;
+	import kabam.rotmg.core.model.PlayerModel;
+	import kabam.rotmg.core.model.ScreenModel;
+	import com.company.assembleegameclient.game.AGameSprite;
+	import kabam.rotmg.dailyLogin.model.DailyLoginModel;
+	import com.company.assembleegameclient.objects.Character;
+	import kabam.rotmg.dialogs.control.OpenDialogSignal;
+	import kabam.rotmg.game.commands.PlayGameCommand;
+	import kabam.rotmg.game.signals.AddTextLineSignal;
+	import kabam.rotmg.messaging.impl.GameServerConnection;
+	import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
+	import kabam.rotmg.servers.api.Server;
+	import kabam.rotmg.text.model.TextKey;
+	import kabam.rotmg.core.signals.SetScreenSignal;
+
+	import kabam.rotmg.ui.model.HUDModel;
+	import kabam.rotmg.ui.signals.EnterGameSignal;
+
+    public class ParseChatMessageCommand
     {
 
         private static var lastMsg:String = "";
@@ -72,17 +77,34 @@ package kabam.rotmg.chat.control
         public static var switch_:Boolean = false;
         private static var afkStart:CJDateUtil;
 
+
+		[Inject]
+		public var supporterPoints:int;
+		[Inject]
+		public var gs_:AGameSprite;
+		public var setScreen:SetScreenSignal;
+		[Inject]
+		public var deathSound_:String;
+		[Inject]
+        public var view:ArenaQueryPanel;
+		[Inject]
+        public var account:Account;
+	    [Inject]
+        public var showChatInput:ShowChatInputSignal;
+		[Inject]
+        public var enterGame:EnterGameSignal;
+		[Inject]
+        public var updateAccount:UpdateAccountInfoSignal;
         [Inject]
         public var data:String;
         [Inject]
         public var hudModel:HUDModel;
+		[Inject]
+        public var screenModel:ScreenModel;
         [Inject]
         public var addTextLine:AddTextLineSignal;
 		[Inject]
         public var openDialog:OpenDialogSignal;
-		//
-		[Inject]
-        public var account:Account;
 		[Inject]
         public var buildData:BuildData;
         private var requestData:Object;
@@ -782,6 +804,7 @@ package kabam.rotmg.chat.control
             var _local_13:Player = this.hudModel.gameSprite.map.player_;
             var _local_17:Number = NaN;
             var _local_26:GameServerConnection = this.hudModel.gameSprite.gsc_;
+			var _local_27:int;
             switch (this.data.toLowerCase())
             {
                 case "/status":
@@ -813,6 +836,21 @@ package kabam.rotmg.chat.control
                 this.openDialog.dispatch(new SPCBoard());
 				navigateToURL(new URLRequest("https://www.mpgh.net/forum/showthread.php?t=1385201"));
                 return (true);
+				//case "/forceupdate":
+				//this.updateAccount.dispatch();
+				case "/leaderboard":
+				this.openDialog.dispatch(new ArenaLeaderboard());
+				return(true);
+				case "/logout":
+				case "/lg":
+				this.hudModel.gameSprite.mui_.setEnablePlayerInput(true);
+				this.showChatInput.dispatch(true, _arg_1);
+				this.account.clear();
+				this.openDialog.dispatch(new WebLoginDialog());
+				this.showChatInput.dispatch(true, _arg_1);
+				this.updateAccount.dispatch();
+				this.enterGame.dispatch();
+				return (true);
 				//
 					case "/ao":
 					case "/alpha":
@@ -820,9 +858,6 @@ package kabam.rotmg.chat.control
                     Parameters.save();
                     this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.alphaOnOthers) ? "Alpha enabled" : "Alpha disabled")));
                     return (true);
-				case "/break":
-					var x = this.client.sendRequest("/dailyLogin/fetchCalendar", this.account.getCredentials());
-					return (x);
 				case "/vault":
                 case "/vaultonly":
 					trace ("Testingsomething");
@@ -874,6 +909,18 @@ package kabam.rotmg.chat.control
 					Parameters.data_.NoClip = (!(Parameters.data_.NoClip));
 					this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.NoClip) ?  "Enabled" : "Disabled")));
 					return (true);
+				/* case "/sglow":
+					supporterPoints:int = 982312;
+					(this.hasSupporterFeature(SupporterFeatures.GLOW))
+					SupporterFeatures.GLOW;
+
+				 this.clearTextureCache;
+				 Parameters.save();
+				 (one.hasSupporterFeature(SupporterFeatures.GLOW))
+				{
+
+				};
+					//return (true); */
 				case "/lowcpu":
 				case "/antilag":
 				Parameters.lowCPUMode = (!(Parameters.lowCPUMode));
@@ -1095,12 +1142,14 @@ package kabam.rotmg.chat.control
                     _local_8 = this.data.match("^/death (.+)$");
                     if (_local_8 != null)
                     {
+						SoundEffectLibrary.load(this.deathSound_);
+						SoundEffectLibrary.play(this.deathSound_);
                         _local_13.dead_ = true;
                         _local_25 = new GameObject(ObjectLibrary.getXMLfromId("Gravestone 11"));
                         _local_25.objectId_ = (-2147483648 + getTimer());
                         _local_25.name_ = _local_13.name_;
                         this.hudModel.gameSprite.map.addObj(_local_25, _local_13.x_, _local_13.y_);
-                        this.hudModel.gameSprite.mui_.setEnablePlayerInput(false);
+                        this.hudModel.gameSprite.mui_.setEnablePlayerInput(true);
                         this.hudModel.gameSprite.gsc_.fakeDeath(_local_8[1].toString());
                         return (true);
                     };
@@ -1405,6 +1454,14 @@ package kabam.rotmg.chat.control
                         };
                         return (true);
                     };
+					_local_8 = this.data.match("^/psize (\\d+)");
+                if (_local_8 != null)
+				{
+                    Parameters.data_.playerSize = parseInt(_local_8[1]); //parseInt(_local_8[1]);
+					Parameters.save();
+                    this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME, ("Set Size to: " + _local_8[1])));
+                    return (true);
+                }
                     _local_8 = this.data.toLowerCase().match("^/tp (\\w+)$");
                     if (_local_8 != null)
                     {
@@ -1462,6 +1519,7 @@ package kabam.rotmg.chat.control
             };
             return (false);
         }
+
 
         private function findSkinIndex(_arg_1:String):Array
         {
@@ -1846,4 +1904,4 @@ package kabam.rotmg.chat.control
     }
 }//package kabam.rotmg.chat.control
 
-
+

@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.mapeditor.InfoPane
 
 package com.company.assembleegameclient.mapeditor
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.map.GroundLibrary;
 	import com.company.assembleegameclient.map.RegionLibrary;
 	import com.company.assembleegameclient.objects.ObjectLibrary;

@@ -1,19 +1,19 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.supportCampaign.tab.tiers.progressBar.TiersProgressBar
 
 package io.decagames.rotmg.supportCampaign.tab.tiers.progressBar
 {
     import flash.display.Sprite;
-    import __AS3__.vec.Vector;
+    
     import io.decagames.rotmg.supportCampaign.data.vo.RankVO;
     import io.decagames.rotmg.supportCampaign.tab.tiers.button.TierButton;
     import io.decagames.rotmg.ui.ProgressBar;
     import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
     import io.decagames.rotmg.ui.texture.TextureParser;
     import io.decagames.rotmg.supportCampaign.tab.tiers.button.status.TierButtonStatus;
-    import __AS3__.vec.*;
+    
 
     public class TiersProgressBar extends Sprite 
     {

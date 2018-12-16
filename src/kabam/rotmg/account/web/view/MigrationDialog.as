@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.account.web.view.MigrationDialog
 
@@ -18,7 +18,7 @@ package kabam.rotmg.account.web.view
     import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
     import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
-    public class MigrationDialog extends EmptyFrame 
+    public class MigrationDialog extends EmptyFrame
     {
 
         public var done:Signal;
@@ -84,11 +84,11 @@ package kabam.rotmg.account.web.view
             this.timerProgressCheck.removeEventListener(TimerEvent.TIMER, this.percentLoop);
         }
 
-        private function percentLoop(_arg_1:TimerEvent):void
+        private function percentLoop(event:TimerEvent):void
         {
-            var _local_2:Object = this.account.getCredentials();
+            var params:Object = this.account.getCredentials();
             this.progressCheckClient.complete.addOnce(this.onUpdateStatusComplete);
-            this.progressCheckClient.sendRequest("/migrate/progress", _local_2);
+            this.progressCheckClient.sendRequest("/migrate/progress", params);
         }
 
         private function onUpdateStatusComplete(_arg_1:Boolean, _arg_2:*):void

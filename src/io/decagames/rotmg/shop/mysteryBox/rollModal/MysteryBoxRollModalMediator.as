@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.shop.mysteryBox.rollModal.MysteryBoxRollModalMediator
 
@@ -29,7 +29,7 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
     import io.decagames.rotmg.shop.genericBox.BoxUtils;
     import io.decagames.rotmg.ui.buttons.BaseButton;
 
-    public class MysteryBoxRollModalMediator extends Mediator 
+    public class MysteryBoxRollModalMediator extends Mediator
     {
 
         [Inject]
@@ -375,7 +375,7 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
             this.swapItems(null);
         }
 
-        private function swapItems(_arg_1:TimerEvent):void
+        private function swapItems(event:TimerEvent):void
         {
             var _local_2:Array;
             var _local_3:int;
@@ -397,3 +397,4 @@ package io.decagames.rotmg.shop.mysteryBox.rollModal
     }
 }//package io.decagames.rotmg.shop.mysteryBox.rollModal
 
+

@@ -1,17 +1,18 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.GameObject
 
 package com.company.assembleegameclient.objects
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.engine3d.Model3D;
 	import com.company.assembleegameclient.engine3d.Object3D;
 	import com.company.assembleegameclient.map.Camera;
 	import com.company.assembleegameclient.map.Map;
 	import com.company.assembleegameclient.map.Square;
+	import com.company.assembleegameclient.objects.ObjectProperties;
 	import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
 	import com.company.assembleegameclient.objects.animation.Animations;
 	import com.company.assembleegameclient.objects.animation.AnimationsData;
@@ -60,10 +61,10 @@ package com.company.assembleegameclient.objects
 	import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 	import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 	import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-	
+
 	public class GameObject extends BasicObject
 	{
-		
+
 		protected static const PAUSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
 		protected static const CURSED_FILTER:ColorMatrixFilter = new ColorMatrixFilter(MoreColorUtil.redFilterMatrix);
 		protected static const IDENTITY_MATRIX:Matrix = new Matrix();
@@ -71,7 +72,7 @@ package com.company.assembleegameclient.objects
 		private static const NEGATIVE_ZERO_LIMIT:Number = -(ZERO_LIMIT);
 		public static const ATTACK_PERIOD:int = 300;
 		private static const DEFAULT_HP_BAR_Y_OFFSET:int = 6;
-		
+
 		private var mobInfoShown:Boolean = false;
 		public var nameBitmapData_:BitmapData = null;
 		private var nameFill_:GraphicsBitmapFill = null;
@@ -153,7 +154,7 @@ package com.company.assembleegameclient.objects
 		public var myPet:Boolean;
 		public var supporterPoints:int = 0;
 		private var isInvincible_:Boolean = false;
-		
+
 		public function GameObject(_arg_1:XML)
 		{
 			var _local_2:int;
@@ -266,7 +267,7 @@ package com.company.assembleegameclient.objects
 			;
 			this.props_.loadSounds();
 		}
-		
+
 		public static function damageWithDefense(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:Vector.<uint>):int
 		{
 			var _local_5:int = _arg_2;
@@ -307,7 +308,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_7);
 		}
-		
+
 		public static function takeDmgNotif(_arg_1:int, _arg_2:GameObject, _arg_3:Boolean = false):void
 		{
 			var _local_4:int;
@@ -337,7 +338,7 @@ package com.company.assembleegameclient.objects
 			_local_9.setStringBuilder(new StaticStringBuilder(_local_8));
 			_arg_2.map_.mapOverlay_.addStatusText(_local_9);
 		}
-		
+
 		public static function green2red(_arg_1:int):int
 		{
 			if (_arg_1 > 50)
@@ -347,7 +348,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (0xFFFF00 - (0x0500 * int((50 - _arg_1))));
 		}
-		
+
 		public function setObjectId(_arg_1:int):void
 		{
 			var _local_2:TextureData;
@@ -366,7 +367,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function setTexture(_arg_1:int):void
 		{
 			var _local_2:TextureData = ObjectLibrary.typeToTextureData_[_arg_1];
@@ -374,7 +375,7 @@ package com.company.assembleegameclient.objects
 			this.mask_ = _local_2.mask_;
 			this.animatedChar_ = _local_2.animatedChar_;
 		}
-		
+
 		public function setAltTexture(_arg_1:int):void
 		{
 			var _local_2:TextureData;
@@ -413,7 +414,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function setTex1(_arg_1:int):void
 		{
 			if (_arg_1 == this.tex1Id_)
@@ -425,7 +426,7 @@ package com.company.assembleegameclient.objects
 			this.texturingCache_ = new Dictionary();
 			this.portrait_ = null;
 		}
-		
+
 		public function setTex2(_arg_1:int):void
 		{
 			if (_arg_1 == this.tex2Id_)
@@ -437,12 +438,12 @@ package com.company.assembleegameclient.objects
 			this.texturingCache_ = new Dictionary();
 			this.portrait_ = null;
 		}
-		
+
 		public function playSound(_arg_1:int):void
 		{
 			SoundEffectLibrary.play(this.props_.sounds_[_arg_1]);
 		}
-		
+
 		override public function dispose():void
 		{
 			super.dispose();
@@ -496,37 +497,37 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function isQuiet():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.QUIET_BIT) == 0));
 		}
-		
+
 		public function isWeak():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.WEAK_BIT) == 0));
 		}
-		
+
 		public function isSlowed():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.SLOWED_BIT) == 0));
 		}
-		
+
 		public function isSick():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.SICK_BIT) == 0));
 		}
-		
+
 		public function isDazed():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.DAZED_BIT) == 0));
 		}
-		
+
 		public function isStunned():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.STUNNED_BIT) == 0));
 		}
-		
+
 		public function isBlind():Boolean
 		{
 			if (Parameters.data_["dbBlind"] != true)
@@ -536,7 +537,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.BLIND_BIT) == 0));
 		}
-		
+
 		public function isDrunk():Boolean
 		{
 			if (Parameters.data_["dbDrunk"] != true)
@@ -546,7 +547,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.DRUNK_BIT) == 0));
 		}
-		
+
 		public function isConfused():Boolean
 		{
 			if (Parameters.data_["dbConfused"] != true)
@@ -556,32 +557,32 @@ package com.company.assembleegameclient.objects
 			;
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.CONFUSED_BIT) == 0));
 		}
-		
+
 		public function isStunImmune():Boolean
 		{
 			return ((!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.STUN_IMMUNE_BIT) == 0)) || (this.isStunImmune_));
 		}
-		
+
 		public function isInvisible():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.INVISIBLE_BIT) == 0));
 		}
-		
+
 		public function isParalyzed():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.PARALYZED_BIT) == 0));
 		}
-		
+
 		public function isSpeedy():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.SPEEDY_BIT) == 0));
 		}
-		
+
 		public function isNinjaSpeedy():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.NINJA_SPEEDY_BIT) == 0));
 		}
-		
+
 		public function isHallucinating():Boolean
 		{
 			if (Parameters.data_["dbHallucinating"] != true)
@@ -591,72 +592,72 @@ package com.company.assembleegameclient.objects
 			;
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.HALLUCINATING_BIT) == 0));
 		}
-		
+
 		public function isHealing():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.HEALING_BIT) == 0));
 		}
-		
+
 		public function isBleeding():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.BLEEDING_BIT) == 0));
 		}
-		
+
 		public function isDamaging():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.DAMAGING_BIT) == 0));
 		}
-		
+
 		public function isBerserk():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.BERSERK_BIT) == 0));
 		}
-		
+
 		public function isPaused():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.PAUSED_BIT) == 0));
 		}
-		
+
 		public function isStasis():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.STASIS_BIT) == 0));
 		}
-		
+
 		public function isStasisImmune():Boolean
 		{
 			return ((this.isStasisImmune_) || (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.STASIS_IMMUNE_BIT) == 0)));
 		}
-		
+
 		public function isInvincible():Boolean
 		{
 			return ((this.isInvincible_) || (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.INVINCIBLE_BIT) == 0)));
 		}
-		
+
 		public function isInvulnerable():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.INVULNERABLE_BIT) == 0));
 		}
-		
+
 		public function isArmored():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.ARMORED_BIT) == 0));
 		}
-		
+
 		public function isArmorBroken():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.ARMORBROKEN_BIT) == 0));
 		}
-		
+
 		public function isArmorBrokenImmune():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.ARMORBROKEN_IMMUNE_BIT) == 0));
 		}
-		
+
 		public function isSlowedImmune():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.SLOWED_IMMUNE_BIT) == 0));
 		}
-		
+
 		public function isUnstable():Boolean
 		{
 			if (Parameters.data_["dbUnstable"] != true)
@@ -666,12 +667,12 @@ package com.company.assembleegameclient.objects
 			;
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.UNSTABLE_BIT) == 0));
 		}
-		
+
 		public function isShowPetEffectIcon():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PET_EFFECT_ICON) == 0));
 		}
-		
+
 		public function isDarkness():Boolean
 		{
 			if (Parameters.data_["dbDarkness"] != true)
@@ -681,52 +682,52 @@ package com.company.assembleegameclient.objects
 			;
 			return (!((this.condition_[ConditionEffect.CE_FIRST_BATCH] & ConditionEffect.DARKNESS_BIT) == 0));
 		}
-		
+
 		public function isParalyzeImmune():Boolean
 		{
 			return ((this.isParalyzeImmune_) || (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PARALYZED_IMMUNE_BIT) == 0)));
 		}
-		
+
 		public function isDazedImmune():Boolean
 		{
 			return ((this.isDazedImmune_) || (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.DAZED_IMMUNE_BIT) == 0)));
 		}
-		
+
 		public function isPetrified():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PETRIFIED_BIT) == 0));
 		}
-		
+
 		public function isPetrifiedImmune():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.PETRIFIED_IMMUNE_BIT) == 0));
 		}
-		
+
 		public function isCursed():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.CURSE_BIT) == 0));
 		}
-		
+
 		public function isHpBoosted():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.HP_BOOST_BIT) == 0));
 		}
-		
+
 		public function isCursedImmune():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.CURSE_IMMUNE_BIT) == 0));
 		}
-		
+
 		public function isSilenced():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.SILENCED_BIT) == 0));
 		}
-		
+
 		public function isExposed():Boolean
 		{
 			return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.EXPOSED_BIT) == 0));
 		}
-		
+
 		public function isSafe(_arg_1:int = 20):Boolean
 		{
 			var _local_2:GameObject;
@@ -749,12 +750,12 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		public function getName():String
 		{
 			return (((this.name_ == null) || (this.name_ == "")) ? ObjectLibrary.typeToDisplayId_[this.objectType_] : this.name_);
 		}
-		
+
 		public function getColor():uint
 		{
 			if (this.props_.color_ != -1)
@@ -764,21 +765,21 @@ package com.company.assembleegameclient.objects
 			;
 			return (BitmapUtil.mostCommonColor(this.texture_));
 		}
-		
+
 		public function getBulletId():uint
 		{
 			var _local_1:uint = this.nextBulletId_;
 			this.nextBulletId_ = ((this.nextBulletId_ + 1) % 128);
 			return (_local_1);
 		}
-		
+
 		public function distTo(_arg_1:WorldPosData):Number
 		{
 			var _local_2:Number = (_arg_1.x_ - x_);
 			var _local_3:Number = (_arg_1.y_ - y_);
 			return (Math.sqrt(((_local_2 * _local_2) + (_local_3 * _local_3))));
 		}
-		
+
 		public function toggleShockEffect(_arg_1:Boolean):void
 		{
 			if (_arg_1)
@@ -792,7 +793,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function toggleChargingEffect(_arg_1:Boolean):void
 		{
 			if (_arg_1)
@@ -806,7 +807,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		override public function addTo(_arg_1:Map, _arg_2:Number, _arg_3:Number):Boolean
 		{
 			map_ = _arg_1;
@@ -825,7 +826,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		override public function removeFromMap():void
 		{
 			if (((this.props_.static_) && (!(square_ == null))))
@@ -846,7 +847,7 @@ package com.company.assembleegameclient.objects
 			super.removeFromMap();
 			this.dispose();
 		}
-		
+
 		public function moveTo(_arg_1:Number, _arg_2:Number):Boolean
 		{
 			var _local_3:Square = map_.getSquare(_arg_1, _arg_2);
@@ -880,14 +881,14 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		private function mobInfo(_arg_1:String):void
 		{
 			var _local_2:CharacterStatusText = new CharacterStatusText(this, 0xFF00, int.MAX_VALUE);
 			_local_2.setStringBuilder(new StaticStringBuilder(_arg_1));
 			map_.mapOverlay_.addStatusText(_local_2);
 		}
-		
+
 		override public function update(_arg_1:int, _arg_2:int):Boolean
 		{
 			var _local_3:int;
@@ -947,7 +948,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (true);
 		}
-		
+
 		public function onGoto(_arg_1:Number, _arg_2:Number, _arg_3:int):void
 		{
 			this.moveTo(_arg_1, _arg_2);
@@ -959,7 +960,7 @@ package com.company.assembleegameclient.objects
 			this.moveVec_.x = 0;
 			this.moveVec_.y = 0;
 		}
-		
+
 		public function onTickPos(_arg_1:Number, _arg_2:Number, _arg_3:int, _arg_4:int):void
 		{
 			if (this.myLastTickId_ < map_.gs_.gsc_.lastTickId_)
@@ -976,7 +977,7 @@ package com.company.assembleegameclient.objects
 			this.moveVec_.y = ((this.tickPosition_.y - this.posAtTick_.y) / _arg_3);
 			this.myLastTickId_ = _arg_4;
 		}
-		
+
 		public function damage(_arg_1:Boolean, _arg_2:int, _arg_3:Vector.<uint>, _arg_4:Boolean, _arg_5:Projectile, _arg_6:Boolean = false):void
 		{
 			var _local_7:int;
@@ -1017,27 +1018,27 @@ package com.company.assembleegameclient.objects
 						{
 							switch (_local_8)
 							{
-							case ConditionEffect.NOTHING: 
+							case ConditionEffect.NOTHING:
 								break;
-							case ConditionEffect.WEAK: 
-							case ConditionEffect.SICK: 
-							case ConditionEffect.BLIND: 
-							case ConditionEffect.HALLUCINATING: 
-							case ConditionEffect.DRUNK: 
-							case ConditionEffect.CONFUSED: 
-							case ConditionEffect.STUN_IMMUNE: 
-							case ConditionEffect.INVISIBLE: 
-							case ConditionEffect.SPEEDY: 
-							case ConditionEffect.BLEEDING: 
-							case ConditionEffect.STASIS_IMMUNE: 
-							case ConditionEffect.NINJA_SPEEDY: 
-							case ConditionEffect.UNSTABLE: 
-							case ConditionEffect.DARKNESS: 
-							case ConditionEffect.PETRIFIED_IMMUNE: 
-							case ConditionEffect.SILENCED: 
+							case ConditionEffect.WEAK:
+							case ConditionEffect.SICK:
+							case ConditionEffect.BLIND:
+							case ConditionEffect.HALLUCINATING:
+							case ConditionEffect.DRUNK:
+							case ConditionEffect.CONFUSED:
+							case ConditionEffect.STUN_IMMUNE:
+							case ConditionEffect.INVISIBLE:
+							case ConditionEffect.SPEEDY:
+							case ConditionEffect.BLEEDING:
+							case ConditionEffect.STASIS_IMMUNE:
+							case ConditionEffect.NINJA_SPEEDY:
+							case ConditionEffect.UNSTABLE:
+							case ConditionEffect.DARKNESS:
+							case ConditionEffect.PETRIFIED_IMMUNE:
+							case ConditionEffect.SILENCED:
 								_local_9 = ConditionEffect.effects_[_local_8];
 								break;
-							case ConditionEffect.QUIET: 
+							case ConditionEffect.QUIET:
 								if (map_.player_ == this)
 								{
 									map_.player_.mp_ = 0;
@@ -1045,7 +1046,7 @@ package com.company.assembleegameclient.objects
 								;
 								_local_9 = ConditionEffect.effects_[_local_8];
 								break;
-							case ConditionEffect.STASIS: 
+							case ConditionEffect.STASIS:
 								if (this.isStasisImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1058,7 +1059,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.SLOWED: 
+							case ConditionEffect.SLOWED:
 								if (this.isSlowedImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1071,7 +1072,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.ARMORBROKEN: 
+							case ConditionEffect.ARMORBROKEN:
 								if (this.isArmorBrokenImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1084,7 +1085,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.STUNNED: 
+							case ConditionEffect.STUNNED:
 								if (this.isStunImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1097,7 +1098,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.DAZED: 
+							case ConditionEffect.DAZED:
 								if (this.isDazedImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1110,7 +1111,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.PARALYZED: 
+							case ConditionEffect.PARALYZED:
 								if (this.isParalyzeImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1123,7 +1124,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.PETRIFIED: 
+							case ConditionEffect.PETRIFIED:
 								if (this.isPetrifiedImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1136,7 +1137,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.CURSE: 
+							case ConditionEffect.CURSE:
 								if (this.isCursedImmune())
 								{
 									_local_10 = new CharacterStatusText(this, 0xFF0000, 3000);
@@ -1149,7 +1150,7 @@ package com.company.assembleegameclient.objects
 								}
 								;
 								break;
-							case ConditionEffect.GROUND_DAMAGE: 
+							case ConditionEffect.GROUND_DAMAGE:
 								_local_16 = true;
 								break;
 							}
@@ -1219,33 +1220,33 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		public function showConditionEffect(_arg_1:int, _arg_2:String):void
 		{
 			var _local_3:CharacterStatusText = new CharacterStatusText(this, 0xFF0000, 3000, _arg_1);
 			_local_3.setStringBuilder(new LineBuilder().setParams(_arg_2));
 			map_.mapOverlay_.addStatusText(_local_3);
 		}
-		
+
 		public function showConditionEffectPet(_arg_1:int, _arg_2:String):void
 		{
 			var _local_3:CharacterStatusText = new CharacterStatusText(this, 0xFF0000, 3000, _arg_1);
 			_local_3.setStringBuilder(new StaticStringBuilder(("Pet " + _arg_2)));
 			map_.mapOverlay_.addStatusText(_local_3);
 		}
-		
+
 		public function showDamageText(_arg_1:int, _arg_2:Boolean):void
 		{
 			takeDmgNotif(_arg_1, this, _arg_2);
 		}
-		
+
 		protected function makeNameBitmapData():BitmapData
 		{
 			var _local_1:StringBuilder = new StaticStringBuilder(this.name_);
 			var _local_2:BitmapTextFactory = StaticInjectorContext.getInjector().getInstance(BitmapTextFactory);
 			return (_local_2.make(_local_1, 16, 0xFFFFFF, true, IDENTITY_MATRIX, true));
 		}
-		
+
 		public function drawName(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:Boolean = false):void
 		{
 			if (((!(Options.hidden)) && (Parameters.lowCPUMode)))
@@ -1280,7 +1281,7 @@ package com.company.assembleegameclient.objects
 			_arg_1.push(this.namePath_);
 			_arg_1.push(GraphicsUtil.END_FILL);
 		}
-		
+
 		protected function getHallucinatingTexture():BitmapData
 		{
 			if (this.hallucinatingTexture_ == null)
@@ -1290,7 +1291,7 @@ package com.company.assembleegameclient.objects
 			;
 			return (this.hallucinatingTexture_);
 		}
-		
+
 		protected function getTexture(_arg_1:Camera, _arg_2:int):BitmapData
 		{
 			var _local_3:Pet;
@@ -1451,13 +1452,13 @@ package com.company.assembleegameclient.objects
 			;
 			return (_local_12);
 		}
-		
+
 		public function useAltTexture(_arg_1:String, _arg_2:int):void
 		{
 			this.texture_ = AssetLibrary.getImageFromSet(_arg_1, _arg_2);
 			this.sizeMult_ = (this.texture_.height / 8);
 		}
-		
+
 		public function getPortrait():BitmapData
 		{
 			var _local_1:BitmapData;
@@ -1472,13 +1473,13 @@ package com.company.assembleegameclient.objects
 			;
 			return (this.portrait_);
 		}
-		
+
 		public function setAttack(_arg_1:int, _arg_2:Number):void
 		{
 			this.attackAngle_ = _arg_2;
 			this.attackStart_ = getTimer();
 		}
-		
+
 		override public function draw3d(_arg_1:Vector.<Object3DStage3D>):void
 		{
 			if (this.object3d_ != null)
@@ -1487,7 +1488,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		protected function drawHpBar(_arg_1:Vector.<IGraphicsData>, _arg_2:int = 6):void
 		{
 			var _local_3:Number;
@@ -1529,7 +1530,7 @@ package com.company.assembleegameclient.objects
 			GraphicsFillExtra.setSoftwareDrawSolid(this.hpbarFill_, true);
 			GraphicsFillExtra.setSoftwareDrawSolid(this.hpbarBackFill_, true);
 		}
-		
+
 		override public function draw(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
 		{
 			var _local_4:BitmapData;
@@ -1734,12 +1735,12 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		private function bHPBarParamCheck():Boolean
 		{
 			return ((Parameters.data_.HPBar) && (((((Parameters.data_.HPBar == 1) || ((Parameters.data_.HPBar == 2) && (this.props_.isEnemy_))) || ((Parameters.data_.HPBar == 3) && ((this == map_.player_) || (this.props_.isEnemy_)))) || ((Parameters.data_.HPBar == 4) && (this == map_.player_))) || ((Parameters.data_.HPBar == 5) && (this.props_.isPlayer_))));
 		}
-		
+
 		public function drawConditionIcons(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
 		{
 			var _local_4:BitmapData;
@@ -1799,7 +1800,7 @@ package com.company.assembleegameclient.objects
 			}
 			;
 		}
-		
+
 		override public function drawShadow(_arg_1:Vector.<IGraphicsData>, _arg_2:Camera, _arg_3:int):void
 		{
 			if (((!(Options.hidden)) && (Parameters.lowCPUMode)))
@@ -1823,7 +1824,7 @@ package com.company.assembleegameclient.objects
 			_arg_1.push(this.shadowPath_);
 			_arg_1.push(GraphicsUtil.END_FILL);
 		}
-		
+
 		public function clearTextureCache():void
 		{
 			var _local_1:Object;
@@ -1861,12 +1862,12 @@ package com.company.assembleegameclient.objects
 			;
 			this.texturingCache_ = new Dictionary();
 		}
-		
+
 		public function toString():String
 		{
 			return (((((((((("[" + getQualifiedClassName(this)) + " id: ") + objectId_) + " type: ") + ObjectLibrary.typeToDisplayId_[this.objectType_]) + " pos: ") + x_) + ", ") + y_) + "]");
 		}
-	
+
 	}
 }//package com.company.assembleegameclient.objects
 

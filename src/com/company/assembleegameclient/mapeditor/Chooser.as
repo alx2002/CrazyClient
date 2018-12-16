@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.mapeditor.Chooser
 
 package com.company.assembleegameclient.mapeditor
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.adobe.images.PNGEncoder;
 	import com.company.assembleegameclient.ui.Scrollbar;
 	import com.company.util.GraphicsUtil;

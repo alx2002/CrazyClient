@@ -1,16 +1,16 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //kabam.rotmg.stage3D.Object3D.Model3D_stage3d
 
 package kabam.rotmg.stage3D.Object3D
 {
-    import __AS3__.vec.Vector;
+    
     import flash.display3D.VertexBuffer3D;
     import flash.utils.Dictionary;
     import flash.display3D.Context3D;
     import flash.utils.ByteArray;
-    import __AS3__.vec.*;
+    
 
     public class Model3D_stage3d 
     {

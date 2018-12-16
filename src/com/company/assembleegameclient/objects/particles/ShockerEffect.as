@@ -1,12 +1,12 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //com.company.assembleegameclient.objects.particles.ShockerEffect
 
 package com.company.assembleegameclient.objects.particles
 {
-	import __AS3__.vec.*;
-	import __AS3__.vec.Vector;
+	
+	
 	import com.company.assembleegameclient.objects.GameObject;
 	import com.company.assembleegameclient.util.TextureRedrawer;
 	import com.company.util.AssetLibrary;
@@ -91,7 +91,7 @@ package com.company.assembleegameclient.objects.particles
 			this.parseBitmapDataFromImageSet();
 		}
 		
-		private function onTimer(_arg_1:TimerEvent):void
+		private function onTimer(event:TimerEvent):void
 		{
 			if (map_)
 			{
@@ -103,7 +103,7 @@ package com.company.assembleegameclient.objects.particles
 			;
 		}
 		
-		private function onTimerComplete(_arg_1:TimerEvent):void
+		private function onTimerComplete(event:TimerEvent):void
 		{
 			this.destroy();
 		}

@@ -1,5 +1,5 @@
-﻿// Decompiled by AS3 Sorcerer 5.96
-// www.as3sorcerer.com
+﻿
+
 
 //io.decagames.rotmg.pets.commands.ReleasePetCommand
 
@@ -24,7 +24,7 @@ package io.decagames.rotmg.pets.commands
 		
 		override public function execute():void
 		{
-			var _local_1:ActivePetUpdateRequest = (this.messages.require(GameServerConnection.ACTIVE_PET_UPDATE_REQUEST) as ActivePetUpdateRequest);
+			var _local_1:ActivePetUpdateRequest = (this.messages.require(GameServerConnection.ACTIVEPETUPDATEREQUEST) as ActivePetUpdateRequest);
 			_local_1.instanceid = this.instanceID;
 			_local_1.commandtype = PetsConstants.RELEASE;
 			this.server.sendMessage(_local_1);
