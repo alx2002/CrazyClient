@@ -5,8 +5,8 @@
 
 package kabam.rotmg.chat.control
 {
-	
-	
+
+
 	import com.company.assembleegameclient.appengine.SavedCharacter;
 	import com.company.assembleegameclient.game.events.ReconnectEvent;
 	import com.company.assembleegameclient.map.AbstractMap;
@@ -909,18 +909,6 @@ package kabam.rotmg.chat.control
 					Parameters.data_.NoClip = (!(Parameters.data_.NoClip));
 					this.addTextLine.dispatch(ChatMessage.make("", ((Parameters.data_.NoClip) ?  "Enabled" : "Disabled")));
 					return (true);
-				/* case "/sglow":
-					supporterPoints:int = 982312;
-					(this.hasSupporterFeature(SupporterFeatures.GLOW))
-					SupporterFeatures.GLOW;
-
-				 this.clearTextureCache;
-				 Parameters.save();
-				 (one.hasSupporterFeature(SupporterFeatures.GLOW))
-				{
-
-				};
-					//return (true); */
 				case "/lowcpu":
 				case "/antilag":
 				Parameters.lowCPUMode = (!(Parameters.lowCPUMode));
@@ -1457,9 +1445,9 @@ package kabam.rotmg.chat.control
 					_local_8 = this.data.match("^/psize (\\d+)");
                 if (_local_8 != null)
 				{
-                    Parameters.data_.playerSize = parseInt(_local_8[1]); //parseInt(_local_8[1]);
-					Parameters.save();
+                    Parameters.data_.playerSize = parseInt(_local_8[1]);
                     this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME, ("Set Size to: " + _local_8[1])));
+					Parameters.save();
                     return (true);
                 }
                     _local_8 = this.data.toLowerCase().match("^/tp (\\w+)$");

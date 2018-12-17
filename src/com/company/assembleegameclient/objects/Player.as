@@ -5,8 +5,8 @@
 
 package com.company.assembleegameclient.objects
 {
-	
-	
+
+
 	import com.company.assembleegameclient.game.events.ReconnectEvent;
 	import com.company.assembleegameclient.map.Camera;
 	import com.company.assembleegameclient.map.Square;
@@ -1997,13 +1997,12 @@ package com.company.assembleegameclient.objects
 			;
 			if (this.relMoveVec_ != null)
 			{
-				_local_4 = Parameters.data_.cameraAngle;
+				 _local_4 = Parameters.data_.cameraAngle;
 				if (this.rotate_ != 0)
 				{
 					_local_4 = (_local_4 + ((_arg_2 * Parameters.PLAYER_ROTATE_SPEED) * this.rotate_));
 					Parameters.data_.cameraAngle = _local_4;
-				}
-				;
+				};
 				_local_5 = this.getMoveSpeed();
 				if (map_.gs_.gsc_.record == 2)
 				{

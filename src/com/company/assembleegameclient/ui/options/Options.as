@@ -5,8 +5,8 @@
 
 package com.company.assembleegameclient.ui.options
 {
-	
-	
+
+
 	import com.company.assembleegameclient.game.GameSprite;
 	import com.company.assembleegameclient.game.MapUserInput;
 	import com.company.assembleegameclient.objects.Player;
@@ -913,6 +913,7 @@ package com.company.assembleegameclient.ui.options
 			this.addOptionAndPosition(new KeyMapper("SkipRenderKey", "Toggle Rendering", "Stops rendering the playfield. Minimap and the rest of the HUD is still updated."));
 			this.addOptionAndPosition(new KeyMapper("panicKey", "Panic Key", "Toggle visual options to take screenshot."));
 			this.addOptionAndPosition(new KeyMapper("LowCPUModeHotKey", "Low CPU Mode", "Disables a lot of rendering and stuff by hotkey"));
+			this.addOptionAndPosition(new ChoiceOption("pSize", makeOnOffLabels(), [true, false], "[READ ME] Player Size", "[NOT COMPATIBLE WITH SSMODE] Changes the size stat of players, to look bigger/smaller. Settable with: /psize (num), REQUIRES MAP RELOAD", null));
 		}
 
 		private function addOtherOptions():void

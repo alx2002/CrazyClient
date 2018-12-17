@@ -1316,7 +1316,6 @@ package kabam.rotmg.messaging.impl
             _local_2.objectId_ = _arg_1;
             portid = _arg_1;
             serverConnection.sendMessage(_local_2);
-
         }
 
         override public function buy(_arg_1:int, _arg_2:int):void
@@ -2324,7 +2323,7 @@ package kabam.rotmg.messaging.impl
                         };
                         if (((Parameters.data_.sizer) && (!(Options.hidden)))) {
                             _arg_1.size_ = ((_local_5 < 100) ? _local_5 : 100);
-                        } else if ((!(_arg_1.objectId_ == this.playerId_)) && (_arg_1.props_.isPlayer_) && Parameters.data_.pSize && !Options.hidden) {
+                        } else if ((!(_arg_1.objectId_ == this.playerId_)) && (_arg_1.props_.isPlayer_) && Parameters.data_.pSize /*&& !Options.hidden*/) {
                         _arg_1.size_ = Parameters.data_.playerSize;
 						}
                         else {

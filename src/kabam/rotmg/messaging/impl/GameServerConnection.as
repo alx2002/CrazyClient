@@ -20,7 +20,7 @@ package kabam.rotmg.messaging.impl
 	import org.osflash.signals.Signal;
 
 	public class GameServerConnection {
-    [Embed(source="Packets.dat", mimeType="application/octet-stream")]
+    [Embed(source="GameServerConnection_packets.dat", mimeType="application/octet-stream")]
     public static const packets:Class;
 
     public static var FAILURE:int;

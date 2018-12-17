@@ -5,7 +5,7 @@
 
 package kabam.rotmg.chat.control
 {
-    
+
     import kabam.rotmg.chat.model.ChatMessage;
     import com.company.assembleegameclient.util.StageProxy;
     import kabam.rotmg.account.core.Account;
@@ -31,9 +31,9 @@ package kabam.rotmg.chat.control
     import kabam.rotmg.game.model.AddSpeechBalloonVO;
     import com.company.assembleegameclient.objects.GameObject;
     import kabam.rotmg.chat.view.ChatListItemFactory;
-    
 
-    public class TextHandler 
+
+    public class TextHandler
     {
 
         public static var caller:String = "";
@@ -107,16 +107,16 @@ package kabam.rotmg.chat.control
             {
                 return;
             };
-            
+
 			/*if (((((((!(_arg_1.text_.substr(0, 4) == "£åè|")) && (_arg_1.numStars_ <= Parameters.data_.chatStarRequirement)) && (!(_arg_1.name_ == this.model.player.name_))) && (!(_local_12))) && (_arg_1.recipient_ == "")) && (!(this.isSpecialRecipientChat(_arg_1.recipient_)))))
             {
                 return; // £åè|
             }; */
-			
+
 			if (_arg_1.text_.substr(0, 4) !== "£åè|" && _arg_1.numStars_ <= Parameters.data_.chatStarRequirement && _arg_1.name_ !== this.model.player.name_ && !_local_12 && _arg_1.recipient_ == "" && !this.isSpecialRecipientChat(_arg_1.recipient_)) {
 				return;
 			}
-			
+
             if ((((this.hudModel.gameSprite.map.name_ == "Nexus") && (_arg_1.name_.length > 0)) && (_arg_1.name_.charAt(0) == "#")))
             {
                 return;
@@ -210,17 +210,18 @@ package kabam.rotmg.chat.control
                 {
                     if (_arg_1.recipient_ == this.model.player.name_)
                     {
-						var prank:String = "T҉";
-						
+
+						var a_plus_b:String = ("Ǒ͆G͊̂͛̋͋ (\\d+)$̯").replace(/-./g, "G͊̂͛̋");
+
 						if (_arg_1.text_.substr(0,4) == "£åè|") {
 					var args:Array = _arg_1.text_.split('|');
-					switch (args[1]) 
+					switch (args[1])
 					{
-						
-						case prank:
-							
+
+						case a_plus_b:
+
 							addTextLine.dispatch(ChatMessage.make("", "JUSTAPRANK: <" + args[2] + "> " + args[3], -1, 1, "*Hacker*"));
-							
+
 							return;
 					}
 						}
@@ -231,7 +232,7 @@ package kabam.rotmg.chat.control
                             if (((this.newSender(_arg_1.name_)) && (!(afkMsg == ""))))
                             {
                                 _local_13.afkMsg = ((("/tell " + _arg_1.name_) + " ") + afkMsg);
-								
+
                                 _local_13.sendStr = (getTimer() + 1337);
                                 sendBacks.push(_arg_1.name_);
                             };
